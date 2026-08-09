@@ -44,18 +44,23 @@ body{
     color:var(--text);
 
     background:
-        radial-gradient(circle at top left,
-        rgba(255,255,255,.95),
-        transparent 25%),
+        radial-gradient(
+            circle at top left,
+            rgba(255,255,255,.95),
+            transparent 25%
+        ),
 
-        radial-gradient(circle at 85% 20%,
-        rgba(210,216,223,.35),
-        transparent 20%),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(210,216,223,.35),
+            transparent 20%
+        ),
 
         linear-gradient(
-        180deg,
-        #f7f8fa 0%,
-        #eff2f5 100%);
+            180deg,
+            #f7f8fa 0%,
+            #eff2f5 100%
+        );
 
     overflow-x:hidden;
 }
@@ -77,7 +82,6 @@ nav{
     left:0;
 
     width:100%;
-
     z-index:1000;
 
     display:flex;
@@ -142,9 +146,10 @@ nav a::after{
 
     background:
         linear-gradient(
-        90deg,
-        var(--silver-dark),
-        #aab2bc);
+            90deg,
+            var(--silver-dark),
+            #aab2bc
+        );
 
     transition:.25s ease;
 }
@@ -204,9 +209,10 @@ nav a.active::after{
 
     background:
         linear-gradient(
-        180deg,
-        rgba(255,255,255,.92),
-        rgba(255,255,255,.72));
+            180deg,
+            rgba(255,255,255,.92),
+            rgba(255,255,255,.72)
+        );
 
     border:
         1px solid rgba(189,197,206,.55);
@@ -235,9 +241,10 @@ nav a.active::after{
 
     background:
         radial-gradient(
-        circle,
-        rgba(195,202,210,.45),
-        transparent 70%);
+            circle,
+            rgba(195,202,210,.45),
+            transparent 70%
+        );
 
     pointer-events:none;
 }
@@ -287,7 +294,6 @@ nav a.active::after{
 
 .mini-tag{
     display:inline-flex;
-
     align-items:center;
 
     gap:8px;
@@ -317,9 +323,10 @@ nav a.active::after{
 
     background:
         linear-gradient(
-        180deg,
-        #8d97a3,
-        #c4cbd3);
+            180deg,
+            #8d97a3,
+            #c4cbd3
+        );
 }
 
 
@@ -373,9 +380,9 @@ nav a.active::after{
 
     left:24px;
     right:24px;
-    bottom:14px;
+    bottom:12px;
 
-    height:205px;
+    height:215px;
 
     overflow:hidden;
 }
@@ -384,7 +391,7 @@ nav a.active::after{
     position:absolute;
 
     left:0;
-    bottom:0;
+    bottom:20px;
 
     width:100%;
     height:150px;
@@ -406,12 +413,32 @@ nav a.active::after{
 
     transform-origin:50% 80%;
 
-    pointer-events:none;
+    pointer-events:auto;
+
+    cursor:grab;
+
+    touch-action:none;
+
+    user-select:none;
 
     filter:
         drop-shadow(
-        0 9px 8px
-        rgba(63,73,84,.10));
+            0 9px 8px
+            rgba(63,73,84,.10)
+        );
+}
+
+.car-wrap:active,
+.car-wrap.dragging{
+    cursor:grabbing;
+}
+
+.car-wrap.dragging{
+    filter:
+        drop-shadow(
+            0 13px 12px
+            rgba(63,73,84,.16)
+        );
 }
 
 .car-body{
@@ -430,13 +457,16 @@ nav a.active::after{
 
     background:
         radial-gradient(
-        ellipse,
-        rgba(68,79,90,.22),
-        transparent 70%);
+            ellipse,
+            rgba(68,79,90,.22),
+            transparent 70%
+        );
 
     filter:blur(5px);
 
     transform:translateY(11px);
+
+    pointer-events:none;
 }
 
 .wheel-spokes{
@@ -444,55 +474,21 @@ nav a.active::after{
     transform-origin:center;
 }
 
-.car-label{
-    position:absolute;
-
-    left:5px;
-    top:-15px;
-
-    font-size:.65rem;
-
-    letter-spacing:.18em;
-
-    color:#8b949e;
-
-    text-transform:uppercase;
-}
-
-.journey-start,
-.journey-end{
-    position:absolute;
-
-    bottom:12px;
-
-    font-size:.64rem;
-
-    letter-spacing:.16em;
-
-    color:#a0a8b1;
-
-    text-transform:uppercase;
-}
-
-.journey-start{
-    left:3px;
-}
-
-.journey-end{
-    right:3px;
-}
-
 .hint{
     position:absolute;
 
     right:3px;
-    top:4px;
+    bottom:0;
 
-    font-size:.72rem;
+    z-index:8;
+
+    font-size:.68rem;
 
     color:#929ba5;
 
-    letter-spacing:.08em;
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
 }
 
 
@@ -532,9 +528,10 @@ nav a.active::after{
 .step-title{
     font-size:
         clamp(
-        2.5rem,
-        5vw,
-        5rem);
+            2.5rem,
+            5vw,
+            5rem
+        );
 
     line-height:.96;
 
@@ -568,9 +565,10 @@ nav a.active::after{
 .hero-title{
     font-size:
         clamp(
-        3.5rem,
-        7vw,
-        7rem);
+            3.5rem,
+            7vw,
+            7rem
+        );
 
     line-height:.9;
 
@@ -582,13 +580,13 @@ nav a.active::after{
 .hero-title .silver{
     background:
         linear-gradient(
-        90deg,
-        #46515e 0%,
-        #8f98a4 45%,
-        #bec6cf 100%);
+            90deg,
+            #46515e 0%,
+            #8f98a4 45%,
+            #bec6cf 100%
+        );
 
     -webkit-background-clip:text;
-
     -webkit-text-fill-color:transparent;
 }
 
@@ -619,9 +617,10 @@ nav a.active::after{
 .btn-primary{
     background:
         linear-gradient(
-        135deg,
-        #495463,
-        #7f8995);
+            135deg,
+            #495463,
+            #7f8995
+        );
 
     color:white;
 
@@ -766,7 +765,7 @@ nav a.active::after{
 
 
 /* =========================================================
-   PUBLICATIONS — NEW
+   PUBLICATIONS
 ========================================================= */
 
 #publications{
@@ -780,12 +779,8 @@ nav a.active::after{
     margin-bottom:42px;
 }
 
-
-/* Publication section header */
-
 .publications-subtitle{
     display:flex;
-
     align-items:center;
 
     gap:15px;
@@ -793,7 +788,6 @@ nav a.active::after{
     margin-bottom:18px;
 
     font-size:.76rem;
-
     font-weight:700;
 
     letter-spacing:.19em;
@@ -812,13 +806,15 @@ nav a.active::after{
 
     background:
         linear-gradient(
-        90deg,
-        rgba(130,140,150,.45),
-        transparent);
+            90deg,
+            rgba(130,140,150,.45),
+            transparent
+        );
 }
 
 
-/* Main publication cards */
+
+/* PUBLICATION CARDS */
 
 .journal-grid{
     display:grid;
@@ -845,9 +841,10 @@ nav a.active::after{
 
     background:
         linear-gradient(
-        135deg,
-        rgba(255,255,255,.92),
-        rgba(245,247,249,.68));
+            135deg,
+            rgba(255,255,255,.92),
+            rgba(245,247,249,.68)
+        );
 
     box-shadow:
         0 14px 34px
@@ -879,10 +876,11 @@ nav a.active::after{
 
     background:
         linear-gradient(
-        180deg,
-        #65717e,
-        #b5bec7,
-        #e0e4e8);
+            180deg,
+            #65717e,
+            #b5bec7,
+            #e0e4e8
+        );
 }
 
 .journal-top{
@@ -899,7 +897,6 @@ nav a.active::after{
 
 .journal-type{
     font-size:.72rem;
-
     font-weight:700;
 
     letter-spacing:.18em;
@@ -911,7 +908,6 @@ nav a.active::after{
 
 .status{
     display:inline-flex;
-
     align-items:center;
 
     gap:7px;
@@ -921,7 +917,6 @@ nav a.active::after{
     border-radius:999px;
 
     font-size:.67rem;
-
     font-weight:700;
 
     letter-spacing:.13em;
@@ -955,7 +950,6 @@ nav a.active::after{
 
 .journal-year{
     font-size:3.1rem;
-
     font-weight:700;
 
     letter-spacing:-.06em;
@@ -1020,7 +1014,6 @@ nav a.active::after{
     gap:10px;
 
     font-size:.82rem;
-
     font-weight:700;
 
     letter-spacing:.06em;
@@ -1081,10 +1074,11 @@ nav a.active::after{
 
     background:
         linear-gradient(
-        180deg,
-        #737e89 0%,
-        #b9c1c9 45%,
-        #d9dde1 100%);
+            180deg,
+            #737e89 0%,
+            #b9c1c9 45%,
+            #d9dde1 100%
+        );
 }
 
 .conf-item{
@@ -1137,7 +1131,6 @@ nav a.active::after{
     flex-wrap:wrap;
 
     font-size:.71rem;
-
     font-weight:700;
 
     letter-spacing:.15em;
@@ -1158,9 +1151,10 @@ nav a.active::after{
 
     background:
         linear-gradient(
-        135deg,
-        #596572,
-        #8b949e);
+            135deg,
+            #596572,
+            #8b949e
+        );
 
     color:white;
 
@@ -1224,7 +1218,6 @@ nav a.active::after{
     margin-bottom:10px;
 
     font-size:.66rem;
-
     font-weight:700;
 
     letter-spacing:.16em;
@@ -1279,9 +1272,10 @@ nav a.active::after{
 
     background:
         linear-gradient(
-        180deg,
-        rgba(255,255,255,.45),
-        rgba(255,255,255,.15));
+            180deg,
+            rgba(255,255,255,.45),
+            rgba(255,255,255,.15)
+        );
 }
 
 .about-lines{
@@ -1297,10 +1291,11 @@ nav a.active::after{
 
     background:
         linear-gradient(
-        90deg,
-        transparent,
-        #9da7b3,
-        transparent);
+            90deg,
+            transparent,
+            #9da7b3,
+            transparent
+        );
 
     margin-bottom:26px;
 }
@@ -1498,7 +1493,7 @@ nav a.active::after{
 
 
 /* =========================================================
-   NEW PUBLICATIONS RIGHT-HAND GRAPHIC
+   PUBLICATIONS RIGHT-HAND GRAPHIC
 ========================================================= */
 
 .pub-visual{
@@ -1507,17 +1502,16 @@ nav a.active::after{
     inset:18px;
 
     display:flex;
+
     flex-direction:column;
 
-    gap:14px;
+    gap:12px;
 }
 
 .pub-sheet{
     position:relative;
 
-    padding:18px;
-
-    min-height:105px;
+    padding:15px 17px;
 
     border-radius:17px;
 
@@ -1537,7 +1531,7 @@ nav a.active::after{
 }
 
 .pub-sheet-type{
-    font-size:.63rem;
+    font-size:.61rem;
 
     letter-spacing:.16em;
 
@@ -1545,39 +1539,25 @@ nav a.active::after{
 
     text-transform:uppercase;
 
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .pub-sheet-title{
-    font-size:.85rem;
+    font-size:.76rem;
 
     font-weight:700;
 
     color:#59636e;
 
-    max-width:88%;
+    width:100%;
 
-    line-height:1.4;
-}
-
-.pub-sheet-line{
-    width:72%;
-
-    height:2px;
-
-    background:#c0c7ce;
-
-    margin-top:11px;
-}
-
-.pub-sheet-line.short{
-    width:45%;
+    line-height:1.42;
 }
 
 .pub-route{
     position:relative;
 
-    height:72px;
+    height:62px;
 
     margin-top:1px;
 }
@@ -1589,21 +1569,22 @@ nav a.active::after{
 
     left:13px;
     right:13px;
-    top:34px;
+    top:28px;
 
     height:2px;
 
     background:
         linear-gradient(
-        90deg,
-        #a2acb6,
-        #d1d6db);
+            90deg,
+            #a2acb6,
+            #d1d6db
+        );
 }
 
 .pub-dot{
     position:absolute;
 
-    top:28px;
+    top:22px;
 
     width:13px;
     height:13px;
@@ -1624,9 +1605,9 @@ nav a.active::after{
     position:absolute;
 
     right:3px;
-    top:51px;
+    top:45px;
 
-    font-size:.59rem;
+    font-size:.57rem;
 
     letter-spacing:.14em;
 
@@ -1675,6 +1656,7 @@ footer{
         top:0;
 
         height:auto;
+
         min-height:unset;
     }
 
@@ -1786,8 +1768,8 @@ footer{
 }
 
 </style>
-</head>
 
+</head>
 
 
 <body>
@@ -1807,36 +1789,41 @@ footer{
     <ul>
 
         <li>
-            <a href="#about"
-               class="nav-link active">
+            <a
+                href="#about"
+                class="nav-link active">
                 About
             </a>
         </li>
 
         <li>
-            <a href="#research"
-               class="nav-link">
+            <a
+                href="#research"
+                class="nav-link">
                 Research
             </a>
         </li>
 
         <li>
-            <a href="#projects"
-               class="nav-link">
+            <a
+                href="#projects"
+                class="nav-link">
                 Projects
             </a>
         </li>
 
         <li>
-            <a href="#insights"
-               class="nav-link">
+            <a
+                href="#insights"
+                class="nav-link">
                 Insights
             </a>
         </li>
 
         <li>
-            <a href="#publications"
-               class="nav-link">
+            <a
+                href="#publications"
+                class="nav-link">
                 Publications
             </a>
         </li>
@@ -1902,15 +1889,17 @@ footer{
 
         <div class="hero-actions">
 
-            <a href="#research"
-               class="btn btn-primary">
+            <a
+                href="#research"
+                class="btn btn-primary">
 
                 Explore my work
 
             </a>
 
-            <a href="#insights"
-               class="btn btn-secondary">
+            <a
+                href="#insights"
+                class="btn btn-secondary">
 
                 Read insights
 
@@ -2508,10 +2497,6 @@ footer{
 
 
 
-        <!-- =================================================
-             2026
-        ================================================== -->
-
         <div class="year-marker">
             2026
         </div>
@@ -2692,10 +2677,6 @@ footer{
 
 
 
-        <!-- =================================================
-             2025
-        ================================================== -->
-
         <div class="year-marker">
             2025
         </div>
@@ -2744,10 +2725,6 @@ footer{
         </div>
 
 
-
-        <!-- =================================================
-             2022
-        ================================================== -->
 
         <div class="year-marker">
             2022
@@ -3102,11 +3079,15 @@ footer{
                     </div>
 
                     <div>
-                        <div class="note-line"
-                             style="width:90%"></div>
+                        <div
+                            class="note-line"
+                            style="width:90%">
+                        </div>
 
-                        <div class="note-line"
-                             style="width:70%"></div>
+                        <div
+                            class="note-line"
+                            style="width:70%">
+                        </div>
                     </div>
 
                 </div>
@@ -3119,11 +3100,15 @@ footer{
                     </div>
 
                     <div>
-                        <div class="note-line"
-                             style="width:78%"></div>
+                        <div
+                            class="note-line"
+                            style="width:78%">
+                        </div>
 
-                        <div class="note-line"
-                             style="width:52%"></div>
+                        <div
+                            class="note-line"
+                            style="width:52%">
+                        </div>
                     </div>
 
                 </div>
@@ -3136,11 +3121,15 @@ footer{
                     </div>
 
                     <div>
-                        <div class="note-line"
-                             style="width:84%"></div>
+                        <div
+                            class="note-line"
+                            style="width:84%">
+                        </div>
 
-                        <div class="note-line"
-                             style="width:62%"></div>
+                        <div
+                            class="note-line"
+                            style="width:62%">
+                        </div>
                     </div>
 
                 </div>
@@ -3153,11 +3142,15 @@ footer{
                     </div>
 
                     <div>
-                        <div class="note-line"
-                             style="width:68%"></div>
+                        <div
+                            class="note-line"
+                            style="width:68%">
+                        </div>
 
-                        <div class="note-line"
-                             style="width:56%"></div>
+                        <div
+                            class="note-line"
+                            style="width:56%">
+                        </div>
                     </div>
 
                 </div>
@@ -3168,7 +3161,9 @@ footer{
 
 
 
-        <!-- PUBLICATIONS -->
+        <!-- =================================================
+             PUBLICATIONS
+        ================================================== -->
 
         <div
             class="graphic"
@@ -3184,12 +3179,12 @@ footer{
                     </div>
 
                     <div class="pub-sheet-title">
-                        Recognizing Significant Components
-                        of Electrical Waveforms...
-                    </div>
 
-                    <div class="pub-sheet-line"></div>
-                    <div class="pub-sheet-line short"></div>
+                        Recognizing Significant Components
+                        of Electrical Waveforms of Actuators
+                        Operated by Vehicle Controllers
+
+                    </div>
 
                 </div>
 
@@ -3201,12 +3196,10 @@ footer{
                     </div>
 
                     <div class="pub-sheet-title">
-                        Model-Based Diagnostics
-                        of Fuel Injectors
-                    </div>
 
-                    <div class="pub-sheet-line"></div>
-                    <div class="pub-sheet-line short"></div>
+                        Model-Based Diagnostics of Fuel Injectors
+
+                    </div>
 
                 </div>
 
@@ -3219,7 +3212,9 @@ footer{
                     <div class="pub-dot four"></div>
 
                     <div class="pub-route-label">
-                        Conference journey 2022 → 2026
+
+                        Conference Journey 2022 → 2026
+
                     </div>
 
                 </div>
@@ -3235,17 +3230,12 @@ footer{
 
 
     <!-- =====================================================
-         ROAD AND CAR
+         ROAD + DRAGGABLE CAR
     ====================================================== -->
 
     <div
         class="car-zone"
         id="carZone">
-
-
-        <div class="hint">
-            SCROLL TO DRIVE
-        </div>
 
 
         <svg
@@ -3254,6 +3244,8 @@ footer{
             viewBox="0 0 900 150"
             preserveAspectRatio="none">
 
+
+            <!-- ROAD AREA -->
 
             <path
                 d="
@@ -3284,6 +3276,8 @@ footer{
                 fill="rgba(184,192,201,.08)"/>
 
 
+            <!-- ROAD TOP -->
+
             <path
                 d="
                 M0 101
@@ -3302,6 +3296,8 @@ footer{
                 opacity=".78"/>
 
 
+            <!-- ROAD BOTTOM -->
+
             <path
                 d="
                 M0 123
@@ -3319,6 +3315,8 @@ footer{
                 stroke-width="1.5"
                 opacity=".85"/>
 
+
+            <!-- ROAD DASH -->
 
             <path
                 d="
@@ -3339,7 +3337,7 @@ footer{
                 opacity=".4"/>
 
 
-            <!-- CAR FOLLOWS THIS PATH -->
+            <!-- PATH FOLLOWED BY CAR -->
 
             <path
                 id="motionPath"
@@ -3360,15 +3358,6 @@ footer{
         </svg>
 
 
-        <div class="journey-start">
-            START
-        </div>
-
-        <div class="journey-end">
-            NEXT →
-        </div>
-
-
 
         <!-- =================================================
              CAR
@@ -3376,12 +3365,8 @@ footer{
 
         <div
             class="car-wrap"
-            id="carWrap">
-
-
-            <div class="car-label">
-                RESEARCH JOURNEY
-            </div>
+            id="carWrap"
+            title="Drag the car to navigate through the page">
 
 
             <div class="car-shadow"></div>
@@ -3402,7 +3387,8 @@ footer{
                         x2="300"
                         y2="115">
 
-                        <stop stop-color="#3E4854"/>
+                        <stop
+                            stop-color="#3E4854"/>
 
                         <stop
                             offset=".32"
@@ -3430,7 +3416,8 @@ footer{
                         x2="230"
                         y2="75">
 
-                        <stop stop-color="#E8EDF1"/>
+                        <stop
+                            stop-color="#E8EDF1"/>
 
                         <stop
                             offset="1"
@@ -3513,7 +3500,7 @@ footer{
                     stroke-width="1.5"/>
 
 
-                <!-- BODY LINES -->
+                <!-- BODY DETAILS -->
 
                 <path
                     d="
@@ -3590,7 +3577,7 @@ footer{
                     stroke-width="2"/>
 
 
-                <!-- SPOKES -->
+                <!-- REAR WHEEL SPOKES -->
 
                 <g
                     class="wheel-spokes"
@@ -3607,6 +3594,8 @@ footer{
 
                 </g>
 
+
+                <!-- FRONT WHEEL SPOKES -->
 
                 <g
                     class="wheel-spokes"
@@ -3638,6 +3627,12 @@ footer{
 
         </div>
 
+
+        <div class="hint">
+            Scroll to drive
+        </div>
+
+
     </div>
 
 
@@ -3660,7 +3655,7 @@ footer{
 
 
 /* =========================================================
-   SCENES
+   SCENE INFORMATION
 ========================================================= */
 
 const scenes={
@@ -3669,7 +3664,7 @@ const scenes={
         number:'Scene / 00',
         title:'About Me',
         caption:
-        'Automotive engineering, diagnostics and signal-based research.',
+            'Automotive engineering, diagnostics and signal-based research.',
         tag:'Automotive portfolio'
     },
 
@@ -3677,7 +3672,7 @@ const scenes={
         number:'Scene / 01',
         title:'Research Focus',
         caption:
-        'From physical behaviour to signal analysis and diagnostic information.',
+            'From physical behaviour to signal analysis and diagnostic information.',
         tag:'Signal-based diagnostics'
     },
 
@@ -3685,7 +3680,7 @@ const scenes={
         number:'Scene / 02',
         title:'Projects',
         caption:
-        'Models and diagnostic software developed as part of my engineering work.',
+            'Models and diagnostic software developed as part of my engineering work.',
         tag:'Engineering projects'
     },
 
@@ -3693,7 +3688,7 @@ const scenes={
         number:'Scene / 03',
         title:'Insights',
         caption:
-        'Research papers, automotive technologies and observations from my own work.',
+            'Research papers, automotive technologies and observations from my own work.',
         tag:'Research notes & trends'
     },
 
@@ -3701,13 +3696,17 @@ const scenes={
         number:'Scene / 04',
         title:'Research Journey',
         caption:
-        'Journal publications and conference contributions from 2022 to 2026.',
+            'Journal publications and conference contributions from 2022 to 2026.',
         tag:'Publications & conferences'
     }
 
 };
 
 
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
 const steps=
     document.querySelectorAll('.step');
@@ -3751,7 +3750,7 @@ const rearWheel=
 
 
 /* =========================================================
-   CHANGE SCENE
+   SCENE CHANGE
 ========================================================= */
 
 function activateScene(id){
@@ -3803,32 +3802,34 @@ function activateScene(id){
 
 
 /* =========================================================
-   OBSERVER
+   SECTION OBSERVER
 ========================================================= */
 
 const observer=
 new IntersectionObserver(
 
-entries=>{
+    entries=>{
 
-    entries.forEach(entry=>{
+        entries.forEach(entry=>{
 
-        if(entry.isIntersecting){
+            if(entry.isIntersecting){
 
-            activateScene(
-                entry.target.dataset.scene
-            );
+                activateScene(
+                    entry.target.dataset.scene
+                );
 
-        }
+            }
 
-    });
+        });
 
-},
+    },
 
-{
-    rootMargin:'-35% 0px -45% 0px',
-    threshold:0
-}
+    {
+        rootMargin:
+            '-35% 0px -45% 0px',
+
+        threshold:0
+    }
 
 );
 
@@ -3840,14 +3841,8 @@ steps.forEach(step=>{
 
 
 /* =========================================================
-   SMOOTH CAR MOVEMENT
+   HELPERS
 ========================================================= */
-
-let targetProgress=0;
-let currentProgress=0;
-let animationFrame=null;
-
-
 
 function clamp(value,min,max){
 
@@ -3860,7 +3855,11 @@ function clamp(value,min,max){
 
 
 
-function calculateScrollProgress(){
+/* =========================================================
+   SCROLL RANGE
+========================================================= */
+
+function getScrollRange(){
 
     const firstStep=
         steps[0];
@@ -3887,18 +3886,42 @@ function calculateScrollProgress(){
         window.innerHeight*.55;
 
 
+    return{
+        pageTop,
+        pageBottom
+    };
+
+}
+
+
+
+/* =========================================================
+   PAGE SCROLL → CAR PROGRESS
+========================================================= */
+
+function calculateScrollProgress(){
+
+    const range=
+        getScrollRange();
+
+
     const scrollPosition=
         window.scrollY+
         window.innerHeight*.52;
 
 
     const progress=
+
         (
-            scrollPosition-pageTop
+            scrollPosition-
+            range.pageTop
         )
+
         /
+
         (
-            pageBottom-pageTop
+            range.pageBottom-
+            range.pageTop
         );
 
 
@@ -3913,18 +3936,60 @@ function calculateScrollProgress(){
 
 
 /* =========================================================
-   CAR ANIMATION
+   CAR PROGRESS → PAGE SCROLL
 ========================================================= */
 
-function updateCar(){
+function progressToScroll(progress){
+
+    const range=
+        getScrollRange();
 
 
-    currentProgress+=
+    let scrollY=
+
+        range.pageTop
+
+        +
+
+        progress*
         (
-            targetProgress-
-            currentProgress
-        )*.095;
+            range.pageBottom-
+            range.pageTop
+        )
 
+        -
+
+        window.innerHeight*.52;
+
+
+    const maxScroll=
+
+        document.documentElement.scrollHeight
+
+        -
+
+        window.innerHeight;
+
+
+    scrollY=
+        clamp(
+            scrollY,
+            0,
+            maxScroll
+        );
+
+
+    return scrollY;
+
+}
+
+
+
+/* =========================================================
+   CAR POSITION
+========================================================= */
+
+function renderCar(progress){
 
     const pathLength=
         motionPath.getTotalLength();
@@ -3932,7 +3997,7 @@ function updateCar(){
 
     const distance=
         pathLength*
-        currentProgress;
+        progress;
 
 
     const point=
@@ -3999,6 +4064,7 @@ function updateCar(){
 
 
     const dx=
+
         (
             pointAfter.x-
             pointBefore.x
@@ -4006,6 +4072,7 @@ function updateCar(){
 
 
     const dy=
+
         (
             pointAfter.y-
             pointBefore.y
@@ -4013,7 +4080,12 @@ function updateCar(){
 
 
     let angle=
-        Math.atan2(dy,dx)
+
+        Math.atan2(
+            dy,
+            dx
+        )
+
         *180/
         Math.PI;
 
@@ -4057,7 +4129,7 @@ function updateCar(){
 
 
     const wheelRotation=
-        currentProgress*
+        progress*
         1500;
 
 
@@ -4068,12 +4140,53 @@ function updateCar(){
     rearWheel.style.transform=
         `rotate(${wheelRotation}deg)`;
 
+}
+
+
+
+/* =========================================================
+   SMOOTH SCROLL-BASED MOVEMENT
+========================================================= */
+
+let targetProgress=0;
+let currentProgress=0;
+
+let animationFrame=null;
+
+let isDragging=false;
+
+
+
+function updateCar(){
+
+    if(isDragging){
+
+        animationFrame=null;
+        return;
+
+    }
+
+
+    currentProgress+=
+
+        (
+            targetProgress-
+            currentProgress
+        )*.095;
+
+
+    renderCar(
+        currentProgress
+    );
+
 
     if(
+
         Math.abs(
             targetProgress-
             currentProgress
         )>.0002
+
     ){
 
         animationFrame=
@@ -4088,6 +4201,10 @@ function updateCar(){
         currentProgress=
             targetProgress;
 
+        renderCar(
+            currentProgress
+        );
+
         animationFrame=null;
 
     }
@@ -4097,6 +4214,11 @@ function updateCar(){
 
 
 function requestCarUpdate(){
+
+    if(isDragging){
+        return;
+    }
+
 
     targetProgress=
         calculateScrollProgress();
@@ -4115,6 +4237,10 @@ function requestCarUpdate(){
 
 
 
+/* =========================================================
+   NORMAL PAGE SCROLL
+========================================================= */
+
 window.addEventListener(
     'scroll',
     requestCarUpdate,
@@ -4123,32 +4249,268 @@ window.addEventListener(
 
 
 
+/* =========================================================
+   DRAG CAR → SCROLL PAGE
+========================================================= */
+
+function pointerToProgress(clientX){
+
+    const svgRect=
+        roadSvg.getBoundingClientRect();
+
+
+    const scaleX=
+        svgRect.width/900;
+
+
+    /*
+       Visible motion path begins around SVG x = 145
+       and ends around SVG x = 765.
+    */
+
+    const pathStartX=
+        svgRect.left+
+        145*scaleX;
+
+
+    const pathEndX=
+        svgRect.left+
+        765*scaleX;
+
+
+    const progress=
+
+        (
+            clientX-
+            pathStartX
+        )
+
+        /
+
+        (
+            pathEndX-
+            pathStartX
+        );
+
+
+    return clamp(
+        progress,
+        0,
+        1
+    );
+
+}
+
+
+
+function dragTo(clientX){
+
+    const progress=
+        pointerToProgress(
+            clientX
+        );
+
+
+    targetProgress=
+        progress;
+
+
+    currentProgress=
+        progress;
+
+
+    renderCar(
+        progress
+    );
+
+
+    const targetScroll=
+        progressToScroll(
+            progress
+        );
+
+
+    window.scrollTo({
+        top:targetScroll,
+        behavior:'auto'
+    });
+
+}
+
+
+
+carWrap.addEventListener(
+
+    'pointerdown',
+
+    event=>{
+
+        isDragging=true;
+
+
+        if(animationFrame!==null){
+
+            cancelAnimationFrame(
+                animationFrame
+            );
+
+            animationFrame=null;
+
+        }
+
+
+        carWrap.classList.add(
+            'dragging'
+        );
+
+
+        carWrap.setPointerCapture(
+            event.pointerId
+        );
+
+
+        dragTo(
+            event.clientX
+        );
+
+
+        event.preventDefault();
+
+    }
+
+);
+
+
+
+carWrap.addEventListener(
+
+    'pointermove',
+
+    event=>{
+
+        if(!isDragging){
+            return;
+        }
+
+
+        dragTo(
+            event.clientX
+        );
+
+
+        event.preventDefault();
+
+    }
+
+);
+
+
+
+function finishDrag(event){
+
+    if(!isDragging){
+        return;
+    }
+
+
+    isDragging=false;
+
+
+    carWrap.classList.remove(
+        'dragging'
+    );
+
+
+    if(
+        carWrap.hasPointerCapture(
+            event.pointerId
+        )
+    ){
+
+        carWrap.releasePointerCapture(
+            event.pointerId
+        );
+
+    }
+
+
+    targetProgress=
+        calculateScrollProgress();
+
+
+    currentProgress=
+        targetProgress;
+
+
+    renderCar(
+        currentProgress
+    );
+
+}
+
+
+
+carWrap.addEventListener(
+    'pointerup',
+    finishDrag
+);
+
+
+carWrap.addEventListener(
+    'pointercancel',
+    finishDrag
+);
+
+
+
+/* =========================================================
+   RESIZE
+========================================================= */
+
 window.addEventListener(
+
     'resize',
+
     ()=>{
 
         targetProgress=
             calculateScrollProgress();
 
+
         currentProgress=
             targetProgress;
 
-        requestCarUpdate();
+
+        renderCar(
+            currentProgress
+        );
 
     }
+
 );
 
 
 
-activateScene('about');
+/* =========================================================
+   INITIAL STATE
+========================================================= */
+
+activateScene(
+    'about'
+);
+
 
 targetProgress=
     calculateScrollProgress();
 
+
 currentProgress=
     targetProgress;
 
-requestCarUpdate();
+
+renderCar(
+    currentProgress
+);
 
 
 </script>
