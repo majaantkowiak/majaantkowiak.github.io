@@ -748,7 +748,7 @@ nav a.active::after{
 
 
 /* =========================================================
-   SELECTED PROJECTS
+   PROJECTS
 ========================================================= */
 
 .projects-step{
@@ -1080,6 +1080,8 @@ nav a.active::after{
     gap:7px;
 
     flex-wrap:wrap;
+
+    align-items:center;
 }
 
 .tool{
@@ -1087,17 +1089,17 @@ nav a.active::after{
 
     align-items:center;
 
-    gap:6px;
+    gap:7px;
 
     padding:6px 9px;
 
-    border-radius:7px;
+    border-radius:8px;
 
     border:
         1px solid rgba(175,184,193,.54);
 
     background:
-        rgba(248,249,250,.70);
+        rgba(248,249,250,.78);
 
     color:#737e89;
 
@@ -1107,10 +1109,17 @@ nav a.active::after{
 }
 
 .tool img{
-    width:16px;
-    height:16px;
+    width:18px;
+    height:18px;
 
     object-fit:contain;
+
+    display:block;
+}
+
+.tool-logo-wide img{
+    width:34px;
+    height:20px;
 }
 
 .project-button{
@@ -1343,15 +1352,6 @@ nav a.active::after{
 
 
 /* =========================================================
-   INSIGHTS
-========================================================= */
-
-.insight-card{
-    min-height:250px;
-}
-
-
-/* =========================================================
    PUBLICATIONS
 ========================================================= */
 
@@ -1398,9 +1398,6 @@ nav a.active::after{
             transparent
         );
 }
-
-
-/* JOURNAL CARDS */
 
 .journal-grid{
     display:grid;
@@ -1840,7 +1837,7 @@ nav a.active::after{
 
 
 /* =========================================================
-   ABOUT GRAPHIC
+   RIGHT SIDE GRAPHICS
 ========================================================= */
 
 .diagram-box{
@@ -1909,11 +1906,6 @@ nav a.active::after{
     align-items:center;
     justify-content:center;
 }
-
-
-/* =========================================================
-   RESEARCH GRAPHIC
-========================================================= */
 
 .chain{
     position:absolute;
@@ -1984,11 +1976,6 @@ nav a.active::after{
         5px solid transparent;
 }
 
-
-/* =========================================================
-   PROJECTS RIGHT GRAPHIC
-========================================================= */
-
 .project-visual{
     position:absolute;
 
@@ -2048,11 +2035,6 @@ nav a.active::after{
     margin-top:12px;
 }
 
-
-/* =========================================================
-   INSIGHTS GRAPHIC
-========================================================= */
-
 .insight-stack{
     position:absolute;
 
@@ -2103,11 +2085,6 @@ nav a.active::after{
 
     margin-top:10px;
 }
-
-
-/* =========================================================
-   PUBLICATIONS RIGHT GRAPHIC
-========================================================= */
 
 .pub-visual{
     position:absolute;
@@ -2457,41 +2434,31 @@ footer{
     <ul>
 
         <li>
-            <a
-                href="#about"
-                class="nav-link active">
+            <a href="#about" class="nav-link active">
                 About
             </a>
         </li>
 
         <li>
-            <a
-                href="#research"
-                class="nav-link">
+            <a href="#research" class="nav-link">
                 Research
             </a>
         </li>
 
         <li>
-            <a
-                href="#projects"
-                class="nav-link">
+            <a href="#projects" class="nav-link">
                 Projects
             </a>
         </li>
 
         <li>
-            <a
-                href="#insights"
-                class="nav-link">
+            <a href="#insights" class="nav-link">
                 Insights
             </a>
         </li>
 
         <li>
-            <a
-                href="#publications"
-                class="nav-link">
+            <a href="#publications" class="nav-link">
                 Publications
             </a>
         </li>
@@ -2506,15 +2473,13 @@ footer{
 
 
 <!-- =========================================================
-     LEFT SIDE
+     LEFT
 ========================================================= -->
 
 <section class="content-column">
 
 
-<!-- =========================================================
-     ABOUT
-========================================================= -->
+<!-- ABOUT -->
 
 <section
     class="step"
@@ -2550,18 +2515,13 @@ footer{
 
         </p>
 
-
         <div class="hero-actions">
 
-            <a
-                href="#research"
-                class="btn btn-primary">
+            <a href="#research" class="btn btn-primary">
                 Explore my work
             </a>
 
-            <a
-                href="#insights"
-                class="btn btn-secondary">
+            <a href="#insights" class="btn btn-secondary">
                 Read insights
             </a>
 
@@ -2699,17 +2659,14 @@ footer{
 
     <div class="step-inner projects-inner">
 
-
         <div class="step-kicker">
             02 / Projects
         </div>
-
 
         <h2 class="step-title">
             Selected
             <span>Projects</span>
         </h2>
-
 
         <p class="step-text projects-intro">
 
@@ -2720,37 +2677,29 @@ footer{
         </p>
 
 
-
-        <!-- =================================================
-             PROJECT 01
-        ================================================== -->
+        <!-- PROJECT 01 -->
 
         <article class="project-feature">
 
             <div class="project-media">
 
-
                 <div class="project-index">
                     01
                 </div>
-
 
                 <img
                     src="assets/injector-simulation-model.png"
                     alt="Multidomain injector simulation developed in MATLAB Simulink"
                     class="project-image">
 
-
                 <div class="project-image-label">
                     Multidomain model architecture
                 </div>
-
 
             </div>
 
 
             <div class="project-content">
-
 
                 <div class="project-topline">
 
@@ -2808,32 +2757,17 @@ footer{
 
                 <div class="project-footer">
 
-
                     <div class="project-tools">
 
-                        <span class="tool">
+                        <span class="tool tool-logo-wide">
 
                             <img
-                                src="assets/matlab-logo.png"
-                                alt=""
-                                onerror="this.style.display='none'">
+                                src="assets/matlab-simulink-logo.png"
+                                alt="MATLAB and Simulink">
 
-                            MATLAB
-
-                        </span>
-
-
-                        <span class="tool">
-
-                            <img
-                                src="assets/simulink-logo.png"
-                                alt=""
-                                onerror="this.style.display='none'">
-
-                            Simulink
+                            MATLAB / Simulink
 
                         </span>
-
 
                         <span class="tool">
                             Simscape
@@ -2842,18 +2776,15 @@ footer{
                     </div>
 
 
-                    <a
-                        href="#"
-                        class="project-button">
+                    <a href="#" class="project-button">
 
                         VIEW PROJECT
+
                         <span>→</span>
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -2861,38 +2792,29 @@ footer{
 
 
 
-        <!-- =================================================
-             PROJECT 02
-        ================================================== -->
+        <!-- PROJECT 02 -->
 
-        <article
-            class="project-feature project-feature-reverse">
-
+        <article class="project-feature project-feature-reverse">
 
             <div class="project-media">
-
 
                 <div class="project-index">
                     02
                 </div>
-
 
                 <img
                     src="assets/injector-diagnostic-software.png"
                     alt="LabVIEW injector diagnostic software"
                     class="project-image project-image-software">
 
-
                 <div class="project-image-label">
                     Signal-based diagnostic interface
                 </div>
-
 
             </div>
 
 
             <div class="project-content">
-
 
                 <div class="project-topline">
 
@@ -2951,47 +2873,38 @@ footer{
 
                 <div class="project-footer">
 
-
                     <div class="project-tools">
-
 
                         <span class="tool">
 
                             <img
                                 src="assets/labview-logo.png"
-                                alt=""
-                                onerror="this.style.display='none'">
+                                alt="LabVIEW">
 
                             LabVIEW
 
                         </span>
 
-
                         <span class="tool">
                             Signal Analysis
                         </span>
-
 
                         <span class="tool">
                             Diagnostics
                         </span>
 
-
                     </div>
 
 
-                    <a
-                        href="#"
-                        class="project-button">
+                    <a href="#" class="project-button">
 
                         VIEW PROJECT
+
                         <span>→</span>
 
                     </a>
 
-
                 </div>
-
 
             </div>
 
@@ -2999,34 +2912,26 @@ footer{
 
 
 
-        <!-- =================================================
-             PROJECT 03
-        ================================================== -->
+        <!-- PROJECT 03 -->
 
         <article class="project-math">
 
-
             <div class="math-left">
-
 
                 <div class="math-number">
                     03
                 </div>
 
-
                 <div>
-
 
                     <div class="project-type">
                         Analytical Study
                     </div>
 
-
                     <h3>
                         Analytical Model of Injector
                         Current & Voltage
                     </h3>
-
 
                     <p>
 
@@ -3039,16 +2944,12 @@ footer{
 
                     </p>
 
-
                 </div>
-
 
             </div>
 
 
-
             <div class="math-equations">
-
 
                 <div class="equation equation-main">
 
@@ -3084,13 +2985,10 @@ footer{
 
                 </div>
 
-
             </div>
 
 
-
             <div class="math-footer">
-
 
                 <div class="project-tools">
 
@@ -3108,12 +3006,9 @@ footer{
 
                 </div>
 
-
             </div>
 
-
         </article>
-
 
     </div>
 
@@ -3131,11 +3026,9 @@ footer{
 
     <div class="step-inner">
 
-
         <div class="step-kicker">
             03 / Insights
         </div>
-
 
         <h2 class="step-title">
 
@@ -3143,7 +3036,6 @@ footer{
             <span>Insights</span>
 
         </h2>
-
 
         <p class="step-text">
 
@@ -3156,7 +3048,6 @@ footer{
 
 
         <div class="grid-3">
-
 
             <div class="insight-card">
 
@@ -3238,7 +3129,6 @@ footer{
 
             </div>
 
-
         </div>
 
     </div>
@@ -3280,8 +3170,6 @@ footer{
     </p>
 
 
-    <!-- JOURNAL PUBLICATIONS -->
-
     <div class="publications-subtitle">
         Journal Publications
     </div>
@@ -3291,7 +3179,6 @@ footer{
 
 
         <article class="journal-card">
-
 
             <div class="journal-top">
 
@@ -3361,13 +3248,11 @@ footer{
 
             </a>
 
-
         </article>
 
 
 
         <article class="journal-card">
-
 
             <div class="journal-top">
 
@@ -3388,9 +3273,7 @@ footer{
 
 
             <h3>
-
                 Model-Based Diagnostics of Fuel Injectors
-
             </h3>
 
 
@@ -3423,14 +3306,10 @@ footer{
                 REVIEW PROCESS IN PROGRESS
             </div>
 
-
         </article>
-
 
     </div>
 
-
-    <!-- CONFERENCES -->
 
     <div class="publications-subtitle">
         Conference Contributions
@@ -3506,7 +3385,6 @@ footer{
                 3–5 JULY 2026
             </div>
 
-
             <div class="conf-card">
 
                 <div class="conf-type">
@@ -3537,7 +3415,6 @@ footer{
             <div class="conf-date">
                 8–10 APRIL 2026
             </div>
-
 
             <div class="conf-card">
 
@@ -3570,7 +3447,6 @@ footer{
             <div class="conf-date">
                 8–10 APRIL 2026
             </div>
-
 
             <div class="conf-card">
 
@@ -3608,7 +3484,6 @@ footer{
             <div class="conf-date">
                 25 SEPTEMBER 2025
             </div>
-
 
             <div class="conf-card">
 
@@ -3649,7 +3524,6 @@ footer{
                 14–16 DECEMBER 2022
             </div>
 
-
             <div class="conf-card">
 
                 <div class="conf-type">
@@ -3683,7 +3557,6 @@ footer{
                 14–16 SEPTEMBER 2022
             </div>
 
-
             <div class="conf-card">
 
                 <div class="conf-type">
@@ -3710,7 +3583,6 @@ footer{
 
         </div>
 
-
     </div>
 
 
@@ -3724,11 +3596,9 @@ footer{
 
     </footer>
 
-
 </div>
 
 </section>
-
 
 </section>
 
@@ -3748,29 +3618,18 @@ footer{
 
         <div>
 
-            <div
-                class="scene-number"
-                id="sceneNumber">
-
+            <div class="scene-number" id="sceneNumber">
                 Scene / 00
-
             </div>
 
-
-            <div
-                class="scene-title"
-                id="sceneTitle">
-
+            <div class="scene-title" id="sceneTitle">
                 About Me
-
             </div>
 
         </div>
 
 
-        <div
-            class="scene-caption"
-            id="sceneCaption">
+        <div class="scene-caption" id="sceneCaption">
 
             Automotive engineering,
             diagnostics and signal-based research.
@@ -3780,25 +3639,17 @@ footer{
     </div>
 
 
-    <div
-        class="mini-tag"
-        id="sceneTag">
-
+    <div class="mini-tag" id="sceneTag">
         Automotive portfolio
-
     </div>
 
-
-    <!-- CHANGING GRAPHICS -->
 
     <div class="graphic-stage">
 
 
         <!-- ABOUT -->
 
-        <div
-            class="graphic active"
-            data-graphic="about">
+        <div class="graphic active" data-graphic="about">
 
             <div class="diagram-box"></div>
 
@@ -3864,9 +3715,7 @@ footer{
 
         <!-- RESEARCH -->
 
-        <div
-            class="graphic"
-            data-graphic="research">
+        <div class="graphic" data-graphic="research">
 
             <div class="chain">
 
@@ -3896,13 +3745,9 @@ footer{
 
         <!-- PROJECTS -->
 
-        <div
-            class="graphic"
-            data-graphic="projects">
-
+        <div class="graphic" data-graphic="projects">
 
             <div class="project-visual">
-
 
                 <div class="project-mini large">
 
@@ -3914,53 +3759,16 @@ footer{
                         Injector Multidomain Simulation
                     </div>
 
-                    <svg
-                        viewBox="0 0 380 75"
-                        fill="none">
+                    <svg viewBox="0 0 380 75" fill="none">
 
-                        <rect
-                            x="6"
-                            y="20"
-                            width="74"
-                            height="35"
-                            rx="8"
-                            stroke="#89939E"/>
+                        <rect x="6" y="20" width="74" height="35" rx="8" stroke="#89939E"/>
+                        <rect x="111" y="20" width="74" height="35" rx="8" stroke="#89939E"/>
+                        <rect x="216" y="20" width="74" height="35" rx="8" stroke="#89939E"/>
+                        <rect x="321" y="20" width="52" height="35" rx="8" stroke="#89939E"/>
 
-                        <rect
-                            x="111"
-                            y="20"
-                            width="74"
-                            height="35"
-                            rx="8"
-                            stroke="#89939E"/>
-
-                        <rect
-                            x="216"
-                            y="20"
-                            width="74"
-                            height="35"
-                            rx="8"
-                            stroke="#89939E"/>
-
-                        <rect
-                            x="321"
-                            y="20"
-                            width="52"
-                            height="35"
-                            rx="8"
-                            stroke="#89939E"/>
-
-                        <path
-                            d="M80 37H111"
-                            stroke="#A6AFB8"/>
-
-                        <path
-                            d="M185 37H216"
-                            stroke="#A6AFB8"/>
-
-                        <path
-                            d="M290 37H321"
-                            stroke="#A6AFB8"/>
+                        <path d="M80 37H111" stroke="#A6AFB8"/>
+                        <path d="M185 37H216" stroke="#A6AFB8"/>
+                        <path d="M290 37H321" stroke="#A6AFB8"/>
 
                     </svg>
 
@@ -3977,9 +3785,7 @@ footer{
                         Diagnostic Software
                     </div>
 
-                    <svg
-                        viewBox="0 0 150 55"
-                        fill="none">
+                    <svg viewBox="0 0 150 55" fill="none">
 
                         <path
                             d="
@@ -4009,9 +3815,7 @@ footer{
                         Analytical Model
                     </div>
 
-                    <svg
-                        viewBox="0 0 160 55"
-                        fill="none">
+                    <svg viewBox="0 0 160 55" fill="none">
 
                         <text
                             x="7"
@@ -4029,7 +3833,6 @@ footer{
 
                 </div>
 
-
             </div>
 
         </div>
@@ -4037,9 +3840,7 @@ footer{
 
         <!-- INSIGHTS -->
 
-        <div
-            class="graphic"
-            data-graphic="insights">
+        <div class="graphic" data-graphic="insights">
 
             <div class="insight-stack">
 
@@ -4050,6 +3851,7 @@ footer{
                     </div>
 
                     <div>
+
                         <div
                             class="note-line"
                             style="width:90%">
@@ -4059,6 +3861,7 @@ footer{
                             class="note-line"
                             style="width:70%">
                         </div>
+
                     </div>
 
                 </div>
@@ -4071,6 +3874,7 @@ footer{
                     </div>
 
                     <div>
+
                         <div
                             class="note-line"
                             style="width:78%">
@@ -4080,6 +3884,7 @@ footer{
                             class="note-line"
                             style="width:52%">
                         </div>
+
                     </div>
 
                 </div>
@@ -4092,6 +3897,7 @@ footer{
                     </div>
 
                     <div>
+
                         <div
                             class="note-line"
                             style="width:84%">
@@ -4101,6 +3907,7 @@ footer{
                             class="note-line"
                             style="width:62%">
                         </div>
+
                     </div>
 
                 </div>
@@ -4113,6 +3920,7 @@ footer{
                     </div>
 
                     <div>
+
                         <div
                             class="note-line"
                             style="width:68%">
@@ -4122,6 +3930,7 @@ footer{
                             class="note-line"
                             style="width:56%">
                         </div>
+
                     </div>
 
                 </div>
@@ -4133,9 +3942,7 @@ footer{
 
         <!-- PUBLICATIONS -->
 
-        <div
-            class="graphic"
-            data-graphic="publications">
+        <div class="graphic" data-graphic="publications">
 
             <div class="pub-visual">
 
@@ -4185,11 +3992,9 @@ footer{
 
                 </div>
 
-
             </div>
 
         </div>
-
 
     </div>
 
@@ -4198,9 +4003,7 @@ footer{
          ROAD
     ====================================================== -->
 
-    <div
-        class="car-zone"
-        id="carZone">
+    <div class="car-zone" id="carZone">
 
 
         <svg
@@ -4313,8 +4116,6 @@ footer{
         </svg>
 
 
-        <!-- CAR -->
-
         <div
             class="car-wrap"
             id="carWrap"
@@ -4332,7 +4133,6 @@ footer{
 
                 <defs>
 
-
                     <linearGradient
                         id="carMetal"
                         x1="35"
@@ -4340,24 +4140,11 @@ footer{
                         x2="300"
                         y2="115">
 
-                        <stop
-                            stop-color="#3E4854"/>
-
-                        <stop
-                            offset=".32"
-                            stop-color="#929CA7"/>
-
-                        <stop
-                            offset=".58"
-                            stop-color="#596572"/>
-
-                        <stop
-                            offset=".78"
-                            stop-color="#BAC1C8"/>
-
-                        <stop
-                            offset="1"
-                            stop-color="#4E5965"/>
+                        <stop stop-color="#3E4854"/>
+                        <stop offset=".32" stop-color="#929CA7"/>
+                        <stop offset=".58" stop-color="#596572"/>
+                        <stop offset=".78" stop-color="#BAC1C8"/>
+                        <stop offset="1" stop-color="#4E5965"/>
 
                     </linearGradient>
 
@@ -4369,15 +4156,10 @@ footer{
                         x2="230"
                         y2="75">
 
-                        <stop
-                            stop-color="#E8EDF1"/>
-
-                        <stop
-                            offset="1"
-                            stop-color="#87939F"/>
+                        <stop stop-color="#E8EDF1"/>
+                        <stop offset="1" stop-color="#87939F"/>
 
                     </linearGradient>
-
 
                 </defs>
 
@@ -4519,9 +4301,7 @@ footer{
                     stroke-width="2"/>
 
 
-                <g
-                    class="wheel-spokes"
-                    id="rearWheel">
+                <g class="wheel-spokes" id="rearWheel">
 
                     <path
                         d="
@@ -4535,9 +4315,7 @@ footer{
                 </g>
 
 
-                <g
-                    class="wheel-spokes"
-                    id="frontWheel">
+                <g class="wheel-spokes" id="frontWheel">
 
                     <path
                         d="
@@ -4561,7 +4339,6 @@ footer{
 
             </svg>
 
-
         </div>
 
 
@@ -4569,9 +4346,7 @@ footer{
             Scroll to drive
         </div>
 
-
     </div>
-
 
 </div>
 
