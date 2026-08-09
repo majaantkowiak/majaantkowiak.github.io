@@ -13,20 +13,12 @@
 
 :root{
     --bg:#f3f5f7;
-    --bg-soft:#eef1f4;
-    --panel:rgba(255,255,255,.72);
-    --panel-strong:rgba(255,255,255,.92);
-
     --text:#1f2732;
-    --muted:#67707c;
-
-    --silver:#7e8792;
-    --silver-dark:#4f5966;
-    --silver-light:#bcc4ce;
-
-    --border:rgba(182,190,199,.65);
-
-    --shadow:0 20px 45px rgba(30,40,55,.08);
+    --muted:#68727e;
+    --silver:#7e8995;
+    --silver-dark:#4f5b68;
+    --border:rgba(177,187,198,.62);
+    --panel:rgba(255,255,255,.72);
 }
 
 *{
@@ -44,21 +36,9 @@ body{
     color:var(--text);
 
     background:
-        radial-gradient(
-            circle at top left,
-            rgba(255,255,255,.95),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(210,216,223,.35),
-            transparent 20%
-        ),
-        linear-gradient(
-            180deg,
-            #f7f8fa 0%,
-            #eff2f5 100%
-        );
+        radial-gradient(circle at 10% 4%,rgba(255,255,255,1),transparent 25%),
+        radial-gradient(circle at 90% 18%,rgba(207,215,224,.32),transparent 22%),
+        linear-gradient(180deg,#f8f9fa,#eef1f4);
 
     overflow-x:hidden;
 }
@@ -75,107 +55,72 @@ a{
 
 nav{
     position:fixed;
-    top:0;
     left:0;
+    top:0;
 
-    width:100%;
     z-index:1000;
 
+    width:100%;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 
     padding:20px 6%;
 
-    background:rgba(247,248,250,.80);
+    background:rgba(248,249,250,.83);
 
-    backdrop-filter:blur(14px);
+    backdrop-filter:blur(15px);
 
-    border-bottom:
-        1px solid rgba(180,190,200,.35);
+    border-bottom:1px solid rgba(175,185,195,.36);
 }
 
 .logo{
-    font-weight:800;
     font-size:1.25rem;
+    font-weight:800;
     letter-spacing:-.04em;
 }
 
 .logo span{
-    color:var(--silver);
+    color:#8e98a3;
 }
 
 nav ul{
     list-style:none;
 
     display:flex;
-    gap:30px;
-
-    flex-wrap:wrap;
+    gap:29px;
 }
 
 nav a{
-    font-size:.95rem;
-    color:var(--muted);
+    color:#68727e;
+    font-size:.91rem;
 
-    position:relative;
-
-    transition:.25s ease;
+    transition:.2s;
 }
 
 nav a:hover,
 nav a.active{
-    color:var(--text);
-}
-
-nav a::after{
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    bottom:-8px;
-
-    width:0;
-    height:2px;
-
-    border-radius:999px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--silver-dark),
-            #aab2bc
-        );
-
-    transition:.25s ease;
-}
-
-nav a:hover::after,
-nav a.active::after{
-    width:100%;
+    color:#1e2731;
 }
 
 
 /* =========================================================
-   PAGE LAYOUT
+   PAGE
 ========================================================= */
 
 .page{
     display:grid;
 
-    grid-template-columns:
-        1.05fr .95fr;
+    grid-template-columns:1.05fr .95fr;
 
-    gap:44px;
+    gap:45px;
 
     max-width:1500px;
 
     margin:0 auto;
 
-    padding:
-        110px 6%
-        60px;
+    padding:110px 6% 60px;
 }
 
 .content-column{
@@ -195,96 +140,1109 @@ nav a.active::after{
     height:calc(100vh - 140px);
 
     min-height:620px;
-
-    display:flex;
-    align-items:stretch;
 }
 
 .visual-card{
+    position:relative;
+
     width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    border:1px solid rgba(185,194,203,.56);
+
+    border-radius:31px;
+
+    padding:30px;
 
     background:
         linear-gradient(
             180deg,
-            rgba(255,255,255,.92),
+            rgba(255,255,255,.93),
             rgba(255,255,255,.72)
         );
 
-    border:
-        1px solid rgba(189,197,206,.55);
-
-    border-radius:30px;
-
-    box-shadow:var(--shadow);
-
-    padding:30px;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.visual-card::before{
-    content:"";
-
-    position:absolute;
-
-    top:-40px;
-    right:-40px;
-
-    width:200px;
-    height:200px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(195,202,210,.45),
-            transparent 70%
-        );
-
-    pointer-events:none;
+    box-shadow:
+        0 22px 50px rgba(40,50,60,.08);
 }
 
 
 /* =========================================================
-   RIGHT PANEL HEADER
+   LEFT SECTIONS
+========================================================= */
+
+.step{
+    min-height:92vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:25px 0;
+
+    scroll-margin-top:105px;
+}
+
+.step-inner{
+    width:100%;
+    max-width:650px;
+}
+
+.step-kicker{
+    margin-bottom:16px;
+
+    color:#87919c;
+
+    font-size:.76rem;
+    font-weight:600;
+
+    letter-spacing:.21em;
+
+    text-transform:uppercase;
+}
+
+.step-title{
+    margin-bottom:24px;
+
+    font-size:clamp(2.6rem,5vw,5rem);
+
+    line-height:.97;
+
+    letter-spacing:-.055em;
+}
+
+.step-title span{
+    color:#5d6975;
+}
+
+.step-text{
+    max-width:590px;
+
+    color:var(--muted);
+
+    font-size:1.06rem;
+
+    line-height:1.82;
+
+    margin-bottom:27px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-title{
+    margin-bottom:25px;
+
+    font-size:clamp(3.8rem,7vw,7rem);
+
+    line-height:.89;
+
+    letter-spacing:-.07em;
+}
+
+.hero-title .silver{
+    background:linear-gradient(
+        90deg,
+        #46515e,
+        #949da7,
+        #c2c8ce
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-actions{
+    display:flex;
+    gap:13px;
+
+    flex-wrap:wrap;
+
+    margin:28px 0 32px;
+}
+
+.btn{
+    padding:13px 19px;
+
+    border-radius:999px;
+
+    font-size:.91rem;
+    font-weight:600;
+}
+
+.btn-primary{
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4b5663,
+            #7e8995
+        );
+
+    box-shadow:
+        0 12px 25px rgba(71,82,94,.17);
+}
+
+.btn-secondary{
+    border:1px solid rgba(151,161,171,.65);
+
+    background:rgba(255,255,255,.55);
+}
+
+
+/* =========================================================
+   BASIC CARDS
+========================================================= */
+
+.grid-2{
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:18px;
+}
+
+.grid-3{
+    display:grid;
+
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    gap:17px;
+
+    margin-top:28px;
+}
+
+.info-card,
+.insight-card{
+    padding:22px;
+
+    border:1px solid var(--border);
+
+    border-radius:21px;
+
+    background:rgba(255,255,255,.61);
+
+    box-shadow:
+        0 11px 28px rgba(50,60,70,.04);
+}
+
+.info-card h3,
+.insight-card h3{
+    margin-bottom:11px;
+
+    font-size:1.08rem;
+}
+
+.info-card p,
+.insight-card p{
+    color:var(--muted);
+
+    font-size:.91rem;
+
+    line-height:1.67;
+}
+
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects-step{
+    min-height:auto;
+
+    padding-top:95px;
+    padding-bottom:110px;
+}
+
+.projects-inner{
+    max-width:760px;
+}
+
+.projects-intro{
+    margin-bottom:38px;
+}
+
+
+/* FEATURED PROJECT 01 */
+
+.project-featured{
+    margin-bottom:30px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(166,177,188,.72);
+
+    border-radius:29px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(243,246,248,.80)
+        );
+
+    box-shadow:
+        0 18px 42px rgba(43,53,64,.07);
+
+    transition:.3s ease;
+}
+
+.project-featured:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 25px 52px rgba(43,53,64,.10);
+}
+
+.project-hero-image{
+    position:relative;
+
+    padding:18px;
+
+    border-bottom:
+        1px solid rgba(180,188,197,.46);
+
+    background:
+        linear-gradient(
+            145deg,
+            #f4f6f8,
+            #e9edf1
+        );
+}
+
+.project-hero-image img{
+    display:block;
+
+    width:100%;
+
+    max-height:370px;
+
+    object-fit:contain;
+
+    border-radius:17px;
+
+    background:white;
+
+    box-shadow:
+        0 10px 26px rgba(56,66,77,.08);
+}
+
+.project-number{
+    position:absolute;
+
+    top:31px;
+    left:31px;
+
+    z-index:3;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:43px;
+    height:43px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(139,151,163,.45);
+
+    background:rgba(255,255,255,.90);
+
+    backdrop-filter:blur(8px);
+
+    color:#66717d;
+
+    font-size:.70rem;
+    font-weight:700;
+
+    letter-spacing:.13em;
+}
+
+.project-featured-body{
+    padding:31px;
+}
+
+.project-top{
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:18px;
+}
+
+.project-type{
+    color:#7d8893;
+
+    font-size:.65rem;
+    font-weight:700;
+
+    letter-spacing:.17em;
+
+    text-transform:uppercase;
+}
+
+.project-status{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:6px 10px;
+
+    border:1px solid rgba(158,168,178,.48);
+
+    border-radius:999px;
+
+    color:#68737f;
+
+    font-size:.58rem;
+    font-weight:700;
+
+    letter-spacing:.11em;
+
+    text-transform:uppercase;
+}
+
+.project-status::before{
+    content:"";
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#89939e;
+}
+
+.project-featured h3{
+    margin-bottom:16px;
+
+    font-size:1.75rem;
+
+    line-height:1.15;
+
+    letter-spacing:-.04em;
+}
+
+.project-description{
+    max-width:660px;
+
+    margin-bottom:23px;
+
+    color:#64707c;
+
+    font-size:.93rem;
+
+    line-height:1.77;
+}
+
+.project-highlight-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:10px 20px;
+
+    margin-bottom:26px;
+}
+
+.project-highlight{
+    display:grid;
+
+    grid-template-columns:27px 1fr;
+
+    gap:8px;
+
+    color:#596572;
+
+    font-size:.77rem;
+
+    line-height:1.45;
+}
+
+.project-highlight span{
+    color:#a1aab4;
+
+    font-size:.59rem;
+
+    padding-top:2px;
+}
+
+.project-footer{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    padding-top:20px;
+
+    border-top:
+        1px solid rgba(179,188,197,.45);
+}
+
+.project-tools{
+    display:flex;
+
+    gap:7px;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+}
+
+.tool{
+    display:inline-flex;
+
+    gap:7px;
+
+    align-items:center;
+
+    padding:6px 9px;
+
+    border:1px solid rgba(173,183,193,.54);
+
+    border-radius:8px;
+
+    background:rgba(249,250,251,.82);
+
+    color:#707b87;
+
+    font-size:.62rem;
+    font-weight:600;
+}
+
+.tool img{
+    display:block;
+
+    width:19px;
+    height:19px;
+
+    object-fit:contain;
+}
+
+.tool-logo-wide img{
+    width:34px;
+    height:20px;
+}
+
+.project-button{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    padding:11px 15px;
+
+    border-radius:999px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4d5966,
+            #788490
+        );
+
+    font-size:.67rem;
+    font-weight:800;
+
+    letter-spacing:.10em;
+
+    transition:.25s ease;
+}
+
+.project-button:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(60,70,80,.15);
+}
+
+.project-button span{
+    font-size:.95rem;
+}
+
+
+/* PROJECT 02 */
+
+.project-secondary{
+    display:grid;
+
+    grid-template-columns:.95fr 1.05fr;
+
+    margin-bottom:30px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(171,181,192,.67);
+
+    border-radius:26px;
+
+    background:rgba(255,255,255,.69);
+
+    box-shadow:
+        0 13px 32px rgba(45,55,65,.05);
+}
+
+.project-secondary-image{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:330px;
+
+    padding:20px;
+
+    background:#edf0f3;
+}
+
+.project-secondary-image img{
+    width:100%;
+    height:100%;
+
+    min-height:285px;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    border-radius:15px;
+}
+
+.project-secondary-content{
+    padding:28px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+.project-secondary-content h3{
+    margin:11px 0 14px;
+
+    font-size:1.55rem;
+
+    letter-spacing:-.04em;
+}
+
+
+/* PROJECT 03 */
+
+.project-math{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:27px 29px;
+
+    border:1px solid rgba(174,184,194,.65);
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(255,255,255,.84),
+            rgba(239,243,246,.70)
+        );
+
+    box-shadow:
+        0 12px 30px rgba(48,58,68,.04);
+}
+
+.math-head{
+    display:grid;
+
+    grid-template-columns:45px 1fr;
+
+    gap:15px;
+}
+
+.math-number{
+    color:#9da7b1;
+
+    font-size:.68rem;
+
+    letter-spacing:.13em;
+}
+
+.project-math h3{
+    margin:8px 0 10px;
+
+    font-size:1.31rem;
+
+    letter-spacing:-.035em;
+}
+
+.project-math p{
+    color:#68737e;
+
+    font-size:.85rem;
+
+    line-height:1.68;
+}
+
+.math-equations{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:22px;
+
+    flex-wrap:wrap;
+
+    margin:25px 0 22px;
+
+    padding:21px 12px;
+
+    border-top:1px solid rgba(180,188,197,.43);
+    border-bottom:1px solid rgba(180,188,197,.43);
+
+    color:#56616d;
+
+    font-family:Georgia,"Times New Roman",serif;
+    font-style:italic;
+}
+
+.eq-main{
+    font-size:1.28rem;
+}
+
+.eq-small{
+    font-size:1rem;
+}
+
+
+/* =========================================================
+   INSIGHTS
+========================================================= */
+
+.insight-card{
+    min-height:245px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.card-label{
+    margin-bottom:17px;
+
+    color:#89949f;
+
+    font-size:.68rem;
+    font-weight:700;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+.read-more{
+    margin-top:18px;
+
+    color:#586470;
+
+    font-size:.88rem;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   PUBLICATIONS
+========================================================= */
+
+#publications{
+    min-height:auto;
+
+    padding-top:90px;
+}
+
+.publications-subtitle{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    margin:35px 0 18px;
+
+    color:#818c97;
+
+    font-size:.72rem;
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+}
+
+.publications-subtitle::after{
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(135,146,157,.45),
+            transparent
+        );
+}
+
+.journal-card{
+    position:relative;
+
+    overflow:hidden;
+
+    margin-bottom:17px;
+
+    padding:26px;
+
+    border:1px solid rgba(173,183,193,.68);
+
+    border-radius:23px;
+
+    background:rgba(255,255,255,.70);
+
+    box-shadow:
+        0 12px 30px rgba(45,55,65,.05);
+}
+
+.journal-card::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:4px;
+    height:100%;
+
+    background:
+        linear-gradient(
+            #697582,
+            #b5bdc6
+        );
+}
+
+.journal-top{
+    display:flex;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:19px;
+}
+
+.journal-type{
+    color:#818c97;
+
+    font-size:.67rem;
+    font-weight:700;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+.status{
+    padding:6px 10px;
+
+    border:1px solid rgba(160,170,180,.48);
+
+    border-radius:999px;
+
+    color:#65707c;
+
+    font-size:.60rem;
+    font-weight:700;
+
+    letter-spacing:.10em;
+
+    text-transform:uppercase;
+}
+
+.journal-year{
+    margin-bottom:12px;
+
+    color:#d0d5da;
+
+    font-size:2.8rem;
+
+    font-weight:700;
+
+    letter-spacing:-.06em;
+}
+
+.journal-card h3{
+    margin-bottom:10px;
+
+    font-size:1.22rem;
+
+    line-height:1.45;
+}
+
+.journal-authors{
+    margin-bottom:17px;
+
+    color:#737d88;
+
+    font-size:.85rem;
+
+    line-height:1.6;
+}
+
+.journal-meta{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:7px;
+
+    margin-bottom:18px;
+}
+
+.meta-chip{
+    padding:6px 9px;
+
+    border:1px solid rgba(177,186,195,.53);
+
+    border-radius:7px;
+
+    color:#747f8a;
+
+    font-size:.69rem;
+}
+
+.paper-link{
+    color:#525e6a;
+
+    font-size:.75rem;
+    font-weight:700;
+
+    letter-spacing:.06em;
+}
+
+
+/* CONFERENCES */
+
+.conference-head{
+    margin:26px 0;
+}
+
+.conference-head h3{
+    margin-bottom:9px;
+
+    font-size:1.7rem;
+}
+
+.conference-head p{
+    color:var(--muted);
+
+    font-size:.91rem;
+
+    line-height:1.65;
+}
+
+.conference-timeline{
+    position:relative;
+
+    padding-left:28px;
+}
+
+.conference-timeline::before{
+    content:"";
+
+    position:absolute;
+
+    left:7px;
+    top:10px;
+    bottom:10px;
+
+    width:2px;
+
+    background:
+        linear-gradient(
+            #78838e,
+            #d2d7dc
+        );
+}
+
+.year-marker{
+    margin:8px 0 25px 25px;
+
+    color:#d0d5da;
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    letter-spacing:-.06em;
+}
+
+.conf-item{
+    position:relative;
+
+    padding:0 0 31px 25px;
+}
+
+.conf-item::before{
+    content:"";
+
+    position:absolute;
+
+    left:-26px;
+    top:7px;
+
+    width:11px;
+    height:11px;
+
+    border:3px solid #89949f;
+
+    border-radius:50%;
+
+    background:#f6f7f8;
+}
+
+.conf-date{
+    margin-bottom:8px;
+
+    color:#89939e;
+
+    font-size:.66rem;
+    font-weight:700;
+
+    letter-spacing:.13em;
+
+    text-transform:uppercase;
+}
+
+.upcoming-badge{
+    margin-left:8px;
+
+    padding:4px 7px;
+
+    border-radius:999px;
+
+    color:white;
+
+    background:#65717d;
+
+    font-size:.57rem;
+}
+
+.conf-card{
+    padding:18px 20px;
+
+    border:1px solid rgba(178,187,196,.54);
+
+    border-radius:17px;
+
+    background:rgba(255,255,255,.55);
+}
+
+.conf-type{
+    margin-bottom:8px;
+
+    color:#737e89;
+
+    font-size:.62rem;
+    font-weight:700;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+.conf-event{
+    margin-bottom:5px;
+
+    font-size:.98rem;
+
+    font-weight:700;
+
+    line-height:1.4;
+}
+
+.conf-location{
+    margin-bottom:11px;
+
+    color:#87909a;
+
+    font-size:.77rem;
+}
+
+.conf-title{
+    color:#59646f;
+
+    font-size:.86rem;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   RIGHT HEADER
 ========================================================= */
 
 .scene-top{
     display:flex;
 
     justify-content:space-between;
-    align-items:flex-start;
 
-    gap:20px;
+    gap:28px;
 
-    margin-bottom:24px;
+    margin-bottom:25px;
 }
 
 .scene-number{
-    font-size:.8rem;
+    color:#7f8995;
 
-    letter-spacing:.22em;
+    font-size:.75rem;
 
-    color:var(--silver);
+    letter-spacing:.21em;
 
     text-transform:uppercase;
 }
 
 .scene-title{
-    font-size:1.4rem;
-    font-weight:700;
+    margin-top:7px;
 
-    margin-top:6px;
+    font-size:1.38rem;
+
+    font-weight:700;
 }
 
 .scene-caption{
     max-width:290px;
 
-    font-size:.95rem;
-    line-height:1.7;
+    color:#66717d;
 
-    color:var(--muted);
+    font-size:.91rem;
+
+    line-height:1.7;
 }
 
 .mini-tag{
@@ -295,46 +1253,37 @@ nav a.active::after{
 
     padding:8px 12px;
 
-    border:
-        1px solid rgba(170,180,190,.6);
+    border:1px solid rgba(169,179,189,.58);
 
     border-radius:999px;
 
-    font-size:.78rem;
+    color:#697581;
 
-    color:var(--muted);
-
-    background:
-        rgba(255,255,255,.5);
+    font-size:.72rem;
 }
 
 .mini-tag::before{
     content:"";
 
-    width:8px;
-    height:8px;
+    width:7px;
+    height:7px;
 
     border-radius:50%;
 
-    background:
-        linear-gradient(
-            180deg,
-            #8d97a3,
-            #c4cbd3
-        );
+    background:#a4afb9;
 }
 
 
 /* =========================================================
-   CHANGING GRAPHICS
+   RIGHT SCENES
 ========================================================= */
 
 .graphic-stage{
     position:relative;
 
-    height:310px;
+    height:335px;
 
-    margin-top:10px;
+    margin-top:18px;
 }
 
 .graphic{
@@ -344,13 +1293,11 @@ nav a.active::after{
 
     opacity:0;
 
-    transform:
-        translateY(16px)
-        scale(.985);
+    transform:translateY(12px);
 
     transition:
-        opacity .5s ease,
-        transform .5s ease;
+        opacity .4s ease,
+        transform .4s ease;
 
     pointer-events:none;
 }
@@ -358,14 +1305,382 @@ nav a.active::after{
 .graphic.active{
     opacity:1;
 
-    transform:
-        translateY(0)
-        scale(1);
+    transform:translateY(0);
+}
+
+.graphic[data-graphic="projects"].active{
+    pointer-events:auto;
+}
+
+
+/* ABOUT */
+
+.about-art{
+    position:absolute;
+    inset:20px;
+
+    border:1px solid rgba(184,193,202,.55);
+
+    border-radius:24px;
+}
+
+.about-wave{
+    position:absolute;
+
+    left:35px;
+    right:35px;
+    top:140px;
+
+    height:80px;
+}
+
+.about-wave svg{
+    width:100%;
+    height:100%;
+}
+
+
+/* RESEARCH */
+
+.research-chain{
+    position:absolute;
+
+    inset:33px 18px;
+
+    display:grid;
+
+    grid-template-columns:1fr 35px 1fr 35px 1fr;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+.chain-node{
+    min-height:130px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px;
+
+    border:1px solid rgba(174,184,194,.60);
+
+    border-radius:19px;
+
+    background:rgba(255,255,255,.58);
+
+    color:#56626e;
+
+    text-align:center;
+
+    font-size:.87rem;
+    font-weight:600;
+
+    line-height:1.5;
+}
+
+.chain-arrow{
+    height:1px;
+
+    background:#a8b2bc;
 }
 
 
 /* =========================================================
-   AUTOMOTIVE JOURNEY
+   NEW PROJECT SHOWCASE
+========================================================= */
+
+.projects-showcase{
+    position:absolute;
+
+    inset:4px 0 0;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.showcase-tabs{
+    display:flex;
+
+    gap:8px;
+
+    margin-bottom:13px;
+}
+
+.showcase-tab{
+    appearance:none;
+
+    border:1px solid rgba(166,177,188,.55);
+
+    border-radius:999px;
+
+    padding:7px 12px;
+
+    background:rgba(255,255,255,.60);
+
+    color:#7a8590;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    font-size:.61rem;
+    font-weight:700;
+
+    letter-spacing:.10em;
+
+    transition:.2s;
+}
+
+.showcase-tab:hover,
+.showcase-tab.active{
+    color:white;
+
+    border-color:#67737f;
+
+    background:
+        linear-gradient(
+            135deg,
+            #56626f,
+            #87929d
+        );
+}
+
+.showcase-screen{
+    position:relative;
+
+    flex:1;
+
+    min-height:260px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(166,177,188,.62);
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.94),
+            rgba(237,241,244,.86)
+        );
+
+    box-shadow:
+        0 15px 32px rgba(51,62,73,.06);
+}
+
+.project-preview{
+    position:absolute;
+
+    inset:0;
+
+    padding:16px;
+
+    opacity:0;
+
+    transform:scale(.985);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+    pointer-events:none;
+}
+
+.project-preview.active{
+    opacity:1;
+
+    transform:scale(1);
+
+    pointer-events:auto;
+}
+
+.preview-image-frame{
+    height:190px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:10px;
+
+    overflow:hidden;
+
+    border-radius:14px;
+
+    background:white;
+
+    box-shadow:
+        0 7px 18px rgba(54,64,75,.07);
+}
+
+.preview-image-frame img{
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+.preview-image-frame.software img{
+    object-fit:cover;
+    object-position:center;
+}
+
+.preview-meta{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding-top:12px;
+}
+
+.preview-kicker{
+    margin-bottom:4px;
+
+    color:#9099a3;
+
+    font-size:.57rem;
+    font-weight:700;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+.preview-title{
+    color:#4e5a66;
+
+    font-size:.90rem;
+
+    font-weight:700;
+}
+
+.preview-open{
+    color:#697581;
+
+    font-size:.62rem;
+    font-weight:700;
+
+    letter-spacing:.08em;
+}
+
+.math-preview{
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:23px;
+
+    color:#56616d;
+
+    font-family:Georgia,"Times New Roman",serif;
+
+    font-style:italic;
+}
+
+.math-preview-main{
+    font-size:1.7rem;
+}
+
+.math-preview-small{
+    font-size:1.1rem;
+
+    color:#77828d;
+}
+
+
+/* INSIGHTS RIGHT */
+
+.insight-stack{
+    position:absolute;
+
+    inset:25px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:13px;
+}
+
+.note{
+    padding:17px;
+
+    border:1px solid rgba(179,188,197,.58);
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.57);
+
+    color:#5b6672;
+
+    font-size:.82rem;
+
+    font-weight:600;
+}
+
+
+/* PUBLICATIONS RIGHT */
+
+.pub-stack{
+    position:absolute;
+
+    inset:18px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:12px;
+}
+
+.pub-sheet{
+    padding:15px 17px;
+
+    border:1px solid rgba(177,186,195,.60);
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.63);
+}
+
+.pub-sheet-label{
+    margin-bottom:7px;
+
+    color:#8d97a1;
+
+    font-size:.57rem;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+.pub-sheet-title{
+    color:#59646f;
+
+    font-size:.74rem;
+
+    font-weight:700;
+
+    line-height:1.42;
+}
+
+
+/* =========================================================
+   CAR
 ========================================================= */
 
 .car-zone{
@@ -398,15 +1713,9 @@ nav a.active::after{
     left:0;
     top:0;
 
-    width:225px;
-
     z-index:5;
 
-    will-change:transform;
-
-    transform-origin:50% 80%;
-
-    pointer-events:auto;
+    width:225px;
 
     cursor:grab;
 
@@ -414,56 +1723,30 @@ nav a.active::after{
 
     user-select:none;
 
+    will-change:transform;
+
+    transform-origin:50% 80%;
+
     filter:
         drop-shadow(
             0 9px 8px
-            rgba(63,73,84,.10)
+            rgba(63,73,84,.11)
         );
 }
 
-.car-wrap:active,
 .car-wrap.dragging{
     cursor:grabbing;
 }
 
-.car-wrap.dragging{
-    filter:
-        drop-shadow(
-            0 13px 12px
-            rgba(63,73,84,.16)
-        );
-}
-
 .car-body{
-    width:100%;
     display:block;
-}
 
-.car-shadow{
-    position:absolute;
-
-    width:65%;
-    height:11px;
-
-    left:18%;
-    bottom:5px;
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(68,79,90,.22),
-            transparent 70%
-        );
-
-    filter:blur(5px);
-
-    transform:translateY(11px);
-
-    pointer-events:none;
+    width:100%;
 }
 
 .wheel-spokes{
     transform-box:fill-box;
+
     transform-origin:center;
 }
 
@@ -473,1735 +1756,11 @@ nav a.active::after{
     right:3px;
     bottom:0;
 
-    z-index:8;
-
-    font-size:.68rem;
-
-    color:#929ba5;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
-}
-
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-.step{
-    min-height:92vh;
-
-    display:flex;
-    align-items:center;
-
-    padding:20px 0;
-
-    scroll-margin-top:110px;
-}
-
-.step-inner{
-    max-width:640px;
-    width:100%;
-}
-
-.step-kicker{
-    font-size:.8rem;
-
-    letter-spacing:.22em;
-
-    color:var(--silver);
-
-    text-transform:uppercase;
-
-    margin-bottom:16px;
-}
-
-.step-title{
-    font-size:
-        clamp(
-            2.5rem,
-            5vw,
-            5rem
-        );
-
-    line-height:.96;
-
-    letter-spacing:-.05em;
-
-    margin-bottom:22px;
-}
-
-.step-title span{
-    color:var(--silver-dark);
-}
-
-.step-text{
-    font-size:1.08rem;
-
-    line-height:1.85;
-
-    color:var(--muted);
-
-    margin-bottom:26px;
-
-    max-width:590px;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero-title{
-    font-size:
-        clamp(
-            3.5rem,
-            7vw,
-            7rem
-        );
-
-    line-height:.9;
-
-    letter-spacing:-.07em;
-
-    margin-bottom:24px;
-}
-
-.hero-title .silver{
-    background:
-        linear-gradient(
-            90deg,
-            #46515e 0%,
-            #8f98a4 45%,
-            #bec6cf 100%
-        );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero-actions{
-    display:flex;
-
-    gap:14px;
-
-    flex-wrap:wrap;
-
-    margin-top:28px;
-    margin-bottom:32px;
-}
-
-.btn{
-    display:inline-block;
-
-    padding:14px 20px;
-
-    border-radius:999px;
-
-    font-weight:600;
-    font-size:.95rem;
-
-    transition:.25s ease;
-}
-
-.btn-primary{
-    background:
-        linear-gradient(
-            135deg,
-            #495463,
-            #7f8995
-        );
-
-    color:white;
-
-    box-shadow:
-        0 12px 26px
-        rgba(79,89,102,.18);
-}
-
-.btn-primary:hover{
-    transform:translateY(-2px);
-}
-
-.btn-secondary{
-    border:
-        1px solid
-        rgba(153,164,176,.7);
-
-    background:
-        rgba(255,255,255,.55);
-
-    color:var(--text);
-}
-
-.btn-secondary:hover{
-    background:
-        rgba(255,255,255,.9);
-}
-
-
-/* =========================================================
-   COMMON CARDS
-========================================================= */
-
-.grid-2{
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-
-    gap:18px;
-
-    margin-top:26px;
-}
-
-.grid-3{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-    gap:18px;
-
-    margin-top:30px;
-}
-
-.info-card,
-.insight-card{
-    background:
-        rgba(255,255,255,.62);
-
-    border:
-        1px solid var(--border);
-
-    border-radius:22px;
-
-    padding:22px;
-
-    box-shadow:
-        0 10px 26px
-        rgba(50,60,70,.05);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
-}
-
-.info-card:hover,
-.insight-card:hover{
-    transform:translateY(-4px);
-
-    border-color:
-        rgba(137,148,160,.75);
-
-    box-shadow:
-        0 16px 34px
-        rgba(50,60,70,.08);
-}
-
-.info-card h3,
-.insight-card h3{
-    font-size:1.15rem;
-    margin-bottom:12px;
-}
-
-.info-card p,
-.insight-card p{
-    color:var(--muted);
-
-    line-height:1.75;
-
-    font-size:.98rem;
-}
-
-.insight-card{
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-    min-height:250px;
-}
-
-.card-label{
-    font-size:.76rem;
-
-    letter-spacing:.18em;
-
-    text-transform:uppercase;
-
-    color:var(--silver);
-
-    margin-bottom:18px;
-}
-
-.read-more{
-    margin-top:18px;
-
-    font-weight:600;
-
-    color:var(--silver-dark);
-}
-
-
-/* =========================================================
-   PROJECTS
-========================================================= */
-
-.projects-step{
-    min-height:auto;
-
-    padding-top:90px;
-    padding-bottom:100px;
-}
-
-.projects-inner{
-    max-width:760px;
-}
-
-.projects-intro{
-    margin-bottom:42px;
-}
-
-
-/* MAIN PROJECT CARDS */
-
-.project-feature{
-    position:relative;
-
-    display:grid;
-
-    grid-template-columns:
-        1.05fr .95fr;
-
-    margin-bottom:30px;
-
-    border:
-        1px solid rgba(173,183,193,.72);
-
-    border-radius:28px;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.94),
-            rgba(245,247,249,.70)
-        );
-
-    box-shadow:
-        0 18px 42px
-        rgba(47,57,68,.07);
-
-    transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
-}
-
-.project-feature:hover{
-    transform:translateY(-5px);
-
-    border-color:
-        rgba(130,142,154,.82);
-
-    box-shadow:
-        0 25px 52px
-        rgba(47,57,68,.11);
-}
-
-
-/* PROJECT IMAGE */
-
-.project-media{
-    position:relative;
-
-    min-height:390px;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            #f8f9fa,
-            #e9edf1
-        );
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:25px;
-}
-
-.project-image{
-    width:100%;
-    height:100%;
-
-    min-height:330px;
-
-    object-fit:contain;
-
-    background:white;
-
-    border-radius:17px;
-
-    transition:
-        transform .5s ease;
-
-    box-shadow:
-        0 10px 28px
-        rgba(60,70,80,.08);
-}
-
-.project-feature:hover .project-image{
-    transform:scale(1.025);
-}
-
-.project-image-software{
-    object-fit:cover;
-    object-position:center;
-}
-
-.project-index{
-    position:absolute;
-
-    top:18px;
-    left:20px;
-
-    z-index:4;
-
-    width:43px;
-    height:43px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:
-        rgba(247,249,250,.90);
-
-    backdrop-filter:blur(8px);
-
-    border:
-        1px solid rgba(146,157,168,.45);
-
-    font-size:.72rem;
-    font-weight:700;
-
-    letter-spacing:.12em;
-
-    color:#596572;
-}
-
-.project-image-label{
-    position:absolute;
-
-    left:29px;
-    bottom:22px;
-
-    padding:7px 10px;
-
-    border-radius:6px;
-
-    background:
-        rgba(246,248,249,.92);
-
-    backdrop-filter:blur(8px);
-
-    font-size:.59rem;
-    font-weight:700;
-
-    letter-spacing:.15em;
-
-    color:#75808c;
-
-    text-transform:uppercase;
-}
-
-
-/* PROJECT TEXT */
-
-.project-content{
-    padding:31px 30px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-}
-
-.project-topline{
-    display:flex;
-
-    justify-content:space-between;
-    align-items:center;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:22px;
-}
-
-.project-type{
-    font-size:.67rem;
-    font-weight:700;
-
-    letter-spacing:.17em;
-
-    text-transform:uppercase;
-
-    color:#78838f;
-}
-
-.project-status{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    padding:6px 9px;
-
-    border-radius:999px;
-
-    border:
-        1px solid rgba(158,168,178,.50);
-
-    font-size:.59rem;
-    font-weight:700;
-
-    letter-spacing:.12em;
-
-    color:#6c7782;
-}
-
-.project-status::before{
-    content:"";
-
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-
-    background:#7d8894;
-}
-
-.project-name{
-    font-size:1.70rem;
-
-    letter-spacing:-.045em;
-
-    line-height:1.12;
-
-    margin-bottom:17px;
-}
-
-.project-description{
-    color:#69737e;
-
-    line-height:1.75;
-
-    font-size:.92rem;
-
-    margin-bottom:23px;
-}
-
-
-/* FEATURES */
-
-.project-points{
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
-    margin-bottom:27px;
-}
-
-.project-points div{
-    display:grid;
-
-    grid-template-columns:28px 1fr;
-
-    gap:9px;
-
-    align-items:start;
-
-    color:#59636f;
-
-    font-size:.78rem;
-
-    line-height:1.45;
-}
-
-.project-points span{
-    color:#a1aab3;
-
-    font-size:.61rem;
-
-    letter-spacing:.08em;
-
-    padding-top:2px;
-}
-
-
-/* PROJECT FOOTER */
-
-.project-footer{
-    padding-top:20px;
-
-    border-top:
-        1px solid rgba(181,189,198,.44);
-
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-.project-tools{
-    display:flex;
-
-    gap:7px;
-
-    flex-wrap:wrap;
-
-    align-items:center;
-}
-
-.tool{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    padding:6px 9px;
-
-    border-radius:8px;
-
-    border:
-        1px solid rgba(175,184,193,.54);
-
-    background:
-        rgba(248,249,250,.78);
-
-    color:#737e89;
-
-    font-size:.63rem;
-
-    font-weight:600;
-}
-
-.tool img{
-    width:18px;
-    height:18px;
-
-    object-fit:contain;
-
-    display:block;
-}
-
-.tool-logo-wide img{
-    width:34px;
-    height:20px;
-}
-
-.project-button{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:9px;
-
-    color:#515d69;
-
-    font-size:.68rem;
-
-    font-weight:800;
-
-    letter-spacing:.10em;
-
-    transition:.25s ease;
-}
-
-.project-button span{
-    transition:transform .25s ease;
-}
-
-.project-button:hover span{
-    transform:translateX(5px);
-}
-
-
-/* SECOND PROJECT ALTERNATING */
-
-.project-feature-reverse{
-    grid-template-columns:
-        .95fr 1.05fr;
-}
-
-.project-feature-reverse .project-media{
-    order:2;
-}
-
-.project-feature-reverse .project-content{
-    order:1;
-}
-
-
-/* =========================================================
-   SMALL MATHEMATICAL PROJECT
-========================================================= */
-
-.project-math{
-    position:relative;
-
-    overflow:hidden;
-
-    margin-top:34px;
-
-    padding:27px 29px;
-
-    border-radius:24px;
-
-    border:
-        1px solid rgba(175,184,193,.66);
-
-    background:
-        linear-gradient(
-            115deg,
-            rgba(255,255,255,.82),
-            rgba(240,243,246,.68)
-        );
-
-    box-shadow:
-        0 13px 30px
-        rgba(50,60,70,.05);
-}
-
-.project-math::before{
-    content:"";
-
-    position:absolute;
-
-    right:-70px;
-    top:-80px;
-
-    width:240px;
-    height:240px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(174,183,193,.18),
-            transparent 70%
-        );
-}
-
-.math-left{
-    display:grid;
-
-    grid-template-columns:
-        45px 1fr;
-
-    gap:17px;
-
-    position:relative;
-
-    z-index:2;
-}
-
-.math-number{
-    font-size:.70rem;
-
-    color:#9aa4ae;
-
-    letter-spacing:.12em;
-
-    padding-top:3px;
-}
-
-.project-math h3{
-    font-size:1.35rem;
-
-    letter-spacing:-.035em;
-
-    margin:
-        8px 0
-        10px;
-}
-
-.project-math p{
-    max-width:550px;
-
-    color:#6b7580;
-
-    line-height:1.7;
-
-    font-size:.86rem;
-}
-
-.math-equations{
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:20px;
-
-    flex-wrap:wrap;
-
-    margin:
-        28px 0
-        24px;
-
-    padding:
-        22px 15px;
-
-    border-top:
-        1px solid rgba(180,188,197,.45);
-
-    border-bottom:
-        1px solid rgba(180,188,197,.45);
-}
-
-.equation{
-    font-family:
-        "Times New Roman",
-        serif;
-
-    font-style:italic;
-
-    color:#3e4955;
-}
-
-.equation-main{
-    font-size:1.32rem;
-}
-
-.equation-small{
-    font-family:
-        "Times New Roman",
-        serif;
-
-    font-style:italic;
-
-    font-size:1.02rem;
-
-    color:#68737e;
-}
-
-.fraction{
-    display:inline-flex;
-
-    vertical-align:middle;
-
-    flex-direction:column;
-
-    text-align:center;
-
-    line-height:1;
-
-    margin:0 3px;
-}
-
-.fraction span:first-child{
-    border-bottom:
-        1px solid currentColor;
-
-    padding:
-        0 3px
-        2px;
-}
-
-.fraction span:last-child{
-    padding-top:2px;
-}
-
-.math-footer{
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    justify-content:flex-end;
-}
-
-
-/* =========================================================
-   PUBLICATIONS
-========================================================= */
-
-#publications{
-    min-height:auto;
-
-    padding-top:90px;
-    padding-bottom:80px;
-}
-
-.publications-intro{
-    margin-bottom:42px;
-}
-
-.publications-subtitle{
-    display:flex;
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:18px;
-
-    font-size:.76rem;
-    font-weight:700;
-
-    letter-spacing:.19em;
-
-    text-transform:uppercase;
-
-    color:var(--silver);
-}
-
-.publications-subtitle::after{
-    content:"";
-
-    flex:1;
-
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(130,140,150,.45),
-            transparent
-        );
-}
-
-.journal-grid{
-    display:grid;
-
-    grid-template-columns:1fr;
-
-    gap:18px;
-
-    margin-bottom:65px;
-}
-
-.journal-card{
-    position:relative;
-
-    overflow:hidden;
-
-    padding:28px;
-
-    border-radius:25px;
-
-    border:
-        1px solid rgba(174,183,193,.72);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.92),
-            rgba(245,247,249,.68)
-        );
-
-    box-shadow:
-        0 14px 34px
-        rgba(47,57,68,.06);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-}
-
-.journal-card:hover{
-    transform:translateY(-4px);
-
-    box-shadow:
-        0 22px 42px
-        rgba(47,57,68,.10);
-}
-
-.journal-card::before{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:5px;
-    height:100%;
-
-    background:
-        linear-gradient(
-            180deg,
-            #65717e,
-            #b5bec7,
-            #e0e4e8
-        );
-}
-
-.journal-top{
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:15px;
-
-    margin-bottom:23px;
-}
-
-.journal-type{
-    font-size:.72rem;
-
-    font-weight:700;
-
-    letter-spacing:.18em;
-
-    text-transform:uppercase;
-
-    color:var(--silver);
-}
-
-.status{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:7px;
-
-    padding:7px 11px;
-
-    border-radius:999px;
-
-    font-size:.67rem;
-    font-weight:700;
-
-    letter-spacing:.13em;
-
-    text-transform:uppercase;
-
-    border:
-        1px solid rgba(154,164,175,.55);
-
-    background:
-        rgba(255,255,255,.66);
-
-    color:#5e6975;
-}
-
-.status::before{
-    content:"";
-
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:#77838f;
-}
-
-.status-review::before{
-    background:#a2aab2;
-}
-
-.journal-year{
-    font-size:3.1rem;
-    font-weight:700;
-
-    letter-spacing:-.06em;
-
-    color:#d0d5da;
-
-    line-height:1;
-
-    margin-bottom:15px;
-}
-
-.journal-card h3{
-    font-size:1.30rem;
-
-    line-height:1.45;
-
-    margin-bottom:12px;
-}
-
-.journal-authors{
-    font-size:.9rem;
-
-    color:#727b86;
-
-    line-height:1.6;
-
-    margin-bottom:18px;
-}
-
-.journal-meta{
-    display:flex;
-
-    gap:9px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:21px;
-}
-
-.meta-chip{
-    padding:7px 10px;
-
-    border:
-        1px solid rgba(176,185,194,.55);
-
-    border-radius:7px;
-
-    font-size:.74rem;
-
-    color:#737d88;
-
-    background:
-        rgba(248,249,250,.62);
-}
-
-.paper-link{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    font-size:.82rem;
-
-    font-weight:700;
-
-    letter-spacing:.06em;
-
-    color:#505b67;
-}
-
-.paper-link span{
-    transition:transform .25s ease;
-}
-
-.paper-link:hover span{
-    transform:translateX(5px);
-}
-
-
-/* =========================================================
-   CONFERENCE JOURNEY
-========================================================= */
-
-.conference-head{
-    margin-bottom:28px;
-}
-
-.conference-head h3{
-    font-size:1.85rem;
-
-    letter-spacing:-.035em;
-
-    margin-bottom:10px;
-}
-
-.conference-head p{
-    color:var(--muted);
-
-    line-height:1.7;
-
-    font-size:.95rem;
-}
-
-.conference-timeline{
-    position:relative;
-
-    padding-left:28px;
-}
-
-.conference-timeline::before{
-    content:"";
-
-    position:absolute;
-
-    left:7px;
-    top:12px;
-    bottom:15px;
-
-    width:2px;
-
-    background:
-        linear-gradient(
-            180deg,
-            #737e89 0%,
-            #b9c1c9 45%,
-            #d9dde1 100%
-        );
-}
-
-.conf-item{
-    position:relative;
-
-    padding:
-        0 0
-        38px 27px;
-}
-
-.conf-item::before{
-    content:"";
-
-    position:absolute;
-
-    left:-27px;
-    top:7px;
-
-    width:13px;
-    height:13px;
-
-    border-radius:50%;
-
-    background:#f5f7f8;
-
-    border:3px solid #89949f;
-
-    box-shadow:
-        0 0 0 5px
-        rgba(229,233,237,.75);
-}
-
-.conf-item.upcoming::before{
-    background:#66727e;
-
-    border-color:#66727e;
-
-    box-shadow:
-        0 0 0 6px
-        rgba(102,114,126,.13);
-}
-
-.conf-date{
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-
-    font-size:.71rem;
-    font-weight:700;
-
-    letter-spacing:.15em;
-
-    text-transform:uppercase;
-
-    color:var(--silver);
-
-    margin-bottom:9px;
-}
-
-.upcoming-badge{
-    display:inline-block;
-
-    padding:5px 8px;
-
-    border-radius:999px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #596572,
-            #8b949e
-        );
-
-    color:white;
-
-    font-size:.61rem;
-
-    letter-spacing:.13em;
-
-    font-weight:700;
-}
-
-.conf-card{
-    padding:21px 22px;
-
-    border-radius:18px;
-
-    background:
-        rgba(255,255,255,.54);
-
-    border:
-        1px solid rgba(181,189,198,.58);
-
-    transition:
-        transform .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
-}
-
-.conf-card:hover{
-    transform:translateX(4px);
-
-    background:
-        rgba(255,255,255,.79);
-
-    box-shadow:
-        0 11px 27px
-        rgba(48,57,67,.06);
-}
-
-.conf-event{
-    font-size:1.04rem;
-
-    font-weight:700;
-
-    line-height:1.45;
-
-    margin-bottom:6px;
-}
-
-.conf-location{
-    font-size:.82rem;
-
-    color:#828b95;
-
-    margin-bottom:16px;
-}
-
-.conf-type{
-    display:inline-block;
-
-    margin-bottom:10px;
+    color:#939da7;
 
     font-size:.66rem;
 
-    font-weight:700;
-
-    letter-spacing:.16em;
-
-    text-transform:uppercase;
-
-    color:#66717d;
-}
-
-.conf-title{
-    color:#555f6b;
-
-    line-height:1.65;
-
-    font-size:.91rem;
-
-    font-weight:500;
-}
-
-.year-marker{
-    position:relative;
-
-    margin:
-        4px 0
-        30px 27px;
-
-    font-size:2.7rem;
-
-    font-weight:700;
-
-    letter-spacing:-.06em;
-
-    color:#d1d6db;
-}
-
-
-/* =========================================================
-   RIGHT SIDE GRAPHICS
-========================================================= */
-
-.diagram-box{
-    position:absolute;
-
-    inset:20px;
-
-    border:
-        1px solid rgba(190,197,206,.55);
-
-    border-radius:24px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.45),
-            rgba(255,255,255,.15)
-        );
-}
-
-.about-lines{
-    position:absolute;
-    inset:40px;
-}
-
-.about-lines .line{
-    height:2px;
-
-    border-radius:999px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #9da7b3,
-            transparent
-        );
-
-    margin-bottom:26px;
-}
-
-.about-lines .line:nth-child(1){width:62%;}
-.about-lines .line:nth-child(2){width:86%;}
-.about-lines .line:nth-child(3){width:48%;}
-.about-lines .line:nth-child(4){width:78%;}
-
-.injector-shape{
-    position:absolute;
-
-    right:38px;
-    top:54px;
-
-    width:150px;
-    height:150px;
-
-    border-radius:24px;
-
-    border:
-        1px solid rgba(186,194,202,.6);
-
-    background:
-        rgba(255,255,255,.36);
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-}
-
-.chain{
-    position:absolute;
-
-    inset:28px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-
-    gap:12px;
-}
-
-.chain .node{
-    flex:1;
-
-    min-height:120px;
-
-    border-radius:20px;
-
-    background:
-        rgba(255,255,255,.54);
-
-    border:
-        1px solid rgba(184,191,199,.65);
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:16px;
-
-    font-weight:600;
-
-    color:var(--silver-dark);
-}
-
-.chain .arrow{
-    width:42px;
-    height:2px;
-
-    background:#adb6c1;
-
-    position:relative;
-
-    flex:0 0 42px;
-}
-
-.chain .arrow::after{
-    content:"";
-
-    position:absolute;
-
-    right:-2px;
-    top:-4px;
-
-    border-left:
-        8px solid #adb6c1;
-
-    border-top:
-        5px solid transparent;
-
-    border-bottom:
-        5px solid transparent;
-}
-
-.project-visual{
-    position:absolute;
-
-    inset:24px;
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:14px;
-}
-
-.project-mini{
-    border:
-        1px solid rgba(181,190,199,.62);
-
-    border-radius:20px;
-
-    background:
-        rgba(255,255,255,.57);
-
-    padding:18px;
-
-    position:relative;
-
-    overflow:hidden;
-}
-
-.project-mini.large{
-    grid-column:1 / 3;
-}
-
-.project-mini-label{
-    font-size:.61rem;
-
-    letter-spacing:.16em;
-
-    text-transform:uppercase;
-
-    color:#929ba5;
-
-    margin-bottom:10px;
-}
-
-.project-mini-title{
-    font-size:.88rem;
-    font-weight:700;
-
-    line-height:1.4;
-
-    color:#56616d;
-}
-
-.project-mini svg{
-    width:100%;
-    margin-top:12px;
-}
-
-.insight-stack{
-    position:absolute;
-
-    inset:30px;
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:16px;
-}
-
-.note{
-    border-radius:20px;
-
-    background:
-        rgba(255,255,255,.58);
-
-    border:
-        1px solid rgba(185,192,200,.66);
-
-    padding:18px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-    min-height:110px;
-}
-
-.note-title{
-    font-size:.86rem;
-
-    font-weight:700;
-
-    color:var(--silver-dark);
-}
-
-.note-line{
-    height:2px;
-
-    border-radius:999px;
-
-    background:#bcc4cd;
-
-    margin-top:10px;
-}
-
-.pub-visual{
-    position:absolute;
-
-    inset:18px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
-}
-
-.pub-sheet{
-    position:relative;
-
-    padding:15px 17px;
-
-    border-radius:17px;
-
-    border:
-        1px solid rgba(181,190,199,.65);
-
-    background:
-        rgba(255,255,255,.64);
-
-    box-shadow:
-        0 9px 20px
-        rgba(60,70,80,.04);
-}
-
-.pub-sheet:nth-child(2){
-    margin-left:35px;
-}
-
-.pub-sheet-type{
-    font-size:.61rem;
-
-    letter-spacing:.16em;
-
-    color:#8b949e;
-
-    text-transform:uppercase;
-
-    margin-bottom:8px;
-}
-
-.pub-sheet-title{
-    font-size:.76rem;
-
-    font-weight:700;
-
-    color:#59636e;
-
-    width:100%;
-
-    line-height:1.42;
-}
-
-.pub-route{
-    position:relative;
-
-    height:62px;
-
-    margin-top:1px;
-}
-
-.pub-route::before{
-    content:"";
-
-    position:absolute;
-
-    left:13px;
-    right:13px;
-    top:28px;
-
-    height:2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #a2acb6,
-            #d1d6db
-        );
-}
-
-.pub-dot{
-    position:absolute;
-
-    top:22px;
-
-    width:13px;
-    height:13px;
-
-    border-radius:50%;
-
-    border:3px solid #808b96;
-
-    background:#f6f7f8;
-}
-
-.pub-dot.one{left:12%;}
-.pub-dot.two{left:42%;}
-.pub-dot.three{left:70%;}
-.pub-dot.four{right:4%;}
-
-.pub-route-label{
-    position:absolute;
-
-    right:3px;
-    top:45px;
-
-    font-size:.57rem;
-
-    letter-spacing:.14em;
-
-    color:#9aa2ab;
+    letter-spacing:.13em;
 
     text-transform:uppercase;
 }
@@ -2212,13 +1771,11 @@ nav a.active::after{
 ========================================================= */
 
 footer{
-    padding:
-        55px 0
-        15px;
+    padding:50px 0 10px;
 
-    color:var(--muted);
+    color:#808a94;
 
-    font-size:.86rem;
+    font-size:.80rem;
 
     line-height:1.7;
 }
@@ -2243,13 +1800,7 @@ footer{
 
         top:0;
 
-        height:auto;
-
-        min-height:unset;
-    }
-
-    .visual-card{
-        min-height:620px;
+        height:680px;
     }
 
     .step{
@@ -2265,165 +1816,56 @@ footer{
 }
 
 
-@media(max-width:900px){
-
-    .project-feature,
-    .project-feature-reverse{
-        grid-template-columns:1fr;
-    }
-
-    .project-feature-reverse .project-media{
-        order:1;
-    }
-
-    .project-feature-reverse .project-content{
-        order:2;
-    }
-
-    .project-media{
-        min-height:330px;
-    }
-
-    .project-image{
-        min-height:280px;
-    }
-
-}
-
-
 @media(max-width:760px){
 
-    nav{
-        padding:18px 5%;
-    }
-
     nav ul{
-        gap:15px;
+        gap:13px;
     }
 
     nav a{
-        font-size:.80rem;
+        font-size:.76rem;
     }
 
     .page{
-        padding:
-            100px 5%
-            40px;
+        padding:95px 5% 40px;
     }
 
     .grid-2{
         grid-template-columns:1fr;
     }
 
-    .hero-actions{
-        flex-direction:column;
-        align-items:flex-start;
+    .project-highlight-grid{
+        grid-template-columns:1fr;
     }
 
-    .visual-card{
-        padding:22px;
-
-        border-radius:24px;
-
-        min-height:590px;
+    .project-secondary{
+        grid-template-columns:1fr;
     }
 
     .scene-top{
         flex-direction:column;
     }
 
-    .graphic-stage{
-        height:270px;
+    .visual-sticky{
+        height:700px;
     }
 
-    .car-wrap{
-        width:170px;
-    }
-
-    .chain{
-        flex-direction:column;
-    }
-
-    .chain .arrow{
-        width:2px;
-        height:32px;
-
-        flex:0 0 32px;
-    }
-
-    .chain .arrow::after{
-        left:-4px;
-        right:auto;
-
-        top:auto;
-        bottom:-2px;
-
-        border-left:
-            5px solid transparent;
-
-        border-right:
-            5px solid transparent;
-
-        border-top:
-            8px solid #adb6c1;
-
-        border-bottom:none;
-    }
-
-    .insight-stack{
+    .research-chain{
         grid-template-columns:1fr;
     }
 
-    .journal-top{
-        align-items:flex-start;
-        flex-direction:column;
-    }
-
-}
-
-
-@media(max-width:600px){
-
-    .project-content{
-        padding:25px 22px;
-    }
-
-    .project-media{
-        padding:17px;
-    }
-
-    .project-name{
-        font-size:1.45rem;
-    }
-
-    .project-footer{
-        align-items:flex-start;
-        flex-direction:column;
-    }
-
-    .math-left{
-        grid-template-columns:1fr;
-        gap:5px;
-    }
-
-    .math-equations{
-        align-items:flex-start;
-        flex-direction:column;
+    .chain-arrow{
+        display:none;
     }
 
 }
 
 </style>
-
 </head>
 
 
 <body>
 
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
 
 <nav>
 
@@ -2472,14 +1914,12 @@ footer{
 <main class="page">
 
 
-<!-- =========================================================
-     LEFT
-========================================================= -->
-
 <section class="content-column">
 
 
-<!-- ABOUT -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
 <section
     class="step"
@@ -2504,6 +1944,7 @@ footer{
 
         </h1>
 
+
         <p class="step-text">
 
             PhD researcher working at the intersection
@@ -2514,6 +1955,7 @@ footer{
             signal analysis and signal modelling.
 
         </p>
+
 
         <div class="hero-actions">
 
@@ -2553,8 +1995,6 @@ footer{
 
                 <p>
                     GitHub · LinkedIn · E-mail · academic profile
-                    <br><br>
-                    Contact details can be added here later.
                 </p>
 
             </div>
@@ -2564,6 +2004,7 @@ footer{
     </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -2581,10 +2022,14 @@ footer{
             01 / Research
         </div>
 
+
         <h2 class="step-title">
+
             Research
             <span>Focus</span>
+
         </h2>
+
 
         <p class="step-text">
 
@@ -2617,12 +2062,12 @@ footer{
             <div class="info-card">
 
                 <h3>
-                    Mathematical Modelling
+                    Multidomain Simulation
                 </h3>
 
                 <p>
-                    Electro-mechanical-hydraulic injector
-                    models developed in MATLAB and Simulink.
+                    Coupled electrical, mechanical
+                    and hydraulic injector simulation.
                 </p>
 
             </div>
@@ -2636,7 +2081,7 @@ footer{
 
                 <p>
                     Time-domain and frequency-domain
-                    features related to injector operation.
+                    analysis of injector current waveforms.
                 </p>
 
             </div>
@@ -2646,6 +2091,7 @@ footer{
     </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -2659,97 +2105,108 @@ footer{
 
     <div class="step-inner projects-inner">
 
+
         <div class="step-kicker">
             02 / Projects
         </div>
 
+
         <h2 class="step-title">
+
             Selected
             <span>Projects</span>
+
         </h2>
+
 
         <p class="step-text projects-intro">
 
-            Selected research and engineering projects
-            focused on automotive diagnostics,
-            injector simulation and signal analysis.
+            Research and engineering projects combining
+            automotive mechatronics, simulation,
+            signal processing and diagnostics.
 
         </p>
 
 
+
         <!-- PROJECT 01 -->
 
-        <article class="project-feature">
+        <article class="project-featured">
 
-            <div class="project-media">
 
-                <div class="project-index">
+            <div class="project-hero-image">
+
+                <div class="project-number">
                     01
                 </div>
 
                 <img
                     src="assets/injector-simulation-model.png"
-                    alt="Multidomain injector simulation developed in MATLAB Simulink"
-                    class="project-image">
-
-                <div class="project-image-label">
-                    Multidomain model architecture
-                </div>
+                    alt="Multidomain electromagnetic fuel injector model in MATLAB Simulink and Simscape">
 
             </div>
 
 
-            <div class="project-content">
+            <div class="project-featured-body">
 
-                <div class="project-topline">
+
+                <div class="project-top">
 
                     <span class="project-type">
-                        Research Project
+                        Multidomain Simulation
                     </span>
 
                     <span class="project-status">
-                        In Development
+                        Research Project
                     </span>
 
                 </div>
 
 
-                <h3 class="project-name">
+                <h3>
                     Injector Multidomain Simulation
                 </h3>
 
 
                 <p class="project-description">
 
-                    A coupled electrical, mechanical,
-                    hydraulic and thermal simulation
-                    of an electromagnetic direct injector,
-                    developed to reproduce its dynamic
-                    behaviour and electrical response.
+                    Multidomain MATLAB/Simulink and Simscape
+                    model of an electromagnetic direct-injection
+                    fuel injector.
+
+                    The simulation couples the solenoid electrical
+                    circuit with electromagnetic force, needle motion,
+                    hydraulic fuel flow and coil thermal behaviour.
+
+                    It is used to reproduce the characteristic
+                    Peak & Hold current waveform, investigate the
+                    influence of injector parameters on its dynamic
+                    response and compare simulation results with
+                    laboratory measurements.
 
                 </p>
 
 
-                <div class="project-points">
+                <div class="project-highlight-grid">
 
-                    <div>
+                    <div class="project-highlight">
                         <span>01</span>
-                        Peak & Hold current control
+                        Electrical and electromagnetic subsystem
                     </div>
 
-                    <div>
+                    <div class="project-highlight">
                         <span>02</span>
-                        Position-dependent inductance and electromagnetic force
+                        Needle dynamics and return mechanism
                     </div>
 
-                    <div>
+                    <div class="project-highlight">
                         <span>03</span>
-                        Needle dynamics, fuel force and injected mass
+                        Hydraulic flow and injected fuel mass
                     </div>
 
-                    <div>
+                    <div class="project-highlight">
                         <span>04</span>
-                        Validation against measured current waveforms
+                        Current-waveform validation with measurements
                     </div>
 
                 </div>
@@ -2757,32 +2214,39 @@ footer{
 
                 <div class="project-footer">
 
+
                     <div class="project-tools">
+
 
                         <span class="tool tool-logo-wide">
 
                             <img
                                 src="assets/matlab-simulink-logo.png"
-                                alt="MATLAB and Simulink">
+                                alt="MATLAB Simulink">
 
                             MATLAB / Simulink
 
                         </span>
 
+
                         <span class="tool">
                             Simscape
                         </span>
 
+
                     </div>
 
 
-                    <a href="#" class="project-button">
+                    <a
+                        href="injector-simulation.html"
+                        class="project-button">
 
                         VIEW PROJECT
 
                         <span>→</span>
 
                     </a>
+
 
                 </div>
 
@@ -2794,117 +2258,60 @@ footer{
 
         <!-- PROJECT 02 -->
 
-        <article class="project-feature project-feature-reverse">
+        <article class="project-secondary">
 
-            <div class="project-media">
 
-                <div class="project-index">
-                    02
+            <div class="project-secondary-content">
+
+                <div class="project-type">
+                    Research Software
                 </div>
 
-                <img
-                    src="assets/injector-diagnostic-software.png"
-                    alt="LabVIEW injector diagnostic software"
-                    class="project-image project-image-software">
-
-                <div class="project-image-label">
-                    Signal-based diagnostic interface
-                </div>
-
-            </div>
-
-
-            <div class="project-content">
-
-                <div class="project-topline">
-
-                    <span class="project-type">
-                        Research Software
-                    </span>
-
-                    <span class="project-status">
-                        In Development
-                    </span>
-
-                </div>
-
-
-                <h3 class="project-name">
+                <h3>
                     Injector Diagnostic Software
                 </h3>
 
 
                 <p class="project-description">
 
-                    A LabVIEW-based research application
-                    for automatic analysis of injector
-                    current waveforms and extraction
-                    of diagnostic information from
-                    individual injections and complete
-                    measurement series.
+                    LabVIEW-based application for automatic
+                    current-waveform analysis, feature extraction,
+                    FFT analysis, reference comparison and
+                    diagnostic mapping.
 
                 </p>
 
 
-                <div class="project-points">
+                <div class="project-tools">
 
-                    <div>
-                        <span>01</span>
-                        Automatic injection and phase detection
-                    </div>
+                    <span class="tool">
 
-                    <div>
-                        <span>02</span>
-                        Time-domain feature extraction and derivative analysis
-                    </div>
+                        <img
+                            src="assets/labview-logo.png"
+                            alt="LabVIEW">
 
-                    <div>
-                        <span>03</span>
-                        FFT-based frequency analysis and spectral features
-                    </div>
+                        LabVIEW
 
-                    <div>
-                        <span>04</span>
-                        Reference comparison, fault maps and report export
-                    </div>
+                    </span>
+
+                    <span class="tool">
+                        Signal Analysis
+                    </span>
+
+                    <span class="tool">
+                        Diagnostics
+                    </span>
 
                 </div>
 
-
-                <div class="project-footer">
-
-                    <div class="project-tools">
-
-                        <span class="tool">
-
-                            <img
-                                src="assets/labview-logo.png"
-                                alt="LabVIEW">
-
-                            LabVIEW
-
-                        </span>
-
-                        <span class="tool">
-                            Signal Analysis
-                        </span>
-
-                        <span class="tool">
-                            Diagnostics
-                        </span>
-
-                    </div>
+            </div>
 
 
-                    <a href="#" class="project-button">
+            <div class="project-secondary-image">
 
-                        VIEW PROJECT
-
-                        <span>→</span>
-
-                    </a>
-
-                </div>
+                <img
+                    src="assets/injector-diagnostic-software.png"
+                    alt="Injector diagnostic software developed in LabVIEW">
 
             </div>
 
@@ -2916,7 +2323,8 @@ footer{
 
         <article class="project-math">
 
-            <div class="math-left">
+
+            <div class="math-head">
 
                 <div class="math-number">
                     03
@@ -2928,19 +2336,18 @@ footer{
                         Analytical Study
                     </div>
 
+
                     <h3>
-                        Analytical Model of Injector
-                        Current & Voltage
+                        Analytical Model of Injector Current & Voltage
                     </h3>
+
 
                     <p>
 
-                        Analytical description of the
-                        electrical response of an
-                        electromagnetic injector represented
-                        as an equivalent RL circuit,
-                        including peak, hold and
-                        switch-off transients.
+                        Compact analytical description of
+                        injector current and voltage during
+                        Peak, Hold and switch-off phases
+                        using an equivalent RL representation.
 
                     </p>
 
@@ -2951,68 +2358,44 @@ footer{
 
             <div class="math-equations">
 
-                <div class="equation equation-main">
-
-                    U(t) = L ·
-
-                    <span class="fraction">
-                        <span>dI</span>
-                        <span>dt</span>
-                    </span>
-
-                    + R · I(t)
-
+                <div class="eq-main">
+                    U(t) = L · dI/dt + R · I(t)
                 </div>
 
-
-                <div class="equation-small">
-
-                    τ =
-
-                    <span class="fraction">
-                        <span>L</span>
-                        <span>R</span>
-                    </span>
-
+                <div class="eq-small">
+                    τ = L/R
                 </div>
 
-
-                <div class="equation-small">
-
-                    I(t) =
-                    I<sub>off</sub>
-                    e<sup>−R(t−t<sub>off</sub>)/L</sup>
-
+                <div class="eq-small">
+                    I(t) = I₀ · e<sup>−Rt/L</sup>
                 </div>
 
             </div>
 
 
-            <div class="math-footer">
+            <div class="project-tools">
 
-                <div class="project-tools">
+                <span class="tool">
+                    RL Circuit
+                </span>
 
-                    <span class="tool">
-                        RL Circuit
-                    </span>
+                <span class="tool">
+                    Peak & Hold
+                </span>
 
-                    <span class="tool">
-                        Peak & Hold
-                    </span>
-
-                    <span class="tool">
-                        Transient Response
-                    </span>
-
-                </div>
+                <span class="tool">
+                    Transient Response
+                </span>
 
             </div>
 
         </article>
 
+
     </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -3026,9 +2409,11 @@ footer{
 
     <div class="step-inner">
 
+
         <div class="step-kicker">
             03 / Insights
         </div>
+
 
         <h2 class="step-title">
 
@@ -3037,17 +2422,18 @@ footer{
 
         </h2>
 
+
         <p class="step-text">
 
-            A space for short research notes,
-            automotive technologies,
-            interesting scientific papers
-            and observations from my own work.
+            Short research notes, automotive technologies,
+            interesting scientific papers and observations
+            from my own work.
 
         </p>
 
 
         <div class="grid-3">
+
 
             <div class="insight-card">
 
@@ -3062,9 +2448,8 @@ footer{
                     </h3>
 
                     <p>
-                        Short thoughts on how electrical
-                        signals reflect what happens
-                        inside the injector.
+                        How electrical signals may reflect
+                        physical processes inside an injector.
                     </p>
 
                 </div>
@@ -3089,9 +2474,8 @@ footer{
                     </h3>
 
                     <p>
-                        A note on modern diagnostics
-                        and the limitations of
-                        conventional OBD logic.
+                        A note on modern diagnostics and the
+                        limitations of conventional OBD logic.
                     </p>
 
                 </div>
@@ -3116,9 +2500,8 @@ footer{
                     </h3>
 
                     <p>
-                        Notes from connecting mathematical
-                        models with measurements obtained
-                        in the laboratory.
+                        Connecting simulation results
+                        with laboratory measurements.
                     </p>
 
                 </div>
@@ -3129,11 +2512,13 @@ footer{
 
             </div>
 
+
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================================================
@@ -3161,7 +2546,7 @@ footer{
     </h2>
 
 
-    <p class="step-text publications-intro">
+    <p class="step-text">
 
         Selected journal publications and conference
         contributions related to automotive diagnostics,
@@ -3170,145 +2555,126 @@ footer{
     </p>
 
 
+
     <div class="publications-subtitle">
         Journal Publications
     </div>
 
 
-    <div class="journal-grid">
+    <article class="journal-card">
 
+        <div class="journal-top">
 
-        <article class="journal-card">
-
-            <div class="journal-top">
-
-                <div class="journal-type">
-                    Journal Article
-                </div>
-
-                <div class="status">
-                    Published
-                </div>
-
+            <div class="journal-type">
+                Journal Article
             </div>
 
-
-            <div class="journal-year">
-                2022
+            <div class="status">
+                Published
             </div>
 
-
-            <h3>
-
-                Recognizing Significant Components of Electrical
-                Waveforms of Actuators Operated by Vehicle Controllers
-
-            </h3>
+        </div>
 
 
-            <div class="journal-authors">
+        <div class="journal-year">
+            2022
+        </div>
 
-                Krzysztof Więcławski ·
-                <strong>Maja Antkowiak</strong> ·
-                Tomasz Figlus
 
+        <h3>
+
+            Recognizing Significant Components of Electrical
+            Waveforms of Actuators Operated by Vehicle Controllers
+
+        </h3>
+
+
+        <div class="journal-authors">
+
+            Krzysztof Więcławski ·
+            <strong>Maja Antkowiak</strong> ·
+            Tomasz Figlus
+
+        </div>
+
+
+        <div class="journal-meta">
+
+            <span class="meta-chip">
+                Sensors
+            </span>
+
+            <span class="meta-chip">
+                22(20)
+            </span>
+
+            <span class="meta-chip">
+                7945
+            </span>
+
+        </div>
+
+
+        <a
+            href="https://www.mdpi.com/1424-8220/22/20/7945"
+            target="_blank"
+            class="paper-link">
+
+            VIEW PAPER →
+
+        </a>
+
+    </article>
+
+
+
+    <article class="journal-card">
+
+        <div class="journal-top">
+
+            <div class="journal-type">
+                Journal Article
             </div>
 
-
-            <div class="journal-meta">
-
-                <span class="meta-chip">
-                    Sensors
-                </span>
-
-                <span class="meta-chip">
-                    Vol. 22
-                </span>
-
-                <span class="meta-chip">
-                    Issue 20
-                </span>
-
-                <span class="meta-chip">
-                    Article 7945
-                </span>
-
+            <div class="status">
+                Under Review
             </div>
 
-
-            <a
-                href="https://www.mdpi.com/1424-8220/22/20/7945"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="paper-link">
-
-                VIEW PAPER
-
-                <span>→</span>
-
-            </a>
-
-        </article>
+        </div>
 
 
-
-        <article class="journal-card">
-
-            <div class="journal-top">
-
-                <div class="journal-type">
-                    Journal Article
-                </div>
-
-                <div class="status status-review">
-                    Under Review
-                </div>
-
-            </div>
+        <div class="journal-year">
+            2026
+        </div>
 
 
-            <div class="journal-year">
-                2026
-            </div>
+        <h3>
+            Model-Based Diagnostics of Fuel Injectors
+        </h3>
 
 
-            <h3>
-                Model-Based Diagnostics of Fuel Injectors
-            </h3>
+        <div class="journal-authors">
+
+            Manuscript submitted to
+            <strong>Transport Problems</strong>
+
+        </div>
 
 
-            <div class="journal-authors">
+        <div class="journal-meta">
 
-                Manuscript submitted to
-                <strong>Transport Problems</strong>
+            <span class="meta-chip">
+                Injector Diagnostics
+            </span>
 
-            </div>
+            <span class="meta-chip">
+                Modelling
+            </span>
 
+        </div>
 
-            <div class="journal-meta">
+    </article>
 
-                <span class="meta-chip">
-                    Automotive Diagnostics
-                </span>
-
-                <span class="meta-chip">
-                    Model-Based Diagnostics
-                </span>
-
-                <span class="meta-chip">
-                    Fuel Injectors
-                </span>
-
-            </div>
-
-
-            <div class="paper-link">
-                REVIEW PROCESS IN PROGRESS
-            </div>
-
-        </article>
-
-    </div>
 
 
     <div class="publications-subtitle">
@@ -3326,11 +2692,12 @@ footer{
 
             Oral presentations and posters documenting
             the development of my research from signal
-            identification to model-based injector diagnostics.
+            identification to model-based diagnostics.
 
         </p>
 
     </div>
+
 
 
     <div class="conference-timeline">
@@ -3341,18 +2708,17 @@ footer{
         </div>
 
 
-        <div class="conf-item upcoming">
+        <div class="conf-item">
 
             <div class="conf-date">
 
                 23–25 SEPTEMBER 2026
 
                 <span class="upcoming-badge">
-                    Upcoming
+                    UPCOMING
                 </span>
 
             </div>
-
 
             <div class="conf-card">
 
@@ -3361,8 +2727,7 @@ footer{
                 </div>
 
                 <div class="conf-event">
-                    8th International Congress
-                    on Technical Diagnostics
+                    8th International Congress on Technical Diagnostics
                 </div>
 
                 <div class="conf-location">
@@ -3400,8 +2765,7 @@ footer{
                 </div>
 
                 <div class="conf-title">
-                    “Identyfikacja nieprawidłowości działania
-                    układu paliwowego”
+                    “Identyfikacja nieprawidłowości działania układu paliwowego”
                 </div>
 
             </div>
@@ -3423,8 +2787,7 @@ footer{
                 </div>
 
                 <div class="conf-event">
-                    XXII International Technical Systems
-                    Degradation Conference
+                    XXII International Technical Systems Degradation Conference
                 </div>
 
                 <div class="conf-location">
@@ -3432,8 +2795,7 @@ footer{
                 </div>
 
                 <div class="conf-title">
-                    “Modeling the TSI Injector
-                    in the MATLAB/Simulink Environment”
+                    “Modeling the TSI Injector in the MATLAB/Simulink Environment”
                 </div>
 
             </div>
@@ -3455,8 +2817,7 @@ footer{
                 </div>
 
                 <div class="conf-event">
-                    XXII International Technical Systems
-                    Degradation Conference
+                    XXII International Technical Systems Degradation Conference
                 </div>
 
                 <div class="conf-location">
@@ -3464,8 +2825,7 @@ footer{
                 </div>
 
                 <div class="conf-title">
-                    “Problem of Maintaining Constant Pressure
-                    in TSI Injection Test Bench”
+                    “Problem of Maintaining Constant Pressure in TSI Injection Test Bench”
                 </div>
 
             </div>
@@ -3531,10 +2891,7 @@ footer{
                 </div>
 
                 <div class="conf-event">
-
-                    XIX International Technical Systems
-                    Degradation Conference
-
+                    XIX International Technical Systems Degradation Conference
                 </div>
 
                 <div class="conf-location">
@@ -3564,8 +2921,7 @@ footer{
                 </div>
 
                 <div class="conf-event">
-                    7th International Congress
-                    on Technical Diagnostics
+                    7th International Congress on Technical Diagnostics
                 </div>
 
                 <div class="conf-location">
@@ -3574,8 +2930,8 @@ footer{
 
                 <div class="conf-title">
 
-                    “Identification of Waveforms of Electric
-                    Actuators Managed by Vehicle Controllers”
+                    “Identification of Waveforms of Electric Actuators
+                    Managed by Vehicle Controllers”
 
                 </div>
 
@@ -3596,11 +2952,14 @@ footer{
 
     </footer>
 
+
 </div>
 
 </section>
 
+
 </section>
+
 
 
 <!-- =========================================================
@@ -3644,6 +3003,7 @@ footer{
     </div>
 
 
+
     <div class="graphic-stage">
 
 
@@ -3651,60 +3011,26 @@ footer{
 
         <div class="graphic active" data-graphic="about">
 
-            <div class="diagram-box"></div>
+            <div class="about-art"></div>
 
-            <div class="about-lines">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+            <div class="about-wave">
 
-
-            <div class="injector-shape">
-
-                <svg
-                    width="90"
-                    height="90"
-                    viewBox="0 0 90 90"
-                    fill="none">
-
-                    <rect
-                        x="30"
-                        y="8"
-                        width="30"
-                        height="18"
-                        rx="4"
-                        stroke="#7C8793"
-                        stroke-width="2.4"/>
-
-                    <rect
-                        x="24"
-                        y="26"
-                        width="42"
-                        height="16"
-                        rx="4"
-                        stroke="#7C8793"
-                        stroke-width="2.4"/>
-
-                    <rect
-                        x="32"
-                        y="42"
-                        width="26"
-                        height="18"
-                        rx="3"
-                        stroke="#7C8793"
-                        stroke-width="2.4"/>
+                <svg viewBox="0 0 500 80">
 
                     <path
-                        d="M45 60V76"
-                        stroke="#7C8793"
-                        stroke-width="2.4"/>
-
-                    <path
-                        d="M38 76H52"
-                        stroke="#7C8793"
-                        stroke-width="2.4"/>
+                        d="
+                        M0 55
+                        L85 55
+                        L125 53
+                        L153 11
+                        L177 53
+                        L230 53
+                        L252 42
+                        L272 54
+                        L500 54"
+                        fill="none"
+                        stroke="#75818D"
+                        stroke-width="2"/>
 
                 </svg>
 
@@ -3713,129 +3039,198 @@ footer{
         </div>
 
 
+
         <!-- RESEARCH -->
 
         <div class="graphic" data-graphic="research">
 
-            <div class="chain">
+            <div class="research-chain">
 
-                <div class="node">
-                    Physical<br>
-                    phenomenon
+                <div class="chain-node">
+                    Physical<br>phenomenon
                 </div>
 
-                <div class="arrow"></div>
+                <div class="chain-arrow"></div>
 
-                <div class="node">
-                    Signal<br>
-                    analysis
+                <div class="chain-node">
+                    Signal<br>analysis
                 </div>
 
-                <div class="arrow"></div>
+                <div class="chain-arrow"></div>
 
-                <div class="node">
-                    Diagnostic<br>
-                    decision
+                <div class="chain-node">
+                    Diagnostic<br>information
                 </div>
 
             </div>
 
         </div>
+
 
 
         <!-- PROJECTS -->
 
         <div class="graphic" data-graphic="projects">
 
-            <div class="project-visual">
 
-                <div class="project-mini large">
+            <div class="projects-showcase">
 
-                    <div class="project-mini-label">
-                        Project 01
-                    </div>
 
-                    <div class="project-mini-title">
-                        Injector Multidomain Simulation
-                    </div>
+                <div class="showcase-tabs">
 
-                    <svg viewBox="0 0 380 75" fill="none">
 
-                        <rect x="6" y="20" width="74" height="35" rx="8" stroke="#89939E"/>
-                        <rect x="111" y="20" width="74" height="35" rx="8" stroke="#89939E"/>
-                        <rect x="216" y="20" width="74" height="35" rx="8" stroke="#89939E"/>
-                        <rect x="321" y="20" width="52" height="35" rx="8" stroke="#89939E"/>
+                    <button
+                        class="showcase-tab active"
+                        data-project-preview="simulation">
 
-                        <path d="M80 37H111" stroke="#A6AFB8"/>
-                        <path d="M185 37H216" stroke="#A6AFB8"/>
-                        <path d="M290 37H321" stroke="#A6AFB8"/>
+                        01 / SIMULATION
 
-                    </svg>
+                    </button>
+
+
+                    <button
+                        class="showcase-tab"
+                        data-project-preview="software">
+
+                        02 / SOFTWARE
+
+                    </button>
+
+
+                    <button
+                        class="showcase-tab"
+                        data-project-preview="math">
+
+                        03 / ANALYTICAL
+
+                    </button>
+
 
                 </div>
 
 
-                <div class="project-mini">
 
-                    <div class="project-mini-label">
-                        Project 02
+                <div class="showcase-screen">
+
+
+                    <!-- PREVIEW 01 -->
+
+                    <div
+                        class="project-preview active"
+                        data-project-panel="simulation">
+
+
+                        <div class="preview-image-frame">
+
+                            <img
+                                src="assets/injector-simulation-model.png"
+                                alt="Injector multidomain simulation">
+
+                        </div>
+
+
+                        <div class="preview-meta">
+
+                            <div>
+
+                                <div class="preview-kicker">
+                                    MATLAB / SIMULINK / SIMSCAPE
+                                </div>
+
+                                <div class="preview-title">
+                                    Injector Multidomain Simulation
+                                </div>
+
+                            </div>
+
+
+                            <a
+                                href="injector-simulation.html"
+                                class="preview-open">
+
+                                OPEN PROJECT →
+
+                            </a>
+
+                        </div>
+
+
                     </div>
 
-                    <div class="project-mini-title">
-                        Diagnostic Software
+
+
+                    <!-- PREVIEW 02 -->
+
+                    <div
+                        class="project-preview"
+                        data-project-panel="software">
+
+
+                        <div class="preview-image-frame software">
+
+                            <img
+                                src="assets/injector-diagnostic-software.png"
+                                alt="Injector diagnostic software">
+
+                        </div>
+
+
+                        <div class="preview-meta">
+
+                            <div>
+
+                                <div class="preview-kicker">
+                                    LABVIEW / SIGNAL ANALYSIS
+                                </div>
+
+                                <div class="preview-title">
+                                    Injector Diagnostic Software
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
                     </div>
 
-                    <svg viewBox="0 0 150 55" fill="none">
 
-                        <path
-                            d="
-                            M5 43
-                            L25 43
-                            L39 13
-                            L51 42
-                            L73 42
-                            L86 28
-                            L96 42
-                            L143 42"
-                            stroke="#707B87"
-                            stroke-width="2"/>
 
-                    </svg>
+                    <!-- PREVIEW 03 -->
+
+                    <div
+                        class="project-preview"
+                        data-project-panel="math">
+
+
+                        <div class="math-preview">
+
+                            <div class="math-preview-main">
+                                U(t) = L · dI/dt + R · I(t)
+                            </div>
+
+                            <div class="math-preview-small">
+                                τ = L / R
+                            </div>
+
+                            <div class="preview-title">
+                                Analytical Model of Injector Current & Voltage
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
 
                 </div>
 
-
-                <div class="project-mini">
-
-                    <div class="project-mini-label">
-                        Project 03
-                    </div>
-
-                    <div class="project-mini-title">
-                        Analytical Model
-                    </div>
-
-                    <svg viewBox="0 0 160 55" fill="none">
-
-                        <text
-                            x="7"
-                            y="34"
-                            fill="#707B87"
-                            font-size="19"
-                            font-family="serif"
-                            font-style="italic">
-
-                            U = L di/dt + Ri
-
-                        </text>
-
-                    </svg>
-
-                </div>
 
             </div>
 
+
         </div>
+
 
 
         <!-- INSIGHTS -->
@@ -3845,119 +3240,44 @@ footer{
             <div class="insight-stack">
 
                 <div class="note">
-
-                    <div class="note-title">
-                        Research paper
-                    </div>
-
-                    <div>
-
-                        <div
-                            class="note-line"
-                            style="width:90%">
-                        </div>
-
-                        <div
-                            class="note-line"
-                            style="width:70%">
-                        </div>
-
-                    </div>
-
+                    Research papers
                 </div>
 
-
                 <div class="note">
-
-                    <div class="note-title">
-                        Automotive trend
-                    </div>
-
-                    <div>
-
-                        <div
-                            class="note-line"
-                            style="width:78%">
-                        </div>
-
-                        <div
-                            class="note-line"
-                            style="width:52%">
-                        </div>
-
-                    </div>
-
+                    Automotive trends
                 </div>
 
-
                 <div class="note">
-
-                    <div class="note-title">
-                        Lab note
-                    </div>
-
-                    <div>
-
-                        <div
-                            class="note-line"
-                            style="width:84%">
-                        </div>
-
-                        <div
-                            class="note-line"
-                            style="width:62%">
-                        </div>
-
-                    </div>
-
+                    Laboratory notes
                 </div>
 
-
                 <div class="note">
-
-                    <div class="note-title">
-                        Personal thought
-                    </div>
-
-                    <div>
-
-                        <div
-                            class="note-line"
-                            style="width:68%">
-                        </div>
-
-                        <div
-                            class="note-line"
-                            style="width:56%">
-                        </div>
-
-                    </div>
-
+                    Behind the research
                 </div>
 
             </div>
 
         </div>
+
 
 
         <!-- PUBLICATIONS -->
 
         <div class="graphic" data-graphic="publications">
 
-            <div class="pub-visual">
-
+            <div class="pub-stack">
 
                 <div class="pub-sheet">
 
-                    <div class="pub-sheet-type">
-                        Published · 2022
+                    <div class="pub-sheet-label">
+                        PUBLISHED · 2022
                     </div>
 
                     <div class="pub-sheet-title">
 
-                        Recognizing Significant Components
-                        of Electrical Waveforms of Actuators
-                        Operated by Vehicle Controllers
+                        Recognizing Significant Components of
+                        Electrical Waveforms of Actuators Operated
+                        by Vehicle Controllers
 
                     </div>
 
@@ -3966,28 +3286,12 @@ footer{
 
                 <div class="pub-sheet">
 
-                    <div class="pub-sheet-type">
-                        Under Review · 2026
+                    <div class="pub-sheet-label">
+                        UNDER REVIEW · 2026
                     </div>
 
                     <div class="pub-sheet-title">
-
                         Model-Based Diagnostics of Fuel Injectors
-
-                    </div>
-
-                </div>
-
-
-                <div class="pub-route">
-
-                    <div class="pub-dot one"></div>
-                    <div class="pub-dot two"></div>
-                    <div class="pub-dot three"></div>
-                    <div class="pub-dot four"></div>
-
-                    <div class="pub-route-label">
-                        Conference Journey 2022 → 2026
                     </div>
 
                 </div>
@@ -3996,7 +3300,9 @@ footer{
 
         </div>
 
+
     </div>
+
 
 
     <!-- =====================================================
@@ -4016,28 +3322,15 @@ footer{
             <path
                 d="
                 M0 101
-                C115 82
-                185 74
-                285 88
-                C395 104
-                470 121
-                560 92
-                C660 59
-                755 67
-                900 89
+                C115 82 185 74 285 88
+                C395 104 470 121 560 92
+                C660 59 755 67 900 89
 
                 L900 111
 
-                C755 89
-                660 81
-                560 114
-                C470 143
-                395 126
-                285 110
-                C185 96
-                115 104
-                0 123
-
+                C755 89 660 81 560 114
+                C470 143 395 126 285 110
+                C185 96 115 104 0 123
                 Z"
                 fill="rgba(184,192,201,.08)"/>
 
@@ -4045,54 +3338,34 @@ footer{
             <path
                 d="
                 M0 101
-                C115 82
-                185 74
-                285 88
-                C395 104
-                470 121
-                560 92
-                C660 59
-                755 67
-                900 89"
+                C115 82 185 74 285 88
+                C395 104 470 121 560 92
+                C660 59 755 67 900 89"
                 fill="none"
                 stroke="#A9B2BC"
-                stroke-width="2.2"
-                opacity=".78"/>
+                stroke-width="2.2"/>
 
 
             <path
                 d="
                 M0 123
-                C115 104
-                185 96
-                285 110
-                C395 126
-                470 143
-                560 114
-                C660 81
-                755 89
-                900 111"
+                C115 104 185 96 285 110
+                C395 126 470 143 560 114
+                C660 81 755 89 900 111"
                 fill="none"
                 stroke="#D0D6DC"
-                stroke-width="1.5"
-                opacity=".85"/>
+                stroke-width="1.5"/>
 
 
             <path
                 d="
                 M0 112
-                C115 93
-                185 85
-                285 99
-                C395 115
-                470 132
-                560 103
-                C660 70
-                755 78
-                900 100"
+                C115 93 185 85 285 99
+                C395 115 470 132 560 103
+                C660 70 755 78 900 100"
                 fill="none"
                 stroke="#89939E"
-                stroke-width="1.7"
+                stroke-width="1.6"
                 stroke-dasharray="24 25"
                 opacity=".4"/>
 
@@ -4101,28 +3374,20 @@ footer{
                 id="motionPath"
                 d="
                 M145 87
-                C225 75
-                285 79
-                350 91
-                C430 106
-                485 111
-                560 87
-                C635 63
-                695 66
-                765 77"
+                C225 75 285 79 350 91
+                C430 106 485 111 560 87
+                C635 63 695 66 765 77"
                 fill="none"
                 stroke="transparent"/>
 
         </svg>
 
 
+
         <div
             class="car-wrap"
             id="carWrap"
             title="Drag the car to navigate">
-
-
-            <div class="car-shadow"></div>
 
 
             <svg
@@ -4199,8 +3464,7 @@ footer{
                     L199 18
                     C224 20 245 31 261 50"
                     stroke="url(#carMetal)"
-                    stroke-width="2.6"
-                    stroke-linecap="round"/>
+                    stroke-width="2.6"/>
 
 
                 <path
@@ -4236,35 +3500,7 @@ footer{
                     C99 69 154 67 207 68
                     C244 68 275 71 307 78"
                     stroke="#77838F"
-                    stroke-width="1.4"
-                    opacity=".8"/>
-
-
-                <path
-                    d="
-                    M111 91
-                    C148 94 188 94 223 91"
-                    stroke="#A5AFB9"
-                    stroke-width="1.4"
-                    opacity=".8"/>
-
-
-                <path
-                    d="
-                    M292 68
-                    L314 73
-                    L302 78
-                    L285 74"
-                    stroke="#BFC6CD"
-                    stroke-width="2"
-                    stroke-linejoin="round"/>
-
-
-                <path
-                    d="M29 79 L51 74"
-                    stroke="#7A8590"
-                    stroke-width="2.5"
-                    stroke-linecap="round"/>
+                    stroke-width="1.4"/>
 
 
                 <circle
@@ -4328,15 +3564,6 @@ footer{
 
                 </g>
 
-
-                <path
-                    d="
-                    M218 52
-                    C225 49 232 50 235 55"
-                    stroke="#707C88"
-                    stroke-width="2"
-                    stroke-linecap="round"/>
-
             </svg>
 
         </div>
@@ -4346,7 +3573,9 @@ footer{
             Scroll to drive
         </div>
 
+
     </div>
+
 
 </div>
 
@@ -4358,12 +3587,13 @@ footer{
 </main>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
 
 <script>
 
+
+/* =========================================================
+   SCENES
+========================================================= */
 
 const scenes={
 
@@ -4419,36 +3649,6 @@ const graphics=
 const navLinks=
     document.querySelectorAll('.nav-link');
 
-const sceneNumber=
-    document.getElementById('sceneNumber');
-
-const sceneTitle=
-    document.getElementById('sceneTitle');
-
-const sceneCaption=
-    document.getElementById('sceneCaption');
-
-const sceneTag=
-    document.getElementById('sceneTag');
-
-const carWrap=
-    document.getElementById('carWrap');
-
-const carZone=
-    document.getElementById('carZone');
-
-const roadSvg=
-    document.getElementById('roadSvg');
-
-const motionPath=
-    document.getElementById('motionPath');
-
-const frontWheel=
-    document.getElementById('frontWheel');
-
-const rearWheel=
-    document.getElementById('rearWheel');
-
 
 function activateScene(id){
 
@@ -4458,16 +3658,17 @@ function activateScene(id){
         return;
     }
 
-    sceneNumber.textContent=
+
+    document.getElementById('sceneNumber').textContent=
         scene.number;
 
-    sceneTitle.textContent=
+    document.getElementById('sceneTitle').textContent=
         scene.title;
 
-    sceneCaption.textContent=
+    document.getElementById('sceneCaption').textContent=
         scene.caption;
 
-    sceneTag.textContent=
+    document.getElementById('sceneTag').textContent=
         scene.tag;
 
 
@@ -4483,12 +3684,9 @@ function activateScene(id){
 
     navLinks.forEach(link=>{
 
-        const href=
-            link.getAttribute('href');
-
         link.classList.toggle(
             'active',
-            href==='#'+id
+            link.getAttribute('href')==='#'+id
         );
 
     });
@@ -4516,9 +3714,7 @@ new IntersectionObserver(
     },
 
     {
-        rootMargin:
-            '-35% 0px -45% 0px',
-
+        rootMargin:'-35% 0px -45% 0px',
         threshold:0
     }
 
@@ -4528,6 +3724,76 @@ new IntersectionObserver(
 steps.forEach(step=>{
     observer.observe(step);
 });
+
+
+/* =========================================================
+   PROJECT PREVIEW SWITCHER
+========================================================= */
+
+const previewButtons=
+    document.querySelectorAll(
+        '[data-project-preview]'
+    );
+
+const previewPanels=
+    document.querySelectorAll(
+        '[data-project-panel]'
+    );
+
+
+previewButtons.forEach(button=>{
+
+    button.addEventListener('click',()=>{
+
+        const selected=
+            button.dataset.projectPreview;
+
+
+        previewButtons.forEach(item=>{
+
+            item.classList.toggle(
+                'active',
+                item===button
+            );
+
+        });
+
+
+        previewPanels.forEach(panel=>{
+
+            panel.classList.toggle(
+                'active',
+                panel.dataset.projectPanel===selected
+            );
+
+        });
+
+    });
+
+});
+
+
+/* =========================================================
+   CAR
+========================================================= */
+
+const carWrap=
+    document.getElementById('carWrap');
+
+const carZone=
+    document.getElementById('carZone');
+
+const roadSvg=
+    document.getElementById('roadSvg');
+
+const motionPath=
+    document.getElementById('motionPath');
+
+const frontWheel=
+    document.getElementById('frontWheel');
+
+const rearWheel=
+    document.getElementById('rearWheel');
 
 
 function clamp(value,min,max){
@@ -4542,18 +3808,13 @@ function clamp(value,min,max){
 
 function getScrollRange(){
 
-    const firstStep=
-        steps[0];
-
-    const lastStep=
-        steps[steps.length-1];
-
-
     const firstRect=
-        firstStep.getBoundingClientRect();
+        steps[0].getBoundingClientRect();
 
     const lastRect=
-        lastStep.getBoundingClientRect();
+        steps[
+            steps.length-1
+        ].getBoundingClientRect();
 
 
     const pageTop=
@@ -4581,15 +3842,15 @@ function calculateScrollProgress(){
         getScrollRange();
 
 
-    const scrollPosition=
+    const position=
         window.scrollY+
         window.innerHeight*.52;
 
 
-    const progress=
+    return clamp(
 
         (
-            scrollPosition-
+            position-
             range.pageTop
         )
 
@@ -4598,13 +3859,11 @@ function calculateScrollProgress(){
         (
             range.pageBottom-
             range.pageTop
-        );
+        ),
 
-
-    return clamp(
-        progress,
         0,
         1
+
     );
 
 }
@@ -4616,7 +3875,7 @@ function progressToScroll(progress){
         getScrollRange();
 
 
-    let scrollY=
+    const target=
 
         range.pageTop
 
@@ -4633,7 +3892,7 @@ function progressToScroll(progress){
         window.innerHeight*.52;
 
 
-    const maxScroll=
+    const max=
 
         document.documentElement.scrollHeight
 
@@ -4642,58 +3901,38 @@ function progressToScroll(progress){
         window.innerHeight;
 
 
-    scrollY=
-        clamp(
-            scrollY,
-            0,
-            maxScroll
-        );
-
-
-    return scrollY;
+    return clamp(
+        target,
+        0,
+        max
+    );
 
 }
 
 
 function renderCar(progress){
 
-    const pathLength=
+    const length=
         motionPath.getTotalLength();
 
 
     const distance=
-        pathLength*
-        progress;
+        length*progress;
 
 
     const point=
+        motionPath.getPointAtLength(distance);
+
+
+    const before=
         motionPath.getPointAtLength(
-            distance
+            Math.max(0,distance-4)
         );
 
 
-    const lookDistance=4;
-
-
-    const pointBefore=
+    const after=
         motionPath.getPointAtLength(
-
-            Math.max(
-                0,
-                distance-lookDistance
-            )
-
-        );
-
-
-    const pointAfter=
-        motionPath.getPointAtLength(
-
-            Math.min(
-                pathLength,
-                distance+lookDistance
-            )
-
+            Math.min(length,distance+4)
         );
 
 
@@ -4718,38 +3957,20 @@ function renderCar(progress){
         zoneRect.top;
 
 
-    const pointX=
-        point.x*
-        scaleX;
+    const x=
+        point.x*scaleX;
 
 
-    const pointY=
+    const y=
         roadTop+
-        point.y*
-        scaleY;
-
-
-    const dx=
-
-        (
-            pointAfter.x-
-            pointBefore.x
-        )*scaleX;
-
-
-    const dy=
-
-        (
-            pointAfter.y-
-            pointBefore.y
-        )*scaleY;
+        point.y*scaleY;
 
 
     let angle=
 
         Math.atan2(
-            dy,
-            dx
+            (after.y-before.y)*scaleY,
+            (after.x-before.x)*scaleX
         )
 
         *180/
@@ -4757,29 +3978,17 @@ function renderCar(progress){
 
 
     angle=
-        clamp(
-            angle,
-            -5,
-            5
-        );
-
-
-    const carWidth=
-        carWrap.offsetWidth;
-
-
-    const carHeight=
-        carWrap.offsetHeight;
+        clamp(angle,-5,5);
 
 
     const carX=
-        pointX-
-        carWidth*.50;
+        x-
+        carWrap.offsetWidth*.50;
 
 
     const carY=
-        pointY-
-        carHeight*.82;
+        y-
+        carWrap.offsetHeight*.82;
 
 
     carWrap.style.transform=
@@ -4789,14 +3998,11 @@ function renderCar(progress){
             ${carY}px,
             0
         )
-        rotate(
-            ${angle}deg
-        )`;
+        rotate(${angle}deg)`;
 
 
     const wheelRotation=
-        progress*
-        1500;
+        progress*1500;
 
 
     frontWheel.style.transform=
@@ -4811,9 +4017,7 @@ function renderCar(progress){
 
 let targetProgress=0;
 let currentProgress=0;
-
 let animationFrame=null;
-
 let isDragging=false;
 
 
@@ -4822,13 +4026,12 @@ function updateCar(){
     if(isDragging){
 
         animationFrame=null;
-        return;
 
+        return;
     }
 
 
     currentProgress+=
-
         (
             targetProgress-
             currentProgress
@@ -4841,12 +4044,10 @@ function updateCar(){
 
 
     if(
-
         Math.abs(
             targetProgress-
             currentProgress
         )>.0002
-
     ){
 
         animationFrame=
@@ -4904,41 +4105,26 @@ window.addEventListener(
 
 function pointerToProgress(clientX){
 
-    const svgRect=
+    const rect=
         roadSvg.getBoundingClientRect();
 
 
     const scaleX=
-        svgRect.width/900;
+        rect.width/900;
 
 
-    const pathStartX=
-        svgRect.left+
+    const start=
+        rect.left+
         145*scaleX;
 
 
-    const pathEndX=
-        svgRect.left+
+    const end=
+        rect.left+
         765*scaleX;
 
 
-    const progress=
-
-        (
-            clientX-
-            pathStartX
-        )
-
-        /
-
-        (
-            pathEndX-
-            pathStartX
-        );
-
-
     return clamp(
-        progress,
+        (clientX-start)/(end-start),
         0,
         1
     );
@@ -4949,45 +4135,40 @@ function pointerToProgress(clientX){
 function dragTo(clientX){
 
     const progress=
-        pointerToProgress(
-            clientX
-        );
+        pointerToProgress(clientX);
 
 
     targetProgress=
         progress;
 
-
     currentProgress=
         progress;
 
 
-    renderCar(
-        progress
-    );
-
-
-    const targetScroll=
-        progressToScroll(
-            progress
-        );
+    renderCar(progress);
 
 
     window.scrollTo({
-        top:targetScroll,
+
+        top:
+            progressToScroll(progress),
+
         behavior:'auto'
+
     });
 
 }
 
 
 carWrap.addEventListener(
-
     'pointerdown',
-
     event=>{
 
         isDragging=true;
+
+        carWrap.classList.add(
+            'dragging'
+        );
 
 
         if(animationFrame!==null){
@@ -5001,11 +4182,6 @@ carWrap.addEventListener(
         }
 
 
-        carWrap.classList.add(
-            'dragging'
-        );
-
-
         carWrap.setPointerCapture(
             event.pointerId
         );
@@ -5015,34 +4191,23 @@ carWrap.addEventListener(
             event.clientX
         );
 
-
-        event.preventDefault();
-
     }
-
 );
 
 
 carWrap.addEventListener(
-
     'pointermove',
-
     event=>{
 
         if(!isDragging){
             return;
         }
 
-
         dragTo(
             event.clientX
         );
 
-
-        event.preventDefault();
-
     }
-
 );
 
 
@@ -5077,7 +4242,6 @@ function finishDrag(event){
     targetProgress=
         calculateScrollProgress();
 
-
     currentProgress=
         targetProgress;
 
@@ -5101,40 +4265,30 @@ carWrap.addEventListener(
 
 
 window.addEventListener(
-
     'resize',
-
     ()=>{
 
         targetProgress=
             calculateScrollProgress();
 
-
         currentProgress=
             targetProgress;
-
 
         renderCar(
             currentProgress
         );
 
     }
-
 );
 
 
-activateScene(
-    'about'
-);
-
+activateScene('about');
 
 targetProgress=
     calculateScrollProgress();
 
-
 currentProgress=
     targetProgress;
-
 
 renderCar(
     currentProgress
