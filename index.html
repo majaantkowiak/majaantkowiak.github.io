@@ -5,9 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Maja Antkowiak | Engineering & Research</title>
+  <title>Maja Antkowiak | Automotive Engineering & Research</title>
 
   <style>
+
+    :root {
+      --bg: #05070a;
+      --bg2: #0a0d12;
+      --panel: rgba(255,255,255,0.025);
+      --panel2: rgba(255,255,255,0.045);
+
+      --white: #f5f7f9;
+      --silver1: #eef1f4;
+      --silver2: #c6ccd3;
+      --silver3: #949ca7;
+      --silver4: #666e79;
+
+      --text: #c2c7ce;
+      --muted: #89919b;
+
+      --border: rgba(255,255,255,0.10);
+      --border-soft: rgba(255,255,255,0.055);
+    }
+
 
     * {
       margin: 0;
@@ -15,246 +35,1068 @@
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #080b10;
-      color: #f5f7fa;
+      background:
+        radial-gradient(circle at 85% 5%, rgba(255,255,255,0.06), transparent 22%),
+        radial-gradient(circle at 10% 45%, rgba(255,255,255,0.025), transparent 28%),
+        linear-gradient(135deg, #030405 0%, #07090d 50%, #090c11 100%);
+      color: var(--white);
+      overflow-x: hidden;
     }
 
-    /* NAVIGATION */
+
+    /* =========================
+       GLOBAL
+    ========================= */
+
+    section {
+      padding: 110px 8%;
+      position: relative;
+    }
+
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--silver3);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+
+    .section-title {
+      font-size: clamp(38px, 5vw, 65px);
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+
+    .section-title span {
+      background: linear-gradient(
+        90deg,
+        var(--silver1),
+        var(--silver2),
+        var(--silver3)
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+
+    .section-intro {
+      color: var(--text);
+      line-height: 1.8;
+      max-width: 760px;
+      font-size: 17px;
+      margin-bottom: 55px;
+    }
+
+
+    .metal-line {
+      width: 90px;
+      height: 2px;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        #d8dde2,
+        transparent
+      );
+
+      margin-bottom: 24px;
+    }
+
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 22px 8%;
+
+      padding: 20px 8%;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(8,11,16,0.85);
-      backdrop-filter: blur(12px);
+
+      background: rgba(5,7,10,0.82);
+
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid var(--border-soft);
+
       z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
+
 
     .logo {
       font-size: 20px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
     }
+
 
     .logo span {
-      color: #39bdf8;
+      color: #9da4ad;
     }
+
 
     nav ul {
-      list-style: none;
       display: flex;
-      gap: 34px;
+      gap: 38px;
+      list-style: none;
     }
 
+
     nav a {
+      color: #9da4ad;
       text-decoration: none;
-      color: #aab3c0;
-      font-size: 14px;
-      transition: 0.3s;
+
+      font-size: 13px;
+
+      letter-spacing: .5px;
+
+      position: relative;
+
+      transition: .3s;
     }
+
+
+    nav a::after {
+      content: "";
+
+      position: absolute;
+
+      bottom: -8px;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      background: #d9dde2;
+
+      transition: .3s;
+    }
+
 
     nav a:hover {
       color: white;
     }
 
-    /* HERO */
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 100vh;
-      display: flex;
+
+      display: grid;
+
+      grid-template-columns: 1.05fr .95fr;
+
       align-items: center;
-      padding: 120px 8% 70px;
-      position: relative;
+
+      gap: 70px;
+
+      padding-top: 135px;
+
       overflow: hidden;
     }
 
+
     .hero::before {
+
       content: "";
+
       position: absolute;
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(
-        circle,
-        rgba(38,166,255,0.18),
-        rgba(38,166,255,0.04) 45%,
-        transparent 70%
-      );
-      right: -100px;
-      top: 70px;
+
+      width: 750px;
+      height: 750px;
+
+      right: -150px;
+      top: 30px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(220,225,231,0.11),
+          rgba(220,225,231,0.025) 42%,
+          transparent 70%
+        );
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 1px;
-      height: 65%;
-      background: linear-gradient(
-        transparent,
-        rgba(57,189,248,0.6),
-        transparent
-      );
-      right: 18%;
-      top: 18%;
-    }
 
     .hero-content {
-      max-width: 850px;
       position: relative;
       z-index: 2;
     }
 
+
     .eyebrow {
-      color: #39bdf8;
+
+      color: #aeb5be;
+
+      font-size: 12px;
+
+      letter-spacing: 5px;
+
       text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 13px;
-      font-weight: 600;
+
       margin-bottom: 25px;
     }
 
+
     h1 {
-      font-size: clamp(55px, 7vw, 105px);
-      line-height: 0.95;
-      letter-spacing: -4px;
-      margin-bottom: 28px;
+
+      font-size: clamp(60px, 7.5vw, 110px);
+
+      line-height: .92;
+
+      letter-spacing: -5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 32px;
     }
 
-    h1 span {
-      color: #39bdf8;
-    }
 
-    .subtitle {
-      color: #9da7b5;
-      font-size: 21px;
-      max-width: 700px;
-      line-height: 1.7;
-      margin-bottom: 38px;
-    }
+    h1 .name {
 
-    .buttons {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 55px;
-    }
-
-    .btn {
-      text-decoration: none;
-      padding: 14px 24px;
-      border-radius: 5px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: #39bdf8;
-      color: #061018;
-    }
-
-    .btn-primary:hover {
-      background: white;
-    }
-
-    .btn-secondary {
-      border: 1px solid #39414d;
       color: white;
     }
 
-    .btn-secondary:hover {
-      border-color: #39bdf8;
+
+    h1 .surname {
+
+      background: linear-gradient(
+        105deg,
+        #fafafa 0%,
+        #d8dce1 30%,
+        #8f98a3 62%,
+        #e9ecef 100%
+      );
+
+      -webkit-background-clip: text;
+
+      -webkit-text-fill-color: transparent;
     }
 
-    /* TECH TAGS */
+
+    .hero-text {
+
+      color: #bdc3cb;
+
+      font-size: 20px;
+
+      line-height: 1.7;
+
+      max-width: 700px;
+
+      margin-bottom: 38px;
+    }
+
+
+    .buttons {
+
+      display: flex;
+
+      gap: 14px;
+
+      margin-bottom: 50px;
+
+      flex-wrap: wrap;
+    }
+
+
+    .btn {
+
+      padding: 14px 24px;
+
+      text-decoration: none;
+
+      border-radius: 4px;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      letter-spacing: .5px;
+
+      transition: .3s;
+    }
+
+
+    .btn-primary {
+
+      color: #090b0e;
+
+      background: linear-gradient(
+        135deg,
+        #f0f2f4,
+        #aeb5be
+      );
+    }
+
+
+    .btn-primary:hover {
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 12px 30px rgba(255,255,255,.12);
+    }
+
+
+    .btn-secondary {
+
+      color: white;
+
+      border: 1px solid #4b525c;
+
+      background: rgba(255,255,255,.015);
+    }
+
+
+    .btn-secondary:hover {
+
+      border-color: #c5cbd2;
+
+      background: rgba(255,255,255,.04);
+    }
+
 
     .tech {
+
       display: flex;
+
+      gap: 10px;
+
       flex-wrap: wrap;
-      gap: 12px;
     }
+
 
     .tech span {
-      padding: 8px 14px;
-      border: 1px solid #252c36;
-      border-radius: 4px;
-      color: #7f8996;
-      font-size: 12px;
-      letter-spacing: 0.5px;
-      background: rgba(255,255,255,0.02);
+
+      padding: 8px 13px;
+
+      border: 1px solid #303640;
+
+      border-radius: 3px;
+
+      color: #9ca4ae;
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
     }
 
-    /* DECORATIVE ENGINEERING LINES */
 
-    .engineering-lines {
-      position: absolute;
-      right: 7%;
-      bottom: 8%;
-      width: 350px;
-      height: 170px;
-      opacity: 0.35;
+
+    /* =========================
+       AUTOMOTIVE VISUAL
+    ========================= */
+
+    .automotive-visual {
+
+      min-height: 560px;
+
+      border: 1px solid var(--border-soft);
+
+      border-radius: 18px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.008)
+        );
     }
 
-    .line {
+
+    .automotive-visual::before {
+
+      content: "";
+
       position: absolute;
+
+      inset: 0;
+
+      background-image:
+
+        linear-gradient(
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        );
+
+      background-size: 50px 50px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          transparent,
+          black 25%,
+          black 75%,
+          transparent
+        );
+    }
+
+
+    .visual-title {
+
+      position: absolute;
+
+      right: 24px;
+
+      top: 22px;
+
+      font-size: 10px;
+
+      letter-spacing: 3px;
+
+      color: #949ca6;
+    }
+
+
+    .car-svg {
+
+      position: absolute;
+
+      width: 92%;
+
+      left: 4%;
+
+      top: 19%;
+
+      opacity: .88;
+    }
+
+
+    .signal {
+
+      position: absolute;
+
+      left: 9%;
+
+      right: 9%;
+
+      bottom: 80px;
+
+      height: 90px;
+
+      opacity: .6;
+    }
+
+
+    .visual-footer {
+
+      position: absolute;
+
+      bottom: 25px;
+
+      left: 26px;
+
+      color: #7e8791;
+
+      letter-spacing: 2px;
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+    }
+
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    #about {
+
+      border-top: 1px solid var(--border-soft);
+    }
+
+
+    .about-grid {
+
+      display: grid;
+
+      grid-template-columns: 1.2fr .8fr;
+
+      gap: 70px;
+    }
+
+
+    .about-text {
+
+      color: var(--text);
+
+      font-size: 17px;
+
+      line-height: 1.9;
+    }
+
+
+    .about-details {
+
+      display: grid;
+
+      gap: 15px;
+    }
+
+
+    .detail-card {
+
+      padding: 22px;
+
+      border: 1px solid var(--border);
+
+      background: var(--panel);
+
+      border-radius: 7px;
+
+      transition: .3s;
+    }
+
+
+    .detail-card:hover {
+
+      transform: translateX(4px);
+
+      background: var(--panel2);
+
+      border-color: rgba(255,255,255,.18);
+    }
+
+
+    .detail-label {
+
+      color: #808893;
+
+      text-transform: uppercase;
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .detail-value {
+
+      color: #e4e7eb;
+
+      font-size: 15px;
+
+      line-height: 1.5;
+    }
+
+
+    .about-bottom {
+
+      margin-top: 60px;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 22px;
+    }
+
+
+    .about-panel {
+
+      border-top: 1px solid #656d77;
+
+      padding-top: 22px;
+    }
+
+
+    .about-panel h3 {
+
+      font-size: 18px;
+
+      margin-bottom: 14px;
+    }
+
+
+    .about-panel p {
+
+      color: #969ea8;
+
+      line-height: 1.7;
+
+      font-size: 14px;
+    }
+
+
+
+    /* =========================
+       RESEARCH
+    ========================= */
+
+    #research {
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.015),
+          transparent
+        );
+    }
+
+
+    .cards {
+
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 18px;
+    }
+
+
+    .card {
+
+      min-height: 300px;
+
+      padding: 28px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 8px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.04),
+          rgba(255,255,255,.012)
+        );
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition: .35s;
+    }
+
+
+    .card::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 70px;
+
       height: 1px;
-      background: #39bdf8;
+
+      background: #cdd2d7;
+
+      top: 0;
+
+      left: 28px;
     }
 
-    .line1 {
-      width: 270px;
-      top: 30px;
-      right: 0;
+
+    .card:hover {
+
+      transform: translateY(-7px);
+
+      border-color: rgba(255,255,255,.22);
+
+      box-shadow:
+        0 20px 45px rgba(0,0,0,.25);
     }
 
-    .line2 {
-      width: 190px;
-      top: 70px;
-      right: 40px;
+
+    .card-number {
+
+      color: #717a85;
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 70px;
     }
 
-    .line3 {
-      width: 110px;
-      top: 110px;
-      right: 80px;
+
+    .card h3 {
+
+      margin-bottom: 16px;
+
+      font-size: 21px;
     }
 
-    .vertical {
-      width: 1px;
-      height: 140px;
-      background: #39bdf8;
-      position: absolute;
-      right: 0;
-      top: 10px;
+
+    .card p {
+
+      color: #9ea5af;
+
+      line-height: 1.7;
+
+      font-size: 14px;
     }
 
-    /* MOBILE */
 
-    @media(max-width: 750px) {
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .project-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(2,1fr);
+
+      gap: 22px;
+    }
+
+
+    .project {
+
+      padding: 32px;
+
+      border-radius: 9px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(255,255,255,.018);
+
+      min-height: 330px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      transition: .35s;
+    }
+
+
+    .project:hover {
+
+      border-color: #69717c;
+
+      transform: translateY(-5px);
+    }
+
+
+    .project-tag {
+
+      color: #818a95;
+
+      letter-spacing: 2px;
+
+      font-size: 10px;
+
+      margin-bottom: 16px;
+    }
+
+
+    .project h3 {
+
+      font-size: 25px;
+
+      margin-bottom: 16px;
+    }
+
+
+    .project p {
+
+      color: #9ea5ae;
+
+      line-height: 1.8;
+
+      max-width: 550px;
+    }
+
+
+    .project-link {
+
+      color: #d9dde2;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      margin-top: 30px;
+    }
+
+
+
+    /* =========================
+       INSIGHTS
+    ========================= */
+
+    #insights {
+
+      background:
+        radial-gradient(
+          circle at 80% 50%,
+          rgba(255,255,255,.035),
+          transparent 30%
+        );
+    }
+
+
+    .insight-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 18px;
+    }
+
+
+    .insight {
+
+      padding: 26px;
+
+      min-height: 340px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 8px;
+
+      background:
+        linear-gradient(
+          160deg,
+          rgba(255,255,255,.035),
+          rgba(255,255,255,.009)
+        );
+
+      transition: .35s;
+    }
+
+
+    .insight:hover {
+
+      transform: translateY(-6px);
+
+      border-color: rgba(255,255,255,.2);
+    }
+
+
+    .insight-tag {
+
+      display: inline-block;
+
+      padding: 6px 9px;
+
+      border: 1px solid #404852;
+
+      color: #abb2bb;
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 32px;
+
+      text-transform: uppercase;
+    }
+
+
+    .insight h3 {
+
+      font-size: 20px;
+
+      line-height: 1.4;
+
+      margin-bottom: 16px;
+    }
+
+
+    .insight p {
+
+      color: #929aa4;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    .read-more {
+
+      display: inline-block;
+
+      margin-top: 28px;
+
+      text-decoration: none;
+
+      color: #d5d9de;
+
+      font-size: 12px;
+
+      letter-spacing: .5px;
+    }
+
+
+
+    /* =========================
+       PUBLICATIONS
+    ========================= */
+
+    .publication {
+
+      display: grid;
+
+      grid-template-columns: 70px 1fr;
+
+      padding: 28px 0;
+
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+
+    .pub-year {
+
+      color: #777f89;
+
+      font-size: 13px;
+    }
+
+
+    .publication h3 {
+
+      font-size: 18px;
+
+      margin-bottom: 9px;
+    }
+
+
+    .publication p {
+
+      color: #9098a2;
+
+      line-height: 1.6;
+
+      font-size: 14px;
+    }
+
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+      padding: 50px 8%;
+
+      border-top: 1px solid var(--border-soft);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      color: #707984;
+
+      font-size: 11px;
+
+      letter-spacing: 1px;
+    }
+
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media(max-width:1000px) {
+
+      .hero {
+
+        grid-template-columns: 1fr;
+      }
+
+      .automotive-visual {
+
+        min-height: 480px;
+      }
+
+      .about-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .insight-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media(max-width:700px) {
 
       nav ul {
+
         display: none;
       }
 
       h1 {
-        letter-spacing: -2px;
+
+        letter-spacing: -3px;
       }
 
-      .subtitle {
-        font-size: 18px;
+      section {
+
+        padding: 85px 7%;
       }
 
-      .engineering-lines {
-        display: none;
+      .about-bottom {
+
+        grid-template-columns: 1fr;
+      }
+
+      .publication {
+
+        grid-template-columns: 1fr;
+        gap: 10px;
       }
 
     }
@@ -265,81 +1107,912 @@
 
 <body>
 
-  <nav>
 
-    <div class="logo">
-      MA<span>.</span>
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+  <div class="logo">
+    MA<span>.</span>
+  </div>
+
+  <ul>
+
+    <li><a href="#about">About</a></li>
+
+    <li><a href="#research">Research</a></li>
+
+    <li><a href="#projects">Projects</a></li>
+
+    <li><a href="#insights">Insights</a></li>
+
+    <li><a href="#publications">Publications</a></li>
+
+  </ul>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      Mechanical Engineering · Mechatronics · Automotive
     </div>
 
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Research</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Publications</a></li>
-      <li><a href="#">Experience</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
 
-  </nav>
+    <h1>
+
+      <span class="name">
+        Maja
+      </span>
+
+      <br>
+
+      <span class="surname">
+        Antkowiak
+      </span>
+
+    </h1>
 
 
-  <section class="hero">
+    <p class="hero-text">
 
-    <div class="hero-content">
+      PhD researcher working at the intersection of automotive engineering,
+      mechatronics and intelligent diagnostics.
 
-      <div class="eyebrow">
-        Mechanical Engineering · Mechatronics · Automotive
+      My research focuses on modelling and signal-based diagnostics
+      of gasoline direct injection systems.
+
+    </p>
+
+
+    <div class="buttons">
+
+      <a href="#research" class="btn btn-primary">
+        Explore my work
+      </a>
+
+      <a href="#" class="btn btn-secondary">
+        GitHub
+      </a>
+
+    </div>
+
+
+    <div class="tech">
+
+      <span>MATLAB</span>
+
+      <span>SIMULINK</span>
+
+      <span>LABVIEW</span>
+
+      <span>TSI</span>
+
+      <span>SIGNAL ANALYSIS</span>
+
+      <span>MODELLING</span>
+
+      <span>DIAGNOSTICS</span>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="automotive-visual">
+
+    <div class="visual-title">
+      AUTOMOTIVE SYSTEMS / 01
+    </div>
+
+
+    <svg
+      class="car-svg"
+      viewBox="0 0 800 420"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+
+      <defs>
+
+        <linearGradient
+          id="metal"
+          x1="0"
+          y1="0"
+          x2="800"
+          y2="420"
+        >
+
+          <stop
+            stop-color="#F4F5F6"
+          />
+
+          <stop
+            offset=".35"
+            stop-color="#B7BEC6"
+          />
+
+          <stop
+            offset=".67"
+            stop-color="#737C87"
+          />
+
+          <stop
+            offset="1"
+            stop-color="#D7DBDF"
+          />
+
+        </linearGradient>
+
+      </defs>
+
+
+      <path
+
+        d="
+        M76 286
+        C120 278 154 235 202 221
+        L302 181
+        C358 158 456 157 521 180
+        C566 195 607 226 641 262
+        L706 270
+        C728 273 742 288 742 306
+        L742 320
+        C742 339 727 351 708 351
+        L670 351
+
+        C660 395 622 419 580 419
+        C535 419 497 390 489 351
+
+        L284 351
+
+        C275 392 238 419 194 419
+        C149 419 110 392 101 351
+
+        L74 351
+        C51 351 37 337 37 316
+
+        C37 298 52 288 76 286
+        "
+
+        stroke="url(#metal)"
+
+        stroke-width="3"
+
+      />
+
+
+      <path
+
+        d="
+        M205 220
+        L292 166
+
+        C347 132 452 131 520 159
+
+        C563 176 599 205 628 247
+        "
+
+        stroke="url(#metal)"
+
+        stroke-width="2.4"
+
+        opacity=".75"
+
+      />
+
+
+      <path
+        d="M287 168 L250 260"
+        stroke="#A0A8B1"
+        stroke-width="2"
+        opacity=".6"
+      />
+
+
+      <path
+        d="M425 139 L420 260"
+        stroke="#A0A8B1"
+        stroke-width="2"
+        opacity=".5"
+      />
+
+
+      <circle
+        cx="194"
+        cy="351"
+        r="61"
+        stroke="url(#metal)"
+        stroke-width="3"
+      />
+
+
+      <circle
+        cx="580"
+        cy="351"
+        r="61"
+        stroke="url(#metal)"
+        stroke-width="3"
+      />
+
+
+      <circle
+        cx="194"
+        cy="351"
+        r="27"
+        stroke="#7E8792"
+        stroke-width="2"
+      />
+
+
+      <circle
+        cx="580"
+        cy="351"
+        r="27"
+        stroke="#7E8792"
+        stroke-width="2"
+      />
+
+
+      <path
+
+        d="
+        M300 332
+
+        L340 332
+
+        L355 303
+
+        L372 347
+
+        L389 318
+
+        L403 332
+
+        L445 332
+        "
+
+        stroke="#CCD1D6"
+
+        stroke-width="2"
+
+        opacity=".65"
+
+      />
+
+    </svg>
+
+
+
+    <svg
+      class="signal"
+      viewBox="0 0 700 100"
+    >
+
+      <path
+
+        d="
+        M0 70
+
+        L80 70
+
+        L115 20
+
+        L145 68
+
+        L190 68
+
+        L215 43
+
+        L242 69
+
+        L300 69
+
+        L325 57
+
+        L355 68
+
+        L470 68
+
+        L495 61
+
+        L530 61
+
+        L555 70
+
+        L700 70
+        "
+
+        fill="none"
+
+        stroke="#AEB5BE"
+
+        stroke-width="2"
+
+      />
+
+    </svg>
+
+
+    <div class="visual-footer">
+
+      SIGNAL-BASED DIAGNOSTICS · INJECTION SYSTEMS · MODELLING
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+  <div class="section-number">
+    01 / About
+  </div>
+
+  <div class="metal-line"></div>
+
+  <h2 class="section-title">
+
+    About <span>Me</span>
+
+  </h2>
+
+
+  <div class="about-grid">
+
+
+    <div class="about-text">
+
+      I am a researcher and engineer focused on automotive mechatronic systems,
+      signal analysis and diagnostic methods.
+
+      My work combines mathematical modelling, experimental measurements
+      and software-based analysis to better understand the behaviour
+      of modern fuel injection systems.
+
+      <br><br>
+
+      I am particularly interested in the relationship between electrical
+      signals and the mechanical and hydraulic behaviour of electromagnetic
+      fuel injectors.
+
+    </div>
+
+
+    <div class="about-details">
+
+
+      <div class="detail-card">
+
+        <div class="detail-label">
+          Field
+        </div>
+
+        <div class="detail-value">
+          Mechanical Engineering & Mechatronics
+        </div>
+
       </div>
 
-      <h1>
-        MAJA<br>
-        <span>ANTKOWIAK</span>
-      </h1>
 
-      <p class="subtitle">
-        PhD researcher working at the intersection of automotive engineering,
-        mechatronics and intelligent diagnostics. My research focuses on
-        modelling and signal-based diagnostics of gasoline direct injection
-        systems.
+      <div class="detail-card">
+
+        <div class="detail-label">
+          Research
+        </div>
+
+        <div class="detail-value">
+          Automotive diagnostics and fuel injection systems
+        </div>
+
+      </div>
+
+
+      <div class="detail-card">
+
+        <div class="detail-label">
+          Tools
+        </div>
+
+        <div class="detail-value">
+          MATLAB · Simulink · LabVIEW
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <div class="about-bottom">
+
+
+    <div class="about-panel">
+
+      <h3>
+        Experience
+      </h3>
+
+      <p>
+
+        Research, teaching, conference presentations
+        and engineering projects in the field of automotive
+        mechatronics and diagnostics.
+
       </p>
 
-      <div class="buttons">
+    </div>
 
-        <a href="#" class="btn btn-primary">
-          Explore my work
-        </a>
 
-        <a href="#" class="btn btn-secondary">
-          GitHub
-        </a>
+    <div class="about-panel">
 
-      </div>
+      <h3>
+        Contact
+      </h3>
 
-      <div class="tech">
+      <p>
 
-        <span>MATLAB</span>
-        <span>SIMULINK</span>
-        <span>LABVIEW</span>
-        <span>TSI</span>
-        <span>SIGNAL ANALYSIS</span>
-        <span>MODELLING</span>
-        <span>DIAGNOSTICS</span>
+        GitHub · LinkedIn · Academic profile · Email
 
-      </div>
+        <br>
+
+        Contact details will be added here.
+
+      </p>
 
     </div>
 
 
-    <div class="engineering-lines">
+  </div>
 
-      <div class="line line1"></div>
-      <div class="line line2"></div>
-      <div class="line line3"></div>
-      <div class="vertical"></div>
+</section>
+
+
+
+<!-- =========================
+     RESEARCH
+========================= -->
+
+<section id="research">
+
+  <div class="section-number">
+    02 / Research
+  </div>
+
+  <div class="metal-line"></div>
+
+
+  <h2 class="section-title">
+
+    Research <span>Focus</span>
+
+  </h2>
+
+
+  <p class="section-intro">
+
+    My research combines physical modelling,
+    electrical signal analysis and experimental diagnostics
+    of automotive injection systems.
+
+  </p>
+
+
+  <div class="cards">
+
+
+    <div class="card">
+
+      <div class="card-number">
+        R / 01
+      </div>
+
+      <h3>
+        Injector Diagnostics
+      </h3>
+
+      <p>
+
+        Development of non-invasive diagnostic methods
+        based on electrical current signals generated
+        during injector operation.
+
+      </p>
 
     </div>
 
-  </section>
+
+
+    <div class="card">
+
+      <div class="card-number">
+        R / 02
+      </div>
+
+      <h3>
+        Mathematical Modelling
+      </h3>
+
+      <p>
+
+        Non-linear electro-mechanical-hydraulic modelling
+        of gasoline direct injection systems
+        using MATLAB and Simulink.
+
+      </p>
+
+    </div>
+
+
+
+    <div class="card">
+
+      <div class="card-number">
+        R / 03
+      </div>
+
+      <h3>
+        Signal Analysis
+      </h3>
+
+      <p>
+
+        Time-domain and frequency-domain analysis
+        for identifying characteristic features
+        associated with injector behaviour and degradation.
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+  <div class="section-number">
+    03 / Projects
+  </div>
+
+  <div class="metal-line"></div>
+
+
+  <h2 class="section-title">
+
+    Selected <span>Projects</span>
+
+  </h2>
+
+
+  <p class="section-intro">
+
+    Selected engineering and research projects combining
+    automotive systems, modelling and diagnostic software.
+
+  </p>
+
+
+  <div class="project-grid">
+
+
+    <div class="project">
+
+      <div>
+
+        <div class="project-tag">
+          MATLAB / SIMULINK
+        </div>
+
+        <h3>
+          TSI Injector Model
+        </h3>
+
+        <p>
+
+          Electro-mechanical-hydraulic model
+          of an electromagnetic gasoline direct injector,
+          including Peak & Hold control and needle dynamics.
+
+        </p>
+
+      </div>
+
+      <a
+        href="#"
+        class="project-link"
+      >
+        View project →
+      </a>
+
+    </div>
+
+
+
+    <div class="project">
+
+      <div>
+
+        <div class="project-tag">
+          LABVIEW / SIGNAL ANALYSIS
+        </div>
+
+        <h3>
+          Injector Diagnostic Software
+        </h3>
+
+        <p>
+
+          Research-oriented software for automatic
+          current waveform analysis, feature extraction,
+          spectral analysis and fault fingerprint mapping.
+
+        </p>
+
+      </div>
+
+      <a
+        href="#"
+        class="project-link"
+      >
+        View project →
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     INSIGHTS
+========================= -->
+
+<section id="insights">
+
+  <div class="section-number">
+    04 / Insights
+  </div>
+
+  <div class="metal-line"></div>
+
+
+  <h2 class="section-title">
+
+    Automotive <span>Insights</span>
+
+  </h2>
+
+
+  <p class="section-intro">
+
+    Short notes about interesting automotive technologies,
+    research papers, engineering ideas and observations
+    from my own work.
+
+  </p>
+
+
+  <div class="insight-grid">
+
+
+    <article class="insight">
+
+      <div class="insight-tag">
+        Research Note
+      </div>
+
+      <h3>
+
+        Can injector current reveal mechanical degradation?
+
+      </h3>
+
+      <p>
+
+        A short look at how electrical signals
+        can carry information about mechanical changes
+        occurring inside an electromagnetic injector.
+
+      </p>
+
+      <a
+        href="#"
+        class="read-more"
+      >
+        Read more →
+      </a>
+
+    </article>
+
+
+
+    <article class="insight">
+
+      <div class="insight-tag">
+        Automotive
+      </div>
+
+      <h3>
+
+        From fault codes to signal-based diagnostics
+
+      </h3>
+
+      <p>
+
+        Why future vehicle diagnostics may increasingly
+        depend on analysing raw signals instead of relying
+        only on conventional diagnostic trouble codes.
+
+      </p>
+
+      <a
+        href="#"
+        class="read-more"
+      >
+        Read more →
+      </a>
+
+    </article>
+
+
+
+    <article class="insight">
+
+      <div class="insight-tag">
+        Behind the Research
+      </div>
+
+      <h3>
+
+        From a Simulink model to a real injector signal
+
+      </h3>
+
+      <p>
+
+        Notes from the process of connecting
+        mathematical modelling with measurements
+        obtained from a real automotive injector.
+
+      </p>
+
+      <a
+        href="#"
+        class="read-more"
+      >
+        Read more →
+      </a>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     PUBLICATIONS
+========================= -->
+
+<section id="publications">
+
+  <div class="section-number">
+    05 / Publications
+  </div>
+
+  <div class="metal-line"></div>
+
+
+  <h2 class="section-title">
+
+    Selected <span>Publications</span>
+
+  </h2>
+
+
+  <p class="section-intro">
+
+    Research papers and conference contributions
+    related to automotive engineering,
+    modelling and diagnostic systems.
+
+  </p>
+
+
+
+  <div class="publication">
+
+    <div class="pub-year">
+      2026
+    </div>
+
+    <div>
+
+      <h3>
+        Model-based diagnostic of fuel injectors
+      </h3>
+
+      <p>
+        Publication details will be added here.
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="publication">
+
+    <div class="pub-year">
+      2026
+    </div>
+
+    <div>
+
+      <h3>
+        Research on electromagnetic fuel injector diagnostics
+      </h3>
+
+      <p>
+        Conference and publication details will be added here.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<footer>
+
+  <div>
+    © 2026 Maja Antkowiak
+  </div>
+
+  <div>
+    Automotive Engineering · Research · Diagnostics
+  </div>
+
+</footer>
+
 
 </body>
 
