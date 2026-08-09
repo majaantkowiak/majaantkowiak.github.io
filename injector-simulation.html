@@ -13,24 +13,17 @@
 Injector Multidomain Simulation | Maja Antkowiak
 </title>
 
-
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-
 :root{
-
-    --text:#1f2832;
-    --muted:#69747f;
-    --silver:#7f8a95;
-    --dark:#4c5864;
-
-    --border:
-        rgba(174,184,194,.62);
-
+    --text:#1d2732;
+    --muted:#687480;
+    --silver:#84909b;
+    --dark:#4e5a66;
+    --border:rgba(174,184,194,.62);
 }
-
 
 *{
     margin:0;
@@ -38,44 +31,28 @@ Injector Multidomain Simulation | Maja Antkowiak
     box-sizing:border-box;
 }
 
-
 html{
     scroll-behavior:smooth;
 }
 
-
 body{
-
     font-family:'Inter',sans-serif;
-
     color:var(--text);
 
     background:
-
-        radial-gradient(
-            circle at 10% 0%,
-            white,
-            transparent 27%
-        ),
-
-        radial-gradient(
-            circle at 90% 13%,
-            rgba(201,210,219,.28),
-            transparent 23%
-        ),
-
-        linear-gradient(
-            180deg,
-            #f8f9fa,
-            #eef1f4
-        );
-
+        radial-gradient(circle at 8% 2%,#fff,transparent 26%),
+        radial-gradient(circle at 92% 12%,rgba(201,210,219,.25),transparent 23%),
+        linear-gradient(180deg,#f8f9fa,#eef1f4);
 }
-
 
 a{
     text-decoration:none;
     color:inherit;
+}
+
+p{
+    text-align:justify;
+    text-justify:inter-word;
 }
 
 
@@ -84,56 +61,37 @@ a{
 ========================================================= */
 
 nav{
-
     position:fixed;
-
     top:0;
     left:0;
+    z-index:100;
 
     width:100%;
 
-    z-index:100;
-
     display:flex;
-
     align-items:center;
     justify-content:space-between;
 
     padding:20px 6%;
 
-    background:
-        rgba(248,249,250,.84);
+    background:rgba(248,249,250,.86);
+    backdrop-filter:blur(15px);
 
-    backdrop-filter:
-        blur(15px);
-
-    border-bottom:
-        1px solid
-        rgba(177,186,195,.35);
-
+    border-bottom:1px solid rgba(177,186,195,.35);
 }
-
 
 .brand{
-
     font-size:1.2rem;
-
     font-weight:800;
-
     letter-spacing:-.04em;
-
 }
-
 
 .brand span{
     color:#9099a3;
 }
 
-
 .back{
-
     display:inline-flex;
-
     align-items:center;
 
     gap:10px;
@@ -141,9 +99,7 @@ nav{
     color:#65717c;
 
     font-size:.82rem;
-
     font-weight:600;
-
 }
 
 
@@ -152,15 +108,11 @@ nav{
 ========================================================= */
 
 main{
-
-    max-width:1200px;
+    max-width:1280px;
 
     margin:0 auto;
 
-    padding:
-        150px 6%
-        90px;
-
+    padding:150px 6% 90px;
 }
 
 
@@ -169,353 +121,301 @@ main{
 ========================================================= */
 
 .hero{
-
     display:grid;
 
-    grid-template-columns:
-        1.3fr .7fr;
+    grid-template-columns:1.3fr .7fr;
 
     gap:65px;
 
     align-items:end;
 
-    margin-bottom:65px;
-
+    margin-bottom:110px;
 }
 
-
 .kicker{
-
     margin-bottom:17px;
 
     color:#87929d;
 
     font-size:.70rem;
-
     font-weight:700;
 
     letter-spacing:.19em;
-
     text-transform:uppercase;
-
 }
-
 
 h1{
+    max-width:810px;
 
-    max-width:800px;
-
-    font-size:
-        clamp(
-            3.4rem,
-            7vw,
-            6.7rem
-        );
+    font-size:clamp(3.3rem,7vw,6.6rem);
 
     line-height:.92;
-
     letter-spacing:-.065em;
-
 }
 
-
 h1 span{
-
     display:block;
 
     color:#697581;
-
 }
 
-
 .hero-description{
-
     color:#626e7a;
 
     font-size:1rem;
+    line-height:1.82;
 
-    line-height:1.78;
-
+    text-align:justify;
 }
-
 
 .hero-description strong{
     color:#3d4854;
 }
 
-
 .tech{
-
     display:flex;
-
     flex-wrap:wrap;
 
     gap:8px;
 
-    margin-top:22px;
-
+    margin-top:23px;
 }
 
-
 .tech-item{
-
     display:inline-flex;
-
     align-items:center;
 
     gap:8px;
 
-    padding:7px 10px;
+    padding:8px 11px;
 
-    border:
-        1px solid
-        rgba(169,179,189,.57);
+    border:1px solid rgba(169,179,189,.57);
+    border-radius:9px;
 
-    border-radius:8px;
-
-    background:
-        rgba(255,255,255,.63);
+    background:rgba(255,255,255,.63);
 
     color:#687480;
 
     font-size:.65rem;
-
     font-weight:600;
-
 }
 
-
 .tech-item img{
-
     width:31px;
     height:19px;
 
     object-fit:contain;
-
 }
 
 
 /* =========================================================
-   MAIN MODEL IMAGE
+   COMMON SECTION
 ========================================================= */
 
-.model-hero{
-
-    position:relative;
-
-    margin-bottom:85px;
-
-    padding:23px;
-
-    overflow:hidden;
-
-    border:
-        1px solid
-        rgba(171,181,191,.65);
-
-    border-radius:31px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.96),
-            rgba(237,241,244,.79)
-        );
-
-    box-shadow:
-
-        0 28px 60px
-        rgba(42,52,63,.08);
-
+.section{
+    margin-bottom:120px;
 }
 
+.section-centered{
+    max-width:960px;
 
-.model-hero::before{
+    margin-left:auto;
+    margin-right:auto;
 
-    content:"MODEL ARCHITECTURE";
+    text-align:center;
+}
 
-    position:absolute;
+.section-label{
+    margin-bottom:20px;
 
-    top:37px;
-    left:38px;
+    color:#97a1ab;
 
-    z-index:2;
-
-    padding:
-        7px 10px;
-
-    border-radius:7px;
-
-    background:
-        rgba(255,255,255,.90);
-
-    border:
-        1px solid
-        rgba(165,176,187,.48);
-
-    color:#74808c;
-
-    font-size:.58rem;
-
+    font-size:.69rem;
     font-weight:700;
 
-    letter-spacing:.14em;
+    letter-spacing:.19em;
 
+    text-transform:uppercase;
+}
+
+.section-title{
+    margin-bottom:25px;
+
+    font-size:clamp(2.2rem,4.2vw,4rem);
+
+    line-height:1.04;
+    letter-spacing:-.055em;
+}
+
+.section-centered .section-copy{
+    max-width:900px;
+
+    margin:0 auto;
+
+    color:#687480;
+
+    font-size:1rem;
+    line-height:1.95;
+
+    text-align:justify;
+}
+
+.standard-head{
+    max-width:860px;
+
+    margin:0 auto 38px;
+
+    text-align:center;
+}
+
+.standard-head p{
+    max-width:780px;
+
+    margin:0 auto;
+
+    color:#687480;
+
+    font-size:.95rem;
+    line-height:1.82;
 }
 
 
-.model-hero img{
+/* =========================================================
+   IMAGE CARD
+========================================================= */
 
+.figure-card{
+    padding:20px;
+
+    border:1px solid var(--border);
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.94),
+            rgba(238,242,245,.82)
+        );
+
+    box-shadow:0 22px 50px rgba(45,55,65,.07);
+}
+
+.figure-card img{
     display:block;
 
     width:100%;
 
-    max-height:720px;
+    object-fit:contain;
+
+    border-radius:17px;
+
+    background:white;
+}
+
+.figure-caption{
+    margin-top:13px;
+
+    color:#818c97;
+
+    font-size:.67rem;
+    font-weight:600;
+
+    letter-spacing:.06em;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   MODEL ARCHITECTURE
+========================================================= */
+
+.architecture-intro{
+    max-width:810px;
+
+    margin:0 auto 35px;
+
+    color:#687480;
+
+    font-size:.95rem;
+    line-height:1.82;
+}
+
+
+/* =========================================================
+   SUBSYSTEMS
+========================================================= */
+
+.subsystem-grid{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:17px;
+}
+
+.subsystem-card{
+    overflow:hidden;
+
+    border:1px solid var(--border);
+    border-radius:22px;
+
+    background:rgba(255,255,255,.64);
+
+    box-shadow:0 12px 28px rgba(47,57,68,.05);
+}
+
+.subsystem-image{
+    height:245px;
+
+    padding:13px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f0f3f5;
+}
+
+.subsystem-image img{
+    display:block;
+
+    width:100%;
+    height:100%;
 
     object-fit:contain;
 
-    border-radius:19px;
+    border-radius:12px;
 
     background:white;
-
 }
 
-
-/* =========================================================
-   COMMON
-========================================================= */
-
-.section{
-
-    margin-bottom:95px;
-
+.subsystem-content{
+    padding:20px;
 }
 
+.subsystem-index{
+    margin-bottom:10px;
 
-.section-head{
+    color:#9ba5af;
 
-    display:grid;
-
-    grid-template-columns:
-        .62fr
-        1.38fr;
-
-    gap:55px;
-
-    margin-bottom:35px;
-
-}
-
-
-.section-number{
-
-    color:#a2abb4;
-
-    font-size:.72rem;
-
+    font-size:.60rem;
     font-weight:700;
 
-    letter-spacing:.17em;
-
+    letter-spacing:.15em;
 }
 
+.subsystem-content h3{
+    margin-bottom:10px;
 
-.section-title{
-
-    font-size:
-        clamp(
-            2rem,
-            4vw,
-            3.4rem
-        );
-
-    letter-spacing:-.05em;
-
-    line-height:1.03;
-
+    font-size:1.03rem;
 }
 
-
-.section-copy{
-
-    max-width:720px;
-
-    color:#68737e;
-
-    font-size:.98rem;
-
-    line-height:1.8;
-
-}
-
-
-/* =========================================================
-   ARCHITECTURE
-========================================================= */
-
-.architecture{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:15px;
-
-}
-
-
-.arch-card{
-
-    min-height:215px;
-
-    padding:23px;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:21px;
-
-    background:
-        rgba(255,255,255,.60);
-
-}
-
-
-.arch-index{
-
-    margin-bottom:35px;
-
-    color:#9ca6b0;
-
-    font-size:.62rem;
-
-    font-weight:700;
-
-    letter-spacing:.13em;
-
-}
-
-
-.arch-card h3{
-
-    margin-bottom:11px;
-
-    font-size:1rem;
-
-}
-
-
-.arch-card p{
-
-    color:#6b7681;
+.subsystem-content p{
+    color:#697580;
 
     font-size:.79rem;
-
-    line-height:1.62;
-
+    line-height:1.68;
 }
 
 
@@ -524,88 +424,64 @@ h1 span{
 ========================================================= */
 
 .coupling{
-
     display:grid;
 
-    grid-template-columns:
-        1fr 45px 1fr 45px 1fr 45px 1fr;
+    grid-template-columns:1fr 45px 1fr 45px 1fr 45px 1fr;
 
     align-items:center;
 
     gap:7px;
 
+    margin-top:45px;
+
     padding:30px;
 
-    border:
-        1px solid
-        var(--border);
-
+    border:1px solid var(--border);
     border-radius:26px;
 
-    background:
-        rgba(255,255,255,.58);
-
+    background:rgba(255,255,255,.58);
 }
 
-
 .coupling-node{
-
     min-height:135px;
 
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
     justify-content:center;
 
+    padding:16px;
+
     text-align:center;
 
-    border:
-        1px solid
-        rgba(174,184,194,.55);
-
+    border:1px solid rgba(174,184,194,.55);
     border-radius:18px;
 
-    background:
-        rgba(250,251,252,.72);
-
+    background:rgba(250,251,252,.72);
 }
 
-
 .coupling-node strong{
-
     margin-bottom:8px;
 
     font-size:.86rem;
-
 }
 
-
 .coupling-node span{
-
     color:#7f8993;
 
     font-size:.70rem;
-
     line-height:1.5;
-
 }
 
-
 .coupling-arrow{
+    position:relative;
 
     height:1px;
 
     background:#9faab4;
-
-    position:relative;
-
 }
 
-
 .coupling-arrow::after{
-
     content:"";
 
     position:absolute;
@@ -613,83 +489,68 @@ h1 span{
     right:-2px;
     top:-4px;
 
-    border-left:
-        7px solid
-        #9faab4;
-
-    border-top:
-        4px solid
-        transparent;
-
-    border-bottom:
-        4px solid
-        transparent;
-
+    border-left:7px solid #9faab4;
+    border-top:4px solid transparent;
+    border-bottom:4px solid transparent;
 }
 
 
 /* =========================================================
-   PURPOSE
+   DYNAMIC RESPONSE
 ========================================================= */
 
-.purpose-grid{
-
+.response-grid{
     display:grid;
+    grid-template-columns:1.15fr .85fr;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    gap:20px;
 
-    gap:15px;
-
+    align-items:stretch;
 }
 
+.response-panel{
+    display:flex;
+    flex-direction:column;
 
-.purpose{
+    padding:19px;
 
-    padding:25px;
+    border:1px solid var(--border);
+    border-radius:25px;
 
-    border:
-        1px solid
-        var(--border);
+    background:rgba(255,255,255,.65);
 
-    border-radius:20px;
-
-    background:
-        rgba(255,255,255,.58);
-
+    box-shadow:0 13px 31px rgba(46,56,66,.05);
 }
 
+.response-panel img{
+    display:block;
 
-.purpose-number{
+    width:100%;
 
-    margin-bottom:19px;
+    flex:1;
 
-    color:#9aa4ae;
+    object-fit:contain;
 
-    font-size:.61rem;
+    border-radius:14px;
 
-    letter-spacing:.14em;
-
+    background:white;
 }
 
-
-.purpose h3{
-
-    margin-bottom:9px;
-
-    font-size:1rem;
-
+.response-text{
+    padding:18px 4px 3px;
 }
 
+.response-text h3{
+    margin-bottom:8px;
 
-.purpose p{
+    font-size:1.02rem;
+}
 
-    color:#69747f;
+.response-text p{
+    color:#697580;
 
-    font-size:.84rem;
-
+    font-size:.80rem;
     line-height:1.67;
-
 }
 
 
@@ -697,68 +558,122 @@ h1 span{
    VALIDATION
 ========================================================= */
 
-.validation{
+.validation-copy{
+    max-width:850px;
 
+    margin:0 auto 34px;
+
+    color:#687480;
+
+    font-size:.96rem;
+    line-height:1.85;
+}
+
+
+/* =========================================================
+   SENSITIVITY
+========================================================= */
+
+.sensitivity-layout{
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1.25fr .75fr;
 
-    gap:18px;
+    gap:28px;
 
+    align-items:center;
+}
+
+.sensitivity-text{
+    padding:10px;
+}
+
+.sensitivity-text h3{
+    margin-bottom:17px;
+
+    font-size:1.65rem;
+
+    letter-spacing:-.035em;
+}
+
+.sensitivity-text p{
+    color:#66727e;
+
+    font-size:.92rem;
+    line-height:1.83;
+}
+
+.sensitivity-points{
+    margin-top:22px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:9px;
+}
+
+.sensitivity-point{
+    display:grid;
+
+    grid-template-columns:28px 1fr;
+
+    gap:9px;
+
+    color:#66727e;
+
+    font-size:.79rem;
+    line-height:1.5;
+}
+
+.sensitivity-point span{
+    color:#9ca6b0;
+
+    font-size:.60rem;
 }
 
 
-.validation-panel{
+/* =========================================================
+   RESEARCH RELEVANCE
+========================================================= */
 
-    padding:26px;
+.relevance{
+    padding:42px;
 
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:23px;
+    border:1px solid rgba(169,179,189,.60);
+    border-radius:29px;
 
     background:
-        rgba(255,255,255,.60);
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.88),
+            rgba(234,239,243,.74)
+        );
 
+    box-shadow:0 18px 40px rgba(46,56,66,.06);
 }
 
+.relevance h2{
+    max-width:700px;
 
-.validation-label{
+    margin:0 auto 23px;
 
-    margin-bottom:18px;
+    font-size:clamp(2rem,4vw,3.6rem);
 
-    color:#8d97a1;
+    line-height:1.06;
+    letter-spacing:-.05em;
 
-    font-size:.62rem;
-
-    font-weight:700;
-
-    letter-spacing:.15em;
-
-    text-transform:uppercase;
-
+    text-align:center;
 }
 
+.relevance p{
+    max-width:850px;
 
-.validation-panel h3{
+    margin:0 auto;
 
-    margin-bottom:12px;
+    color:#66727e;
 
-    font-size:1.25rem;
-
-}
-
-
-.validation-panel p{
-
-    color:#67737e;
-
-    font-size:.87rem;
-
-    line-height:1.72;
-
+    font-size:.96rem;
+    line-height:1.9;
 }
 
 
@@ -767,9 +682,7 @@ h1 span{
 ========================================================= */
 
 .project-footer{
-
     display:flex;
-
     justify-content:space-between;
     align-items:center;
 
@@ -779,29 +692,20 @@ h1 span{
 
     padding-top:32px;
 
-    border-top:
-        1px solid
-        rgba(175,185,195,.48);
-
+    border-top:1px solid rgba(175,185,195,.48);
 }
 
-
 .project-footer p{
-
     color:#818b95;
 
     font-size:.76rem;
-
 }
 
-
 .back-button{
-
     display:inline-flex;
+    align-items:center;
 
     gap:10px;
-
-    align-items:center;
 
     padding:12px 18px;
 
@@ -817,9 +721,7 @@ h1 span{
         );
 
     font-size:.72rem;
-
     font-weight:700;
-
 }
 
 
@@ -827,65 +729,46 @@ h1 span{
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
-    .hero,
-    .section-head{
-
+    .hero{
         grid-template-columns:1fr;
 
-        gap:25px;
-
+        gap:35px;
     }
 
-
-    .architecture{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+    .subsystem-grid{
+        grid-template-columns:1fr;
     }
-
 
     .coupling{
-
         grid-template-columns:1fr;
-
     }
-
 
     .coupling-arrow{
         display:none;
     }
 
+    .response-grid,
+    .sensitivity-layout{
+        grid-template-columns:1fr;
+    }
 }
-
 
 @media(max-width:600px){
 
     main{
-
-        padding:
-            120px 5%
-            60px;
-
+        padding:120px 5% 60px;
     }
 
-
-    .architecture,
-    .purpose-grid,
-    .validation{
-
-        grid-template-columns:1fr;
-
+    .relevance{
+        padding:28px 22px;
     }
-
 }
 
 </style>
 
 </head>
-
 
 
 <body>
@@ -913,7 +796,6 @@ h1 span{
 </nav>
 
 
-
 <main>
 
 
@@ -923,13 +805,11 @@ h1 span{
 
 <section class="hero">
 
-
     <div>
 
         <div class="kicker">
             Project 01 · Multidomain Simulation
         </div>
-
 
         <h1>
 
@@ -944,17 +824,14 @@ h1 span{
     </div>
 
 
-
     <div class="hero-description">
 
         A coupled simulation of an electromagnetic
         direct-injection fuel injector developed in
         <strong>MATLAB/Simulink and Simscape</strong>.
-
-        The model connects electrical, electromagnetic,
+        The model integrates electrical, electromagnetic,
         mechanical, hydraulic and thermal phenomena
         within one simulation environment.
-
 
         <div class="tech">
 
@@ -968,11 +845,9 @@ h1 span{
 
             </span>
 
-
             <span class="tech-item">
                 Simscape
             </span>
-
 
             <span class="tech-item">
                 Multidomain Modelling
@@ -985,219 +860,215 @@ h1 span{
 </section>
 
 
-
 <!-- =========================================================
-     MODEL
+     01 OVERVIEW
 ========================================================= -->
 
-<div class="model-hero">
+<section class="section section-centered">
 
-    <img
-        src="assets/injector-simulation-model.png"
-        alt="Complete multidomain model of an electromagnetic fuel injector">
-
-</div>
-
-
-
-<!-- =========================================================
-     OVERVIEW
-========================================================= -->
-
-<section class="section">
-
-
-    <div class="section-head">
-
-        <div class="section-number">
-            01 / OVERVIEW
-        </div>
-
-
-        <div>
-
-            <h2 class="section-title">
-                One injector.
-                Several physical domains.
-            </h2>
-
-        </div>
-
+    <div class="section-label">
+        01 / Overview
     </div>
 
+    <h2 class="section-title">
+        One injector. Several physical domains.
+    </h2>
 
     <p class="section-copy">
 
         The project was developed to reproduce the dynamic
-        behaviour of an electromagnetic fuel injector rather
-        than treating the coil as an isolated electrical load.
-
-        The electrical response of the solenoid is coupled
-        with the motion of the injector needle and the
-        hydraulic behaviour of the fuel path.
-
-        Changes occurring in one domain therefore influence
-        the response observed in the others, including the
-        current waveform used for diagnostic analysis.
+        behaviour of an electromagnetic fuel injector while
+        preserving the physical relationships between its main
+        subsystems. Instead of describing the solenoid as an
+        isolated electrical load, the simulation couples coil
+        current and electromagnetic force with needle motion,
+        fuel-flow conditions and thermal effects. This allows
+        changes introduced in one physical domain to affect
+        quantities observed in the others, including the
+        electrical current waveform used in diagnostic analysis.
 
     </p>
 
 </section>
 
 
-
 <!-- =========================================================
-     ARCHITECTURE
+     02 ARCHITECTURE
 ========================================================= -->
 
 <section class="section">
 
+    <div class="standard-head">
 
-    <div class="section-head">
-
-        <div class="section-number">
-            02 / ARCHITECTURE
+        <div class="section-label">
+            02 / Model Architecture
         </div>
 
+        <h2 class="section-title">
+            A coupled simulation environment
+        </h2>
 
-        <div>
+        <p>
 
-            <h2 class="section-title">
-                Model architecture
-            </h2>
+            The complete Simulink/Simscape structure integrates
+            the main processes governing electromagnetic injector
+            operation within one model.
 
-        </div>
+        </p>
 
     </div>
 
 
+    <div class="figure-card">
 
-    <div class="architecture">
+        <img
+            src="assets/injector-model-architecture.png"
+            alt="Complete injector model architecture">
 
+        <div class="figure-caption">
 
-        <article class="arch-card">
+            Multidomain injector model developed
+            in MATLAB/Simulink and Simscape
 
-            <div class="arch-index">
-                01
-            </div>
-
-            <h3>
-                Electrical
-            </h3>
-
-            <p>
-
-                Solenoid current,
-                coil resistance,
-                inductance and
-                Peak & Hold control.
-
-            </p>
-
-        </article>
-
-
-
-        <article class="arch-card">
-
-            <div class="arch-index">
-                02
-            </div>
-
-            <h3>
-                Electromagnetic
-            </h3>
-
-            <p>
-
-                Conversion of electrical
-                excitation into electromagnetic
-                force acting on the needle.
-
-            </p>
-
-        </article>
-
-
-
-        <article class="arch-card">
-
-            <div class="arch-index">
-                03
-            </div>
-
-            <h3>
-                Mechanical
-            </h3>
-
-            <p>
-
-                Needle motion, spring force,
-                damping and forces associated
-                with injector operation.
-
-            </p>
-
-        </article>
-
-
-
-        <article class="arch-card">
-
-            <div class="arch-index">
-                04
-            </div>
-
-            <h3>
-                Hydraulic & Thermal
-            </h3>
-
-            <p>
-
-                Fuel flow, pressure-dependent
-                behaviour, injected mass and
-                temperature-dependent coil resistance.
-
-            </p>
-
-        </article>
-
+        </div>
 
     </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     COUPLING
+     03 SUBSYSTEMS
 ========================================================= -->
 
 <section class="section">
 
+    <div class="standard-head">
 
-    <div class="section-head">
-
-        <div class="section-number">
-            03 / COUPLING
+        <div class="section-label">
+            03 / Coupled Physical Domains
         </div>
 
+        <h2 class="section-title">
+            From electrical excitation to fuel flow
+        </h2>
 
-        <div>
+        <p>
 
-            <h2 class="section-title">
-                From electrical input
-                to fuel delivery
-            </h2>
+            Separate physical subsystems describe the key stages
+            of injector operation while exchanging variables
+            required to reproduce the complete transient response.
 
-        </div>
+        </p>
 
     </div>
 
 
+    <div class="subsystem-grid">
+
+
+        <article class="subsystem-card">
+
+            <div class="subsystem-image">
+
+                <img
+                    src="assets/injector-electrical-subsystem.png"
+                    alt="Electrical injector subsystem">
+
+            </div>
+
+            <div class="subsystem-content">
+
+                <div class="subsystem-index">
+                    01 / ELECTRICAL
+                </div>
+
+                <h3>
+                    Solenoid electrical response
+                </h3>
+
+                <p>
+
+                    Describes injector current, coil resistance,
+                    position-dependent inductance, thermal effects
+                    and the control signal applied to the solenoid.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="subsystem-card">
+
+            <div class="subsystem-image">
+
+                <img
+                    src="assets/injector-mechanical-subsystem.png"
+                    alt="Mechanical injector subsystem">
+
+            </div>
+
+            <div class="subsystem-content">
+
+                <div class="subsystem-index">
+                    02 / MECHANICAL
+                </div>
+
+                <h3>
+                    Needle dynamics
+                </h3>
+
+                <p>
+
+                    Combines electromagnetic actuation with
+                    spring, damping and fuel forces to reproduce
+                    needle displacement during opening and closing.
+
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="subsystem-card">
+
+            <div class="subsystem-image">
+
+                <img
+                    src="assets/injector-hydraulic-subsystem.png"
+                    alt="Hydraulic injector subsystem">
+
+            </div>
+
+            <div class="subsystem-content">
+
+                <div class="subsystem-index">
+                    03 / HYDRAULIC
+                </div>
+
+                <h3>
+                    Fuel-flow response
+                </h3>
+
+                <p>
+
+                    Links needle opening with the hydraulic
+                    fuel path and enables analysis of flow
+                    behaviour and injected fuel mass.
+
+                </p>
+
+            </div>
+
+        </article>
+
+    </div>
+
 
     <div class="coupling">
-
 
         <div class="coupling-node">
 
@@ -1211,9 +1082,7 @@ h1 span{
 
         </div>
 
-
         <div class="coupling-arrow"></div>
-
 
         <div class="coupling-node">
 
@@ -1227,9 +1096,7 @@ h1 span{
 
         </div>
 
-
         <div class="coupling-arrow"></div>
-
 
         <div class="coupling-node">
 
@@ -1243,245 +1110,287 @@ h1 span{
 
         </div>
 
-
         <div class="coupling-arrow"></div>
-
 
         <div class="coupling-node">
 
             <strong>
-                Fuel flow
+                Fuel delivery
             </strong>
 
             <span>
-                hydraulic response · injected mass
+                flow · injected mass
             </span>
 
         </div>
 
-
     </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     PURPOSE
+     04 DYNAMIC RESPONSE
 ========================================================= -->
 
 <section class="section">
 
+    <div class="standard-head">
 
-    <div class="section-head">
-
-        <div class="section-number">
-            04 / PURPOSE
+        <div class="section-label">
+            04 / Dynamic Response
         </div>
 
+        <h2 class="section-title">
+            Electrical signal and needle motion
+        </h2>
 
-        <div>
+        <p>
 
-            <h2 class="section-title">
-                What the simulation is used for
-            </h2>
+            The model provides access not only to the measurable
+            electrical response but also to internal mechanical
+            variables that are difficult to observe directly
+            during injector operation.
 
-        </div>
+        </p>
 
     </div>
 
 
+    <div class="response-grid">
 
-    <div class="purpose-grid">
 
+        <article class="response-panel">
 
-        <article class="purpose">
+            <img
+                src="assets/injector-current-waveform.png"
+                alt="Simulated injector current waveform">
 
-            <div class="purpose-number">
-                01
+            <div class="response-text">
+
+                <h3>
+                    Injector current
+                </h3>
+
+                <p>
+
+                    Simulated current waveform reproducing
+                    the characteristic Peak & Hold operating
+                    strategy and the transition between its
+                    individual phases.
+
+                </p>
+
             </div>
-
-            <h3>
-                Current waveform reproduction
-            </h3>
-
-            <p>
-
-                Reproduction of the characteristic
-                injector current response including
-                the Peak and Hold operating phases.
-
-            </p>
 
         </article>
 
 
+        <article class="response-panel">
 
-        <article class="purpose">
+            <img
+                src="assets/injector-needle-position.png"
+                alt="Simulated injector needle displacement">
 
-            <div class="purpose-number">
-                02
+            <div class="response-text">
+
+                <h3>
+                    Needle displacement
+                </h3>
+
+                <p>
+
+                    Simulated injector needle motion during
+                    a complete injection event, linking the
+                    electrical response with mechanical opening
+                    and closing behaviour.
+
+                </p>
+
             </div>
 
-            <h3>
-                Parameter sensitivity
-            </h3>
-
-            <p>
-
-                Investigation of how changes in
-                electrical and physical injector
-                parameters affect the resulting response.
-
-            </p>
-
         </article>
-
-
-
-        <article class="purpose">
-
-            <div class="purpose-number">
-                03
-            </div>
-
-            <h3>
-                Internal-state analysis
-            </h3>
-
-            <p>
-
-                Observation of quantities that are
-                difficult to access directly during
-                normal injector operation, such as
-                needle displacement.
-
-            </p>
-
-        </article>
-
-
-
-        <article class="purpose">
-
-            <div class="purpose-number">
-                04
-            </div>
-
-            <h3>
-                Diagnostic development
-            </h3>
-
-            <p>
-
-                Use of simulated responses to support
-                research on relationships between injector
-                condition and measurable electrical signals.
-
-            </p>
-
-        </article>
-
 
     </div>
 
 </section>
 
 
-
 <!-- =========================================================
-     VALIDATION
+     05 VALIDATION
 ========================================================= -->
 
 <section class="section">
 
+    <div class="standard-head">
 
-    <div class="section-head">
-
-        <div class="section-number">
-            05 / VALIDATION
+        <div class="section-label">
+            05 / Model Validation
         </div>
 
-
-        <div>
-
-            <h2 class="section-title">
-                Simulation versus measurement
-            </h2>
-
-        </div>
+        <h2 class="section-title">
+            From simulation to measurement
+        </h2>
 
     </div>
 
 
+    <p class="validation-copy">
 
-    <div class="validation">
-
-
-        <article class="validation-panel">
-
-            <div class="validation-label">
-                Laboratory signal
-            </div>
-
-            <h3>
-                Measured current waveform
-            </h3>
-
-            <p>
-
-                Current signals recorded during real
-                injector operation provide the reference
-                used to assess whether the simulation
-                reproduces the characteristic stages
-                of the electrical response.
-
-            </p>
-
-        </article>
-
-
-
-        <article class="validation-panel">
-
-            <div class="validation-label">
-                Model output
-            </div>
-
-            <h3>
-                Simulated response
-            </h3>
-
-            <p>
-
-                The model output is compared with the
-                measured waveform with particular attention
-                to the current rise, Peak region,
-                transition to Hold, Hold-level behaviour
-                and switch-off response.
-
-            </p>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<div class="project-footer">
-
-
-    <p>
-
-        Maja Antkowiak ·
-        Automotive Engineering ·
-        Research Project
+        Validation is based on comparison between the simulated
+        injector current and a waveform obtained from laboratory
+        measurements. Particular attention is paid to the current
+        rise, Peak region, transition toward Hold, steady Hold
+        behaviour and switch-off response. Similarity between
+        the characteristic stages of both signals provides a
+        basis for further use of the model in diagnostic studies.
 
     </p>
 
+
+    <div class="figure-card">
+
+        <img
+            src="assets/injector-model-validation.png"
+            alt="Measured injector signal compared with model output">
+
+        <div class="figure-caption">
+
+            Comparison of the measured injector
+            current waveform and model output
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     06 SENSITIVITY
+========================================================= -->
+
+<section class="section">
+
+    <div class="standard-head">
+
+        <div class="section-label">
+            06 / Parameter Sensitivity
+        </div>
+
+        <h2 class="section-title">
+            How parameter changes reshape the signal
+        </h2>
+
+    </div>
+
+
+    <div class="sensitivity-layout">
+
+
+        <div class="figure-card">
+
+            <img
+                src="assets/injector-resistance-sensitivity.png"
+                alt="Influence of coil resistance on injector current waveform">
+
+            <div class="figure-caption">
+
+                Effect of coil resistance variation
+                on the injector current waveform
+
+            </div>
+
+        </div>
+
+
+        <div class="sensitivity-text">
+
+            <h3>
+                Electrical degradation becomes visible in the waveform
+            </h3>
+
+            <p>
+
+                Changing the coil resistance modifies the electrical
+                response generated by the same injector model.
+                This sensitivity is important from a diagnostic
+                perspective because degradation of electrical
+                parameters can therefore produce measurable changes
+                in the current signal.
+
+            </p>
+
+
+            <div class="sensitivity-points">
+
+                <div class="sensitivity-point">
+                    <span>01</span>
+                    Peak-current response changes with coil resistance
+                </div>
+
+                <div class="sensitivity-point">
+                    <span>02</span>
+                    Transient behaviour is altered
+                </div>
+
+                <div class="sensitivity-point">
+                    <span>03</span>
+                    Electrical faults can influence diagnostic features
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESEARCH RELEVANCE
+========================================================= -->
+
+<section class="section">
+
+    <div class="relevance">
+
+        <div class="section-label" style="text-align:center;">
+            Research Relevance
+        </div>
+
+        <h2>
+            A simulation model built for diagnostic research
+        </h2>
+
+        <p>
+
+            The model provides a controlled environment for
+            investigating relationships between injector
+            parameters, internal physical behaviour and the
+            electrical waveform available for measurement.
+            By combining multidomain simulation with laboratory
+            validation, it can be used to study how selected
+            degradations or parameter changes may manifest
+            themselves in current-based diagnostic indicators.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<div class="project-footer">
+
+    <p>
+        Maja Antkowiak · Automotive Engineering · Research Project
+    </p>
 
     <a
         href="index.html#projects"
@@ -1491,12 +1400,10 @@ h1 span{
 
     </a>
 
-
 </div>
 
 
 </main>
-
 
 </body>
 
