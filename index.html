@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Maja Antkowiak | Engineering & Research</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080b10;
+      color: #f5f7fa;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(8,11,16,0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #39bdf8;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 34px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #aab3c0;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 8% 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(
+        circle,
+        rgba(38,166,255,0.18),
+        rgba(38,166,255,0.04) 45%,
+        transparent 70%
+      );
+      right: -100px;
+      top: 70px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 65%;
+      background: linear-gradient(
+        transparent,
+        rgba(57,189,248,0.6),
+        transparent
+      );
+      right: 18%;
+      top: 18%;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: #39bdf8;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(55px, 7vw, 105px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+    }
+
+    h1 span {
+      color: #39bdf8;
+    }
+
+    .subtitle {
+      color: #9da7b5;
+      font-size: 21px;
+      max-width: 700px;
+      line-height: 1.7;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 55px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #39bdf8;
+      color: #061018;
+    }
+
+    .btn-primary:hover {
+      background: white;
+    }
+
+    .btn-secondary {
+      border: 1px solid #39414d;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: #39bdf8;
+    }
+
+    /* TECH TAGS */
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .tech span {
+      padding: 8px 14px;
+      border: 1px solid #252c36;
+      border-radius: 4px;
+      color: #7f8996;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    /* DECORATIVE ENGINEERING LINES */
+
+    .engineering-lines {
+      position: absolute;
+      right: 7%;
+      bottom: 8%;
+      width: 350px;
+      height: 170px;
+      opacity: 0.35;
+    }
+
+    .line {
+      position: absolute;
+      height: 1px;
+      background: #39bdf8;
+    }
+
+    .line1 {
+      width: 270px;
+      top: 30px;
+      right: 0;
+    }
+
+    .line2 {
+      width: 190px;
+      top: 70px;
+      right: 40px;
+    }
+
+    .line3 {
+      width: 110px;
+      top: 110px;
+      right: 80px;
+    }
+
+    .vertical {
+      width: 1px;
+      height: 140px;
+      background: #39bdf8;
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 750px) {
+
+      nav ul {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .engineering-lines {
+        display: none;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <nav>
+
+    <div class="logo">
+      MA<span>.</span>
+    </div>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Research</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="#">Publications</a></li>
+      <li><a href="#">Experience</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+  </nav>
+
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Mechanical Engineering · Mechatronics · Automotive
+      </div>
+
+      <h1>
+        MAJA<br>
+        <span>ANTKOWIAK</span>
+      </h1>
+
+      <p class="subtitle">
+        PhD researcher working at the intersection of automotive engineering,
+        mechatronics and intelligent diagnostics. My research focuses on
+        modelling and signal-based diagnostics of gasoline direct injection
+        systems.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#" class="btn btn-primary">
+          Explore my work
+        </a>
+
+        <a href="#" class="btn btn-secondary">
+          GitHub
+        </a>
+
+      </div>
+
+      <div class="tech">
+
+        <span>MATLAB</span>
+        <span>SIMULINK</span>
+        <span>LABVIEW</span>
+        <span>TSI</span>
+        <span>SIGNAL ANALYSIS</span>
+        <span>MODELLING</span>
+        <span>DIAGNOSTICS</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="engineering-lines">
+
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+      <div class="line line3"></div>
+      <div class="vertical"></div>
+
+    </div>
+
+  </section>
+
+</body>
+
+</html>
