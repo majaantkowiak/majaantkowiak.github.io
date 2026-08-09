@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Maja Antkowiak | Automotive Engineering & Research</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maja Antkowiak | Automotive Research Portfolio</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
     :root {
-      --bg: #05070a;
-      --bg2: #0a0d12;
-      --panel: rgba(255,255,255,0.025);
-      --panel2: rgba(255,255,255,0.045);
-
-      --white: #f5f7f9;
-      --silver1: #eef1f4;
-      --silver2: #c6ccd3;
-      --silver3: #949ca7;
-      --silver4: #666e79;
-
-      --text: #c2c7ce;
-      --muted: #89919b;
-
-      --border: rgba(255,255,255,0.10);
-      --border-soft: rgba(255,255,255,0.055);
+      --bg: #f3f5f7;
+      --bg-soft: #eef1f4;
+      --panel: rgba(255,255,255,0.72);
+      --panel-strong: rgba(255,255,255,0.9);
+      --line: #d6dbe1;
+      --line-strong: #bcc4ce;
+      --text: #1f2732;
+      --muted: #67707c;
+      --accent: #7e8792;
+      --accent-dark: #4f5966;
+      --shadow: 0 20px 45px rgba(30, 40, 55, 0.08);
+      --radius: 24px;
     }
-
 
     * {
       margin: 0;
@@ -35,1985 +29,1176 @@
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
       background:
-        radial-gradient(circle at 85% 5%, rgba(255,255,255,0.06), transparent 22%),
-        radial-gradient(circle at 10% 45%, rgba(255,255,255,0.025), transparent 28%),
-        linear-gradient(135deg, #030405 0%, #07090d 50%, #090c11 100%);
-      color: var(--white);
+        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 25%),
+        radial-gradient(circle at 85% 20%, rgba(210,216,223,0.35), transparent 20%),
+        linear-gradient(180deg, #f7f8fa 0%, #eff2f5 100%);
       overflow-x: hidden;
     }
 
-
-    /* =========================
-       GLOBAL
-    ========================= */
-
-    section {
-      padding: 110px 8%;
-      position: relative;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-
-    .section-number {
-      font-size: 11px;
-      letter-spacing: 4px;
-      color: var(--silver3);
-      margin-bottom: 12px;
-      text-transform: uppercase;
-    }
-
-
-    .section-title {
-      font-size: clamp(38px, 5vw, 65px);
-      letter-spacing: -2px;
-      margin-bottom: 18px;
-    }
-
-
-    .section-title span {
-      background: linear-gradient(
-        90deg,
-        var(--silver1),
-        var(--silver2),
-        var(--silver3)
-      );
-
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-
-    .section-intro {
-      color: var(--text);
-      line-height: 1.8;
-      max-width: 760px;
-      font-size: 17px;
-      margin-bottom: 55px;
-    }
-
-
-    .metal-line {
-      width: 90px;
-      height: 2px;
-
-      background: linear-gradient(
-        90deg,
-        transparent,
-        #d8dde2,
-        transparent
-      );
-
-      margin-bottom: 24px;
-    }
-
-
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
-
-      padding: 20px 8%;
-
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      background: rgba(5,7,10,0.82);
-
-      backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid var(--border-soft);
-
-      z-index: 1000;
+      padding: 20px 6%;
+      background: rgba(247,248,250,0.78);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(180,190,200,0.35);
     }
-
 
     .logo {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.04em;
     }
-
 
     .logo span {
-      color: #9da4ad;
+      color: var(--accent);
     }
-
 
     nav ul {
-      display: flex;
-      gap: 38px;
       list-style: none;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
     }
-
 
     nav a {
-      color: #9da4ad;
-      text-decoration: none;
-
-      font-size: 13px;
-
-      letter-spacing: .5px;
-
+      font-size: 0.95rem;
+      color: var(--muted);
       position: relative;
-
-      transition: .3s;
+      transition: 0.25s ease;
     }
 
+    nav a:hover,
+    nav a.active {
+      color: var(--text);
+    }
 
     nav a::after {
       content: "";
-
       position: absolute;
-
-      bottom: -8px;
       left: 0;
-
+      bottom: -8px;
       width: 0;
-      height: 1px;
-
-      background: #d9dde2;
-
-      transition: .3s;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-dark), #aab2bc);
+      transition: 0.25s ease;
     }
 
-
-    nav a:hover {
-      color: white;
-    }
-
-
-    nav a:hover::after {
+    nav a:hover::after,
+    nav a.active::after {
       width: 100%;
     }
 
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 100vh;
-
+    /* LAYOUT */
+    .page {
       display: grid;
-
-      grid-template-columns: 1.05fr .95fr;
-
-      align-items: center;
-
-      gap: 70px;
-
-      padding-top: 135px;
-
-      overflow: hidden;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 44px;
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 110px 6% 60px;
     }
 
-
-    .hero::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 750px;
-      height: 750px;
-
-      right: -150px;
-      top: 30px;
-
-      border-radius: 50%;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(220,225,231,0.11),
-          rgba(220,225,231,0.025) 42%,
-          transparent 70%
-        );
-    }
-
-
-    .hero-content {
+    .content-column {
       position: relative;
       z-index: 2;
     }
 
+    .visual-column {
+      position: relative;
+    }
 
-    .eyebrow {
+    .visual-sticky {
+      position: sticky;
+      top: 110px;
+      height: calc(100vh - 140px);
+      min-height: 620px;
+      display: flex;
+      align-items: stretch;
+    }
 
-      color: #aeb5be;
+    .visual-card {
+      width: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.72));
+      border: 1px solid rgba(189,197,206,0.55);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
 
-      font-size: 12px;
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(195,202,210,0.45), transparent 70%);
+      pointer-events: none;
+    }
 
-      letter-spacing: 5px;
+    .scene-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
 
+    .scene-number {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      color: var(--accent);
       text-transform: uppercase;
-
-      margin-bottom: 25px;
     }
 
+    .scene-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 6px;
+    }
 
-    h1 {
+    .scene-caption {
+      max-width: 290px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
 
-      font-size: clamp(60px, 7.5vw, 110px);
+    .graphic-stage {
+      position: relative;
+      height: 310px;
+      margin-top: 10px;
+    }
 
-      line-height: .92;
+    .graphic {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: translateY(18px) scale(0.98);
+      transition: 0.45s ease;
+      pointer-events: none;
+    }
 
-      letter-spacing: -5px;
+    .graphic.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
 
+    .mini-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid rgba(170,180,190,0.6);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: rgba(255,255,255,0.5);
+    }
+
+    .mini-tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #8d97a3, #c4cbd3);
+    }
+
+    /* CAR TRACK */
+    .car-zone {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      bottom: 24px;
+      height: 170px;
+    }
+
+    .road-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 38px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #b7c0ca 14%, #a8b1bc 86%, transparent);
+    }
+
+    .road-dashes {
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      bottom: 31px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .road-dashes span {
+      width: 52px;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(165,175,186,0.7);
+    }
+
+    .car-wrap {
+      position: absolute;
+      left: 0;
+      bottom: 45px;
+      width: 220px;
+      transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .car-label {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      color: var(--accent);
       text-transform: uppercase;
-
-      margin-bottom: 32px;
     }
 
-
-    h1 .name {
-
-      color: white;
+    .hint {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 0.82rem;
+      color: var(--muted);
     }
 
+    /* SECTIONS */
+    .step {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      scroll-margin-top: 110px;
+    }
 
-    h1 .surname {
+    .step-inner {
+      max-width: 620px;
+    }
 
-      background: linear-gradient(
-        105deg,
-        #fafafa 0%,
-        #d8dce1 30%,
-        #8f98a3 62%,
-        #e9ecef 100%
-      );
+    .step-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
 
+    .step-title {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      margin-bottom: 22px;
+    }
+
+    .step-title span {
+      color: var(--accent-dark);
+    }
+
+    .step-text {
+      font-size: 1.08rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 26px;
+      max-width: 580px;
+    }
+
+    .hero-title {
+      font-size: clamp(3.5rem, 7vw, 7rem);
+      line-height: 0.9;
+      letter-spacing: -0.07em;
+      margin-bottom: 24px;
+    }
+
+    .hero-title .silver {
+      background: linear-gradient(90deg, #46515e 0%, #8f98a4 45%, #bec6cf 100%);
       -webkit-background-clip: text;
-
       -webkit-text-fill-color: transparent;
     }
 
-
-    .hero-text {
-
-      color: #bdc3cb;
-
-      font-size: 20px;
-
-      line-height: 1.7;
-
-      max-width: 700px;
-
-      margin-bottom: 38px;
-    }
-
-
-    .buttons {
-
+    .hero-actions {
       display: flex;
-
       gap: 14px;
-
-      margin-bottom: 50px;
-
       flex-wrap: wrap;
+      margin-top: 28px;
+      margin-bottom: 32px;
     }
-
 
     .btn {
-
-      padding: 14px 24px;
-
-      text-decoration: none;
-
-      border-radius: 4px;
-
-      font-size: 13px;
-
-      font-weight: 700;
-
-      letter-spacing: .5px;
-
-      transition: .3s;
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+      display: inline-block;
     }
-
 
     .btn-primary {
-
-      color: #090b0e;
-
-      background: linear-gradient(
-        135deg,
-        #f0f2f4,
-        #aeb5be
-      );
+      background: linear-gradient(135deg, #495463, #7f8995);
+      color: #fff;
+      box-shadow: 0 12px 26px rgba(79,89,102,0.18);
     }
-
 
     .btn-primary:hover {
-
       transform: translateY(-2px);
-
-      box-shadow: 0 12px 30px rgba(255,255,255,.12);
     }
-
 
     .btn-secondary {
-
-      color: white;
-
-      border: 1px solid #4b525c;
-
-      background: rgba(255,255,255,.015);
+      border: 1px solid rgba(153,164,176,0.7);
+      background: rgba(255,255,255,0.55);
+      color: var(--text);
     }
-
 
     .btn-secondary:hover {
-
-      border-color: #c5cbd2;
-
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,0.85);
     }
 
-
-    .tech {
-
+    .pill-row,
+    .tags-row {
       display: flex;
-
-      gap: 10px;
-
       flex-wrap: wrap;
+      gap: 10px;
     }
 
-
-    .tech span {
-
-      padding: 8px 13px;
-
-      border: 1px solid #303640;
-
-      border-radius: 3px;
-
-      color: #9ca4ae;
-
-      font-size: 11px;
-
-      letter-spacing: 1px;
+    .pill,
+    .tag {
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(180,188,197,0.7);
+      background: rgba(255,255,255,0.5);
+      color: var(--muted);
+      font-size: 0.88rem;
     }
 
-
-
-    /* =========================
-       AUTOMOTIVE VISUAL
-    ========================= */
-
-    .automotive-visual {
-
-      min-height: 560px;
-
-      border: 1px solid var(--border-soft);
-
-      border-radius: 18px;
-
-      position: relative;
-
-      overflow: hidden;
-
-      background:
-
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,.025),
-          rgba(255,255,255,.008)
-        );
-    }
-
-
-    .automotive-visual::before {
-
-      content: "";
-
-      position: absolute;
-
-      inset: 0;
-
-      background-image:
-
-        linear-gradient(
-          rgba(255,255,255,.025) 1px,
-          transparent 1px
-        ),
-
-        linear-gradient(
-          90deg,
-          rgba(255,255,255,.025) 1px,
-          transparent 1px
-        );
-
-      background-size: 50px 50px;
-
-      mask-image:
-        linear-gradient(
-          to bottom,
-          transparent,
-          black 25%,
-          black 75%,
-          transparent
-        );
-    }
-
-
-    .visual-title {
-
-      position: absolute;
-
-      right: 24px;
-
-      top: 22px;
-
-      font-size: 10px;
-
-      letter-spacing: 3px;
-
-      color: #949ca6;
-    }
-
-
-    .car-svg {
-
-      position: absolute;
-
-      width: 92%;
-
-      left: 4%;
-
-      top: 19%;
-
-      opacity: .88;
-    }
-
-
-    .signal {
-
-      position: absolute;
-
-      left: 9%;
-
-      right: 9%;
-
-      bottom: 80px;
-
-      height: 90px;
-
-      opacity: .6;
-    }
-
-
-    .visual-footer {
-
-      position: absolute;
-
-      bottom: 25px;
-
-      left: 26px;
-
-      color: #7e8791;
-
-      letter-spacing: 2px;
-
-      font-size: 10px;
-
-      text-transform: uppercase;
-    }
-
-
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    #about {
-
-      border-top: 1px solid var(--border-soft);
-    }
-
-
-    .about-grid {
-
+    .grid-2 {
       display: grid;
-
-      grid-template-columns: 1.2fr .8fr;
-
-      gap: 70px;
-    }
-
-
-    .about-text {
-
-      color: var(--text);
-
-      font-size: 17px;
-
-      line-height: 1.9;
-    }
-
-
-    .about-details {
-
-      display: grid;
-
-      gap: 15px;
-    }
-
-
-    .detail-card {
-
-      padding: 22px;
-
-      border: 1px solid var(--border);
-
-      background: var(--panel);
-
-      border-radius: 7px;
-
-      transition: .3s;
-    }
-
-
-    .detail-card:hover {
-
-      transform: translateX(4px);
-
-      background: var(--panel2);
-
-      border-color: rgba(255,255,255,.18);
-    }
-
-
-    .detail-label {
-
-      color: #808893;
-
-      text-transform: uppercase;
-
-      font-size: 10px;
-
-      letter-spacing: 2px;
-
-      margin-bottom: 8px;
-    }
-
-
-    .detail-value {
-
-      color: #e4e7eb;
-
-      font-size: 15px;
-
-      line-height: 1.5;
-    }
-
-
-    .about-bottom {
-
-      margin-top: 60px;
-
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 22px;
-    }
-
-
-    .about-panel {
-
-      border-top: 1px solid #656d77;
-
-      padding-top: 22px;
-    }
-
-
-    .about-panel h3 {
-
-      font-size: 18px;
-
-      margin-bottom: 14px;
-    }
-
-
-    .about-panel p {
-
-      color: #969ea8;
-
-      line-height: 1.7;
-
-      font-size: 14px;
-    }
-
-
-
-    /* =========================
-       RESEARCH
-    ========================= */
-
-    #research {
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,.015),
-          transparent
-        );
-    }
-
-
-    .cards {
-
-      display: grid;
-
-      grid-template-columns: repeat(3,1fr);
-
+      grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 18px;
+      margin-top: 26px;
     }
 
-
-    .card {
-
-      min-height: 300px;
-
-      padding: 28px;
-
-      border: 1px solid var(--border);
-
-      border-radius: 8px;
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,255,255,.04),
-          rgba(255,255,255,.012)
-        );
-
-      position: relative;
-
-      overflow: hidden;
-
-      transition: .35s;
-    }
-
-
-    .card::before {
-
-      content: "";
-
-      position: absolute;
-
-      width: 70px;
-
-      height: 1px;
-
-      background: #cdd2d7;
-
-      top: 0;
-
-      left: 28px;
-    }
-
-
-    .card:hover {
-
-      transform: translateY(-7px);
-
-      border-color: rgba(255,255,255,.22);
-
-      box-shadow:
-        0 20px 45px rgba(0,0,0,.25);
-    }
-
-
-    .card-number {
-
-      color: #717a85;
-
-      font-size: 11px;
-
-      letter-spacing: 2px;
-
-      margin-bottom: 70px;
-    }
-
-
-    .card h3 {
-
-      margin-bottom: 16px;
-
-      font-size: 21px;
-    }
-
-
-    .card p {
-
-      color: #9ea5af;
-
-      line-height: 1.7;
-
-      font-size: 14px;
-    }
-
-
-
-    /* =========================
-       PROJECTS
-    ========================= */
-
-    .project-grid {
-
+    .grid-3 {
       display: grid;
-
-      grid-template-columns: repeat(2,1fr);
-
-      gap: 22px;
-    }
-
-
-    .project {
-
-      padding: 32px;
-
-      border-radius: 9px;
-
-      border: 1px solid var(--border);
-
-      background: rgba(255,255,255,.018);
-
-      min-height: 330px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      justify-content: space-between;
-
-      transition: .35s;
-    }
-
-
-    .project:hover {
-
-      border-color: #69717c;
-
-      transform: translateY(-5px);
-    }
-
-
-    .project-tag {
-
-      color: #818a95;
-
-      letter-spacing: 2px;
-
-      font-size: 10px;
-
-      margin-bottom: 16px;
-    }
-
-
-    .project h3 {
-
-      font-size: 25px;
-
-      margin-bottom: 16px;
-    }
-
-
-    .project p {
-
-      color: #9ea5ae;
-
-      line-height: 1.8;
-
-      max-width: 550px;
-    }
-
-
-    .project-link {
-
-      color: #d9dde2;
-
-      text-decoration: none;
-
-      font-size: 13px;
-
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
       margin-top: 30px;
     }
 
-
-
-    /* =========================
-       INSIGHTS
-    ========================= */
-
-    #insights {
-
-      background:
-        radial-gradient(
-          circle at 80% 50%,
-          rgba(255,255,255,.035),
-          transparent 30%
-        );
+    .info-card,
+    .project-card,
+    .insight-card,
+    .pub-card {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(182,190,199,0.65);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: 0 10px 26px rgba(50,60,70,0.05);
     }
 
-
-    .insight-grid {
-
-      display: grid;
-
-      grid-template-columns: repeat(3,1fr);
-
-      gap: 18px;
+    .info-card h3,
+    .project-card h3,
+    .insight-card h3,
+    .pub-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
     }
 
-
-    .insight {
-
-      padding: 26px;
-
-      min-height: 340px;
-
-      border: 1px solid var(--border);
-
-      border-radius: 8px;
-
-      background:
-        linear-gradient(
-          160deg,
-          rgba(255,255,255,.035),
-          rgba(255,255,255,.009)
-        );
-
-      transition: .35s;
+    .info-card p,
+    .project-card p,
+    .insight-card p,
+    .pub-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.98rem;
     }
 
-
-    .insight:hover {
-
-      transform: translateY(-6px);
-
-      border-color: rgba(255,255,255,.2);
+    .project-card,
+    .insight-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
     }
 
-
-    .insight-tag {
-
-      display: inline-block;
-
-      padding: 6px 9px;
-
-      border: 1px solid #404852;
-
-      color: #abb2bb;
-
-      font-size: 9px;
-
-      letter-spacing: 2px;
-
-      margin-bottom: 32px;
-
+    .card-label {
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
     }
-
-
-    .insight h3 {
-
-      font-size: 20px;
-
-      line-height: 1.4;
-
-      margin-bottom: 16px;
-    }
-
-
-    .insight p {
-
-      color: #929aa4;
-
-      font-size: 14px;
-
-      line-height: 1.7;
-    }
-
 
     .read-more {
-
-      display: inline-block;
-
-      margin-top: 28px;
-
-      text-decoration: none;
-
-      color: #d5d9de;
-
-      font-size: 12px;
-
-      letter-spacing: .5px;
+      margin-top: 18px;
+      font-weight: 600;
+      color: var(--accent-dark);
     }
 
-
-
-    /* =========================
-       PUBLICATIONS
-    ========================= */
-
-    .publication {
-
-      display: grid;
-
-      grid-template-columns: 70px 1fr;
-
-      padding: 28px 0;
-
-      border-bottom: 1px solid var(--border-soft);
+    .publication-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 26px;
     }
 
-
-    .pub-year {
-
-      color: #777f89;
-
-      font-size: 13px;
+    .pub-meta {
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
-
-
-    .publication h3 {
-
-      font-size: 18px;
-
-      margin-bottom: 9px;
-    }
-
-
-    .publication p {
-
-      color: #9098a2;
-
-      line-height: 1.6;
-
-      font-size: 14px;
-    }
-
-
-
-    /* =========================
-       FOOTER
-    ========================= */
 
     footer {
+      padding: 20px 0 60px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
 
-      padding: 50px 8%;
+    /* GRAPHICS */
+    .diagram-box {
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(190,197,206,0.55);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.15));
+    }
 
-      border-top: 1px solid var(--border-soft);
+    .about-lines {
+      position: absolute;
+      inset: 40px;
+    }
 
+    .about-lines .line {
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, #9da7b3, transparent);
+      margin-bottom: 26px;
+    }
+
+    .about-lines .line:nth-child(1) { width: 62%; }
+    .about-lines .line:nth-child(2) { width: 86%; }
+    .about-lines .line:nth-child(3) { width: 48%; }
+    .about-lines .line:nth-child(4) { width: 78%; }
+
+    .injector-shape {
+      position: absolute;
+      right: 38px;
+      top: 54px;
+      width: 150px;
+      height: 150px;
+      border-radius: 24px;
+      border: 1px solid rgba(186,194,202,0.6);
+      background: rgba(255,255,255,0.36);
       display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
+    .chain {
+      position: absolute;
+      inset: 28px;
+      display: flex;
+      align-items: center;
       justify-content: space-between;
-
-      color: #707984;
-
-      font-size: 11px;
-
-      letter-spacing: 1px;
+      gap: 12px;
     }
 
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media(max-width:1000px) {
-
-      .hero {
-
-        grid-template-columns: 1fr;
-      }
-
-      .automotive-visual {
-
-        min-height: 480px;
-      }
-
-      .about-grid {
-
-        grid-template-columns: 1fr;
-      }
-
-      .cards,
-      .insight-grid {
-
-        grid-template-columns: 1fr;
-      }
-
-      .project-grid {
-
-        grid-template-columns: 1fr;
-      }
-
+    .chain .node {
+      flex: 1;
+      min-height: 120px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.54);
+      border: 1px solid rgba(184,191,199,0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      font-weight: 600;
+      color: var(--accent-dark);
     }
 
+    .chain .arrow {
+      width: 42px;
+      height: 2px;
+      background: #adb6c1;
+      position: relative;
+      flex: 0 0 42px;
+    }
 
-    @media(max-width:700px) {
+    .chain .arrow::after {
+      content: "";
+      position: absolute;
+      right: -2px;
+      top: -4px;
+      border-left: 8px solid #adb6c1;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+    }
+
+    .wave-box {
+      position: absolute;
+      inset: 34px;
+      border-radius: 24px;
+      border: 1px solid rgba(189,197,205,0.58);
+      background: rgba(255,255,255,0.38);
+      overflow: hidden;
+    }
+
+    .wave-box svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .insight-stack {
+      position: absolute;
+      inset: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .note {
+      border-radius: 20px;
+      background: rgba(255,255,255,0.58);
+      border: 1px solid rgba(185,192,200,0.66);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 110px;
+    }
+
+    .note-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+    }
+
+    .note-line {
+      height: 2px;
+      border-radius: 999px;
+      background: #bcc4cd;
+      margin-top: 10px;
+    }
+
+    .timeline {
+      position: absolute;
+      inset: 36px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #b1bac4, #d6dce2);
+      border-radius: 999px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-left: 48px;
+      margin-bottom: 34px;
+      padding: 18px 18px 18px 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.52);
+      border: 1px solid rgba(182,190,198,0.6);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -38px;
+      top: 22px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #7f8995, #c4cbd3);
+      box-shadow: 0 0 0 5px rgba(255,255,255,0.7);
+    }
+
+    /* MOBILE */
+    @media (max-width: 1100px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-column {
+        order: -1;
+      }
+
+      .visual-sticky {
+        position: relative;
+        top: 0;
+        height: auto;
+        min-height: unset;
+      }
+
+      .visual-card {
+        min-height: 620px;
+      }
+
+      .step {
+        min-height: auto;
+        padding: 80px 0;
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        padding: 18px 5%;
+      }
 
       nav ul {
-
-        display: none;
+        gap: 16px;
       }
 
-      h1 {
-
-        letter-spacing: -3px;
+      nav a {
+        font-size: 0.85rem;
       }
 
-      section {
-
-        padding: 85px 7%;
+      .page {
+        padding: 100px 5% 40px;
       }
 
-      .about-bottom {
-
+      .grid-2 {
         grid-template-columns: 1fr;
       }
 
-      .publication {
-
-        grid-template-columns: 1fr;
-        gap: 10px;
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
+      .visual-card {
+        padding: 22px;
+        border-radius: 24px;
+        min-height: 580px;
+      }
+
+      .scene-top {
+        flex-direction: column;
+      }
+
+      .graphic-stage {
+        height: 270px;
+      }
+
+      .car-wrap {
+        width: 180px;
+      }
+
+      .road-dashes span {
+        width: 28px;
+      }
+
+      .chain {
+        flex-direction: column;
+      }
+
+      .chain .arrow {
+        width: 2px;
+        height: 32px;
+        flex: 0 0 32px;
+      }
+
+      .chain .arrow::after {
+        left: -4px;
+        right: auto;
+        top: auto;
+        bottom: -2px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 8px solid #adb6c1;
+        border-bottom: none;
+      }
+
+      .insight-stack {
+        grid-template-columns: 1fr;
+      }
     }
-
   </style>
 </head>
-
-
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<nav>
-
-  <div class="logo">
-    MA<span>.</span>
-  </div>
-
-  <ul>
-
-    <li><a href="#about">About</a></li>
-
-    <li><a href="#research">Research</a></li>
-
-    <li><a href="#projects">Projects</a></li>
-
-    <li><a href="#insights">Insights</a></li>
-
-    <li><a href="#publications">Publications</a></li>
-
-  </ul>
-
-</nav>
-
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-  <div class="hero-content">
-
-    <div class="eyebrow">
-      Mechanical Engineering · Mechatronics · Automotive
-    </div>
-
-
-    <h1>
-
-      <span class="name">
-        Maja
-      </span>
-
-      <br>
-
-      <span class="surname">
-        Antkowiak
-      </span>
-
-    </h1>
-
-
-    <p class="hero-text">
-
-      PhD researcher working at the intersection of automotive engineering,
-      mechatronics and intelligent diagnostics.
-
-      My research focuses on modelling and signal-based diagnostics
-      of gasoline direct injection systems.
-
-    </p>
-
-
-    <div class="buttons">
-
-      <a href="#research" class="btn btn-primary">
-        Explore my work
-      </a>
-
-      <a href="#" class="btn btn-secondary">
-        GitHub
-      </a>
-
-    </div>
-
-
-    <div class="tech">
-
-      <span>MATLAB</span>
-
-      <span>SIMULINK</span>
-
-      <span>LABVIEW</span>
-
-      <span>TSI</span>
-
-      <span>SIGNAL ANALYSIS</span>
-
-      <span>MODELLING</span>
-
-      <span>DIAGNOSTICS</span>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="automotive-visual">
-
-    <div class="visual-title">
-      AUTOMOTIVE SYSTEMS / 01
-    </div>
-
-
-    <svg
-      class="car-svg"
-      viewBox="0 0 800 420"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-
-      <defs>
-
-        <linearGradient
-          id="metal"
-          x1="0"
-          y1="0"
-          x2="800"
-          y2="420"
-        >
-
-          <stop
-            stop-color="#F4F5F6"
-          />
-
-          <stop
-            offset=".35"
-            stop-color="#B7BEC6"
-          />
-
-          <stop
-            offset=".67"
-            stop-color="#737C87"
-          />
-
-          <stop
-            offset="1"
-            stop-color="#D7DBDF"
-          />
-
-        </linearGradient>
-
-      </defs>
-
-
-      <path
-
-        d="
-        M76 286
-        C120 278 154 235 202 221
-        L302 181
-        C358 158 456 157 521 180
-        C566 195 607 226 641 262
-        L706 270
-        C728 273 742 288 742 306
-        L742 320
-        C742 339 727 351 708 351
-        L670 351
-
-        C660 395 622 419 580 419
-        C535 419 497 390 489 351
-
-        L284 351
-
-        C275 392 238 419 194 419
-        C149 419 110 392 101 351
-
-        L74 351
-        C51 351 37 337 37 316
-
-        C37 298 52 288 76 286
-        "
-
-        stroke="url(#metal)"
-
-        stroke-width="3"
-
-      />
-
-
-      <path
-
-        d="
-        M205 220
-        L292 166
-
-        C347 132 452 131 520 159
-
-        C563 176 599 205 628 247
-        "
-
-        stroke="url(#metal)"
-
-        stroke-width="2.4"
-
-        opacity=".75"
-
-      />
-
-
-      <path
-        d="M287 168 L250 260"
-        stroke="#A0A8B1"
-        stroke-width="2"
-        opacity=".6"
-      />
-
-
-      <path
-        d="M425 139 L420 260"
-        stroke="#A0A8B1"
-        stroke-width="2"
-        opacity=".5"
-      />
-
-
-      <circle
-        cx="194"
-        cy="351"
-        r="61"
-        stroke="url(#metal)"
-        stroke-width="3"
-      />
-
-
-      <circle
-        cx="580"
-        cy="351"
-        r="61"
-        stroke="url(#metal)"
-        stroke-width="3"
-      />
-
-
-      <circle
-        cx="194"
-        cy="351"
-        r="27"
-        stroke="#7E8792"
-        stroke-width="2"
-      />
-
-
-      <circle
-        cx="580"
-        cy="351"
-        r="27"
-        stroke="#7E8792"
-        stroke-width="2"
-      />
-
-
-      <path
-
-        d="
-        M300 332
-
-        L340 332
-
-        L355 303
-
-        L372 347
-
-        L389 318
-
-        L403 332
-
-        L445 332
-        "
-
-        stroke="#CCD1D6"
-
-        stroke-width="2"
-
-        opacity=".65"
-
-      />
-
-    </svg>
-
-
-
-    <svg
-      class="signal"
-      viewBox="0 0 700 100"
-    >
-
-      <path
-
-        d="
-        M0 70
-
-        L80 70
-
-        L115 20
-
-        L145 68
-
-        L190 68
-
-        L215 43
-
-        L242 69
-
-        L300 69
-
-        L325 57
-
-        L355 68
-
-        L470 68
-
-        L495 61
-
-        L530 61
-
-        L555 70
-
-        L700 70
-        "
-
-        fill="none"
-
-        stroke="#AEB5BE"
-
-        stroke-width="2"
-
-      />
-
-    </svg>
-
-
-    <div class="visual-footer">
-
-      SIGNAL-BASED DIAGNOSTICS · INJECTION SYSTEMS · MODELLING
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section id="about">
-
-  <div class="section-number">
-    01 / About
-  </div>
-
-  <div class="metal-line"></div>
-
-  <h2 class="section-title">
-
-    About <span>Me</span>
-
-  </h2>
-
-
-  <div class="about-grid">
-
-
-    <div class="about-text">
-
-      I am a researcher and engineer focused on automotive mechatronic systems,
-      signal analysis and diagnostic methods.
-
-      My work combines mathematical modelling, experimental measurements
-      and software-based analysis to better understand the behaviour
-      of modern fuel injection systems.
-
-      <br><br>
-
-      I am particularly interested in the relationship between electrical
-      signals and the mechanical and hydraulic behaviour of electromagnetic
-      fuel injectors.
-
-    </div>
-
-
-    <div class="about-details">
-
-
-      <div class="detail-card">
-
-        <div class="detail-label">
-          Field
+  <nav>
+    <div class="logo">MA<span>.</span></div>
+    <ul>
+      <li><a href="#about" class="nav-link active">About</a></li>
+      <li><a href="#research" class="nav-link">Research</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#insights" class="nav-link">Insights</a></li>
+      <li><a href="#publications" class="nav-link">Publications</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <section class="content-column">
+
+      <section class="step" id="about" data-scene="about" data-index="0">
+        <div class="step-inner">
+          <div class="step-kicker">Mechanical Engineering · Mechatronics · Automotive</div>
+          <h1 class="hero-title">Maja <br><span class="silver">Antkowiak</span></h1>
+          <p class="step-text">
+            PhD researcher working at the intersection of automotive engineering,
+            mechatronics and intelligent diagnostics. My work focuses on modelling,
+            signal analysis and fuel injection systems — but I also want this site
+            to feel dynamic, visual and genuinely automotive.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#research" class="btn btn-primary">Explore my work</a>
+            <a href="#insights" class="btn btn-secondary">Read insights</a>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill">MATLAB</span>
+            <span class="pill">Simulink</span>
+            <span class="pill">LabVIEW</span>
+            <span class="pill">TSI Injectors</span>
+            <span class="pill">Diagnostics</span>
+            <span class="pill">Signal Analysis</span>
+          </div>
+
+          <div class="grid-2">
+            <div class="info-card">
+              <h3>Experience</h3>
+              <p>
+                Research, conference participation, technical projects
+                and academic work in automotive mechatronics.
+              </p>
+            </div>
+            <div class="info-card">
+              <h3>Contact</h3>
+              <p>
+                GitHub · LinkedIn · E-mail · academic profile
+                <br><br>
+                Contact details can be added here later.
+              </p>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="detail-value">
-          Mechanical Engineering & Mechatronics
+      <section class="step" id="research" data-scene="research" data-index="1">
+        <div class="step-inner">
+          <div class="step-kicker">01 / Research</div>
+          <h2 class="step-title">Research <span>Focus</span></h2>
+          <p class="step-text">
+            My research combines physical phenomena, signal acquisition and diagnostic reasoning.
+            The main goal is to understand what current waveforms can reveal about the internal
+            behaviour and degradation of automotive injectors.
+          </p>
+
+          <div class="grid-3">
+            <div class="info-card">
+              <h3>Injector Diagnostics</h3>
+              <p>Non-invasive diagnostic methods based on electrical current signals.</p>
+            </div>
+            <div class="info-card">
+              <h3>Mathematical Modelling</h3>
+              <p>Electro-mechanical-hydraulic injector models in MATLAB/Simulink.</p>
+            </div>
+            <div class="info-card">
+              <h3>Signal Analysis</h3>
+              <p>Time-domain and frequency-domain features related to injector operation.</p>
+            </div>
+          </div>
         </div>
+      </section>
 
-      </div>
+      <section class="step" id="projects" data-scene="projects" data-index="2">
+        <div class="step-inner">
+          <div class="step-kicker">02 / Projects</div>
+          <h2 class="step-title">Selected <span>Projects</span></h2>
+          <p class="step-text">
+            Below are some of the projects that best represent my work:
+            modelling, diagnostics, software tools and automotive-oriented engineering concepts.
+          </p>
 
+          <div class="grid-2">
+            <div class="project-card">
+              <div>
+                <div class="card-label">MATLAB / Simulink</div>
+                <h3>TSI Injector Model</h3>
+                <p>
+                  Non-linear electro-mechanical-hydraulic model of an injector with
+                  peak-and-hold control and needle dynamics.
+                </p>
+              </div>
+              <div class="read-more">View project →</div>
+            </div>
 
-      <div class="detail-card">
-
-        <div class="detail-label">
-          Research
+            <div class="project-card">
+              <div>
+                <div class="card-label">LabVIEW / Signal Analysis</div>
+                <h3>Injector Diagnostic Software</h3>
+                <p>
+                  Research-oriented software for automatic waveform analysis,
+                  feature extraction, FFT and fault fingerprint mapping.
+                </p>
+              </div>
+              <div class="read-more">View project →</div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="detail-value">
-          Automotive diagnostics and fuel injection systems
+      <section class="step" id="insights" data-scene="insights" data-index="3">
+        <div class="step-inner">
+          <div class="step-kicker">03 / Insights</div>
+          <h2 class="step-title">Automotive <span>Insights</span></h2>
+          <p class="step-text">
+            A flexible section for research notes, automotive trends,
+            short personal observations and interesting papers worth mentioning.
+            This makes the page feel alive, not just like a static CV.
+          </p>
+
+          <div class="grid-3">
+            <div class="insight-card">
+              <div>
+                <div class="card-label">Research Note</div>
+                <h3>Can injector current reveal mechanical degradation?</h3>
+                <p>Short thoughts on how electrical signals reflect what happens inside the injector.</p>
+              </div>
+              <div class="read-more">Read more →</div>
+            </div>
+
+            <div class="insight-card">
+              <div>
+                <div class="card-label">Automotive</div>
+                <h3>Why raw signals may matter more than fault codes</h3>
+                <p>A note on the future of diagnostics and the limitations of standard OBD logic.</p>
+              </div>
+              <div class="read-more">Read more →</div>
+            </div>
+
+            <div class="insight-card">
+              <div>
+                <div class="card-label">Behind the Research</div>
+                <h3>From Simulink to a real injector signal</h3>
+                <p>Notes from connecting model-based reasoning with measurements from the lab.</p>
+              </div>
+              <div class="read-more">Read more →</div>
+            </div>
+          </div>
         </div>
+      </section>
 
-      </div>
+      <section class="step" id="publications" data-scene="publications" data-index="4">
+        <div class="step-inner">
+          <div class="step-kicker">04 / Publications</div>
+          <h2 class="step-title">Selected <span>Publications</span></h2>
+          <p class="step-text">
+            Papers and conference work related to diagnostics, automotive systems
+            and modelling of fuel injection behaviour.
+          </p>
 
+          <div class="publication-list">
+            <div class="pub-card">
+              <div class="pub-meta">2026 · Journal Paper</div>
+              <h3>Model-based diagnostic of fuel injectors</h3>
+              <p>Publication details will be added here.</p>
+            </div>
 
-      <div class="detail-card">
+            <div class="pub-card">
+              <div class="pub-meta">2026 · Conference</div>
+              <h3>Research on electromagnetic fuel injector diagnostics</h3>
+              <p>Conference and publication details will be added here.</p>
+            </div>
+          </div>
 
-        <div class="detail-label">
-          Tools
+          <footer>
+            © 2026 Maja Antkowiak · Automotive Engineering · Research · Diagnostics
+          </footer>
         </div>
+      </section>
 
-        <div class="detail-value">
-          MATLAB · Simulink · LabVIEW
+    </section>
+
+    <aside class="visual-column">
+      <div class="visual-sticky">
+        <div class="visual-card">
+
+          <div class="scene-top">
+            <div>
+              <div class="scene-number" id="sceneNumber">Scene / 00</div>
+              <div class="scene-title" id="sceneTitle">About Me</div>
+            </div>
+            <div class="scene-caption" id="sceneCaption">
+              Scroll through the sections. The visual on the right changes together with the content.
+            </div>
+          </div>
+
+          <div class="mini-tag" id="sceneTag">Automotive portfolio</div>
+
+          <div class="graphic-stage">
+
+            <div class="graphic active" data-graphic="about">
+              <div class="diagram-box"></div>
+              <div class="about-lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </div>
+              <div class="injector-shape">
+                <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="30" y="8" width="30" height="18" rx="4" stroke="#7C8793" stroke-width="2.4"/>
+                  <rect x="24" y="26" width="42" height="16" rx="4" stroke="#7C8793" stroke-width="2.4"/>
+                  <rect x="32" y="42" width="26" height="18" rx="3" stroke="#7C8793" stroke-width="2.4"/>
+                  <path d="M45 60V76" stroke="#7C8793" stroke-width="2.4" stroke-linecap="round"/>
+                  <path d="M38 76H52" stroke="#7C8793" stroke-width="2.4" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="graphic" data-graphic="research">
+              <div class="chain">
+                <div class="node">Physical<br>phenomenon</div>
+                <div class="arrow"></div>
+                <div class="node">Signal<br>analysis</div>
+                <div class="arrow"></div>
+                <div class="node">Diagnostic<br>decision</div>
+              </div>
+            </div>
+
+            <div class="graphic" data-graphic="projects">
+              <div class="wave-box">
+                <svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+                  <line x1="30" y1="190" x2="570" y2="190" stroke="#C5CCD4" stroke-width="2"/>
+                  <line x1="50" y1="30" x2="50" y2="210" stroke="#C5CCD4" stroke-width="2"/>
+                  <path d="M50 190 
+                           L110 190 
+                           L145 75 
+                           L190 190 
+                           L255 190 
+                           L280 140 
+                           L305 190 
+                           L390 190 
+                           L420 162 
+                           L490 162 
+                           L520 190 
+                           L565 190" 
+                        fill="none" stroke="#6D7783" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M50 190 
+                           L110 190 
+                           L145 75 
+                           L190 190" 
+                        fill="none" stroke="#AEB6BF" stroke-width="7" opacity="0.28" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="graphic" data-graphic="insights">
+              <div class="insight-stack">
+                <div class="note">
+                  <div class="note-title">Research paper</div>
+                  <div>
+                    <div class="note-line" style="width: 90%;"></div>
+                    <div class="note-line" style="width: 70%;"></div>
+                  </div>
+                </div>
+                <div class="note">
+                  <div class="note-title">Automotive trend</div>
+                  <div>
+                    <div class="note-line" style="width: 78%;"></div>
+                    <div class="note-line" style="width: 52%;"></div>
+                  </div>
+                </div>
+                <div class="note">
+                  <div class="note-title">Lab note</div>
+                  <div>
+                    <div class="note-line" style="width: 84%;"></div>
+                    <div class="note-line" style="width: 62%;"></div>
+                  </div>
+                </div>
+                <div class="note">
+                  <div class="note-title">Personal thought</div>
+                  <div>
+                    <div class="note-line" style="width: 68%;"></div>
+                    <div class="note-line" style="width: 56%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="graphic" data-graphic="publications">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="note-title">2026 · Journal article</div>
+                  <div class="note-line" style="width: 88%;"></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="note-title">2026 · Conference paper</div>
+                  <div class="note-line" style="width: 72%;"></div>
+                </div>
+                <div class="timeline-item">
+                  <div class="note-title">Future publications</div>
+                  <div class="note-line" style="width: 60%;"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="car-zone">
+            <div class="road-line"></div>
+            <div class="road-dashes">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="car-wrap" id="carWrap">
+              <svg viewBox="0 0 260 96" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path d="M32 60
+                         C45 58 56 48 69 45
+                         L103 31
+                         C121 24 152 24 174 31
+                         C190 36 203 46 214 58
+                         L236 61
+                         C244 62 249 68 249 74
+                         C249 80 244 84 237 84
+                         L225 84
+                         C221 92 212 96 201 96
+                         C189 96 180 91 176 84
+                         L93 84
+                         C89 92 80 96 68 96
+                         C56 96 47 91 43 84
+                         L31 84
+                         C23 84 18 79 18 72
+                         C18 66 24 61 32 60Z"
+                      stroke="#54606D" stroke-width="2.8" stroke-linejoin="round"/>
+                <path d="M72 45L102 26C120 16 154 16 178 26C192 32 203 39 212 52"
+                      stroke="#8C97A3" stroke-width="2.2" stroke-linejoin="round"/>
+                <circle cx="68" cy="84" r="12.5" stroke="#67727E" stroke-width="2.8"/>
+                <circle cx="201" cy="84" r="12.5" stroke="#67727E" stroke-width="2.8"/>
+              </svg>
+              <div class="car-label">Drive through the page</div>
+            </div>
+
+            <div class="hint">Scroll ↓</div>
+          </div>
+
         </div>
-
       </div>
-
-
-    </div>
-
-  </div>
-
-
-
-  <div class="about-bottom">
-
-
-    <div class="about-panel">
-
-      <h3>
-        Experience
-      </h3>
-
-      <p>
-
-        Research, teaching, conference presentations
-        and engineering projects in the field of automotive
-        mechatronics and diagnostics.
-
-      </p>
-
-    </div>
-
-
-    <div class="about-panel">
-
-      <h3>
-        Contact
-      </h3>
-
-      <p>
-
-        GitHub · LinkedIn · Academic profile · Email
-
-        <br>
-
-        Contact details will be added here.
-
-      </p>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     RESEARCH
-========================= -->
-
-<section id="research">
-
-  <div class="section-number">
-    02 / Research
-  </div>
-
-  <div class="metal-line"></div>
-
-
-  <h2 class="section-title">
-
-    Research <span>Focus</span>
-
-  </h2>
-
-
-  <p class="section-intro">
-
-    My research combines physical modelling,
-    electrical signal analysis and experimental diagnostics
-    of automotive injection systems.
-
-  </p>
-
-
-  <div class="cards">
-
-
-    <div class="card">
-
-      <div class="card-number">
-        R / 01
-      </div>
-
-      <h3>
-        Injector Diagnostics
-      </h3>
-
-      <p>
-
-        Development of non-invasive diagnostic methods
-        based on electrical current signals generated
-        during injector operation.
-
-      </p>
-
-    </div>
-
-
-
-    <div class="card">
-
-      <div class="card-number">
-        R / 02
-      </div>
-
-      <h3>
-        Mathematical Modelling
-      </h3>
-
-      <p>
-
-        Non-linear electro-mechanical-hydraulic modelling
-        of gasoline direct injection systems
-        using MATLAB and Simulink.
-
-      </p>
-
-    </div>
-
-
-
-    <div class="card">
-
-      <div class="card-number">
-        R / 03
-      </div>
-
-      <h3>
-        Signal Analysis
-      </h3>
-
-      <p>
-
-        Time-domain and frequency-domain analysis
-        for identifying characteristic features
-        associated with injector behaviour and degradation.
-
-      </p>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     PROJECTS
-========================= -->
-
-<section id="projects">
-
-  <div class="section-number">
-    03 / Projects
-  </div>
-
-  <div class="metal-line"></div>
-
-
-  <h2 class="section-title">
-
-    Selected <span>Projects</span>
-
-  </h2>
-
-
-  <p class="section-intro">
-
-    Selected engineering and research projects combining
-    automotive systems, modelling and diagnostic software.
-
-  </p>
-
-
-  <div class="project-grid">
-
-
-    <div class="project">
-
-      <div>
-
-        <div class="project-tag">
-          MATLAB / SIMULINK
-        </div>
-
-        <h3>
-          TSI Injector Model
-        </h3>
-
-        <p>
-
-          Electro-mechanical-hydraulic model
-          of an electromagnetic gasoline direct injector,
-          including Peak & Hold control and needle dynamics.
-
-        </p>
-
-      </div>
-
-      <a
-        href="#"
-        class="project-link"
-      >
-        View project →
-      </a>
-
-    </div>
-
-
-
-    <div class="project">
-
-      <div>
-
-        <div class="project-tag">
-          LABVIEW / SIGNAL ANALYSIS
-        </div>
-
-        <h3>
-          Injector Diagnostic Software
-        </h3>
-
-        <p>
-
-          Research-oriented software for automatic
-          current waveform analysis, feature extraction,
-          spectral analysis and fault fingerprint mapping.
-
-        </p>
-
-      </div>
-
-      <a
-        href="#"
-        class="project-link"
-      >
-        View project →
-      </a>
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     INSIGHTS
-========================= -->
-
-<section id="insights">
-
-  <div class="section-number">
-    04 / Insights
-  </div>
-
-  <div class="metal-line"></div>
-
-
-  <h2 class="section-title">
-
-    Automotive <span>Insights</span>
-
-  </h2>
-
-
-  <p class="section-intro">
-
-    Short notes about interesting automotive technologies,
-    research papers, engineering ideas and observations
-    from my own work.
-
-  </p>
-
-
-  <div class="insight-grid">
-
-
-    <article class="insight">
-
-      <div class="insight-tag">
-        Research Note
-      </div>
-
-      <h3>
-
-        Can injector current reveal mechanical degradation?
-
-      </h3>
-
-      <p>
-
-        A short look at how electrical signals
-        can carry information about mechanical changes
-        occurring inside an electromagnetic injector.
-
-      </p>
-
-      <a
-        href="#"
-        class="read-more"
-      >
-        Read more →
-      </a>
-
-    </article>
-
-
-
-    <article class="insight">
-
-      <div class="insight-tag">
-        Automotive
-      </div>
-
-      <h3>
-
-        From fault codes to signal-based diagnostics
-
-      </h3>
-
-      <p>
-
-        Why future vehicle diagnostics may increasingly
-        depend on analysing raw signals instead of relying
-        only on conventional diagnostic trouble codes.
-
-      </p>
-
-      <a
-        href="#"
-        class="read-more"
-      >
-        Read more →
-      </a>
-
-    </article>
-
-
-
-    <article class="insight">
-
-      <div class="insight-tag">
-        Behind the Research
-      </div>
-
-      <h3>
-
-        From a Simulink model to a real injector signal
-
-      </h3>
-
-      <p>
-
-        Notes from the process of connecting
-        mathematical modelling with measurements
-        obtained from a real automotive injector.
-
-      </p>
-
-      <a
-        href="#"
-        class="read-more"
-      >
-        Read more →
-      </a>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     PUBLICATIONS
-========================= -->
-
-<section id="publications">
-
-  <div class="section-number">
-    05 / Publications
-  </div>
-
-  <div class="metal-line"></div>
-
-
-  <h2 class="section-title">
-
-    Selected <span>Publications</span>
-
-  </h2>
-
-
-  <p class="section-intro">
-
-    Research papers and conference contributions
-    related to automotive engineering,
-    modelling and diagnostic systems.
-
-  </p>
-
-
-
-  <div class="publication">
-
-    <div class="pub-year">
-      2026
-    </div>
-
-    <div>
-
-      <h3>
-        Model-based diagnostic of fuel injectors
-      </h3>
-
-      <p>
-        Publication details will be added here.
-      </p>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="publication">
-
-    <div class="pub-year">
-      2026
-    </div>
-
-    <div>
-
-      <h3>
-        Research on electromagnetic fuel injector diagnostics
-      </h3>
-
-      <p>
-        Conference and publication details will be added here.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<footer>
-
-  <div>
-    © 2026 Maja Antkowiak
-  </div>
-
-  <div>
-    Automotive Engineering · Research · Diagnostics
-  </div>
-
-</footer>
-
+    </aside>
+
+  </main>
+
+  <script>
+    const scenes = {
+      about: {
+        number: 'Scene / 00',
+        title: 'About Me',
+        caption: 'A cleaner, lighter introduction with engineering identity and automotive context.',
+        tag: 'Automotive portfolio'
+      },
+      research: {
+        number: 'Scene / 01',
+        title: 'Research Focus',
+        caption: 'The core logic: physical phenomenon → signal → diagnostic decision.',
+        tag: 'Signal-based diagnostics'
+      },
+      projects: {
+        number: 'Scene / 02',
+        title: 'Projects',
+        caption: 'Models, software tools and technical concepts translated into practical work.',
+        tag: 'Engineering projects'
+      },
+      insights: {
+        number: 'Scene / 03',
+        title: 'Insights',
+        caption: 'A flexible space for ideas, papers, trends and short observations from the lab.',
+        tag: 'Research notes & trends'
+      },
+      publications: {
+        number: 'Scene / 04',
+        title: 'Publications',
+        caption: 'Journal and conference outputs presented as part of the research journey.',
+        tag: 'Scientific output'
+      }
+    };
+
+    const steps = document.querySelectorAll('.step');
+    const graphics = document.querySelectorAll('.graphic');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const sceneNumber = document.getElementById('sceneNumber');
+    const sceneTitle = document.getElementById('sceneTitle');
+    const sceneCaption = document.getElementById('sceneCaption');
+    const sceneTag = document.getElementById('sceneTag');
+    const carWrap = document.getElementById('carWrap');
+
+    function activateScene(id, index) {
+      const scene = scenes[id];
+      if (!scene) return;
+
+      sceneNumber.textContent = scene.number;
+      sceneTitle.textContent = scene.title;
+      sceneCaption.textContent = scene.caption;
+      sceneTag.textContent = scene.tag;
+
+      graphics.forEach(graphic => {
+        graphic.classList.toggle('active', graphic.dataset.graphic === id);
+      });
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.toggle('active', href === '#' + id);
+      });
+
+      const moveX = Math.min(index * 42, 168);
+      carWrap.style.transform = `translateX(${moveX}px)`;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.dataset.scene;
+          const index = Number(entry.target.dataset.index);
+          activateScene(id, index);
+        }
+      });
+    }, {
+      threshold: 0.55
+    });
+
+    steps.forEach(step => observer.observe(step));
+
+    activateScene('about', 0);
+  </script>
 
 </body>
-
 </html>
