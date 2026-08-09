@@ -343,9 +343,6 @@ nav a.active{
     margin-bottom:38px;
 }
 
-
-/* PROJECT 01 */
-
 .project-featured{
     margin-bottom:30px;
 
@@ -368,7 +365,6 @@ nav a.active{
 
 .project-featured:hover{
     transform:translateY(-4px);
-
     box-shadow:0 25px 52px rgba(43,53,64,.10);
 }
 
@@ -477,16 +473,13 @@ nav a.active{
     padding-top:2px;
 }
 
-
-/* waveform in card */
-
-.project-waveform{
+.project-main-image{
     position:relative;
 
     padding:0 20px 20px;
 }
 
-.project-waveform-frame{
+.project-main-image-frame{
     overflow:hidden;
 
     padding:13px;
@@ -502,11 +495,11 @@ nav a.active{
         );
 }
 
-.project-waveform-frame img{
+.project-main-image-frame img{
     display:block;
 
     width:100%;
-    max-height:305px;
+    max-height:340px;
 
     object-fit:contain;
 
@@ -515,7 +508,11 @@ nav a.active{
     background:white;
 }
 
-.project-waveform-caption{
+.project-main-image-frame.software img{
+    object-fit:contain;
+}
+
+.project-image-caption{
     margin-top:10px;
 
     color:#89939d;
@@ -620,66 +617,7 @@ nav a.active{
 }
 
 
-/* PROJECT 02 */
-
-.project-secondary{
-    display:grid;
-    grid-template-columns:.95fr 1.05fr;
-
-    margin-bottom:30px;
-
-    overflow:hidden;
-
-    border:1px solid rgba(171,181,192,.67);
-    border-radius:26px;
-
-    background:rgba(255,255,255,.69);
-
-    box-shadow:0 13px 32px rgba(45,55,65,.05);
-}
-
-.project-secondary-image{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    min-height:330px;
-
-    padding:20px;
-
-    background:#edf0f3;
-}
-
-.project-secondary-image img{
-    width:100%;
-    height:100%;
-
-    min-height:285px;
-
-    object-fit:cover;
-    object-position:center;
-
-    border-radius:15px;
-}
-
-.project-secondary-content{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-
-    padding:28px;
-}
-
-.project-secondary-content h3{
-    margin:11px 0 14px;
-
-    font-size:1.55rem;
-
-    letter-spacing:-.04em;
-}
-
-
-/* PROJECT 03 */
+/* SMALL MATH PROJECT */
 
 .project-math{
     padding:27px 29px;
@@ -862,11 +800,7 @@ nav a.active{
     width:4px;
     height:100%;
 
-    background:
-        linear-gradient(
-            #697582,
-            #b5bdc6
-        );
+    background:linear-gradient(#697582,#b5bdc6);
 }
 
 .journal-top{
@@ -960,7 +894,7 @@ nav a.active{
 }
 
 
-/* conferences */
+/* CONFERENCES */
 
 .conference-head{
     margin:26px 0;
@@ -968,7 +902,6 @@ nav a.active{
 
 .conference-head h3{
     margin-bottom:9px;
-
     font-size:1.7rem;
 }
 
@@ -981,7 +914,6 @@ nav a.active{
 
 .conference-timeline{
     position:relative;
-
     padding-left:28px;
 }
 
@@ -996,11 +928,7 @@ nav a.active{
 
     width:2px;
 
-    background:
-        linear-gradient(
-            #78838e,
-            #d2d7dc
-        );
+    background:linear-gradient(#78838e,#d2d7dc);
 }
 
 .year-marker{
@@ -1188,7 +1116,6 @@ nav a.active{
     inset:0;
 
     opacity:0;
-
     transform:translateY(12px);
 
     transition:
@@ -1208,7 +1135,7 @@ nav a.active{
 }
 
 
-/* ABOUT RIGHT */
+/* ABOUT */
 
 .about-art{
     position:absolute;
@@ -1234,7 +1161,7 @@ nav a.active{
 }
 
 
-/* RESEARCH RIGHT */
+/* RESEARCH */
 
 .research-chain{
     position:absolute;
@@ -1275,12 +1202,11 @@ nav a.active{
 
 .chain-arrow{
     height:1px;
-
     background:#a8b2bc;
 }
 
 
-/* PROJECTS RIGHT */
+/* PROJECT PREVIEW */
 
 .projects-showcase{
     position:absolute;
@@ -1364,7 +1290,6 @@ nav a.active{
     padding:16px;
 
     opacity:0;
-
     transform:scale(.985);
 
     transition:.3s ease;
@@ -1404,10 +1329,6 @@ nav a.active{
     height:100%;
 
     object-fit:contain;
-}
-
-.preview-image-frame.software img{
-    object-fit:cover;
 }
 
 .preview-meta{
@@ -1470,12 +1391,11 @@ nav a.active{
 
 .math-preview-small{
     font-size:1.1rem;
-
     color:#77828d;
 }
 
 
-/* INSIGHTS RIGHT */
+/* INSIGHTS */
 
 .insight-stack{
     position:absolute;
@@ -1503,7 +1423,7 @@ nav a.active{
 }
 
 
-/* PUBLICATIONS RIGHT */
+/* PUBLICATIONS */
 
 .pub-stack{
     position:absolute;
@@ -1626,11 +1546,6 @@ nav a.active{
     text-transform:uppercase;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
 footer{
     padding:50px 0 10px;
 
@@ -1657,15 +1572,12 @@ footer{
 
     .visual-sticky{
         position:relative;
-
         top:0;
-
         height:680px;
     }
 
     .step{
         min-height:auto;
-
         padding:80px 0;
     }
 
@@ -1693,10 +1605,6 @@ footer{
     }
 
     .project-highlight-grid{
-        grid-template-columns:1fr;
-    }
-
-    .project-secondary{
         grid-template-columns:1fr;
     }
 
@@ -1732,35 +1640,11 @@ footer{
 
     <ul>
 
-        <li>
-            <a href="#about" class="nav-link active">
-                About
-            </a>
-        </li>
-
-        <li>
-            <a href="#research" class="nav-link">
-                Research
-            </a>
-        </li>
-
-        <li>
-            <a href="#projects" class="nav-link">
-                Projects
-            </a>
-        </li>
-
-        <li>
-            <a href="#insights" class="nav-link">
-                Insights
-            </a>
-        </li>
-
-        <li>
-            <a href="#publications" class="nav-link">
-                Publications
-            </a>
-        </li>
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#insights" class="nav-link">Insights</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
 
     </ul>
 
@@ -1769,16 +1653,14 @@ footer{
 
 <main class="page">
 
-
 <section class="content-column">
 
 
-<!-- ABOUT -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
-<section
-    class="step"
-    id="about"
-    data-scene="about">
+<section class="step" id="about" data-scene="about">
 
     <div class="step-inner">
 
@@ -1787,13 +1669,8 @@ footer{
         </div>
 
         <h1 class="hero-title">
-
             Maja<br>
-
-            <span class="silver">
-                Antkowiak
-            </span>
-
+            <span class="silver">Antkowiak</span>
         </h1>
 
         <p class="step-text">
@@ -1819,14 +1696,11 @@ footer{
 
         </div>
 
-
         <div class="grid-2">
 
             <div class="info-card">
 
-                <h3>
-                    Experience
-                </h3>
+                <h3>Experience</h3>
 
                 <p>
                     Research, conference participation,
@@ -1836,12 +1710,9 @@ footer{
 
             </div>
 
-
             <div class="info-card">
 
-                <h3>
-                    Contact
-                </h3>
+                <h3>Contact</h3>
 
                 <p>
                     GitHub · LinkedIn · E-mail · academic profile
@@ -1856,12 +1727,11 @@ footer{
 </section>
 
 
-<!-- RESEARCH -->
+<!-- =========================================================
+     RESEARCH
+========================================================= -->
 
-<section
-    class="step"
-    id="research"
-    data-scene="research">
+<section class="step" id="research" data-scene="research">
 
     <div class="step-inner">
 
@@ -1870,10 +1740,7 @@ footer{
         </div>
 
         <h2 class="step-title">
-
-            Research
-            <span>Focus</span>
-
+            Research <span>Focus</span>
         </h2>
 
         <p class="step-text">
@@ -1887,14 +1754,11 @@ footer{
 
         </p>
 
-
         <div class="grid-3">
 
             <div class="info-card">
 
-                <h3>
-                    Injector Diagnostics
-                </h3>
+                <h3>Injector Diagnostics</h3>
 
                 <p>
                     Non-invasive diagnostic methods
@@ -1903,12 +1767,9 @@ footer{
 
             </div>
 
-
             <div class="info-card">
 
-                <h3>
-                    Multidomain Simulation
-                </h3>
+                <h3>Multidomain Simulation</h3>
 
                 <p>
                     Coupled electrical, mechanical
@@ -1917,12 +1778,9 @@ footer{
 
             </div>
 
-
             <div class="info-card">
 
-                <h3>
-                    Signal Analysis
-                </h3>
+                <h3>Signal Analysis</h3>
 
                 <p>
                     Time-domain and frequency-domain
@@ -1938,7 +1796,9 @@ footer{
 </section>
 
 
-<!-- PROJECTS -->
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
 
 <section
     class="step projects-step"
@@ -1952,10 +1812,7 @@ footer{
         </div>
 
         <h2 class="step-title">
-
-            Selected
-            <span>Projects</span>
-
+            Selected <span>Projects</span>
         </h2>
 
         <p class="step-text projects-intro">
@@ -1985,11 +1842,9 @@ footer{
 
                 </div>
 
-
                 <h3>
                     Injector Multidomain Simulation
                 </h3>
-
 
                 <p class="project-description">
 
@@ -2005,7 +1860,6 @@ footer{
                     against laboratory measurements.
 
                 </p>
-
 
                 <div class="project-highlight-grid">
 
@@ -2034,9 +1888,9 @@ footer{
             </div>
 
 
-            <div class="project-waveform">
+            <div class="project-main-image">
 
-                <div class="project-waveform-frame">
+                <div class="project-main-image-frame">
 
                     <img
                         src="assets/injector-current-waveform.png"
@@ -2044,8 +1898,10 @@ footer{
 
                 </div>
 
-                <div class="project-waveform-caption">
+                <div class="project-image-caption">
+
                     Simulated injector current waveform · Peak & Hold control
+
                 </div>
 
             </div>
@@ -2071,7 +1927,6 @@ footer{
 
                 </div>
 
-
                 <a
                     href="injector-simulation.html"
                     class="project-button">
@@ -2087,12 +1942,20 @@ footer{
 
         <!-- PROJECT 02 -->
 
-        <article class="project-secondary">
+        <article class="project-featured">
 
-            <div class="project-secondary-content">
+            <div class="project-featured-body">
 
-                <div class="project-type">
-                    Research Software
+                <div class="project-top">
+
+                    <span class="project-type">
+                        Diagnostic Software
+                    </span>
+
+                    <span class="project-status">
+                        Research Software
+                    </span>
+
                 </div>
 
                 <h3>
@@ -2101,12 +1964,66 @@ footer{
 
                 <p class="project-description">
 
-                    LabVIEW-based application for automatic
-                    current-waveform analysis, feature extraction,
-                    FFT analysis, reference comparison and
-                    diagnostic mapping.
+                    A LabVIEW-based research application developed
+                    for automated analysis of electromagnetic injector
+                    current signals. The software identifies individual
+                    injection events, detects characteristic waveform
+                    phases and extracts time-domain and frequency-domain
+                    diagnostic features. Reference-based comparison and
+                    diagnostic maps support evaluation of injector
+                    behaviour, while dedicated reporting tools summarize
+                    results obtained from individual injections and
+                    complete measurement series.
 
                 </p>
+
+                <div class="project-highlight-grid">
+
+                    <div class="project-highlight">
+                        <span>01</span>
+                        Automatic injection and phase detection
+                    </div>
+
+                    <div class="project-highlight">
+                        <span>02</span>
+                        Time-domain feature extraction
+                    </div>
+
+                    <div class="project-highlight">
+                        <span>03</span>
+                        FFT and frequency-domain analysis
+                    </div>
+
+                    <div class="project-highlight">
+                        <span>04</span>
+                        Reference comparison and diagnostic mapping
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-main-image">
+
+                <div class="project-main-image-frame software">
+
+                    <img
+                        src="assets/injector-diagnostic-software.png"
+                        alt="Injector diagnostic software developed in LabVIEW">
+
+                </div>
+
+                <div class="project-image-caption">
+
+                    Time-domain analysis and automatic injector current feature extraction
+
+                </div>
+
+            </div>
+
+
+            <div class="project-footer">
 
                 <div class="project-tools">
 
@@ -2130,14 +2047,14 @@ footer{
 
                 </div>
 
-            </div>
 
+                <a
+                    href="injector-diagnostic.html"
+                    class="project-button">
 
-            <div class="project-secondary-image">
+                    VIEW PROJECT →
 
-                <img
-                    src="assets/injector-diagnostic-software.png"
-                    alt="Injector diagnostic software developed in LabVIEW">
+                </a>
 
             </div>
 
@@ -2177,7 +2094,6 @@ footer{
 
             </div>
 
-
             <div class="math-equations">
 
                 <div class="eq-main">
@@ -2194,20 +2110,11 @@ footer{
 
             </div>
 
-
             <div class="project-tools">
 
-                <span class="tool">
-                    RL Circuit
-                </span>
-
-                <span class="tool">
-                    Peak & Hold
-                </span>
-
-                <span class="tool">
-                    Transient Response
-                </span>
+                <span class="tool">RL Circuit</span>
+                <span class="tool">Peak & Hold</span>
+                <span class="tool">Transient Response</span>
 
             </div>
 
@@ -2218,12 +2125,11 @@ footer{
 </section>
 
 
-<!-- INSIGHTS -->
+<!-- =========================================================
+     INSIGHTS
+========================================================= -->
 
-<section
-    class="step"
-    id="insights"
-    data-scene="insights">
+<section class="step" id="insights" data-scene="insights">
 
     <div class="step-inner">
 
@@ -2232,10 +2138,7 @@ footer{
         </div>
 
         <h2 class="step-title">
-
-            Automotive
-            <span>Insights</span>
-
+            Automotive <span>Insights</span>
         </h2>
 
         <p class="step-text">
@@ -2245,7 +2148,6 @@ footer{
             from my own work.
 
         </p>
-
 
         <div class="grid-3">
 
@@ -2274,7 +2176,6 @@ footer{
 
             </div>
 
-
             <div class="insight-card">
 
                 <div>
@@ -2299,7 +2200,6 @@ footer{
                 </div>
 
             </div>
-
 
             <div class="insight-card">
 
@@ -2333,7 +2233,9 @@ footer{
 </section>
 
 
-<!-- PUBLICATIONS -->
+<!-- =========================================================
+     PUBLICATIONS
+========================================================= -->
 
 <section
     class="step"
@@ -2347,10 +2249,7 @@ footer{
     </div>
 
     <h2 class="step-title">
-
-        Publications &
-        <span>Conferences</span>
-
+        Publications & <span>Conferences</span>
     </h2>
 
     <p class="step-text">
@@ -2402,17 +2301,9 @@ footer{
 
         <div class="journal-meta">
 
-            <span class="meta-chip">
-                Sensors
-            </span>
-
-            <span class="meta-chip">
-                22(20)
-            </span>
-
-            <span class="meta-chip">
-                7945
-            </span>
+            <span class="meta-chip">Sensors</span>
+            <span class="meta-chip">22(20)</span>
+            <span class="meta-chip">7945</span>
 
         </div>
 
@@ -2496,11 +2387,9 @@ footer{
 
     <div class="conference-timeline">
 
-
         <div class="year-marker">
             2026
         </div>
-
 
         <div class="conf-item">
 
@@ -2628,7 +2517,6 @@ footer{
             2025
         </div>
 
-
         <div class="conf-item">
 
             <div class="conf-date">
@@ -2665,7 +2553,6 @@ footer{
         <div class="year-marker">
             2022
         </div>
-
 
         <div class="conf-item">
 
@@ -2747,13 +2634,16 @@ footer{
 </section>
 
 
-<!-- RIGHT -->
+<!-- =========================================================
+     RIGHT PANEL
+========================================================= -->
 
 <aside class="visual-column">
 
 <div class="visual-sticky">
 
 <div class="visual-card">
+
 
     <div class="scene-top">
 
@@ -2787,6 +2677,8 @@ footer{
     <div class="graphic-stage">
 
 
+        <!-- ABOUT -->
+
         <div class="graphic active" data-graphic="about">
 
             <div class="about-art"></div>
@@ -2807,6 +2699,8 @@ footer{
 
         </div>
 
+
+        <!-- RESEARCH -->
 
         <div class="graphic" data-graphic="research">
 
@@ -2832,6 +2726,8 @@ footer{
 
         </div>
 
+
+        <!-- PROJECTS -->
 
         <div class="graphic" data-graphic="projects">
 
@@ -2912,7 +2808,7 @@ footer{
                         class="project-preview"
                         data-project-panel="software">
 
-                        <div class="preview-image-frame software">
+                        <div class="preview-image-frame">
 
                             <img
                                 src="assets/injector-diagnostic-software.png"
@@ -2933,6 +2829,14 @@ footer{
                                 </div>
 
                             </div>
+
+                            <a
+                                href="injector-diagnostic.html"
+                                class="preview-open">
+
+                                OPEN →
+
+                            </a>
 
                         </div>
 
@@ -2968,30 +2872,23 @@ footer{
         </div>
 
 
+        <!-- INSIGHTS -->
+
         <div class="graphic" data-graphic="insights">
 
             <div class="insight-stack">
 
-                <div class="note">
-                    Research papers
-                </div>
-
-                <div class="note">
-                    Automotive trends
-                </div>
-
-                <div class="note">
-                    Laboratory notes
-                </div>
-
-                <div class="note">
-                    Behind the research
-                </div>
+                <div class="note">Research papers</div>
+                <div class="note">Automotive trends</div>
+                <div class="note">Laboratory notes</div>
+                <div class="note">Behind the research</div>
 
             </div>
 
         </div>
 
+
+        <!-- PUBLICATIONS -->
 
         <div class="graphic" data-graphic="publications">
 
@@ -3031,6 +2928,8 @@ footer{
 
     </div>
 
+
+    <!-- ROAD -->
 
     <div class="car-zone" id="carZone">
 
@@ -3268,7 +3167,6 @@ footer{
 
         </div>
 
-
         <div class="hint">
             Scroll to drive
         </div>
@@ -3326,14 +3224,9 @@ const scenes={
 };
 
 
-const steps=
-    document.querySelectorAll('.step');
-
-const graphics=
-    document.querySelectorAll('.graphic');
-
-const navLinks=
-    document.querySelectorAll('.nav-link');
+const steps=document.querySelectorAll('.step');
+const graphics=document.querySelectorAll('.graphic');
+const navLinks=document.querySelectorAll('.nav-link');
 
 
 function activateScene(id){
@@ -3344,18 +3237,10 @@ function activateScene(id){
         return;
     }
 
-    document.getElementById('sceneNumber').textContent=
-        scene.number;
-
-    document.getElementById('sceneTitle').textContent=
-        scene.title;
-
-    document.getElementById('sceneCaption').textContent=
-        scene.caption;
-
-    document.getElementById('sceneTag').textContent=
-        scene.tag;
-
+    document.getElementById('sceneNumber').textContent=scene.number;
+    document.getElementById('sceneTitle').textContent=scene.title;
+    document.getElementById('sceneCaption').textContent=scene.caption;
+    document.getElementById('sceneTag').textContent=scene.tag;
 
     graphics.forEach(graphic=>{
 
@@ -3365,7 +3250,6 @@ function activateScene(id){
         );
 
     });
-
 
     navLinks.forEach(link=>{
 
@@ -3379,8 +3263,7 @@ function activateScene(id){
 }
 
 
-const observer=
-new IntersectionObserver(
+const observer=new IntersectionObserver(
 
     entries=>{
 
@@ -3388,9 +3271,7 @@ new IntersectionObserver(
 
             if(entry.isIntersecting){
 
-                activateScene(
-                    entry.target.dataset.scene
-                );
+                activateScene(entry.target.dataset.scene);
 
             }
 
@@ -3406,9 +3287,7 @@ new IntersectionObserver(
 );
 
 
-steps.forEach(step=>{
-    observer.observe(step);
-});
+steps.forEach(step=>observer.observe(step));
 
 
 const previewButtons=
@@ -3448,23 +3327,12 @@ previewButtons.forEach(button=>{
 });
 
 
-const carWrap=
-    document.getElementById('carWrap');
-
-const carZone=
-    document.getElementById('carZone');
-
-const roadSvg=
-    document.getElementById('roadSvg');
-
-const motionPath=
-    document.getElementById('motionPath');
-
-const frontWheel=
-    document.getElementById('frontWheel');
-
-const rearWheel=
-    document.getElementById('rearWheel');
+const carWrap=document.getElementById('carWrap');
+const carZone=document.getElementById('carZone');
+const roadSvg=document.getElementById('roadSvg');
+const motionPath=document.getElementById('motionPath');
+const frontWheel=document.getElementById('frontWheel');
+const rearWheel=document.getElementById('rearWheel');
 
 
 function clamp(value,min,max){
@@ -3483,13 +3351,10 @@ function getScrollRange(){
         steps[0].getBoundingClientRect();
 
     const lastRect=
-        steps[
-            steps.length-1
-        ].getBoundingClientRect();
+        steps[steps.length-1].getBoundingClientRect();
 
     const pageTop=
-        window.scrollY+
-        firstRect.top;
+        window.scrollY+firstRect.top;
 
     const pageBottom=
         window.scrollY+
@@ -3506,8 +3371,7 @@ function getScrollRange(){
 
 function calculateScrollProgress(){
 
-    const range=
-        getScrollRange();
+    const range=getScrollRange();
 
     const position=
         window.scrollY+
@@ -3537,8 +3401,7 @@ function calculateScrollProgress(){
 
 function progressToScroll(progress){
 
-    const range=
-        getScrollRange();
+    const range=getScrollRange();
 
     const target=
 
@@ -3557,18 +3420,10 @@ function progressToScroll(progress){
         window.innerHeight*.52;
 
     const max=
-
-        document.documentElement.scrollHeight
-
-        -
-
+        document.documentElement.scrollHeight-
         window.innerHeight;
 
-    return clamp(
-        target,
-        0,
-        max
-    );
+    return clamp(target,0,max);
 
 }
 
@@ -3607,15 +3462,13 @@ function renderCar(progress){
         svgRect.height/150;
 
     const roadTop=
-        svgRect.top-
-        zoneRect.top;
+        svgRect.top-zoneRect.top;
 
     const x=
         point.x*scaleX;
 
     const y=
-        roadTop+
-        point.y*scaleY;
+        roadTop+point.y*scaleY;
 
     let angle=
 
@@ -3627,25 +3480,16 @@ function renderCar(progress){
         *180/
         Math.PI;
 
-    angle=
-        clamp(angle,-5,5);
+    angle=clamp(angle,-5,5);
 
     const carX=
-        x-
-        carWrap.offsetWidth*.50;
+        x-carWrap.offsetWidth*.50;
 
     const carY=
-        y-
-        carWrap.offsetHeight*.82;
+        y-carWrap.offsetHeight*.82;
 
     carWrap.style.transform=
-
-        `translate3d(
-            ${carX}px,
-            ${carY}px,
-            0
-        )
-        rotate(${angle}deg)`;
+        `translate3d(${carX}px,${carY}px,0) rotate(${angle}deg)`;
 
     const wheelRotation=
         progress*1500;
@@ -3670,21 +3514,17 @@ function updateCar(){
     if(isDragging){
 
         animationFrame=null;
-
         return;
 
     }
 
     currentProgress+=
-
         (
             targetProgress-
             currentProgress
         )*.095;
 
-    renderCar(
-        currentProgress
-    );
+    renderCar(currentProgress);
 
     if(
         Math.abs(
@@ -3694,20 +3534,15 @@ function updateCar(){
     ){
 
         animationFrame=
-            requestAnimationFrame(
-                updateCar
-            );
+            requestAnimationFrame(updateCar);
 
     }
 
     else{
 
-        currentProgress=
-            targetProgress;
+        currentProgress=targetProgress;
 
-        renderCar(
-            currentProgress
-        );
+        renderCar(currentProgress);
 
         animationFrame=null;
 
@@ -3728,9 +3563,7 @@ function requestCarUpdate(){
     if(animationFrame===null){
 
         animationFrame=
-            requestAnimationFrame(
-                updateCar
-            );
+            requestAnimationFrame(updateCar);
 
     }
 
@@ -3753,12 +3586,10 @@ function pointerToProgress(clientX){
         rect.width/900;
 
     const start=
-        rect.left+
-        145*scaleX;
+        rect.left+145*scaleX;
 
     const end=
-        rect.left+
-        765*scaleX;
+        rect.left+765*scaleX;
 
     return clamp(
         (clientX-start)/(end-start),
@@ -3774,19 +3605,14 @@ function dragTo(clientX){
     const progress=
         pointerToProgress(clientX);
 
-    targetProgress=
-        progress;
-
-    currentProgress=
-        progress;
+    targetProgress=progress;
+    currentProgress=progress;
 
     renderCar(progress);
 
     window.scrollTo({
 
-        top:
-            progressToScroll(progress),
-
+        top:progressToScroll(progress),
         behavior:'auto'
 
     });
@@ -3800,27 +3626,18 @@ carWrap.addEventListener(
 
         isDragging=true;
 
-        carWrap.classList.add(
-            'dragging'
-        );
+        carWrap.classList.add('dragging');
 
         if(animationFrame!==null){
 
-            cancelAnimationFrame(
-                animationFrame
-            );
-
+            cancelAnimationFrame(animationFrame);
             animationFrame=null;
 
         }
 
-        carWrap.setPointerCapture(
-            event.pointerId
-        );
+        carWrap.setPointerCapture(event.pointerId);
 
-        dragTo(
-            event.clientX
-        );
+        dragTo(event.clientX);
 
     }
 );
@@ -3834,9 +3651,7 @@ carWrap.addEventListener(
             return;
         }
 
-        dragTo(
-            event.clientX
-        );
+        dragTo(event.clientX);
 
     }
 );
@@ -3850,19 +3665,11 @@ function finishDrag(event){
 
     isDragging=false;
 
-    carWrap.classList.remove(
-        'dragging'
-    );
+    carWrap.classList.remove('dragging');
 
-    if(
-        carWrap.hasPointerCapture(
-            event.pointerId
-        )
-    ){
+    if(carWrap.hasPointerCapture(event.pointerId)){
 
-        carWrap.releasePointerCapture(
-            event.pointerId
-        );
+        carWrap.releasePointerCapture(event.pointerId);
 
     }
 
@@ -3872,22 +3679,13 @@ function finishDrag(event){
     currentProgress=
         targetProgress;
 
-    renderCar(
-        currentProgress
-    );
+    renderCar(currentProgress);
 
 }
 
 
-carWrap.addEventListener(
-    'pointerup',
-    finishDrag
-);
-
-carWrap.addEventListener(
-    'pointercancel',
-    finishDrag
-);
+carWrap.addEventListener('pointerup',finishDrag);
+carWrap.addEventListener('pointercancel',finishDrag);
 
 
 window.addEventListener(
@@ -3900,9 +3698,7 @@ window.addEventListener(
         currentProgress=
             targetProgress;
 
-        renderCar(
-            currentProgress
-        );
+        renderCar(currentProgress);
 
     }
 );
@@ -3916,12 +3712,9 @@ targetProgress=
 currentProgress=
     targetProgress;
 
-renderCar(
-    currentProgress
-);
+renderCar(currentProgress);
 
 </script>
 
 </body>
-
 </html>
