@@ -171,59 +171,10 @@ nav{
 }
 
 .visual-column{
-    position:relative;
-}
-
-
-/* =========================================================
-   RIGHT STICKY
-========================================================= */
-
-.visual-sticky{
-
-    position:sticky;
-
-    top:96px;
-
-    height:
-        calc(100vh - 120px);
-
-    height:
-        calc(100dvh - 120px);
-
-    min-height:560px;
-
-    max-height:760px;
-}
-
-.visual-card{
 
     position:relative;
 
-    width:100%;
-    height:100%;
-
-    overflow:hidden;
-
-    padding:28px;
-
-    border:
-        1px solid
-        rgba(185,194,203,.56);
-
-    border-radius:31px;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.94),
-            rgba(255,255,255,.74)
-        );
-
-    box-shadow:
-        0 22px 50px
-        rgba(40,50,60,.08);
+    align-self:stretch;
 }
 
 
@@ -294,6 +245,10 @@ nav{
     font-size:1.08rem;
 
     line-height:1.85;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 .hero-tags{
@@ -458,6 +413,8 @@ nav{
     line-height:1.9;
 
     text-align:justify;
+
+    text-justify:inter-word;
 }
 
 .section-text + .section-text{
@@ -496,7 +453,7 @@ nav{
 
 
 /* =========================================================
-   SIGNAL VS DTC
+   COMPARISON
 ========================================================= */
 
 .comparison-grid{
@@ -513,8 +470,7 @@ nav{
 
 .comparison-card{
 
-    padding:
-        21px;
+    padding:21px;
 
     border:
         1px solid
@@ -555,6 +511,10 @@ nav{
     font-size:.83rem;
 
     line-height:1.7;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 
@@ -574,8 +534,7 @@ nav{
 
     margin-top:27px;
 
-    padding:
-        20px;
+    padding:20px;
 
     border:
         1px solid
@@ -621,7 +580,7 @@ nav{
 
 
 /* =========================================================
-   FEATURE GRID
+   FEATURES
 ========================================================= */
 
 .feature-grid{
@@ -641,8 +600,7 @@ nav{
 
 .feature-card{
 
-    padding:
-        17px;
+    padding:17px;
 
     border:
         1px solid
@@ -670,11 +628,15 @@ nav{
     font-size:.77rem;
 
     line-height:1.6;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 
 /* =========================================================
-   PROCESS
+   PROCESS LIST
 ========================================================= */
 
 .process-list{
@@ -697,8 +659,7 @@ nav{
 
     gap:13px;
 
-    padding:
-        16px;
+    padding:16px;
 
     border:
         1px solid
@@ -743,6 +704,10 @@ nav{
     font-size:.79rem;
 
     line-height:1.6;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 
@@ -834,6 +799,10 @@ nav{
     font-size:.82rem;
 
     line-height:1.65;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 .related-open{
@@ -872,24 +841,104 @@ footer{
    RIGHT PANEL
 ========================================================= */
 
+.visual-sticky{
+
+    position:sticky;
+
+    top:94px;
+
+    height:
+        calc(100vh - 112px);
+
+    height:
+        calc(100dvh - 112px);
+
+    max-height:760px;
+
+    min-height:0;
+}
+
+.visual-card{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    padding:26px;
+
+    border:
+        1px solid
+        rgba(185,194,203,.56);
+
+    border-radius:31px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.95),
+            rgba(255,255,255,.76)
+        );
+
+    box-shadow:
+        0 22px 50px
+        rgba(40,50,60,.08);
+}
+
+
+/* =========================================================
+   RIGHT HEADER
+========================================================= */
+
+.visual-header{
+
+    flex:0 0 auto;
+}
+
 .scene-title{
 
-    font-size:1.34rem;
+    margin-bottom:8px;
 
-    font-weight:700;
+    font-size:1.32rem;
 
-    margin-bottom:7px;
+    font-weight:800;
+
+    letter-spacing:-.025em;
 }
 
 .scene-caption{
 
-    max-width:390px;
+    max-width:430px;
 
     color:#69747f;
 
-    font-size:.9rem;
+    font-size:.88rem;
 
-    line-height:1.7;
+    line-height:1.6;
+
+    text-align:justify;
+
+    text-justify:inter-word;
+}
+
+.panel-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-top:16px;
 }
 
 .panel-tag{
@@ -900,10 +949,8 @@ footer{
 
     gap:8px;
 
-    margin-top:18px;
-
     padding:
-        8px 12px;
+        7px 11px;
 
     border:
         1px solid
@@ -913,17 +960,17 @@ footer{
 
     color:#697581;
 
-    font-size:.72rem;
+    font-size:.65rem;
 
-    font-weight:600;
+    font-weight:700;
 }
 
 .panel-tag::before{
 
     content:"";
 
-    width:7px;
-    height:7px;
+    width:6px;
+    height:6px;
 
     border-radius:50%;
 
@@ -932,53 +979,362 @@ footer{
 
 .stage-label{
 
-    margin-top:23px;
-
     color:#909aa5;
 
-    font-size:.65rem;
+    font-size:.60rem;
 
     font-weight:800;
 
-    letter-spacing:.16em;
+    letter-spacing:.13em;
 
     text-transform:uppercase;
 }
 
 
 /* =========================================================
-   DIAGNOSTIC VISUAL
+   DIAGNOSTIC WINDOW
 ========================================================= */
 
-.diagnostic-visual{
+.diagnostic-window{
 
-    position:relative;
+    flex:1 1 auto;
 
-    margin-top:14px;
+    min-height:0;
 
-    min-height:335px;
+    margin-top:15px;
 
-    padding:
-        18px;
+    padding:16px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:11px;
+
+    overflow:hidden;
 
     border:
         1px solid
-        rgba(178,187,196,.48);
+        rgba(173,184,194,.58);
 
-    border-radius:22px;
+    border-radius:21px;
 
     background:
 
         linear-gradient(
             145deg,
-            #f7f8fa,
-            #edf1f4
+            rgba(245,247,249,.96),
+            rgba(235,239,243,.94)
         );
-
-    overflow:hidden;
 }
 
-.visual-heading{
+.window-top{
+
+    flex:0 0 auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+}
+
+.window-title{
+
+    color:#586571;
+
+    font-size:.67rem;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+.window-route{
+
+    color:#98a2ac;
+
+    font-size:.60rem;
+}
+
+
+/* =========================================================
+   SIGNAL PLOT
+========================================================= */
+
+.signal-box{
+
+    position:relative;
+
+    flex:0 0 112px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(177,187,196,.55);
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.75);
+}
+
+.signal-name{
+
+    position:absolute;
+
+    left:13px;
+    top:9px;
+
+    z-index:3;
+
+    color:#818c97;
+
+    font-size:.54rem;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+.signal-box svg{
+
+    position:absolute;
+
+    left:8px;
+    right:8px;
+
+    bottom:4px;
+
+    width:calc(100% - 16px);
+
+    height:82px;
+}
+
+.signal-axis{
+
+    stroke:#d5dbe0;
+
+    stroke-width:1;
+}
+
+.signal-reference{
+
+    fill:none;
+
+    stroke:#bac3cb;
+
+    stroke-width:2.1;
+
+    stroke-linejoin:round;
+
+    stroke-linecap:round;
+}
+
+.signal-active{
+
+    fill:none;
+
+    stroke:#697681;
+
+    stroke-width:2.8;
+
+    stroke-linejoin:round;
+
+    stroke-linecap:round;
+
+    opacity:.42;
+
+    transition:.35s ease;
+}
+
+.highlight-signal .signal-active{
+    opacity:1;
+}
+
+
+/* =========================================================
+   DIAGNOSTIC TRACKS
+========================================================= */
+
+.track{
+
+    flex:0 0 auto;
+
+    padding:
+        12px;
+
+    border:
+        1px solid
+        rgba(176,186,196,.54);
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.62);
+
+    opacity:.48;
+
+    transition:
+        opacity .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+.track.active{
+
+    opacity:1;
+
+    border-color:
+        rgba(118,131,144,.68);
+
+    box-shadow:
+        0 8px 18px
+        rgba(55,66,76,.07);
+
+    transform:
+        translateY(-1px);
+}
+
+.track-label{
+
+    margin-bottom:9px;
+
+    color:#7d8994;
+
+    font-size:.52rem;
+
+    font-weight:800;
+
+    letter-spacing:.11em;
+
+    text-transform:uppercase;
+}
+
+.track-flow{
+
+    display:grid;
+
+    align-items:center;
+
+    gap:5px;
+}
+
+.raw-flow{
+
+    grid-template-columns:
+        1fr 18px
+        1fr 18px
+        1fr 18px
+        1.15fr;
+}
+
+.code-flow{
+
+    grid-template-columns:
+        1fr 18px
+        1fr 18px
+        1fr;
+}
+
+.track-node{
+
+    min-height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+        6px 7px;
+
+    border:
+        1px solid
+        rgba(176,186,195,.56);
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.74);
+
+    color:#77828d;
+
+    font-size:.55rem;
+
+    font-weight:700;
+
+    line-height:1.3;
+
+    text-align:center;
+
+    transition:.3s ease;
+}
+
+.track-node.active{
+
+    color:white;
+
+    border-color:#66727e;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #56626f,
+            #87929d
+        );
+
+    box-shadow:
+        0 7px 14px
+        rgba(55,66,76,.11);
+}
+
+.track-arrow{
+
+    color:#a3adb6;
+
+    font-size:.7rem;
+
+    font-weight:800;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   BOTTOM EXPLANATION
+========================================================= */
+
+.info-panel{
+
+    flex:0 0 auto;
+
+    margin-top:11px;
+
+    padding:
+        14px 16px;
+
+    border:
+        1px solid
+        rgba(174,184,194,.58);
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.68);
+}
+
+.info-top{
 
     display:flex;
 
@@ -988,344 +1344,27 @@ footer{
 
     gap:12px;
 
-    margin-bottom:17px;
-}
-
-.visual-heading strong{
-
-    color:#596571;
-
-    font-size:.72rem;
-
-    letter-spacing:.06em;
-
-    text-transform:uppercase;
-}
-
-.visual-heading span{
-
-    color:#98a2ac;
-
-    font-size:.65rem;
-}
-
-
-/* =========================================================
-   WAVEFORM
-========================================================= */
-
-.mini-wave{
-
-    position:relative;
-
-    height:100px;
-
-    margin-bottom:15px;
-
-    overflow:hidden;
-
-    border:
-        1px solid
-        rgba(180,189,198,.51);
-
-    border-radius:15px;
-
-    background:
-        rgba(255,255,255,.70);
-
-    transition:
-        opacity .3s ease,
-        transform .3s ease,
-        border-color .3s ease;
-}
-
-.mini-wave svg{
-
-    width:100%;
-    height:100%;
-}
-
-.wave-label{
-
-    position:absolute;
-
-    left:12px;
-    top:10px;
-
-    z-index:3;
-
-    color:#7f8994;
-
-    font-size:.56rem;
-
-    font-weight:800;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
-}
-
-.wave-path{
-
-    fill:none;
-
-    stroke:#717d89;
-
-    stroke-width:2.3;
-
-    stroke-linejoin:round;
-
-    stroke-linecap:round;
-}
-
-
-/* =========================================================
-   LANES
-========================================================= */
-
-.lanes{
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:12px;
-}
-
-.lane{
-
-    padding:
-        14px;
-
-    border:
-        1px solid
-        rgba(176,186,196,.55);
-
-    border-radius:17px;
-
-    background:
-        rgba(255,255,255,.60);
-
-    transition:
-        opacity .3s ease,
-        transform .3s ease,
-        border-color .3s ease,
-        background .3s ease,
-        box-shadow .3s ease;
-}
-
-.lane-title{
-
-    margin-bottom:12px;
-
-    color:#727e89;
-
-    font-size:.57rem;
-
-    font-weight:800;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
-}
-
-.lane-flow{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:6px;
-}
-
-.lane-node{
-
-    position:relative;
-
-    padding:
-        9px 10px;
-
-    border:
-        1px solid
-        rgba(177,186,195,.53);
-
-    border-radius:10px;
-
-    background:
-        rgba(255,255,255,.72);
-
-    color:#687480;
-
-    font-size:.66rem;
-
-    font-weight:700;
-
-    text-align:center;
-
-    transition:.3s ease;
-}
-
-.lane-arrow{
-
-    color:#a3adb7;
-
-    text-align:center;
-
-    font-size:.72rem;
-}
-
-.lane-result{
-
-    padding:
-        11px;
-
-    border:
-        1px solid
-        rgba(143,154,165,.62);
-
-    border-radius:11px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.92),
-            rgba(229,234,239,.80)
-        );
-
-    color:#4f5b67;
-
-    font-size:.67rem;
-
-    font-weight:800;
-
-    text-align:center;
-}
-
-
-/* =========================================================
-   VISUAL ACTIVE STATES
-========================================================= */
-
-.diagnostic-visual .lane,
-.diagnostic-visual .mini-wave{
-
-    opacity:.42;
-}
-
-.stage-intro .mini-wave,
-.stage-raw .mini-wave,
-.stage-features .mini-wave,
-.stage-compensation .mini-wave{
-
-    opacity:1;
-}
-
-.stage-code .code-lane,
-.stage-threshold .code-lane{
-
-    opacity:1;
-
-    transform:
-        translateY(-2px);
-
-    border-color:
-        rgba(112,125,138,.68);
-
-    box-shadow:
-        0 10px 22px
-        rgba(54,65,76,.07);
-}
-
-.stage-raw .raw-lane,
-.stage-features .raw-lane,
-.stage-compensation .raw-lane,
-.stage-diagnostics .raw-lane,
-.stage-research .raw-lane{
-
-    opacity:1;
-
-    transform:
-        translateY(-2px);
-
-    border-color:
-        rgba(112,125,138,.68);
-
-    box-shadow:
-        0 10px 22px
-        rgba(54,65,76,.07);
-}
-
-.stage-features
-.node-features,
-
-.stage-compensation
-.node-trend,
-
-.stage-diagnostics
-.node-condition,
-
-.stage-research
-.node-condition,
-
-.stage-threshold
-.node-threshold,
-
-.stage-code
-.node-dtc{
-
-    color:white;
-
-    border-color:#65727e;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #56626f,
-            #87929d
-        );
-}
-
-.stage-intro .raw-lane,
-.stage-intro .code-lane{
-
-    opacity:.72;
-}
-
-
-/* =========================================================
-   PANEL INFO
-========================================================= */
-
-.info-panel{
-
-    margin-top:15px;
-
-    padding:17px;
-
-    border:
-        1px solid
-        rgba(174,184,194,.58);
-
-    border-radius:18px;
-
-    background:
-        rgba(255,255,255,.60);
+    margin-bottom:6px;
 }
 
 .info-title{
 
-    margin-bottom:8px;
-
     color:#56626e;
 
-    font-size:.78rem;
+    font-size:.72rem;
 
     font-weight:800;
+}
 
-    letter-spacing:.06em;
+.info-small{
+
+    color:#9aa4ae;
+
+    font-size:.52rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
 
     text-transform:uppercase;
 }
@@ -1334,9 +1373,13 @@ footer{
 
     color:#73808c;
 
-    font-size:.81rem;
+    font-size:.74rem;
 
-    line-height:1.65;
+    line-height:1.58;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 
@@ -1362,8 +1405,6 @@ footer{
 
         height:650px;
 
-        min-height:0;
-
         max-height:none;
     }
 
@@ -1388,6 +1429,221 @@ footer{
     }
 }
 
+
+/* =========================================================
+   SHORT DESKTOP
+========================================================= */
+
+@media (min-width:1101px) and (max-height:850px){
+
+    .page{
+        padding-top:92px;
+    }
+
+    .visual-sticky{
+
+        top:78px;
+
+        height:
+            calc(100dvh - 88px);
+
+        max-height:none;
+    }
+
+    .visual-card{
+
+        padding:
+            18px 20px;
+
+        border-radius:26px;
+    }
+
+    .scene-title{
+
+        margin-bottom:5px;
+
+        font-size:1.12rem;
+    }
+
+    .scene-caption{
+
+        font-size:.75rem;
+
+        line-height:1.45;
+    }
+
+    .panel-meta{
+        margin-top:10px;
+    }
+
+    .panel-tag{
+
+        padding:
+            5px 9px;
+
+        font-size:.56rem;
+    }
+
+    .stage-label{
+        font-size:.51rem;
+    }
+
+    .diagnostic-window{
+
+        margin-top:9px;
+
+        padding:10px;
+
+        gap:7px;
+
+        border-radius:17px;
+    }
+
+    .window-title{
+        font-size:.56rem;
+    }
+
+    .window-route{
+        font-size:.51rem;
+    }
+
+    .signal-box{
+
+        flex-basis:83px;
+
+        border-radius:12px;
+    }
+
+    .signal-name{
+
+        left:10px;
+        top:7px;
+
+        font-size:.46rem;
+    }
+
+    .signal-box svg{
+        height:60px;
+    }
+
+    .track{
+
+        padding:
+            8px;
+
+        border-radius:12px;
+    }
+
+    .track-label{
+
+        margin-bottom:6px;
+
+        font-size:.44rem;
+    }
+
+    .track-node{
+
+        min-height:32px;
+
+        padding:
+            4px 4px;
+
+        font-size:.46rem;
+    }
+
+    .track-arrow{
+        font-size:.55rem;
+    }
+
+    .raw-flow{
+
+        grid-template-columns:
+            1fr 13px
+            1fr 13px
+            1fr 13px
+            1.15fr;
+    }
+
+    .code-flow{
+
+        grid-template-columns:
+            1fr 13px
+            1fr 13px
+            1fr;
+    }
+
+    .info-panel{
+
+        margin-top:7px;
+
+        padding:
+            9px 11px;
+    }
+
+    .info-top{
+        margin-bottom:3px;
+    }
+
+    .info-title{
+        font-size:.62rem;
+    }
+
+    .info-small{
+        font-size:.43rem;
+    }
+
+    .info-text{
+
+        font-size:.63rem;
+
+        line-height:1.43;
+    }
+}
+
+
+/* =========================================================
+   VERY SHORT
+========================================================= */
+
+@media (min-width:1101px) and (max-height:700px){
+
+    .visual-card{
+        padding:14px 17px;
+    }
+
+    .panel-tag{
+        display:none;
+    }
+
+    .panel-meta{
+        justify-content:flex-end;
+    }
+
+    .diagnostic-window{
+        margin-top:6px;
+    }
+
+    .signal-box{
+        flex-basis:68px;
+    }
+
+    .signal-box svg{
+        height:48px;
+    }
+
+    .track-node{
+        min-height:27px;
+    }
+
+    .info-text{
+        font-size:.58rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:760px){
 
@@ -1426,11 +1682,27 @@ footer{
         text-align:center;
     }
 
-    .lanes{
+    .raw-flow,
+    .code-flow{
 
         grid-template-columns:1fr;
     }
 
+    .track-arrow{
+        transform:rotate(90deg);
+    }
+
+    .hero-subtitle,
+    .section-text,
+    .comparison-card p,
+    .feature-card p,
+    .process-content p,
+    .related-card p,
+    .scene-caption,
+    .info-text{
+
+        text-align:left;
+    }
 }
 
 </style>
@@ -1442,13 +1714,11 @@ footer{
 <body>
 
 
-
 <!-- =========================================================
      NAV
 ========================================================= -->
 
 <nav>
-
 
     <div class="logo">
 
@@ -1465,13 +1735,11 @@ footer{
 
     </a>
 
-
 </nav>
 
 
 
 <main class="page">
-
 
 
 <!-- =========================================================
@@ -1482,9 +1750,7 @@ footer{
 
 
 
-<!-- =========================================================
-     HERO
-========================================================= -->
+<!-- HERO -->
 
 <section
     class="hero"
@@ -1595,7 +1861,9 @@ footer{
 
 
     <div class="section-label">
+
         01 / Diagnostic decision
+
     </div>
 
 
@@ -1693,7 +1961,9 @@ footer{
 
 
     <div class="section-label">
+
         02 / Signal information
+
     </div>
 
 
@@ -1805,7 +2075,9 @@ footer{
 
 
     <div class="section-label">
+
         03 / Feature extraction
+
     </div>
 
 
@@ -1945,7 +2217,7 @@ footer{
 
 
 <!-- =========================================================
-     04 COMPENSATION
+     04 CONTROL COMPENSATION
 ========================================================= -->
 
 <section
@@ -1958,7 +2230,9 @@ footer{
 
 
     <div class="section-label">
+
         04 / Control system
+
     </div>
 
 
@@ -2035,23 +2309,6 @@ footer{
     </div>
 
 
-    <div class="note-box">
-
-
-        <p
-            class="section-text"
-            style="margin-top:0;">
-
-            This is one reason why monitoring the component
-            signal itself can be interesting for degradation-oriented
-            diagnostics.
-
-        </p>
-
-
-    </div>
-
-
 </div>
 
 
@@ -2060,7 +2317,7 @@ footer{
 
 
 <!-- =========================================================
-     05 THRESHOLDS
+     05 THRESHOLD
 ========================================================= -->
 
 <section
@@ -2073,7 +2330,9 @@ footer{
 
 
     <div class="section-label">
+
         05 / Thresholds
+
     </div>
 
 
@@ -2214,7 +2473,7 @@ footer{
 
 
 <!-- =========================================================
-     06 DIAGNOSTICS
+     06 DIAGNOSTIC STRATEGY
 ========================================================= -->
 
 <section
@@ -2227,7 +2486,9 @@ footer{
 
 
     <div class="section-label">
+
         06 / Diagnostic strategy
+
     </div>
 
 
@@ -2316,7 +2577,7 @@ footer{
 
 
 <!-- =========================================================
-     07 RESEARCH
+     07 MY RESEARCH
 ========================================================= -->
 
 <section
@@ -2329,7 +2590,9 @@ footer{
 
 
     <div class="section-label">
+
         07 / My perspective
+
     </div>
 
 
@@ -2395,7 +2658,6 @@ footer{
         Related work
 
     </div>
-
 
 
     <div class="related-grid">
@@ -2517,7 +2779,6 @@ footer{
     </div>
 
 
-
     <footer>
 
         © 2026 Maja Antkowiak
@@ -2540,7 +2801,7 @@ footer{
 
 
 <!-- =========================================================
-     RIGHT VISUAL
+     RIGHT PANEL
 ========================================================= -->
 
 <aside class="visual-column">
@@ -2552,129 +2813,199 @@ footer{
 <div class="visual-card">
 
 
-    <div class="scene-title">
+    <div class="visual-header">
 
-        Signal vs. Fault Code
+
+        <div class="scene-title">
+
+            Signal vs. Fault Code
+
+        </div>
+
+
+        <div
+            class="scene-caption"
+            id="sceneCaption">
+
+            Two diagnostic levels can describe the same
+            physical system in very different ways.
+
+        </div>
+
+
+        <div class="panel-meta">
+
+
+            <div class="panel-tag">
+
+                Diagnostic information flow
+
+            </div>
+
+
+            <div
+                class="stage-label"
+                id="stageLabel">
+
+                Introduction
+
+            </div>
+
+
+        </div>
+
 
     </div>
 
+
+
+    <!-- =====================================================
+         DIAGNOSTIC WINDOW
+    ====================================================== -->
 
     <div
-        class="scene-caption"
-        id="sceneCaption">
-
-        Two diagnostic levels can describe the same
-        physical system in very different ways.
-
-    </div>
+        class="diagnostic-window"
+        id="diagnosticWindow">
 
 
-    <div class="panel-tag">
-
-        Diagnostic information flow
-
-    </div>
+        <div class="window-top">
 
 
-    <div
-        class="stage-label"
-        id="stageLabel">
+            <div class="window-title">
 
-        Introduction
+                Diagnostic Information
 
-    </div>
+            </div>
 
 
+            <div class="window-route">
 
-    <div
-        class="diagnostic-visual stage-intro"
-        id="diagnosticVisual">
-
-
-        <div class="visual-heading">
-
-
-            <strong>
-                Diagnostic information
-            </strong>
-
-
-            <span>
                 component → decision
-            </span>
+
+            </div>
 
 
         </div>
 
 
 
-        <!-- RAW WAVEFORM -->
+        <!-- SIGNAL -->
 
-        <div class="mini-wave">
+        <div
+            class="signal-box"
+            id="signalBox">
 
 
-            <div class="wave-label">
+            <div class="signal-name">
+
                 Measured signal
+
             </div>
 
 
             <svg
-                viewBox="0 0 600 100"
-                fill="none">
-
-
-                <path
-                    d="
-                    M18 77
-                    L74 77
-                    L95 76
-                    L112 34
-                    L128 18
-                    L144 31
-                    L161 57
-                    L182 65
-                    L195 63
-                    L208 67
-                    L221 63
-                    L234 67
-                    L247 63
-                    L260 67
-                    L273 63
-                    L286 67
-                    L299 63
-                    L312 67
-                    L325 63
-                    L338 67
-                    L351 63
-                    L364 67
-                    L377 63
-                    L390 67
-                    L403 63
-                    L416 67
-                    L429 63
-                    L442 67
-                    L455 63
-                    L468 67
-                    L481 63
-                    L494 67
-                    L507 63
-                    L520 67
-                    L533 63
-                    L546 77
-                    L582 77"
-
-                    class="wave-path"/>
+                viewBox="0 0 620 90"
+                preserveAspectRatio="none">
 
 
                 <line
-                    x1="18"
-                    y1="77"
-                    x2="582"
-                    y2="77"
+                    class="signal-axis"
 
-                    stroke="#D5DAE0"
+                    x1="14"
+                    y1="73"
 
-                    stroke-width="1"/>
+                    x2="606"
+                    y2="73"/>
+
+
+                <path
+                    class="signal-reference"
+
+                    d="
+                    M14 73
+                    L78 73
+                    L95 72
+                    L111 33
+                    L127 18
+                    L143 31
+                    L160 56
+                    L181 64
+                    L194 62
+                    L207 66
+                    L220 62
+                    L233 66
+                    L246 62
+                    L259 66
+                    L272 62
+                    L285 66
+                    L298 62
+                    L311 66
+                    L324 62
+                    L337 66
+                    L350 62
+                    L363 66
+                    L376 62
+                    L389 66
+                    L402 62
+                    L415 66
+                    L428 62
+                    L441 66
+                    L454 62
+                    L467 66
+                    L480 62
+                    L493 66
+                    L506 62
+                    L519 66
+                    L532 62
+                    L545 66
+                    L558 62
+                    L571 73
+                    L606 73"/>
+
+
+                <path
+                    class="signal-active"
+
+                    d="
+                    M14 73
+                    L78 73
+                    L95 72
+                    L111 33
+                    L127 18
+                    L143 31
+                    L160 56
+                    L181 64
+                    L194 62
+                    L207 66
+                    L220 62
+                    L233 66
+                    L246 62
+                    L259 66
+                    L272 62
+                    L285 66
+                    L298 62
+                    L311 66
+                    L324 62
+                    L337 66
+                    L350 62
+                    L363 66
+                    L376 62
+                    L389 66
+                    L402 62
+                    L415 66
+                    L428 62
+                    L441 66
+                    L454 62
+                    L467 66
+                    L480 62
+                    L493 66
+                    L506 62
+                    L519 66
+                    L532 62
+                    L545 66
+                    L558 62
+                    L571 73
+                    L606 73"/>
 
 
             </svg>
@@ -2684,61 +3015,70 @@ footer{
 
 
 
-        <!-- LANES -->
+        <!-- RAW SIGNAL TRACK -->
 
-        <div class="lanes">
-
-
-
-            <!-- RAW SIGNAL LANE -->
-
-            <div class="lane raw-lane">
+        <div
+            class="track raw-track"
+            id="rawTrack">
 
 
-                <div class="lane-title">
+            <div class="track-label">
 
-                    Signal-based assessment
+                Signal-based assessment
+
+            </div>
+
+
+            <div class="track-flow raw-flow">
+
+
+                <div
+                    class="track-node"
+                    id="rawNode">
+
+                    Raw signal
 
                 </div>
 
 
-                <div class="lane-flow">
+                <div class="track-arrow">
+                    →
+                </div>
 
 
-                    <div class="lane-node">
-                        Raw signal
-                    </div>
+                <div
+                    class="track-node"
+                    id="featuresNode">
+
+                    Features
+
+                </div>
 
 
-                    <div class="lane-arrow">
-                        ↓
-                    </div>
+                <div class="track-arrow">
+                    →
+                </div>
 
 
-                    <div class="lane-node node-features">
-                        Features
-                    </div>
+                <div
+                    class="track-node"
+                    id="trendNode">
+
+                    Trend / deviation
+
+                </div>
 
 
-                    <div class="lane-arrow">
-                        ↓
-                    </div>
+                <div class="track-arrow">
+                    →
+                </div>
 
 
-                    <div class="lane-node node-trend">
-                        Trend / deviation
-                    </div>
+                <div
+                    class="track-node"
+                    id="conditionNode">
 
-
-                    <div class="lane-arrow">
-                        ↓
-                    </div>
-
-
-                    <div class="lane-result node-condition">
-                        Condition assessment
-                    </div>
-
+                    Condition assessment
 
                 </div>
 
@@ -2746,46 +3086,60 @@ footer{
             </div>
 
 
-
-            <!-- CODE LANE -->
-
-            <div class="lane code-lane">
+        </div>
 
 
-                <div class="lane-title">
 
-                    Fault-code logic
+        <!-- DTC TRACK -->
+
+        <div
+            class="track code-track"
+            id="codeTrack">
+
+
+            <div class="track-label">
+
+                Fault-code logic
+
+            </div>
+
+
+            <div class="track-flow code-flow">
+
+
+                <div
+                    class="track-node"
+                    id="monitoredNode">
+
+                    Monitored value
 
                 </div>
 
 
-                <div class="lane-flow">
+                <div class="track-arrow">
+                    →
+                </div>
 
 
-                    <div class="lane-node">
-                        Monitored value
-                    </div>
+                <div
+                    class="track-node"
+                    id="thresholdNode">
+
+                    Diagnostic threshold
+
+                </div>
 
 
-                    <div class="lane-arrow">
-                        ↓
-                    </div>
+                <div class="track-arrow">
+                    →
+                </div>
 
 
-                    <div class="lane-node node-threshold">
-                        Diagnostic threshold
-                    </div>
+                <div
+                    class="track-node"
+                    id="dtcNode">
 
-
-                    <div class="lane-arrow">
-                        ↓
-                    </div>
-
-
-                    <div class="lane-result node-dtc">
-                        Fault Code
-                    </div>
-
+                    Fault code
 
                 </div>
 
@@ -2800,14 +3154,31 @@ footer{
 
 
 
+    <!-- INFO -->
+
     <div class="info-panel">
 
 
-        <div
-            class="info-title"
-            id="infoTitle">
+        <div class="info-top">
 
-            Two levels of information
+
+            <div
+                class="info-title"
+                id="infoTitle">
+
+                Two levels of information
+
+            </div>
+
+
+            <div
+                class="info-small"
+                id="infoSmall">
+
+                Signal vs decision
+
+            </div>
+
 
         </div>
 
@@ -2818,7 +3189,7 @@ footer{
 
             Fault codes provide a clear diagnostic result,
             while raw signals retain more detail about
-            component dynamics.
+            dynamic component behaviour.
 
         </div>
 
@@ -2857,14 +3228,26 @@ const stageData={
         caption:
             'Two diagnostic levels can describe the same physical system in very different ways.',
 
-        className:
-            'stage-intro',
+        signal:
+            true,
 
-        infoTitle:
+        rawTrack:
+            true,
+
+        codeTrack:
+            true,
+
+        nodes:
+            [],
+
+        title:
             'Two levels of information',
 
-        infoText:
-            'Fault codes provide a clear diagnostic result, while raw signals retain more detail about component dynamics.'
+        small:
+            'Signal vs decision',
+
+        text:
+            'Fault codes provide a clear diagnostic result, while raw signals retain more detail about dynamic component behaviour.'
 
     },
 
@@ -2877,14 +3260,30 @@ const stageData={
         caption:
             'A diagnostic trouble code is usually the result of processing and diagnostic logic.',
 
-        className:
-            'stage-code',
+        signal:
+            false,
 
-        infoTitle:
+        rawTrack:
+            false,
+
+        codeTrack:
+            true,
+
+        nodes:
+            [
+                'monitored',
+                'threshold',
+                'dtc'
+            ],
+
+        title:
             'Processed information',
 
-        infoText:
-            'The final fault code is useful and compact, but much of the original waveform detail has already been reduced.'
+        small:
+            'Diagnostic logic',
+
+        text:
+            'The final fault code is useful and compact, but much of the detail contained in the original waveform has already been reduced.'
 
     },
 
@@ -2897,14 +3296,28 @@ const stageData={
         caption:
             'The raw waveform preserves time-dependent information about component behaviour.',
 
-        className:
-            'stage-raw',
+        signal:
+            true,
 
-        infoTitle:
-            'Dynamic behaviour',
+        rawTrack:
+            true,
 
-        infoText:
-            'Amplitude, timing, slopes, oscillations and repeatability can all be contained in the original signal.'
+        codeTrack:
+            false,
+
+        nodes:
+            [
+                'raw'
+            ],
+
+        title:
+            'Dynamic information',
+
+        small:
+            'Before classification',
+
+        text:
+            'Amplitude, timing, transitions, oscillations and repeatability can all remain visible in the original measured signal.'
 
     },
 
@@ -2915,16 +3328,30 @@ const stageData={
             'Feature extraction',
 
         caption:
-            'Signal analysis converts the waveform into parameters that can be compared and interpreted.',
+            'Characteristic parameters convert the waveform into information that can be compared and interpreted.',
 
-        className:
-            'stage-features',
+        signal:
+            true,
 
-        infoTitle:
+        rawTrack:
+            true,
+
+        codeTrack:
+            false,
+
+        nodes:
+            [
+                'features'
+            ],
+
+        title:
             'From waveform to features',
 
-        infoText:
-            'Useful features may include peak values, rise time, phase duration, ripple and frequency-domain indicators.'
+        small:
+            'Signal processing',
+
+        text:
+            'Peak values, timing, slopes, ripple and frequency-domain components can describe different aspects of system behaviour.'
 
     },
 
@@ -2935,16 +3362,31 @@ const stageData={
             'Control compensation',
 
         caption:
-            'Closed-loop control may reduce visible system-level symptoms while the component signal is already changing.',
+            'A component signal may change while control strategies reduce the visible system-level symptom.',
 
-        className:
-            'stage-compensation',
+        signal:
+            true,
 
-        infoTitle:
-            'Component-level information',
+        rawTrack:
+            true,
 
-        infoText:
-            'Monitoring the actuator signal itself can provide information that is different from observing only the final controlled output.'
+        codeTrack:
+            false,
+
+        nodes:
+            [
+                'raw',
+                'trend'
+            ],
+
+        title:
+            'Component-level change',
+
+        small:
+            'Before visible symptom',
+
+        text:
+            'Monitoring the component signal can provide information that is different from observing only the final controlled system output.'
 
     },
 
@@ -2955,16 +3397,31 @@ const stageData={
             'Diagnostic threshold',
 
         caption:
-            'A gradual trend may exist before a diagnostic threshold is finally exceeded.',
+            'A gradual signal trend may exist before a binary diagnostic threshold is exceeded.',
 
-        className:
-            'stage-threshold',
+        signal:
+            false,
 
-        infoTitle:
+        rawTrack:
+            true,
+
+        codeTrack:
+            true,
+
+        nodes:
+            [
+                'trend',
+                'threshold'
+            ],
+
+        title:
             'Trend before threshold',
 
-        infoText:
-            'Reference comparison and repeated measurements may reveal progressive signal deviation before a binary diagnostic event.'
+        small:
+            'Progressive change',
+
+        text:
+            'Reference comparison and repeated measurements may reveal deviation before conventional diagnostic logic generates a fault code.'
 
     },
 
@@ -2975,16 +3432,31 @@ const stageData={
             'Combined diagnostics',
 
         caption:
-            'Signal analysis and fault-code diagnostics serve different purposes and can complement each other.',
+            'Signal analysis and fault-code diagnostics can provide complementary levels of information.',
 
-        className:
-            'stage-diagnostics',
+        signal:
+            true,
 
-        infoTitle:
+        rawTrack:
+            true,
+
+        codeTrack:
+            true,
+
+        nodes:
+            [
+                'condition',
+                'dtc'
+            ],
+
+        title:
             'Complementary information',
 
-        infoText:
-            'Fault codes support practical troubleshooting. Signal features provide deeper information about dynamic component behaviour.'
+        small:
+            'Two diagnostic layers',
+
+        text:
+            'Fault codes support practical troubleshooting, while signal analysis provides deeper information about dynamic component behaviour.'
 
     },
 
@@ -2997,14 +3469,31 @@ const stageData={
         caption:
             'My work uses injector current signals to connect measurable electrical behaviour with physical injector condition.',
 
-        className:
-            'stage-research',
+        signal:
+            true,
 
-        infoTitle:
+        rawTrack:
+            true,
+
+        codeTrack:
+            false,
+
+        nodes:
+            [
+                'raw',
+                'features',
+                'trend',
+                'condition'
+            ],
+
+        title:
             'Research objective',
 
-        infoText:
-            'Modelling, simulation and laboratory measurements are combined to develop physically interpretable condition indicators.'
+        small:
+            'Physical interpretation',
+
+        text:
+            'My approach combines modelling, simulation and laboratory measurements to develop physically interpretable indicators of injector condition.'
 
     }
 
@@ -3023,9 +3512,9 @@ const sections=
     );
 
 
-const diagnosticVisual=
+const sceneCaption=
     document.getElementById(
-        'diagnosticVisual'
+        'sceneCaption'
     );
 
 
@@ -3035,9 +3524,21 @@ const stageLabel=
     );
 
 
-const sceneCaption=
+const signalBox=
     document.getElementById(
-        'sceneCaption'
+        'signalBox'
+    );
+
+
+const rawTrack=
+    document.getElementById(
+        'rawTrack'
+    );
+
+
+const codeTrack=
+    document.getElementById(
+        'codeTrack'
     );
 
 
@@ -3047,10 +3548,56 @@ const infoTitle=
     );
 
 
+const infoSmall=
+    document.getElementById(
+        'infoSmall'
+    );
+
+
 const infoText=
     document.getElementById(
         'infoText'
     );
+
+
+const nodeMap={
+
+    raw:
+        document.getElementById(
+            'rawNode'
+        ),
+
+    features:
+        document.getElementById(
+            'featuresNode'
+        ),
+
+    trend:
+        document.getElementById(
+            'trendNode'
+        ),
+
+    condition:
+        document.getElementById(
+            'conditionNode'
+        ),
+
+    monitored:
+        document.getElementById(
+            'monitoredNode'
+        ),
+
+    threshold:
+        document.getElementById(
+            'thresholdNode'
+        ),
+
+    dtc:
+        document.getElementById(
+            'dtcNode'
+        )
+
+};
 
 
 
@@ -3070,26 +3617,77 @@ function activateStage(stage){
     }
 
 
-    diagnosticVisual.className=
-
-        'diagnostic-visual '+
-        data.className;
+    sceneCaption.textContent=
+        data.caption;
 
 
     stageLabel.textContent=
         data.label;
 
 
-    sceneCaption.textContent=
-        data.caption;
-
-
     infoTitle.textContent=
-        data.infoTitle;
+        data.title;
+
+
+    infoSmall.textContent=
+        data.small;
 
 
     infoText.textContent=
-        data.infoText;
+        data.text;
+
+
+
+    signalBox.classList.toggle(
+
+        'highlight-signal',
+
+        data.signal
+
+    );
+
+
+
+    rawTrack.classList.toggle(
+
+        'active',
+
+        data.rawTrack
+
+    );
+
+
+
+    codeTrack.classList.toggle(
+
+        'active',
+
+        data.codeTrack
+
+    );
+
+
+
+    Object.entries(
+        nodeMap
+    )
+    .forEach(
+        ([name,node])=>{
+
+
+            node.classList.toggle(
+
+                'active',
+
+                data.nodes.includes(
+                    name
+                )
+
+            );
+
+
+        }
+    );
 
 
 }
@@ -3097,71 +3695,116 @@ function activateStage(stage){
 
 
 /* =========================================================
-   OBSERVER
+   SCROLL
 ========================================================= */
 
-const observer=
-    new IntersectionObserver(
+function updateStage(){
 
 
-        entries=>{
+    const referenceY=
+        window.innerHeight*
+        .47;
 
 
-            entries.forEach(
-                entry=>{
+    let closest=null;
+
+    let distance=
+        Infinity;
 
 
-                    if(
-                        entry.isIntersecting
-                    ){
+    sections.forEach(
+        section=>{
 
 
-                        activateStage(
-                            entry.target.dataset.stage
-                        );
+            const rect=
+                section
+                .getBoundingClientRect();
 
 
-                    }
+            const point=
+                Math.max(
+
+                    rect.top,
+
+                    Math.min(
+                        referenceY,
+                        rect.bottom
+                    )
+
+                );
 
 
-                }
-            );
+            const currentDistance=
+                Math.abs(
+                    point-
+                    referenceY
+                );
 
 
-        },
+            if(
+                currentDistance<
+                distance
+            ){
 
 
-        {
+                distance=
+                    currentDistance;
 
-            rootMargin:
-                '-35% 0px -45% 0px',
 
-            threshold:0
+                closest=
+                    section;
+
+
+            }
+
 
         }
-
-
     );
 
 
-
-sections.forEach(
-    section=>{
+    if(closest){
 
 
-        observer.observe(
-            section
+        activateStage(
+            closest.dataset.stage
         );
 
 
     }
+
+
+}
+
+
+
+window.addEventListener(
+
+    'scroll',
+
+    updateStage,
+
+    {
+        passive:true
+    }
+
 );
 
+
+window.addEventListener(
+
+    'resize',
+
+    updateStage
+
+);
 
 
 activateStage(
     'intro'
 );
+
+
+updateStage();
 
 
 </script>
