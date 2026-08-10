@@ -171,59 +171,10 @@ nav{
 }
 
 .visual-column{
-    position:relative;
-}
-
-
-/* =========================================================
-   STICKY VISUAL
-========================================================= */
-
-.visual-sticky{
-
-    position:sticky;
-
-    top:96px;
-
-    height:
-        calc(100vh - 120px);
-
-    height:
-        calc(100dvh - 120px);
-
-    min-height:560px;
-
-    max-height:760px;
-}
-
-.visual-card{
 
     position:relative;
 
-    width:100%;
-    height:100%;
-
-    overflow:hidden;
-
-    padding:28px;
-
-    border:
-        1px solid
-        rgba(185,194,203,.56);
-
-    border-radius:31px;
-
-    background:
-
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.94),
-            rgba(255,255,255,.74)
-        );
-
-    box-shadow:
-        0 22px 50px
-        rgba(40,50,60,.08);
+    align-self:stretch;
 }
 
 
@@ -294,6 +245,10 @@ nav{
     font-size:1.08rem;
 
     line-height:1.85;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 .hero-tags{
@@ -458,6 +413,8 @@ nav{
     line-height:1.9;
 
     text-align:justify;
+
+    text-justify:inter-word;
 }
 
 .section-text + .section-text{
@@ -466,7 +423,7 @@ nav{
 
 
 /* =========================================================
-   NOTE BOX
+   NOTE
 ========================================================= */
 
 .note-box{
@@ -557,7 +514,7 @@ nav{
 
 
 /* =========================================================
-   DOMAIN GRID
+   DOMAINS
 ========================================================= */
 
 .domain-grid{
@@ -577,8 +534,7 @@ nav{
 
 .domain-card{
 
-    padding:
-        18px;
+    padding:18px;
 
     border:
         1px solid
@@ -619,6 +575,10 @@ nav{
     font-size:.78rem;
 
     line-height:1.65;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 
@@ -643,8 +603,7 @@ nav{
 
 .validation-card{
 
-    padding:
-        18px;
+    padding:18px;
 
     border:
         1px solid
@@ -674,11 +633,15 @@ nav{
     font-size:.76rem;
 
     line-height:1.6;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 
 /* =========================================================
-   PARAMETER LIST
+   PARAMETERS
 ========================================================= */
 
 .parameter-list{
@@ -707,8 +670,7 @@ nav{
 
     align-items:center;
 
-    padding:
-        15px;
+    padding:15px;
 
     border:
         1px solid
@@ -827,6 +789,10 @@ nav{
     font-size:.82rem;
 
     line-height:1.65;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 .related-open{
@@ -862,27 +828,107 @@ footer{
 
 
 /* =========================================================
-   RIGHT PANEL HEADER
+   RIGHT STICKY PANEL
 ========================================================= */
+
+.visual-sticky{
+
+    position:sticky;
+
+    top:94px;
+
+    height:
+        calc(100vh - 112px);
+
+    height:
+        calc(100dvh - 112px);
+
+    max-height:760px;
+
+    min-height:0;
+}
+
+.visual-card{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    padding:26px;
+
+    border:
+        1px solid
+        rgba(185,194,203,.56);
+
+    border-radius:31px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.95),
+            rgba(255,255,255,.76)
+        );
+
+    box-shadow:
+        0 22px 50px
+        rgba(40,50,60,.08);
+}
+
+
+/* =========================================================
+   RIGHT HEADER
+========================================================= */
+
+.visual-header{
+
+    flex:0 0 auto;
+}
 
 .scene-title{
 
-    font-size:1.34rem;
+    margin-bottom:8px;
 
-    font-weight:700;
+    font-size:1.32rem;
 
-    margin-bottom:7px;
+    font-weight:800;
+
+    letter-spacing:-.025em;
 }
 
 .scene-caption{
 
-    max-width:390px;
+    max-width:430px;
 
     color:#69747f;
 
-    font-size:.9rem;
+    font-size:.88rem;
 
-    line-height:1.7;
+    line-height:1.6;
+
+    text-align:justify;
+
+    text-justify:inter-word;
+}
+
+.panel-meta{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-top:16px;
 }
 
 .panel-tag{
@@ -893,10 +939,8 @@ footer{
 
     gap:8px;
 
-    margin-top:18px;
-
     padding:
-        8px 12px;
+        7px 11px;
 
     border:
         1px solid
@@ -906,17 +950,17 @@ footer{
 
     color:#697581;
 
-    font-size:.72rem;
+    font-size:.65rem;
 
-    font-weight:600;
+    font-weight:700;
 }
 
 .panel-tag::before{
 
     content:"";
 
-    width:7px;
-    height:7px;
+    width:6px;
+    height:6px;
 
     border-radius:50%;
 
@@ -925,35 +969,41 @@ footer{
 
 .stage-label{
 
-    margin-top:23px;
-
     color:#909aa5;
 
-    font-size:.65rem;
+    font-size:.60rem;
 
     font-weight:800;
 
-    letter-spacing:.16em;
+    letter-spacing:.13em;
 
     text-transform:uppercase;
 }
 
 
 /* =========================================================
-   WORKFLOW VISUAL
+   WORKFLOW PANEL
 ========================================================= */
 
 .workflow{
 
-    margin-top:14px;
+    flex:1 1 auto;
 
-    padding:17px;
+    min-height:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-top:15px;
+
+    padding:15px;
 
     border:
         1px solid
         rgba(178,187,196,.48);
 
-    border-radius:22px;
+    border-radius:21px;
 
     background:
 
@@ -964,7 +1014,14 @@ footer{
         );
 }
 
+
+/* =========================================================
+   WORKFLOW STEPS
+========================================================= */
+
 .workflow-row{
+
+    flex:0 0 auto;
 
     display:grid;
 
@@ -974,16 +1031,12 @@ footer{
             minmax(0,1fr)
         );
 
-    gap:6px;
-
-    align-items:center;
-
-    margin-bottom:15px;
+    gap:7px;
 }
 
 .workflow-node{
 
-    min-height:55px;
+    min-height:54px;
 
     display:flex;
 
@@ -991,7 +1044,8 @@ footer{
 
     justify-content:center;
 
-    padding:9px;
+    padding:
+        8px 6px;
 
     border:
         1px solid
@@ -1000,21 +1054,24 @@ footer{
     border-radius:12px;
 
     background:
-        rgba(255,255,255,.62);
+        rgba(255,255,255,.68);
 
-    color:#77828d;
+    color:#7b8691;
 
-    font-size:.57rem;
+    font-size:.54rem;
 
     font-weight:800;
 
-    letter-spacing:.06em;
+    letter-spacing:.05em;
+
+    line-height:1.25;
 
     text-align:center;
 
     text-transform:uppercase;
 
-    transition:.3s ease;
+    transition:
+        .3s ease;
 }
 
 .workflow-node.active{
@@ -1032,23 +1089,27 @@ footer{
         );
 
     box-shadow:
-        0 9px 18px
-        rgba(55,66,76,.12);
+        0 8px 16px
+        rgba(55,66,76,.11);
 
     transform:
-        translateY(-2px);
+        translateY(-1px);
 }
 
 
 /* =========================================================
-   SIGNAL COMPARISON
+   SIGNAL PANEL
 ========================================================= */
 
 .signal-window{
 
     position:relative;
 
-    height:245px;
+    flex:1 1 auto;
+
+    min-height:190px;
+
+    margin-top:11px;
 
     overflow:hidden;
 
@@ -1056,108 +1117,29 @@ footer{
         1px solid
         rgba(178,187,196,.50);
 
-    border-radius:18px;
+    border-radius:17px;
 
     background:
-        rgba(255,255,255,.74);
+        rgba(255,255,255,.76);
 }
 
 .signal-window svg{
 
     position:absolute;
 
-    inset:0;
+    inset:
+        32px 7px 7px;
 
-    width:100%;
-    height:100%;
-}
+    width:
+        calc(100% - 14px);
 
-.axis{
-
-    stroke:#d2d8de;
-
-    stroke-width:1;
-}
-
-.grid-line{
-
-    stroke:#edf0f3;
-
-    stroke-width:1;
-}
-
-.axis-text{
-
-    fill:#929ca6;
-
-    font-family:'Inter',sans-serif;
-
-    font-size:10px;
-}
-
-.model-wave{
-
-    fill:none;
-
-    stroke:#596572;
-
-    stroke-width:2.7;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-
-    opacity:0;
-
-    transition:
-        opacity .35s ease;
-}
-
-.measurement-wave{
-
-    fill:none;
-
-    stroke:#9aa4ae;
-
-    stroke-width:2.3;
-
-    stroke-dasharray:
-        7 6;
-
-    stroke-linecap:round;
-
-    stroke-linejoin:round;
-
-    opacity:0;
-
-    transition:
-        opacity .35s ease;
-}
-
-.stage-model .model-wave,
-.stage-simulation .model-wave{
-
-    opacity:1;
-}
-
-.stage-measurement .measurement-wave{
-
-    opacity:1;
-}
-
-.stage-comparison .model-wave,
-.stage-comparison .measurement-wave,
-.stage-validation .model-wave,
-.stage-validation .measurement-wave,
-.stage-research .model-wave,
-.stage-research .measurement-wave{
-
-    opacity:1;
+    height:
+        calc(100% - 39px);
 }
 
 
 /* =========================================================
-   SIGNAL LABELS
+   LABELS
 ========================================================= */
 
 .signal-label{
@@ -1172,8 +1154,10 @@ footer{
 
     gap:7px;
 
+    top:10px;
+
     padding:
-        7px 9px;
+        5px 8px;
 
     border:
         1px solid
@@ -1182,11 +1166,11 @@ footer{
     border-radius:999px;
 
     background:
-        rgba(255,255,255,.90);
+        rgba(255,255,255,.92);
 
-    color:#717d88;
+    color:#8b959f;
 
-    font-size:.57rem;
+    font-size:.48rem;
 
     font-weight:800;
 
@@ -1194,61 +1178,192 @@ footer{
 
     text-transform:uppercase;
 
-    opacity:.35;
-
-    transition:.3s ease;
+    transition:
+        opacity .3s ease,
+        color .3s ease,
+        border-color .3s ease;
 }
 
 .signal-label::before{
 
     content:"";
 
-    width:14px;
+    width:13px;
 
     height:2px;
 
-    background:#7d8893;
+    background:#697681;
 }
 
 .model-label{
-
-    top:14px;
-
-    left:15px;
+    left:11px;
 }
 
 .measure-label{
-
-    top:14px;
-
-    right:15px;
+    right:11px;
 }
 
 .measure-label::before{
 
     background:
+
         repeating-linear-gradient(
             90deg,
-            #9aa4ae 0 5px,
-            transparent 5px 8px
+            #8f9aa5 0 4px,
+            transparent 4px 7px
         );
 }
+
+
+/* =========================================================
+   GRAPH
+========================================================= */
+
+.axis{
+
+    stroke:#ccd4db;
+
+    stroke-width:1;
+}
+
+.grid-line{
+
+    stroke:#e4e9ed;
+
+    stroke-width:1;
+}
+
+.axis-text{
+
+    fill:#8e98a2;
+
+    font-family:'Inter',sans-serif;
+
+    font-size:10px;
+}
+
+.model-wave{
+
+    fill:none;
+
+    stroke:#56636f;
+
+    stroke-width:3;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    opacity:.30;
+
+    transition:
+        opacity .35s ease,
+        stroke-width .35s ease;
+}
+
+.measurement-wave{
+
+    fill:none;
+
+    stroke:#8f9aa5;
+
+    stroke-width:2.6;
+
+    stroke-dasharray:8 6;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    opacity:.30;
+
+    transition:
+        opacity .35s ease,
+        stroke-width .35s ease;
+}
+
+
+/* INTRO SHOWS BOTH */
+
+.stage-intro .model-wave,
+.stage-intro .measurement-wave{
+
+    opacity:.42;
+}
+
+
+/* MODEL */
+
+.stage-model .model-wave,
+.stage-simulation .model-wave{
+
+    opacity:1;
+
+    stroke-width:3.4;
+}
+
+.stage-model .measurement-wave,
+.stage-simulation .measurement-wave{
+
+    opacity:.10;
+}
+
+
+/* MEASUREMENT */
+
+.stage-measurement .measurement-wave{
+
+    opacity:1;
+
+    stroke-width:3.1;
+}
+
+.stage-measurement .model-wave{
+
+    opacity:.10;
+}
+
+
+/* COMPARISON */
+
+.stage-comparison .model-wave,
+.stage-comparison .measurement-wave,
+.stage-validation .model-wave,
+.stage-validation .measurement-wave,
+.stage-diagnostics .model-wave,
+.stage-diagnostics .measurement-wave,
+.stage-research .model-wave,
+.stage-research .measurement-wave{
+
+    opacity:1;
+}
+
+
+/* LABEL ACTIVE STATES */
 
 .stage-model .model-label,
 .stage-simulation .model-label,
 .stage-comparison .model-label,
 .stage-validation .model-label,
+.stage-diagnostics .model-label,
 .stage-research .model-label{
 
-    opacity:1;
+    color:#56636f;
+
+    border-color:
+        rgba(112,125,138,.60);
 }
 
 .stage-measurement .measure-label,
 .stage-comparison .measure-label,
 .stage-validation .measure-label,
+.stage-diagnostics .measure-label,
 .stage-research .measure-label{
 
-    opacity:1;
+    color:#66727e;
+
+    border-color:
+        rgba(112,125,138,.60);
 }
 
 
@@ -1258,6 +1373,8 @@ footer{
 
 .metrics{
 
+    flex:0 0 auto;
+
     display:grid;
 
     grid-template-columns:
@@ -1266,28 +1383,28 @@ footer{
             minmax(0,1fr)
         );
 
-    gap:8px;
+    gap:7px;
 
-    margin-top:12px;
+    margin-top:9px;
 }
 
 .metric{
 
     padding:
-        11px;
+        9px 8px;
 
     border:
         1px solid
         rgba(176,186,196,.55);
 
-    border-radius:12px;
+    border-radius:11px;
 
     background:
-        rgba(255,255,255,.62);
+        rgba(255,255,255,.65);
 
     text-align:center;
 
-    opacity:.46;
+    opacity:.42;
 
     transition:.3s ease;
 }
@@ -1296,27 +1413,27 @@ footer{
 
     display:block;
 
-    margin-bottom:4px;
+    margin-bottom:3px;
 
     color:#55616d;
 
-    font-size:.68rem;
+    font-size:.62rem;
 }
 
 .metric span{
 
     color:#8b959f;
 
-    font-size:.53rem;
+    font-size:.45rem;
+
+    font-weight:700;
+
+    letter-spacing:.07em;
 
     text-transform:uppercase;
-
-    letter-spacing:.08em;
 }
 
-.stage-validation .metric,
-.stage-research .metric{
-
+.stage-validation + .metrics .metric{
     opacity:1;
 }
 
@@ -1327,31 +1444,54 @@ footer{
 
 .info-panel{
 
-    margin-top:15px;
+    flex:0 0 auto;
 
-    padding:17px;
+    margin-top:11px;
+
+    padding:
+        14px 16px;
 
     border:
         1px solid
         rgba(174,184,194,.58);
 
-    border-radius:18px;
+    border-radius:17px;
 
     background:
-        rgba(255,255,255,.60);
+        rgba(255,255,255,.68);
+}
+
+.info-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-bottom:6px;
 }
 
 .info-title{
 
-    margin-bottom:8px;
-
     color:#56626e;
 
-    font-size:.78rem;
+    font-size:.72rem;
 
     font-weight:800;
+}
 
-    letter-spacing:.06em;
+.info-small{
+
+    color:#9aa4ae;
+
+    font-size:.50rem;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
 
     text-transform:uppercase;
 }
@@ -1360,9 +1500,13 @@ footer{
 
     color:#73808c;
 
-    font-size:.81rem;
+    font-size:.74rem;
 
-    line-height:1.65;
+    line-height:1.58;
+
+    text-align:justify;
+
+    text-justify:inter-word;
 }
 
 
@@ -1387,8 +1531,6 @@ footer{
         top:0;
 
         height:650px;
-
-        min-height:0;
 
         max-height:none;
     }
@@ -1415,6 +1557,242 @@ footer{
     }
 }
 
+
+/* =========================================================
+   SHORT DESKTOP
+   DLA EKRANU ZE SCREENA
+========================================================= */
+
+@media (min-width:1101px) and (max-height:850px){
+
+    .page{
+        padding-top:92px;
+    }
+
+    .visual-sticky{
+
+        top:78px;
+
+        height:
+            calc(100dvh - 88px);
+
+        max-height:none;
+    }
+
+    .visual-card{
+
+        padding:
+            18px 20px;
+
+        border-radius:26px;
+    }
+
+    .scene-title{
+
+        margin-bottom:5px;
+
+        font-size:1.12rem;
+    }
+
+    .scene-caption{
+
+        font-size:.75rem;
+
+        line-height:1.45;
+    }
+
+    .panel-meta{
+        margin-top:10px;
+    }
+
+    .panel-tag{
+
+        padding:
+            5px 9px;
+
+        font-size:.55rem;
+    }
+
+    .stage-label{
+        font-size:.50rem;
+    }
+
+    .workflow{
+
+        margin-top:9px;
+
+        padding:10px;
+
+        border-radius:17px;
+    }
+
+    .workflow-row{
+        gap:5px;
+    }
+
+    .workflow-node{
+
+        min-height:38px;
+
+        padding:
+            5px 4px;
+
+        border-radius:9px;
+
+        font-size:.43rem;
+    }
+
+    .signal-window{
+
+        min-height:165px;
+
+        margin-top:7px;
+
+        border-radius:13px;
+    }
+
+    .signal-window svg{
+
+        inset:
+            27px 4px 4px;
+
+        width:
+            calc(100% - 8px);
+
+        height:
+            calc(100% - 31px);
+    }
+
+    .signal-label{
+
+        top:7px;
+
+        padding:
+            4px 6px;
+
+        font-size:.40rem;
+    }
+
+    .signal-label::before{
+        width:10px;
+    }
+
+    .model-label{
+        left:8px;
+    }
+
+    .measure-label{
+        right:8px;
+    }
+
+    .metrics{
+
+        margin-top:6px;
+
+        gap:5px;
+    }
+
+    .metric{
+
+        padding:
+            6px 5px;
+
+        border-radius:8px;
+    }
+
+    .metric strong{
+        font-size:.53rem;
+    }
+
+    .metric span{
+        font-size:.37rem;
+    }
+
+    .info-panel{
+
+        margin-top:7px;
+
+        padding:
+            9px 11px;
+    }
+
+    .info-top{
+        margin-bottom:3px;
+    }
+
+    .info-title{
+        font-size:.61rem;
+    }
+
+    .info-small{
+        font-size:.42rem;
+    }
+
+    .info-text{
+
+        font-size:.62rem;
+
+        line-height:1.42;
+    }
+}
+
+
+/* =========================================================
+   VERY SHORT DESKTOP
+========================================================= */
+
+@media (min-width:1101px) and (max-height:700px){
+
+    .visual-card{
+
+        padding:
+            14px 17px;
+    }
+
+    .scene-title{
+        font-size:1rem;
+    }
+
+    .scene-caption{
+        font-size:.67rem;
+    }
+
+    .panel-tag{
+        display:none;
+    }
+
+    .panel-meta{
+        justify-content:flex-end;
+    }
+
+    .workflow{
+        margin-top:6px;
+    }
+
+    .workflow-node{
+
+        min-height:31px;
+
+        font-size:.38rem;
+    }
+
+    .signal-window{
+        min-height:135px;
+    }
+
+    .metrics{
+        display:none;
+    }
+
+    .info-text{
+        font-size:.57rem;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:760px){
 
@@ -1460,6 +1838,16 @@ footer{
             1fr 1fr;
     }
 
+    .hero-subtitle,
+    .section-text,
+    .domain-card p,
+    .validation-card p,
+    .related-card p,
+    .scene-caption,
+    .info-text{
+
+        text-align:left;
+    }
 }
 
 </style>
@@ -1467,9 +1855,7 @@ footer{
 </head>
 
 
-
 <body>
-
 
 
 <!-- =========================================================
@@ -1478,13 +1864,9 @@ footer{
 
 <nav>
 
-
     <div class="logo">
-
         MA<span>.</span>
-
     </div>
-
 
     <a
         href="index.html#insights"
@@ -1494,7 +1876,6 @@ footer{
 
     </a>
 
-
 </nav>
 
 
@@ -1502,13 +1883,11 @@ footer{
 <main class="page">
 
 
-
 <!-- =========================================================
      CONTENT
 ========================================================= -->
 
 <section class="content-column">
-
 
 
 <!-- =========================================================
@@ -1545,10 +1924,10 @@ footer{
     <p class="hero-subtitle">
 
         A simulation can reproduce a convincing waveform,
-        but visual similarity alone is not enough.
-        For a model to become useful in engineering research,
-        its behaviour has to be compared with measurements
-        obtained from the real physical system.
+        but visual similarity alone is not enough. For a model
+        to become useful in engineering research, its behaviour
+        has to be compared with measurements obtained from the
+        real physical system.
 
     </p>
 
@@ -1651,9 +2030,10 @@ footer{
 
     <p class="section-text">
 
-        To reproduce the injector current correctly, the model should
-        therefore represent the physical mechanisms that influence
-        current rise, needle opening, the hold phase and switch-off.
+        To reproduce the injector current correctly, the model
+        should therefore represent the physical mechanisms that
+        influence current rise, needle opening, the hold phase
+        and switch-off.
 
     </p>
 
@@ -1676,7 +2056,8 @@ footer{
 
             <p>
 
-                Voltage, current, coil resistance and inductive behaviour.
+                Voltage, current, coil resistance
+                and inductive behaviour.
 
             </p>
 
@@ -1700,7 +2081,8 @@ footer{
 
             <p>
 
-                Conversion of coil current into electromagnetic force.
+                Conversion of coil current into
+                electromagnetic force.
 
             </p>
 
@@ -1724,7 +2106,8 @@ footer{
 
             <p>
 
-                Needle displacement, spring force, friction and damping.
+                Needle displacement, spring force,
+                friction and damping.
 
             </p>
 
@@ -1748,7 +2131,8 @@ footer{
 
             <p>
 
-                Fuel pressure, flow conditions and injected fuel quantity.
+                Fuel pressure, flow conditions
+                and injected fuel quantity.
 
             </p>
 
@@ -1978,7 +2362,8 @@ footer{
 
             <p>
 
-                Comparison of repeated injections under similar conditions.
+                Comparison of repeated injections
+                under similar conditions.
 
             </p>
 
@@ -2059,7 +2444,6 @@ footer{
         </div>
 
 
-
         <div class="parameter-item">
 
             <div class="parameter-number">
@@ -2071,7 +2455,6 @@ footer{
             </div>
 
         </div>
-
 
 
         <div class="parameter-item">
@@ -2087,7 +2470,6 @@ footer{
         </div>
 
 
-
         <div class="parameter-item">
 
             <div class="parameter-number">
@@ -2101,7 +2483,6 @@ footer{
         </div>
 
 
-
         <div class="parameter-item">
 
             <div class="parameter-number">
@@ -2113,7 +2494,6 @@ footer{
             </div>
 
         </div>
-
 
 
         <div class="parameter-item">
@@ -2180,8 +2560,8 @@ footer{
 
     <p class="section-text">
 
-        Validation is therefore not only a final check. It is part of
-        the model-development process.
+        Validation is therefore not only a final check.
+        It is part of the model-development process.
 
     </p>
 
@@ -2352,7 +2732,7 @@ footer{
 
 
 <!-- =========================================================
-     07 MY RESEARCH
+     07 RESEARCH
 ========================================================= -->
 
 <section
@@ -2429,7 +2809,6 @@ footer{
         Related work
 
     </div>
-
 
 
     <div class="related-grid">
@@ -2551,7 +2930,6 @@ footer{
     </div>
 
 
-
     <footer>
 
         © 2026 Maja Antkowiak
@@ -2574,7 +2952,7 @@ footer{
 
 
 <!-- =========================================================
-     RIGHT VISUAL
+     RIGHT PANEL
 ========================================================= -->
 
 <aside class="visual-column">
@@ -2586,46 +2964,58 @@ footer{
 <div class="visual-card">
 
 
+    <div class="visual-header">
 
-    <div class="scene-title">
 
-        Model → Measurement
+        <div class="scene-title">
+
+            Model → Measurement
+
+        </div>
+
+
+        <div
+            class="scene-caption"
+            id="sceneCaption">
+
+            Engineering validation connects the numerical
+            model with the behaviour of the real injector.
+
+        </div>
+
+
+        <div class="panel-meta">
+
+
+            <div class="panel-tag">
+
+                Simulation & experiment
+
+            </div>
+
+
+            <div
+                class="stage-label"
+                id="stageLabel">
+
+                Research workflow
+
+            </div>
+
+
+        </div>
+
 
     </div>
 
+
+
+    <!-- =====================================================
+         WORKFLOW
+    ====================================================== -->
 
     <div
-        class="scene-caption"
-        id="sceneCaption">
-
-        Engineering validation connects the numerical
-        model with the behaviour of the real injector.
-
-    </div>
-
-
-
-    <div class="panel-tag">
-
-        Simulation & experiment
-
-    </div>
-
-
-
-    <div
-        class="stage-label"
-        id="stageLabel">
-
-        Research workflow
-
-    </div>
-
-
-
-    <div
-        class="workflow"
-        id="workflow">
+        class="workflow">
 
 
         <div class="workflow-row">
@@ -2635,8 +3025,7 @@ footer{
                 class="workflow-node"
                 data-workflow="model">
 
-                Physical<br>
-                Model
+                Physical<br>Model
 
             </div>
 
@@ -2672,24 +3061,32 @@ footer{
 
 
 
+        <!-- =================================================
+             SIGNAL WINDOW
+        ================================================== -->
+
         <div
             class="signal-window stage-intro"
             id="signalWindow">
 
 
             <div class="signal-label model-label">
+
                 Model output
+
             </div>
 
 
             <div class="signal-label measure-label">
-                Measured signal
-            </div>
 
+                Measured signal
+
+            </div>
 
 
             <svg
                 viewBox="0 0 650 245"
+                preserveAspectRatio="none"
                 fill="none">
 
 
@@ -2702,6 +3099,7 @@ footer{
                     x2="620"
                     y2="52"/>
 
+
                 <line
                     class="grid-line"
                     x1="65"
@@ -2709,12 +3107,14 @@ footer{
                     x2="620"
                     y2="94"/>
 
+
                 <line
                     class="grid-line"
                     x1="65"
                     y1="136"
                     x2="620"
                     y2="136"/>
+
 
                 <line
                     class="grid-line"
@@ -2763,7 +3163,7 @@ footer{
 
 
 
-                <!-- MODEL OUTPUT -->
+                <!-- MODEL -->
 
                 <path
                     class="model-wave"
@@ -2847,6 +3247,8 @@ footer{
 
 
 
+        <!-- METRICS -->
+
         <div class="metrics">
 
 
@@ -2896,14 +3298,33 @@ footer{
 
 
 
+    <!-- =====================================================
+         INFO
+    ====================================================== -->
+
     <div class="info-panel">
 
 
-        <div
-            class="info-title"
-            id="infoTitle">
+        <div class="info-top">
 
-            Research workflow
+
+            <div
+                class="info-title"
+                id="infoTitle">
+
+                Research workflow
+
+            </div>
+
+
+            <div
+                class="info-small"
+                id="infoSmall">
+
+                Model + experiment
+
+            </div>
+
 
         </div>
 
@@ -2938,7 +3359,7 @@ footer{
 
 
 /* =========================================================
-   DATA
+   STAGE DATA
 ========================================================= */
 
 const stageData={
@@ -2958,10 +3379,13 @@ const stageData={
         workflow:
             [],
 
-        infoTitle:
+        title:
             'Research workflow',
 
-        infoText:
+        small:
+            'Model + experiment',
+
+        text:
             'A physical description is converted into a numerical model, simulated and then compared with laboratory measurements.'
 
     },
@@ -2979,12 +3403,17 @@ const stageData={
             'stage-model',
 
         workflow:
-            ['model'],
+            [
+                'model'
+            ],
 
-        infoTitle:
+        title:
             'Physical description',
 
-        infoText:
+        small:
+            'Model structure',
+
+        text:
             'Electrical, electromagnetic, mechanical and hydraulic domains are coupled to describe injector behaviour.'
 
     },
@@ -3007,11 +3436,14 @@ const stageData={
                 'simulation'
             ],
 
-        infoTitle:
+        title:
             'Model output',
 
-        infoText:
-            'Simulation generates the current waveform predicted by the mathematical and physical assumptions of the model.'
+        small:
+            'Simulation',
+
+        text:
+            'The numerical model generates the current waveform predicted by its physical assumptions and parameter values.'
 
     },
 
@@ -3032,10 +3464,13 @@ const stageData={
                 'measurement'
             ],
 
-        infoTitle:
+        title:
             'Measured response',
 
-        infoText:
+        small:
+            'Experiment',
+
+        text:
             'Laboratory data captures the actual injector behaviour and physical effects present in the real system.'
 
     },
@@ -3060,11 +3495,14 @@ const stageData={
                 'comparison'
             ],
 
-        infoTitle:
+        title:
             'Model vs measurement',
 
-        infoText:
-            'Agreement in the general waveform is useful, but characteristic features should also be compared individually.'
+        small:
+            'Overlay',
+
+        text:
+            'The two waveforms can be compared directly to identify agreement and differences in characteristic signal regions.'
 
     },
 
@@ -3075,7 +3513,7 @@ const stageData={
             'Model validation',
 
         caption:
-            'Differences between the two signals indicate where model assumptions or parameters may require refinement.',
+            'Differences between the signals indicate where model assumptions or parameters may require refinement.',
 
         signalClass:
             'stage-validation',
@@ -3088,11 +3526,14 @@ const stageData={
                 'comparison'
             ],
 
-        infoTitle:
+        title:
             'Validation features',
 
-        infoText:
-            'Peak current, rise time, hold current, transition timing and other waveform parameters can be used for quantitative comparison.'
+        small:
+            'Quantitative comparison',
+
+        text:
+            'Peak current, rise time, hold level, transition timing and other waveform features can support quantitative model evaluation.'
 
     },
 
@@ -3106,7 +3547,7 @@ const stageData={
             'A validated model can be used to investigate how physical parameter changes influence measurable signals.',
 
         signalClass:
-            'stage-comparison',
+            'stage-diagnostics',
 
         workflow:
             [
@@ -3115,11 +3556,14 @@ const stageData={
                 'comparison'
             ],
 
-        infoTitle:
+        title:
             'From model to diagnostics',
 
-        infoText:
-            'Changing physical parameters in simulation can help identify which current features may be sensitive to injector degradation.'
+        small:
+            'Parameter sensitivity',
+
+        text:
+            'Changing physical parameters in simulation can help identify which current features are sensitive to changes in injector behaviour.'
 
     },
 
@@ -3143,11 +3587,14 @@ const stageData={
                 'comparison'
             ],
 
-        infoTitle:
+        title:
             'Physical interpretation',
 
-        infoText:
-            'The objective is not only to reproduce a waveform, but to understand why it changes and what that change may mean diagnostically.'
+        small:
+            'Research approach',
+
+        text:
+            'The objective is not only to reproduce the waveform, but to understand why it changes and what that change may mean diagnostically.'
 
     }
 
@@ -3181,6 +3628,12 @@ const sceneCaption=
 const infoTitle=
     document.getElementById(
         'infoTitle'
+    );
+
+
+const infoSmall=
+    document.getElementById(
+        'infoSmall'
     );
 
 
@@ -3228,11 +3681,15 @@ function activateStage(stage){
 
 
     infoTitle.textContent=
-        data.infoTitle;
+        data.title;
+
+
+    infoSmall.textContent=
+        data.small;
 
 
     infoText.textContent=
-        data.infoText;
+        data.text;
 
 
     signalWindow.className=
@@ -3266,71 +3723,116 @@ function activateStage(stage){
 
 
 /* =========================================================
-   OBSERVER
+   SCROLL DETECTION
 ========================================================= */
 
-const observer=
-    new IntersectionObserver(
+function updateStage(){
 
 
-        entries=>{
+    const referenceY=
+        window.innerHeight*
+        .47;
 
 
-            entries.forEach(
-                entry=>{
+    let closest=null;
+
+    let closestDistance=
+        Infinity;
 
 
-                    if(
-                        entry.isIntersecting
-                    ){
+    sections.forEach(
+        section=>{
 
 
-                        activateStage(
-                            entry.target.dataset.stage
-                        );
+            const rect=
+                section
+                .getBoundingClientRect();
 
 
-                    }
+            const point=
+                Math.max(
+
+                    rect.top,
+
+                    Math.min(
+                        referenceY,
+                        rect.bottom
+                    )
+
+                );
 
 
-                }
-            );
+            const distance=
+                Math.abs(
+                    point-
+                    referenceY
+                );
 
 
-        },
+            if(
+                distance<
+                closestDistance
+            ){
 
 
-        {
+                closestDistance=
+                    distance;
 
-            rootMargin:
-                '-35% 0px -45% 0px',
 
-            threshold:0
+                closest=
+                    section;
+
+
+            }
+
 
         }
-
-
     );
 
 
-
-sections.forEach(
-    section=>{
+    if(closest){
 
 
-        observer.observe(
-            section
+        activateStage(
+            closest.dataset.stage
         );
 
 
     }
+
+
+}
+
+
+
+window.addEventListener(
+
+    'scroll',
+
+    updateStage,
+
+    {
+        passive:true
+    }
+
 );
 
+
+window.addEventListener(
+
+    'resize',
+
+    updateStage
+
+);
 
 
 activateStage(
     'intro'
 );
+
+
+updateStage();
 
 
 </script>
