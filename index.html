@@ -31,7 +31,6 @@ body{
 font-family:'Inter',sans-serif;
 color:var(--text);
 overflow-x:hidden;
-
 background:
 radial-gradient(circle at 10% 3%,#fff,transparent 25%),
 radial-gradient(circle at 90% 18%,rgba(207,215,224,.32),transparent 22%),
@@ -112,10 +111,8 @@ position:relative;
 .visual-sticky{
 position:sticky;
 top:100px;
-
 height:calc(100vh - 125px);
 height:calc(100dvh - 125px);
-
 max-height:760px;
 min-height:560px;
 }
@@ -126,17 +123,14 @@ width:100%;
 height:100%;
 overflow:hidden;
 padding:30px;
-
 border:1px solid rgba(185,194,203,.56);
 border-radius:31px;
-
 background:
 linear-gradient(
 180deg,
 rgba(255,255,255,.94),
 rgba(255,255,255,.72)
 );
-
 box-shadow:0 22px 50px rgba(40,50,60,.08);
 }
 
@@ -200,7 +194,6 @@ linear-gradient(
 #949da7,
 #c2c8ce
 );
-
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -221,14 +214,12 @@ font-weight:600;
 
 .btn-primary{
 color:white;
-
 background:
 linear-gradient(
 135deg,
 #4b5663,
 #7e8995
 );
-
 box-shadow:0 12px 25px rgba(71,82,94,.17);
 }
 
@@ -264,6 +255,159 @@ font-size:.91rem;
 line-height:1.67;
 }
 
+/* ABOUT / EDUCATION */
+
+#about{
+min-height:125vh;
+}
+
+.about-intro{
+margin-bottom:20px;
+}
+
+.focus-label{
+margin-bottom:10px;
+color:#8a949e;
+font-size:.62rem;
+font-weight:700;
+letter-spacing:.15em;
+text-transform:uppercase;
+}
+
+.focus-chips{
+display:flex;
+flex-wrap:wrap;
+gap:7px;
+margin-bottom:31px;
+}
+
+.focus-chip{
+padding:7px 10px;
+border:1px solid rgba(170,180,190,.54);
+border-radius:8px;
+background:rgba(255,255,255,.57);
+color:#6f7a85;
+font-size:.63rem;
+font-weight:600;
+}
+
+.education-block{
+position:relative;
+padding:22px 23px 8px;
+border:1px solid rgba(174,184,194,.60);
+border-radius:23px;
+background:rgba(255,255,255,.57);
+box-shadow:0 12px 28px rgba(47,57,68,.04);
+}
+
+.education-heading{
+margin-bottom:18px;
+color:#7d8893;
+font-size:.67rem;
+font-weight:700;
+letter-spacing:.17em;
+text-transform:uppercase;
+}
+
+.education-item{
+position:relative;
+display:grid;
+grid-template-columns:92px 1fr;
+gap:18px;
+padding:0 0 20px;
+}
+
+.education-item:not(:last-child)::after{
+content:"";
+position:absolute;
+left:91px;
+top:22px;
+bottom:0;
+width:1px;
+background:linear-gradient(#9fa9b3,#d7dce1);
+}
+
+.education-year{
+padding-top:2px;
+color:#8e98a2;
+font-size:.69rem;
+font-weight:700;
+letter-spacing:.07em;
+}
+
+.education-content{
+position:relative;
+padding-left:18px;
+}
+
+.education-content::before{
+content:"";
+position:absolute;
+left:-5px;
+top:5px;
+width:9px;
+height:9px;
+border:2px solid #7f8a95;
+border-radius:50%;
+background:#f7f8f9;
+}
+
+.education-item.current .education-content::before{
+background:#687580;
+border-color:#687580;
+box-shadow:0 0 0 5px rgba(104,117,128,.10);
+}
+
+.education-degree{
+margin-bottom:4px;
+color:#3f4b57;
+font-size:.96rem;
+font-weight:800;
+}
+
+.education-field{
+margin-bottom:5px;
+color:#5f6b77;
+font-size:.82rem;
+font-weight:600;
+}
+
+.education-school{
+color:#8a949e;
+font-size:.68rem;
+line-height:1.55;
+}
+
+.education-note{
+margin-top:8px;
+color:#6d7883;
+font-size:.71rem;
+line-height:1.55;
+}
+
+.current-study{
+display:inline-flex;
+align-items:center;
+gap:6px;
+margin-left:7px;
+padding:4px 7px;
+border:1px solid rgba(143,154,165,.48);
+border-radius:999px;
+color:#687581;
+font-size:.52rem;
+font-weight:700;
+letter-spacing:.09em;
+text-transform:uppercase;
+}
+
+.current-study::before{
+content:"";
+width:5px;
+height:5px;
+border-radius:50%;
+background:#74818d;
+}
+
 /* RESEARCH */
 
 .research-step{
@@ -287,12 +431,9 @@ justify-content:space-between;
 gap:7px;
 margin-bottom:34px;
 padding:20px;
-
 border:1px solid rgba(174,184,194,.58);
 border-radius:22px;
-
 background:rgba(255,255,255,.55);
-
 box-shadow:0 12px 28px rgba(47,57,68,.04);
 }
 
@@ -314,19 +455,15 @@ font-size:.9rem;
 position:relative;
 overflow:hidden;
 margin-bottom:24px;
-
 border:1px solid rgba(168,179,190,.68);
 border-radius:28px;
-
 background:
 linear-gradient(
 145deg,
 rgba(255,255,255,.95),
 rgba(241,244,247,.75)
 );
-
 box-shadow:0 16px 38px rgba(45,55,65,.06);
-
 transition:.3s ease;
 }
 
@@ -358,17 +495,12 @@ letter-spacing:.16em;
 display:inline-flex;
 align-items:center;
 gap:7px;
-
 padding:6px 9px;
-
 border:1px solid rgba(162,172,182,.48);
 border-radius:999px;
-
 color:#6e7984;
-
 font-size:.56rem;
 font-weight:700;
-
 letter-spacing:.12em;
 text-transform:uppercase;
 }
@@ -397,16 +529,12 @@ text-align:justify;
 .research-visual{
 margin:0 20px;
 min-height:180px;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 overflow:hidden;
-
 border:1px solid rgba(178,187,196,.48);
 border-radius:18px;
-
 background:
 linear-gradient(
 145deg,
@@ -427,31 +555,22 @@ height:100%;
 
 .model-flow{
 width:100%;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 gap:8px;
-
 padding:25px 20px;
 }
 
 .model-node{
 min-width:105px;
-
 padding:19px 11px;
-
 border:1px solid rgba(153,164,175,.58);
 border-radius:14px;
-
 background:rgba(255,255,255,.76);
-
 color:#5e6975;
-
 font-size:.66rem;
 font-weight:700;
-
 text-align:center;
 }
 
@@ -461,14 +580,10 @@ color:#99a4ae;
 
 .degradation-visual{
 width:100%;
-
 display:grid;
 grid-template-columns:1fr 50px 1fr;
-
 align-items:center;
-
 gap:12px;
-
 padding:22px;
 }
 
@@ -480,14 +595,10 @@ gap:7px;
 
 .degradation-type{
 padding:8px 11px;
-
 border:1px solid rgba(170,180,190,.52);
 border-radius:8px;
-
 background:rgba(255,255,255,.72);
-
 color:#6a7580;
-
 font-size:.60rem;
 font-weight:600;
 }
@@ -500,17 +611,14 @@ text-align:center;
 
 .condition-box{
 padding:25px 15px;
-
 border:1px solid rgba(127,139,151,.68);
 border-radius:17px;
-
 background:
 linear-gradient(
 145deg,
 rgba(255,255,255,.92),
 rgba(226,232,237,.82)
 );
-
 color:#4f5b67;
 text-align:center;
 }
@@ -534,13 +642,10 @@ line-height:1.45;
 display:flex;
 align-items:center;
 justify-content:space-between;
-
 gap:15px;
 flex-wrap:wrap;
-
 margin:0 30px;
 padding:20px 0 25px;
-
 border-top:1px solid rgba(180,188,197,.44);
 }
 
@@ -552,14 +657,10 @@ gap:7px;
 
 .research-tag{
 padding:6px 9px;
-
 border:1px solid rgba(173,183,193,.52);
 border-radius:7px;
-
 color:#747f8a;
-
 background:rgba(249,250,251,.75);
-
 font-size:.60rem;
 font-weight:600;
 }
@@ -590,19 +691,15 @@ margin-bottom:38px;
 .project-featured{
 margin-bottom:30px;
 overflow:hidden;
-
 border:1px solid rgba(166,177,188,.72);
 border-radius:29px;
-
 background:
 linear-gradient(
 145deg,
 rgba(255,255,255,.96),
 rgba(243,246,248,.80)
 );
-
 box-shadow:0 18px 42px rgba(43,53,64,.07);
-
 transition:.3s ease;
 }
 
@@ -619,10 +716,8 @@ padding:32px 32px 25px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-
 gap:12px;
 flex-wrap:wrap;
-
 margin-bottom:18px;
 }
 
@@ -638,17 +733,12 @@ text-transform:uppercase;
 display:inline-flex;
 align-items:center;
 gap:7px;
-
 padding:6px 10px;
-
 border:1px solid rgba(158,168,178,.48);
 border-radius:999px;
-
 color:#68737f;
-
 font-size:.58rem;
 font-weight:700;
-
 letter-spacing:.11em;
 text-transform:uppercase;
 }
@@ -704,10 +794,8 @@ padding:0 20px 20px;
 .project-main-image-frame{
 overflow:hidden;
 padding:13px;
-
 border:1px solid rgba(176,185,194,.50);
 border-radius:19px;
-
 background:
 linear-gradient(
 145deg,
@@ -739,13 +827,10 @@ text-transform:uppercase;
 display:flex;
 align-items:center;
 justify-content:space-between;
-
 gap:15px;
 flex-wrap:wrap;
-
 margin:0 32px;
 padding:20px 0 25px;
-
 border-top:1px solid rgba(179,188,197,.45);
 }
 
@@ -759,18 +844,12 @@ gap:7px;
 .tool{
 display:inline-flex;
 align-items:center;
-
 gap:7px;
-
 padding:6px 9px;
-
 border:1px solid rgba(173,183,193,.54);
 border-radius:8px;
-
 background:rgba(249,250,251,.82);
-
 color:#707b87;
-
 font-size:.62rem;
 font-weight:600;
 }
@@ -789,22 +868,16 @@ height:20px;
 .project-button{
 display:inline-flex;
 align-items:center;
-
 gap:11px;
-
 padding:11px 15px;
-
 border-radius:999px;
-
 color:white;
-
 background:
 linear-gradient(
 135deg,
 #4d5966,
 #788490
 );
-
 font-size:.67rem;
 font-weight:800;
 letter-spacing:.10em;
@@ -821,18 +894,13 @@ margin-top:28px;
 
 .insight-card{
 min-height:245px;
-
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-
 padding:22px;
-
 border:1px solid var(--border);
 border-radius:21px;
-
 background:rgba(255,255,255,.61);
-
 box-shadow:0 11px 28px rgba(50,60,70,.04);
 }
 
@@ -849,12 +917,9 @@ line-height:1.67;
 
 .card-label{
 margin-bottom:17px;
-
 color:#89949f;
-
 font-size:.68rem;
 font-weight:700;
-
 letter-spacing:.16em;
 text-transform:uppercase;
 }
@@ -877,14 +942,10 @@ padding-top:90px;
 display:flex;
 align-items:center;
 gap:14px;
-
 margin:35px 0 18px;
-
 color:#818c97;
-
 font-size:.72rem;
 font-weight:700;
-
 letter-spacing:.18em;
 text-transform:uppercase;
 }
@@ -893,7 +954,6 @@ text-transform:uppercase;
 content:"";
 flex:1;
 height:1px;
-
 background:
 linear-gradient(
 90deg,
@@ -905,15 +965,11 @@ transparent
 .journal-card{
 position:relative;
 overflow:hidden;
-
 margin-bottom:17px;
 padding:26px;
-
 border:1px solid rgba(173,183,193,.68);
 border-radius:23px;
-
 background:rgba(255,255,255,.70);
-
 box-shadow:0 12px 30px rgba(45,55,65,.05);
 }
 
@@ -944,15 +1000,11 @@ text-transform:uppercase;
 
 .status{
 padding:6px 10px;
-
 border:1px solid rgba(160,170,180,.48);
 border-radius:999px;
-
 color:#65707c;
-
 font-size:.60rem;
 font-weight:700;
-
 letter-spacing:.10em;
 text-transform:uppercase;
 }
@@ -1022,26 +1074,19 @@ padding-left:28px;
 
 .conference-timeline::before{
 content:"";
-
 position:absolute;
-
 left:7px;
 top:10px;
 bottom:10px;
-
 width:2px;
-
 background:linear-gradient(#78838e,#d2d7dc);
 }
 
 .year-marker{
 margin:8px 0 25px 25px;
-
 color:#d0d5da;
-
 font-size:2.5rem;
 font-weight:700;
-
 letter-spacing:-.06em;
 }
 
@@ -1052,18 +1097,13 @@ padding:0 0 31px 25px;
 
 .conf-item::before{
 content:"";
-
 position:absolute;
-
 left:-26px;
 top:7px;
-
 width:11px;
 height:11px;
-
 border:3px solid #89949f;
 border-radius:50%;
-
 background:#f6f7f8;
 }
 
@@ -1120,7 +1160,7 @@ font-size:.86rem;
 line-height:1.6;
 }
 
-/* RIGHT PANEL */
+/* RIGHT PANEL HEADER */
 
 .scene-top{
 display:flex;
@@ -1147,14 +1187,10 @@ line-height:1.7;
 display:inline-flex;
 align-items:center;
 gap:8px;
-
 padding:8px 12px;
-
 border:1px solid rgba(169,179,189,.58);
 border-radius:999px;
-
 color:#697581;
-
 font-size:.72rem;
 }
 
@@ -1175,14 +1211,11 @@ margin-top:18px;
 .graphic{
 position:absolute;
 inset:0;
-
 opacity:0;
 transform:translateY(12px);
-
 transition:
 opacity .4s ease,
 transform .4s ease;
-
 pointer-events:none;
 }
 
@@ -1195,43 +1228,167 @@ transform:translateY(0);
 pointer-events:auto;
 }
 
-/* ABOUT VISUAL */
+/* ABOUT VISUAL / ACADEMIC JOURNEY */
 
-.about-art{
+.academic-journey{
 position:absolute;
-inset:20px;
-
-border:1px solid rgba(184,193,202,.55);
-border-radius:24px;
+inset:7px 10px 0;
+display:flex;
+flex-direction:column;
+justify-content:center;
 }
 
-.about-wave{
-position:absolute;
-
-left:35px;
-right:35px;
-top:140px;
-
-height:80px;
+.academic-journey-head{
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+gap:15px;
+margin-bottom:16px;
 }
 
-.about-wave svg{
-width:100%;
-height:100%;
+.academic-journey-label{
+color:#8e98a2;
+font-size:.58rem;
+font-weight:700;
+letter-spacing:.15em;
+text-transform:uppercase;
+}
+
+.academic-journey-current{
+color:#687581;
+font-size:.58rem;
+font-weight:700;
+}
+
+.academic-line{
+position:absolute;
+left:56px;
+top:53px;
+bottom:18px;
+width:1px;
+background:linear-gradient(#d0d6dc,#909ba6,#d4dae0);
+}
+
+.academic-item{
+position:relative;
+z-index:2;
+display:grid;
+grid-template-columns:44px 1fr;
+gap:14px;
+margin-bottom:10px;
+opacity:.48;
+transition:
+opacity .32s ease,
+transform .32s ease;
+}
+
+.academic-item:last-child{
+margin-bottom:0;
+}
+
+.academic-year{
+display:flex;
+align-items:center;
+justify-content:center;
+color:#939da7;
+font-size:.57rem;
+font-weight:700;
+}
+
+.academic-node{
+position:relative;
+padding:13px 14px 12px 20px;
+border:1px solid rgba(178,188,197,.55);
+border-radius:15px;
+background:rgba(255,255,255,.65);
+transition:
+background .32s ease,
+border-color .32s ease,
+box-shadow .32s ease,
+transform .32s ease;
+}
+
+.academic-node::before{
+content:"";
+position:absolute;
+left:-19px;
+top:50%;
+width:9px;
+height:9px;
+transform:translateY(-50%);
+border:2px solid #96a0aa;
+border-radius:50%;
+background:#f7f8f9;
+transition:.32s ease;
+}
+
+.academic-degree{
+margin-bottom:3px;
+color:#56626e;
+font-size:.65rem;
+font-weight:800;
+letter-spacing:.07em;
+text-transform:uppercase;
+}
+
+.academic-field{
+margin-bottom:3px;
+color:#48545f;
+font-size:.78rem;
+font-weight:700;
+}
+
+.academic-school{
+color:#8b959f;
+font-size:.56rem;
+line-height:1.45;
+}
+
+.academic-item.active{
+opacity:1;
+transform:translateX(4px);
+}
+
+.academic-item.active .academic-node{
+border-color:rgba(112,125,138,.68);
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.94),
+rgba(231,236,240,.84)
+);
+box-shadow:0 10px 22px rgba(54,65,76,.08);
+}
+
+.academic-item.active .academic-node::before{
+background:#687581;
+border-color:#687581;
+box-shadow:0 0 0 5px rgba(104,117,128,.11);
+}
+
+.academic-item[data-edu-stage="phd"] .academic-degree::after{
+content:"CURRENT";
+display:inline-block;
+margin-left:7px;
+padding:3px 6px;
+border:1px solid rgba(137,149,160,.48);
+border-radius:999px;
+color:#6e7a85;
+font-family:'Inter',sans-serif;
+font-size:.45rem;
+font-weight:700;
+letter-spacing:.08em;
+vertical-align:1px;
 }
 
 /* RESEARCH RIGHT */
 
 .research-map{
 position:absolute;
-
-/* opuszczamy diagram, żeby badge nie nachodził na pierwszą kartę */
 inset:38px 18px 4px;
-
 display:flex;
 flex-direction:column;
 justify-content:flex-start;
-
 gap:10px;
 }
 
@@ -1250,10 +1407,8 @@ font-weight:700;
 
 .research-map-card{
 padding:14px 15px;
-
 border:1px solid rgba(174,184,194,.58);
 border-radius:15px;
-
 background:rgba(255,255,255,.60);
 }
 
@@ -1277,17 +1432,14 @@ background:#aab3bc;
 
 .research-destination{
 padding:14px;
-
 border:1px solid rgba(134,146,158,.62);
 border-radius:16px;
-
 background:
 linear-gradient(
 135deg,
 rgba(255,255,255,.88),
 rgba(225,231,236,.78)
 );
-
 text-align:center;
 }
 
@@ -1323,18 +1475,12 @@ margin-bottom:13px;
 
 .showcase-tab{
 appearance:none;
-
 padding:7px 12px;
-
 border:1px solid rgba(166,177,188,.55);
 border-radius:999px;
-
 background:rgba(255,255,255,.60);
-
 color:#7a8590;
-
 cursor:pointer;
-
 font-family:inherit;
 font-size:.61rem;
 font-weight:700;
@@ -1343,9 +1489,7 @@ letter-spacing:.10em;
 
 .showcase-tab.active{
 color:white;
-
 border-color:#67737f;
-
 background:
 linear-gradient(
 135deg,
@@ -1358,12 +1502,9 @@ linear-gradient(
 position:relative;
 flex:1;
 min-height:260px;
-
 overflow:hidden;
-
 border:1px solid rgba(166,177,188,.62);
 border-radius:22px;
-
 background:
 linear-gradient(
 145deg,
@@ -1376,12 +1517,9 @@ rgba(237,241,244,.86)
 position:absolute;
 inset:0;
 padding:16px;
-
 opacity:0;
 transform:scale(.985);
-
 transition:.3s ease;
-
 pointer-events:none;
 }
 
@@ -1393,17 +1531,12 @@ pointer-events:auto;
 
 .preview-image-frame{
 height:190px;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 padding:10px;
-
 overflow:hidden;
-
 border-radius:14px;
-
 background:white;
 }
 
@@ -1446,23 +1579,17 @@ font-weight:700;
 .insight-stack{
 position:absolute;
 inset:25px;
-
 display:grid;
 grid-template-columns:1fr 1fr;
-
 gap:13px;
 }
 
 .note{
 padding:17px;
-
 border:1px solid rgba(179,188,197,.58);
 border-radius:18px;
-
 background:rgba(255,255,255,.57);
-
 color:#5b6672;
-
 font-size:.82rem;
 font-weight:600;
 }
@@ -1472,19 +1599,15 @@ font-weight:600;
 .pub-stack{
 position:absolute;
 inset:18px;
-
 display:flex;
 flex-direction:column;
-
 gap:12px;
 }
 
 .pub-sheet{
 padding:15px 17px;
-
 border:1px solid rgba(177,186,195,.60);
 border-radius:16px;
-
 background:rgba(255,255,255,.63);
 }
 
@@ -1527,16 +1650,12 @@ position:absolute;
 left:0;
 top:0;
 z-index:5;
-
 width:225px;
-
 cursor:grab;
 touch-action:none;
 user-select:none;
-
 will-change:transform;
 transform-origin:50% 80%;
-
 filter:
 drop-shadow(
 0 9px 8px
@@ -1561,20 +1680,15 @@ transform-origin:center;
 position:absolute;
 right:3px;
 bottom:0;
-
 color:#939da7;
-
 font-size:.66rem;
-
 letter-spacing:.13em;
 text-transform:uppercase;
 }
 
 footer{
 padding:50px 0 10px;
-
 color:#808a94;
-
 font-size:.80rem;
 line-height:1.7;
 }
@@ -1599,6 +1713,10 @@ min-height:0;
 max-height:none;
 }
 
+#about{
+min-height:auto;
+}
+
 .step{
 min-height:auto;
 padding:80px 0;
@@ -1620,10 +1738,8 @@ padding-top:95px;
 
 .visual-sticky{
 top:82px;
-
 height:calc(100vh - 95px);
 height:calc(100dvh - 95px);
-
 min-height:0;
 max-height:none;
 }
@@ -1659,19 +1775,43 @@ height:245px;
 margin-top:10px;
 }
 
-.about-art{
-inset:10px;
-border-radius:20px;
+.academic-journey{
+inset:0 4px;
 }
 
-.about-wave{
-left:28px;
-right:28px;
-top:95px;
-height:60px;
+.academic-journey-head{
+margin-bottom:8px;
 }
 
-/* również opuszczamy Research Focus na niższym ekranie */
+.academic-item{
+grid-template-columns:34px 1fr;
+gap:9px;
+margin-bottom:6px;
+}
+
+.academic-line{
+left:41px;
+top:38px;
+bottom:10px;
+}
+
+.academic-node{
+padding:8px 10px 8px 15px;
+}
+
+.academic-node::before{
+left:-15px;
+width:7px;
+height:7px;
+}
+
+.academic-field{
+font-size:.68rem;
+}
+
+.academic-school{
+font-size:.49rem;
+}
 
 .research-map{
 inset:20px 10px 2px;
@@ -1805,8 +1945,54 @@ height:88px;
 width:145px;
 }
 
-.about-wave{
-top:70px;
+.academic-journey{
+inset:-2px 2px 0;
+}
+
+.academic-journey-head{
+margin-bottom:4px;
+}
+
+.academic-journey-label,
+.academic-journey-current{
+font-size:.48rem;
+}
+
+.academic-item{
+grid-template-columns:29px 1fr;
+gap:7px;
+margin-bottom:4px;
+}
+
+.academic-line{
+left:35px;
+top:28px;
+bottom:5px;
+}
+
+.academic-node{
+padding:5px 8px 5px 12px;
+border-radius:10px;
+}
+
+.academic-node::before{
+left:-12px;
+width:6px;
+height:6px;
+}
+
+.academic-degree{
+margin-bottom:1px;
+font-size:.53rem;
+}
+
+.academic-field{
+margin-bottom:0;
+font-size:.60rem;
+}
+
+.academic-school{
+display:none;
 }
 
 .research-map{
@@ -1866,6 +2052,19 @@ padding:95px 5% 40px;
 
 .grid-2{
 grid-template-columns:1fr;
+}
+
+.education-item{
+grid-template-columns:76px 1fr;
+gap:12px;
+}
+
+.education-item:not(:last-child)::after{
+left:75px;
+}
+
+.education-content{
+padding-left:15px;
 }
 
 .project-highlight-grid{
@@ -1944,16 +2143,43 @@ Maja<br>
 <span class="silver">Antkowiak</span>
 </h1>
 
-<p class="step-text">
+<p class="step-text about-intro">
 
-PhD researcher working at the intersection
-of automotive engineering, mechatronics
-and intelligent diagnostics.
-
-My work focuses on diagnostics,
-signal analysis and signal modelling.
+PhD researcher in mechanical engineering with
+a background in mechatronics and automotive systems.
+My work combines experimental measurements,
+signal analysis and numerical modelling to investigate
+the behaviour and technical condition of electromagnetic
+fuel injectors.
 
 </p>
+
+
+<div class="focus-label">
+Current focus
+</div>
+
+
+<div class="focus-chips">
+
+<span class="focus-chip">
+Injector Diagnostics
+</span>
+
+<span class="focus-chip">
+Signal Analysis
+</span>
+
+<span class="focus-chip">
+Modelling
+</span>
+
+<span class="focus-chip">
+Degradation Assessment
+</span>
+
+</div>
+
 
 <div class="hero-actions">
 
@@ -1961,38 +2187,111 @@ signal analysis and signal modelling.
 Explore my work
 </a>
 
-<a href="#insights" class="btn btn-secondary">
-Read insights
+<a href="#publications" class="btn btn-secondary">
+Research journey
 </a>
 
 </div>
 
-<div class="grid-2">
 
-<div class="info-card">
+<div class="education-block">
 
-<h3>Experience</h3>
 
-<p>
-Research, conference participation,
-technical projects and academic work
-in automotive mechatronics.
-</p>
+<div class="education-heading">
+Education
+</div>
+
+
+<div class="education-item">
+
+<div class="education-year">
+2018–2022
+</div>
+
+<div class="education-content">
+
+<div class="education-degree">
+B.Eng.
+</div>
+
+<div class="education-field">
+Mechatronics
+</div>
+
+<div class="education-school">
+Warsaw University of Technology · Faculty of Automotive and Construction Machinery Engineering
+</div>
+
+</div>
 
 </div>
 
 
-<div class="info-card">
+<div class="education-item">
 
-<h3>Contact</h3>
+<div class="education-year">
+2023–2024
+</div>
 
-<p>
-GitHub · LinkedIn · E-mail · academic profile
-</p>
+<div class="education-content">
+
+<div class="education-degree">
+M.Sc.
+</div>
+
+<div class="education-field">
+Mechanical Engineering
+</div>
+
+<div class="education-school">
+Warsaw University of Technology · Faculty of Automotive and Construction Machinery Engineering
+</div>
+
+</div>
+
+</div>
+
+
+<div class="education-item current">
+
+<div class="education-year">
+2025–Present
+</div>
+
+<div class="education-content">
+
+<div class="education-degree">
+
+PhD
+
+<span class="current-study">
+Current
+</span>
+
+</div>
+
+<div class="education-field">
+Mechanical Engineering
+</div>
+
+<div class="education-school">
+Warsaw University of Technology
+</div>
+
+<div class="education-note">
+
+Doctoral research focused on electromagnetic fuel injector diagnostics,
+current-signal analysis, modelling and degradation-oriented condition assessment.
 
 </div>
 
 </div>
+
+</div>
+
+
+</div>
+
 
 </div>
 
@@ -2075,6 +2374,7 @@ Core Research
 </span>
 
 </div>
+
 
 <h3>
 Signal-Based Injector Diagnostics
@@ -2282,6 +2582,7 @@ Transient Response
 
 </div>
 
+
 <a href="injector-modelling.html" class="research-link">
 EXPLORE RESEARCH →
 </a>
@@ -2357,9 +2658,11 @@ Thermal degradation
 
 </div>
 
+
 <div class="degradation-arrow">
 →
 </div>
+
 
 <div class="condition-box">
 
@@ -2396,6 +2699,7 @@ Reliability
 
 </div>
 
+
 <a
 href="degradation-reliability.html"
 class="research-link">
@@ -2407,6 +2711,7 @@ EXPLORE RESEARCH →
 </div>
 
 </article>
+
 
 </div>
 
@@ -2455,9 +2760,11 @@ Research Project
 
 </div>
 
+
 <h3>
 Injector Multidomain Simulation
 </h3>
+
 
 <p class="project-description">
 
@@ -2473,6 +2780,7 @@ parameter-sensitivity studies and validation
 against laboratory measurements.
 
 </p>
+
 
 <div class="project-highlight-grid">
 
@@ -2538,6 +2846,7 @@ Simscape
 
 </div>
 
+
 <a
 href="injector-simulation.html"
 class="project-button">
@@ -2567,9 +2876,11 @@ Research Software
 
 </div>
 
+
 <h3>
 Injector Diagnostic Software
 </h3>
+
 
 <p class="project-description">
 
@@ -2585,6 +2896,7 @@ results obtained from individual injections and
 complete measurement series.
 
 </p>
+
 
 <div class="project-highlight-grid">
 
@@ -2654,6 +2966,7 @@ Diagnostics
 
 </div>
 
+
 <a
 href="injector-diagnostic.html"
 class="project-button">
@@ -2665,6 +2978,7 @@ VIEW PROJECT →
 </div>
 
 </article>
+
 
 </div>
 
@@ -2693,7 +3007,9 @@ from my own work.
 
 </p>
 
+
 <div class="grid-3">
+
 
 <div class="insight-card">
 
@@ -2772,6 +3088,7 @@ Read more →
 
 </div>
 
+
 </div>
 
 </div>
@@ -2824,14 +3141,17 @@ Published
 
 </div>
 
+
 <div class="journal-year">
 2022
 </div>
+
 
 <h3>
 Recognizing Significant Components of Electrical
 Waveforms of Actuators Operated by Vehicle Controllers
 </h3>
+
 
 <div class="journal-authors">
 
@@ -2841,6 +3161,7 @@ Tomasz Figlus
 
 </div>
 
+
 <div class="journal-meta">
 
 <span class="meta-chip">Sensors</span>
@@ -2848,6 +3169,7 @@ Tomasz Figlus
 <span class="meta-chip">7945</span>
 
 </div>
+
 
 <a
 href="https://www.mdpi.com/1424-8220/22/20/7945"
@@ -2875,17 +3197,21 @@ Under Review
 
 </div>
 
+
 <div class="journal-year">
 2026
 </div>
+
 
 <h3>
 Model-Based Diagnostics of Fuel Injectors
 </h3>
 
+
 <div class="journal-authors">
 Manuscript submitted to <strong>Transport Problems</strong>
 </div>
+
 
 <div class="journal-meta">
 
@@ -2914,15 +3240,18 @@ Research Journey
 </h3>
 
 <p>
+
 Oral presentations and posters documenting
 the development of my research from signal
 identification to model-based diagnostics.
+
 </p>
 
 </div>
 
 
 <div class="conference-timeline">
+
 
 <div class="year-marker">
 2026
@@ -2940,6 +3269,7 @@ UPCOMING
 </span>
 
 </div>
+
 
 <div class="conf-card">
 
@@ -2970,6 +3300,7 @@ Gdańsk · Poland
 3–5 JULY 2026
 </div>
 
+
 <div class="conf-card">
 
 <div class="conf-type">
@@ -2999,6 +3330,7 @@ Gdańsk · Poland
 8–10 APRIL 2026
 </div>
 
+
 <div class="conf-card">
 
 <div class="conf-type">
@@ -3027,6 +3359,7 @@ Liptovský Mikuláš · Slovakia
 <div class="conf-date">
 8–10 APRIL 2026
 </div>
+
 
 <div class="conf-card">
 
@@ -3061,6 +3394,7 @@ Liptovský Mikuláš · Slovakia
 <div class="conf-date">
 25 SEPTEMBER 2025
 </div>
+
 
 <div class="conf-card">
 
@@ -3100,6 +3434,7 @@ z zapłonem iskrowym”
 14–16 DECEMBER 2022
 </div>
 
+
 <div class="conf-card">
 
 <div class="conf-type">
@@ -3129,6 +3464,7 @@ Liptovský Mikuláš · Slovakia
 14–16 SEPTEMBER 2022
 </div>
 
+
 <div class="conf-card">
 
 <div class="conf-type">
@@ -3153,6 +3489,7 @@ Managed by Vehicle Controllers”
 </div>
 
 </div>
+
 
 </div>
 
@@ -3204,8 +3541,8 @@ About Me
 class="scene-caption"
 id="sceneCaption">
 
-Automotive engineering,
-diagnostics and signal-based research.
+Mechatronics → mechanical engineering →
+doctoral research in injector diagnostics.
 
 </div>
 
@@ -3216,7 +3553,7 @@ diagnostics and signal-based research.
 class="mini-tag"
 id="sceneTag">
 
-Automotive portfolio
+Academic journey
 
 </div>
 
@@ -3230,19 +3567,106 @@ Automotive portfolio
 class="graphic active"
 data-graphic="about">
 
-<div class="about-art"></div>
 
-<div class="about-wave">
+<div class="academic-journey">
 
-<svg viewBox="0 0 500 80">
 
-<path
-d="M0 55 L85 55 L125 53 L153 11 L177 53 L230 53 L252 42 L272 54 L500 54"
-fill="none"
-stroke="#75818D"
-stroke-width="2"/>
+<div class="academic-journey-head">
 
-</svg>
+<div class="academic-journey-label">
+Academic Journey
+</div>
+
+<div class="academic-journey-current">
+2018 → Present
+</div>
+
+</div>
+
+
+<div class="academic-line"></div>
+
+
+<div
+class="academic-item active"
+data-edu-stage="beng">
+
+<div class="academic-year">
+2018
+</div>
+
+<div class="academic-node">
+
+<div class="academic-degree">
+B.Eng.
+</div>
+
+<div class="academic-field">
+Mechatronics
+</div>
+
+<div class="academic-school">
+Warsaw University of Technology · SiMR
+</div>
+
+</div>
+
+</div>
+
+
+<div
+class="academic-item"
+data-edu-stage="msc">
+
+<div class="academic-year">
+2023
+</div>
+
+<div class="academic-node">
+
+<div class="academic-degree">
+M.Sc.
+</div>
+
+<div class="academic-field">
+Mechanical Engineering
+</div>
+
+<div class="academic-school">
+Warsaw University of Technology · SiMR
+</div>
+
+</div>
+
+</div>
+
+
+<div
+class="academic-item"
+data-edu-stage="phd">
+
+<div class="academic-year">
+2025
+</div>
+
+<div class="academic-node">
+
+<div class="academic-degree">
+PhD
+</div>
+
+<div class="academic-field">
+Mechanical Engineering
+</div>
+
+<div class="academic-school">
+Warsaw University of Technology
+</div>
+
+</div>
+
+</div>
+
 
 </div>
 
@@ -3353,6 +3777,7 @@ data-graphic="projects">
 
 <div class="projects-showcase">
 
+
 <div class="showcase-tabs">
 
 <button
@@ -3389,6 +3814,7 @@ alt="Injector current waveform">
 
 </div>
 
+
 <div class="preview-meta">
 
 <div>
@@ -3402,6 +3828,7 @@ Injector Multidomain Simulation
 </div>
 
 </div>
+
 
 <a
 href="injector-simulation.html"
@@ -3428,6 +3855,7 @@ alt="Injector diagnostic software">
 
 </div>
 
+
 <div class="preview-meta">
 
 <div>
@@ -3441,6 +3869,7 @@ Injector Diagnostic Software
 </div>
 
 </div>
+
 
 <a
 href="injector-diagnostic.html"
@@ -3499,6 +3928,7 @@ data-graphic="publications">
 
 <div class="pub-stack">
 
+
 <div class="pub-sheet">
 
 <div class="pub-sheet-label">
@@ -3527,6 +3957,7 @@ Model-Based Diagnostics of Fuel Injectors
 </div>
 
 </div>
+
 
 </div>
 
@@ -3825,8 +4256,8 @@ const scenes={
 
 about:{
 title:'About Me',
-caption:'Automotive engineering, diagnostics and signal-based research.',
-tag:'Automotive portfolio'
+caption:'Mechatronics → mechanical engineering → doctoral research in injector diagnostics.',
+tag:'Academic journey'
 },
 
 research:{
@@ -3866,6 +4297,104 @@ const navLinks=
 document.querySelectorAll('.nav-link');
 
 
+/* ABOUT EDUCATION ANIMATION */
+
+const aboutSection=
+document.getElementById('about');
+
+const academicItems=
+[
+...document.querySelectorAll(
+'[data-edu-stage]'
+)
+];
+
+
+function updateAcademicJourney(){
+
+if(
+!aboutSection ||
+academicItems.length===0
+){
+return;
+}
+
+
+const rect=
+aboutSection.getBoundingClientRect();
+
+
+const travel=
+Math.max(
+
+rect.height-
+window.innerHeight*.55,
+
+1
+
+);
+
+
+const progress=
+clamp(
+
+(
+-rect.top+
+window.innerHeight*.12
+)
+
+/
+
+travel,
+
+0,
+1
+
+);
+
+
+let stage='beng';
+
+
+if(
+progress>=.34 &&
+progress<.69
+){
+
+stage='msc';
+
+}
+
+
+if(
+progress>=.69
+){
+
+stage='phd';
+
+}
+
+
+academicItems.forEach(
+item=>{
+
+item.classList.toggle(
+
+'active',
+
+item.dataset.eduStage===
+stage
+
+);
+
+}
+);
+
+}
+
+
+/* SCENE CHANGES */
+
 function activateScene(id){
 
 const scene=
@@ -3875,15 +4404,18 @@ if(!scene){
 return;
 }
 
+
 document
 .getElementById('sceneTitle')
 .textContent=
 scene.title;
 
+
 document
 .getElementById('sceneCaption')
 .textContent=
 scene.caption;
+
 
 document
 .getElementById('sceneTag')
@@ -3895,8 +4427,12 @@ graphics.forEach(
 graphic=>{
 
 graphic.classList.toggle(
+
 'active',
-graphic.dataset.graphic===id
+
+graphic.dataset.graphic===
+id
+
 );
 
 }
@@ -3907,8 +4443,12 @@ navLinks.forEach(
 link=>{
 
 link.classList.toggle(
+
 'active',
-link.getAttribute('href')==='#'+id
+
+link.getAttribute('href')===
+'#'+id
+
 );
 
 }
@@ -3962,6 +4502,7 @@ document.querySelectorAll(
 '[data-project-preview]'
 );
 
+
 const previewPanels=
 document.querySelectorAll(
 '[data-project-panel]'
@@ -3995,8 +4536,12 @@ previewPanels.forEach(
 panel=>{
 
 panel.classList.toggle(
+
 'active',
-panel.dataset.projectPanel===selected
+
+panel.dataset.projectPanel===
+selected
+
 );
 
 }
@@ -4016,25 +4561,30 @@ document.getElementById(
 'carWrap'
 );
 
+
 const carZone=
 document.getElementById(
 'carZone'
 );
+
 
 const roadSvg=
 document.getElementById(
 'roadSvg'
 );
 
+
 const motionPath=
 document.getElementById(
 'motionPath'
 );
 
+
 const frontWheel=
 document.getElementById(
 'frontWheel'
 );
+
 
 const rearWheel=
 document.getElementById(
@@ -4049,8 +4599,14 @@ max
 ){
 
 return Math.min(
-Math.max(value,min),
+
+Math.max(
+value,
+min
+),
+
 max
+
 );
 
 }
@@ -4061,6 +4617,7 @@ function getScrollRange(){
 const firstRect=
 steps[0]
 .getBoundingClientRect();
+
 
 const lastRect=
 steps[
@@ -4092,6 +4649,7 @@ function calculateScrollProgress(){
 
 const range=
 getScrollRange();
+
 
 const position=
 window.scrollY+
@@ -4168,7 +4726,8 @@ motionPath.getTotalLength();
 
 
 const distance=
-length*progress;
+length*
+progress;
 
 
 const point=
@@ -4179,19 +4738,23 @@ distance
 
 const before=
 motionPath.getPointAtLength(
+
 Math.max(
 0,
 distance-4
 )
+
 );
 
 
 const after=
 motionPath.getPointAtLength(
+
 Math.min(
 length,
 distance+4
 )
+
 );
 
 
@@ -4206,11 +4769,13 @@ carZone
 
 
 const scaleX=
-svgRect.width/900;
+svgRect.width/
+900;
 
 
 const scaleY=
-svgRect.height/150;
+svgRect.height/
+150;
 
 
 const roadTop=
@@ -4271,7 +4836,8 @@ carWrap.style.transform=
 
 
 const wheelRotation=
-progress*1500;
+progress*
+1500;
 
 
 frontWheel.style.transform=
@@ -4319,8 +4885,10 @@ currentProgress
 if(
 
 Math.abs(
+
 targetProgress-
 currentProgress
+
 )
 
 >.0002
@@ -4339,9 +4907,11 @@ else{
 currentProgress=
 targetProgress;
 
+
 renderCar(
 currentProgress
 );
+
 
 animationFrame=null;
 
@@ -4351,6 +4921,10 @@ animationFrame=null;
 
 
 function requestCarUpdate(){
+
+
+updateAcademicJourney();
+
 
 if(isDragging){
 return;
@@ -4388,6 +4962,8 @@ passive:true
 );
 
 
+/* DRAG CAR */
+
 function pointerToProgress(
 clientX
 ){
@@ -4398,17 +4974,20 @@ roadSvg
 
 
 const scaleX=
-rect.width/900;
+rect.width/
+900;
 
 
 const start=
 rect.left+
-145*scaleX;
+145*
+scaleX;
 
 
 const end=
 rect.left+
-765*scaleX;
+765*
+scaleX;
 
 
 return clamp(
@@ -4478,6 +5057,7 @@ event=>{
 
 isDragging=true;
 
+
 carWrap
 .classList
 .add(
@@ -4521,6 +5101,7 @@ event=>{
 if(!isDragging){
 return;
 }
+
 
 dragTo(
 event.clientX
@@ -4594,11 +5175,17 @@ finishDrag
 );
 
 
+/* RESIZE */
+
 window.addEventListener(
 
 'resize',
 
 ()=>{
+
+
+updateAcademicJourney();
+
 
 targetProgress=
 calculateScrollProgress();
@@ -4617,9 +5204,14 @@ currentProgress
 );
 
 
+/* INITIAL STATE */
+
 activateScene(
 'about'
 );
+
+
+updateAcademicJourney();
 
 
 targetProgress=
