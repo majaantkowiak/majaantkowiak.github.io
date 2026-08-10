@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can Injector Current Reveal Mechanical Degradation? | Maja Antkowiak</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --bg1:#f8f9fa;
+    --bg2:#eef1f4;
+    --text:#1f2732;
+    --muted:#68727e;
+    --line:#a4aeb8;
+    --border:rgba(177,187,198,.62);
+    --card:rgba(255,255,255,.72);
+    --card-strong:rgba(255,255,255,.90);
+    --silver:#7e8995;
+    --accent:#5f6b77;
+    --accent-soft:#d8dee4;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    color:var(--text);
+    overflow-x:hidden;
+    background:
+        radial-gradient(circle at 10% 4%, #ffffff, transparent 24%),
+        radial-gradient(circle at 92% 16%, rgba(207,215,224,.30), transparent 20%),
+        linear-gradient(180deg,var(--bg1),var(--bg2));
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 6%;
+    background:rgba(248,249,250,.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(175,185,195,.36);
+}
+
+.logo{
+    font-size:1.18rem;
+    font-weight:800;
+    letter-spacing:-.04em;
+}
+
+.logo span{
+    color:#8f99a4;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    color:#6b7580;
+    font-size:.9rem;
+}
+
+.back-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 14px;
+    border:1px solid rgba(166,176,186,.56);
+    border-radius:999px;
+    background:rgba(255,255,255,.58);
+    font-size:.83rem;
+    font-weight:600;
+}
+
+.page{
+    max-width:1500px;
+    margin:0 auto;
+    padding:102px 6% 60px;
+    display:grid;
+    grid-template-columns:1.06fr .94fr;
+    gap:44px;
+}
+
+.content-column{
+    position:relative;
+    z-index:2;
+}
+
+.visual-column{
+    position:relative;
+}
+
+.visual-sticky{
+    position:sticky;
+    top:96px;
+    height:calc(100vh - 120px);
+    height:calc(100dvh - 120px);
+    min-height:560px;
+    max-height:760px;
+}
+
+.visual-card{
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    padding:28px;
+    border:1px solid rgba(185,194,203,.56);
+    border-radius:31px;
+    background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.74));
+    box-shadow:0 22px 50px rgba(40,50,60,.08);
+}
+
+.hero{
+    min-height:82vh;
+    display:flex;
+    align-items:center;
+    padding:26px 0 48px;
+}
+
+.hero-inner{
+    max-width:700px;
+}
+
+.kicker{
+    margin-bottom:16px;
+    color:#87919c;
+    font-size:.76rem;
+    font-weight:700;
+    letter-spacing:.20em;
+    text-transform:uppercase;
+}
+
+.hero-title{
+    margin-bottom:22px;
+    font-size:clamp(2.9rem,5.6vw,5.6rem);
+    line-height:.95;
+    letter-spacing:-.06em;
+}
+
+.hero-title span{
+    color:#5e6975;
+}
+
+.hero-subtitle{
+    max-width:640px;
+    margin-bottom:22px;
+    color:var(--muted);
+    font-size:1.08rem;
+    line-height:1.85;
+}
+
+.hero-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:30px;
+}
+
+.hero-tag{
+    padding:8px 11px;
+    border:1px solid rgba(170,180,190,.54);
+    border-radius:10px;
+    background:rgba(255,255,255,.56);
+    color:#6f7a85;
+    font-size:.64rem;
+    font-weight:700;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 18px;
+    border-radius:999px;
+    font-size:.88rem;
+    font-weight:700;
+}
+
+.btn-primary{
+    color:white;
+    background:linear-gradient(135deg,#4b5663,#7e8995);
+    box-shadow:0 12px 25px rgba(71,82,94,.17);
+}
+
+.btn-secondary{
+    border:1px solid rgba(151,161,171,.65);
+    background:rgba(255,255,255,.58);
+    color:#5c6773;
+}
+
+.section{
+    min-height:82vh;
+    display:flex;
+    align-items:center;
+    padding:38px 0;
+    scroll-margin-top:100px;
+}
+
+.section-inner{
+    width:100%;
+    max-width:720px;
+}
+
+.section-label{
+    margin-bottom:16px;
+    color:#8a949e;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+}
+
+.section-title{
+    margin-bottom:18px;
+    font-size:clamp(2rem,3.1vw,3.35rem);
+    line-height:1.04;
+    letter-spacing:-.05em;
+}
+
+.section-title span{
+    color:#5d6975;
+}
+
+.section-text{
+    color:var(--muted);
+    font-size:1rem;
+    line-height:1.9;
+    text-align:justify;
+}
+
+.section-text + .section-text{
+    margin-top:15px;
+}
+
+.note-box{
+    margin-top:24px;
+    padding:20px 22px;
+    border:1px solid rgba(173,183,193,.55);
+    border-radius:20px;
+    background:rgba(255,255,255,.58);
+    box-shadow:0 10px 24px rgba(47,57,68,.04);
+}
+
+.note-box strong{
+    color:#4a5662;
+}
+
+.phase-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:10px;
+    margin-top:24px;
+}
+
+.phase-card{
+    padding:16px 14px;
+    border:1px solid rgba(171,181,191,.52);
+    border-radius:16px;
+    background:rgba(255,255,255,.62);
+    text-align:center;
+}
+
+.phase-card h4{
+    margin-bottom:7px;
+    font-size:.83rem;
+    letter-spacing:.06em;
+    color:#515d69;
+}
+
+.phase-card p{
+    color:#7a8591;
+    font-size:.74rem;
+    line-height:1.55;
+}
+
+.chain-box{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    margin-top:28px;
+    padding:20px;
+    border:1px solid rgba(174,184,194,.58);
+    border-radius:20px;
+    background:rgba(255,255,255,.55);
+    box-shadow:0 12px 28px rgba(47,57,68,.04);
+}
+
+.chain-node{
+    padding:12px 14px;
+    border:1px solid rgba(169,179,189,.58);
+    border-radius:12px;
+    background:rgba(255,255,255,.72);
+    color:#5f6b77;
+    font-size:.78rem;
+    font-weight:700;
+    text-align:center;
+}
+
+.chain-arrow{
+    color:#9ca7b1;
+    font-size:1rem;
+    font-weight:700;
+}
+
+.degradation-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+    margin-top:25px;
+}
+
+.degradation-card{
+    padding:18px 16px;
+    border:1px solid rgba(171,181,191,.54);
+    border-radius:18px;
+    background:rgba(255,255,255,.60);
+}
+
+.degradation-card h4{
+    margin-bottom:9px;
+    color:#52606c;
+    font-size:.9rem;
+}
+
+.degradation-card p{
+    color:#72808b;
+    font-size:.8rem;
+    line-height:1.65;
+}
+
+.feature-list{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+    margin-top:24px;
+}
+
+.feature-item{
+    padding:15px 16px;
+    border:1px solid rgba(172,182,192,.54);
+    border-radius:14px;
+    background:rgba(255,255,255,.60);
+    color:#5c6874;
+    font-size:.82rem;
+    font-weight:700;
+}
+
+.related-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+    margin-top:28px;
+}
+
+.related-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:180px;
+    padding:20px;
+    border:1px solid rgba(173,183,193,.58);
+    border-radius:20px;
+    background:rgba(255,255,255,.62);
+    box-shadow:0 10px 24px rgba(47,57,68,.04);
+    transition:.25s ease;
+}
+
+.related-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 36px rgba(47,57,68,.08);
+}
+
+.related-label{
+    margin-bottom:12px;
+    color:#8a949e;
+    font-size:.62rem;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+
+.related-card h4{
+    margin-bottom:12px;
+    font-size:1rem;
+    line-height:1.35;
+}
+
+.related-card p{
+    color:#73808c;
+    font-size:.82rem;
+    line-height:1.65;
+}
+
+.related-open{
+    margin-top:16px;
+    color:#57636f;
+    font-size:.76rem;
+    font-weight:800;
+    letter-spacing:.08em;
+}
+
+footer{
+    padding:50px 0 10px;
+    color:#808a94;
+    font-size:.80rem;
+    line-height:1.7;
+}
+
+/* RIGHT PANEL */
+
+.scene-title{
+    font-size:1.34rem;
+    font-weight:700;
+    margin-bottom:7px;
+}
+
+.scene-caption{
+    max-width:360px;
+    color:#69747f;
+    font-size:.9rem;
+    line-height:1.7;
+}
+
+.panel-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:18px;
+    padding:8px 12px;
+    border:1px solid rgba(169,179,189,.58);
+    border-radius:999px;
+    color:#697581;
+    font-size:.72rem;
+    font-weight:600;
+}
+
+.panel-tag::before{
+    content:"";
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#a4afb9;
+}
+
+.panel-stage{
+    margin-top:22px;
+    color:#909aa5;
+    font-size:.66rem;
+    font-weight:800;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+}
+
+.visual-graph-area{
+    position:relative;
+    margin-top:14px;
+    height:300px;
+    border:1px solid rgba(178,187,196,.48);
+    border-radius:22px;
+    background:linear-gradient(145deg,#f7f8fa,#edf1f4);
+    overflow:hidden;
+}
+
+.graph-overlay-label{
+    position:absolute;
+    top:16px;
+    left:18px;
+    color:#8a949e;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    z-index:3;
+}
+
+.graph-subnote{
+    position:absolute;
+    top:16px;
+    right:18px;
+    color:#9aa4ae;
+    font-size:.72rem;
+    z-index:3;
+}
+
+.wave-svg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+}
+
+.axis-label{
+    fill:#8c96a0;
+    font-size:12px;
+    font-family:Inter,sans-serif;
+}
+
+.axis-line{
+    stroke:#d4dae0;
+    stroke-width:1;
+}
+
+.grid-line{
+    stroke:#edf1f4;
+    stroke-width:1;
+}
+
+.base-wave{
+    stroke:#cbd3da;
+    stroke-width:2.1;
+    fill:none;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.seg{
+    fill:none;
+    stroke:#9da8b3;
+    stroke-width:2.7;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    opacity:.24;
+    transition:opacity .35s ease, stroke .35s ease, stroke-width .35s ease;
+}
+
+.graph-active-intro .seg-intro,
+.graph-active-phases .seg-peak,
+.graph-active-mechanics .seg-transition,
+.graph-active-degradation .seg-hold,
+.graph-active-features .seg-hold,
+.graph-active-impact .seg-switch,
+.graph-active-research .seg-transition{
+    opacity:1;
+    stroke:#5c6874;
+    stroke-width:3.2;
+}
+
+.phase-tag{
+    position:absolute;
+    padding:7px 10px;
+    border-radius:999px;
+    border:1px solid rgba(167,177,187,.58);
+    background:rgba(255,255,255,.88);
+    color:#7a8590;
+    font-size:.62rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    transition:.3s ease;
+}
+
+.tag-peak{ top:58px; left:115px; }
+.tag-transition{ top:102px; left:220px; }
+.tag-hold{ top:78px; left:390px; }
+.tag-switch{ top:134px; right:72px; }
+
+.graph-active-phases .tag-peak,
+.graph-active-mechanics .tag-transition,
+.graph-active-degradation .tag-hold,
+.graph-active-features .tag-hold,
+.graph-active-impact .tag-switch,
+.graph-active-research .tag-transition{
+    background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(231,236,240,.90));
+    color:#4d5966;
+    border-color:rgba(117,130,143,.65);
+    box-shadow:0 10px 18px rgba(60,70,80,.08);
+    transform:translateY(-2px);
+}
+
+.degraded-wave{
+    fill:none;
+    stroke:#8e99a4;
+    stroke-width:2.1;
+    stroke-dasharray:8 7;
+    opacity:0;
+    transition:opacity .35s ease;
+}
+
+.graph-active-degradation .degraded-wave{
+    opacity:.75;
+}
+
+.wave-legend{
+    position:absolute;
+    left:18px;
+    right:18px;
+    bottom:16px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    z-index:3;
+}
+
+.legend-box{
+    padding:12px 13px;
+    border:1px solid rgba(175,185,195,.56);
+    border-radius:14px;
+    background:rgba(255,255,255,.82);
+}
+
+.legend-title{
+    margin-bottom:4px;
+    color:#55616d;
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.05em;
+}
+
+.legend-text{
+    color:#7b8691;
+    font-size:.72rem;
+    line-height:1.55;
+}
+
+.info-panel{
+    margin-top:16px;
+    padding:18px;
+    border:1px solid rgba(174,184,194,.58);
+    border-radius:20px;
+    background:rgba(255,255,255,.60);
+}
+
+.info-panel-title{
+    margin-bottom:10px;
+    color:#56626e;
+    font-size:.84rem;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+}
+
+.info-panel-text{
+    color:#73808c;
+    font-size:.84rem;
+    line-height:1.7;
+}
+
+.mini-chain{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:7px;
+    margin-top:14px;
+}
+
+.mini-node{
+    padding:8px 10px;
+    border:1px solid rgba(169,179,189,.54);
+    border-radius:10px;
+    background:rgba(255,255,255,.74);
+    color:#5e6975;
+    font-size:.68rem;
+    font-weight:700;
+}
+
+.mini-arrow{
+    color:#9ca7b1;
+    font-size:.8rem;
+    font-weight:800;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+    .page{
+        grid-template-columns:1fr;
+    }
+
+    .visual-column{
+        order:-1;
+    }
+
+    .visual-sticky{
+        position:relative;
+        top:0;
+        height:640px;
+        min-height:0;
+        max-height:none;
+    }
+
+    .hero,
+    .section{
+        min-height:auto;
+        padding:70px 0;
+    }
+}
+
+@media(max-width:820px){
+    .phase-grid,
+    .degradation-grid,
+    .feature-list,
+    .related-grid{
+        grid-template-columns:1fr;
+    }
+
+    .wave-legend{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:760px){
+    nav{
+        padding:16px 5%;
+    }
+
+    .page{
+        padding:92px 5% 42px;
+    }
+
+    .nav-links{
+        gap:12px;
+        font-size:.8rem;
+    }
+
+    .back-link{
+        padding:9px 12px;
+        font-size:.78rem;
+    }
+
+    .chain-box{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .chain-arrow{
+        transform:rotate(90deg);
+        text-align:center;
+    }
+
+    .visual-graph-area{
+        height:340px;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">MA<span>.</span></div>
+
+    <div class="nav-links">
+        <a href="index.html#insights" class="back-link">← Back to Insights</a>
+    </div>
+</nav>
+
+<main class="page">
+
+    <section class="content-column">
+
+        <section class="hero" id="top" data-stage="intro">
+            <div class="hero-inner">
+                <div class="kicker">Research Note · Injector Diagnostics · Signal Analysis</div>
+
+                <h1 class="hero-title">
+                    Can Injector Current Reveal <span>Mechanical Degradation?</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    The injector current waveform is often treated mainly as an electrical signal.
+                    However, in an electromagnetic injector, electrical, magnetic and mechanical
+                    processes are strongly coupled. This means that changes in needle motion or
+                    electromagnetic conditions may also influence the measured current waveform.
+                </p>
+
+                <div class="hero-tags">
+                    <span class="hero-tag">Current Waveform</span>
+                    <span class="hero-tag">Electromagnetic Injector</span>
+                    <span class="hero-tag">Peak & Hold</span>
+                    <span class="hero-tag">Condition Assessment</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#phases" class="btn btn-primary">Explore the note</a>
+                    <a href="index.html#projects" class="btn btn-secondary">See related projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="phases" data-stage="phases">
+            <div class="section-inner">
+                <div class="section-label">01 / Injection event</div>
+                <h2 class="section-title">What happens during <span>one injection?</span></h2>
+
+                <p class="section-text">
+                    During the peak phase, current rises rapidly to generate enough electromagnetic
+                    force to move the injector needle. Once the injector opens, the control strategy
+                    reduces the current to the hold level. During switch-off, the magnetic field
+                    collapses and the needle returns to its closed position.
+                </p>
+
+                <div class="phase-grid">
+                    <div class="phase-card">
+                        <h4>PEAK</h4>
+                        <p>Rapid current increase to generate opening force.</p>
+                    </div>
+
+                    <div class="phase-card">
+                        <h4>TRANSITION</h4>
+                        <p>Opening phase between the initial peak and steady hold.</p>
+                    </div>
+
+                    <div class="phase-card">
+                        <h4>HOLD</h4>
+                        <p>Lower current level used to keep the injector open.</p>
+                    </div>
+
+                    <div class="phase-card">
+                        <h4>SWITCH-OFF</h4>
+                        <p>Current decays and the needle returns to the closed state.</p>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <p class="section-text" style="margin-top:0;">
+                        <strong>Key idea:</strong> even though we measure electrical current,
+                        the waveform reflects a physical event that also includes needle motion
+                        and magnetic changes inside the injector.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="mechanics" data-stage="mechanics">
+            <div class="section-inner">
+                <div class="section-label">02 / Coupling</div>
+                <h2 class="section-title">Where does the mechanical <span>information come from?</span></h2>
+
+                <p class="section-text">
+                    Needle motion changes the geometry of the magnetic circuit. As a result,
+                    the coil inductance may change during injector opening and closing.
+                    Because current dynamics depend on resistance and inductance, mechanical
+                    motion can leave characteristic features in the electrical waveform.
+                </p>
+
+                <div class="chain-box">
+                    <div class="chain-node">Needle motion</div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-node">Magnetic circuit</div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-node">Inductance</div>
+                    <div class="chain-arrow">→</div>
+                    <div class="chain-node">Current waveform</div>
+                </div>
+
+                <p class="section-text">
+                    This is why current analysis may reveal more than only electrical behaviour.
+                    It can also provide indirect information about mechanical and electromagnetic
+                    processes inside the injector.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="degradation" data-stage="degradation">
+            <div class="section-inner">
+                <div class="section-label">03 / Degradation</div>
+                <h2 class="section-title">What could degradation <span>change?</span></h2>
+
+                <p class="section-text">
+                    Changes in injector condition may influence the timing, shape and repeatability
+                    of the current waveform. These effects are not necessarily unique diagnostic
+                    signatures. Similar waveform changes may result from electrical, electromagnetic
+                    or mechanical causes, which is why several signal features should be analysed together.
+                </p>
+
+                <div class="degradation-grid">
+                    <div class="degradation-card">
+                        <h4>Needle sticking</h4>
+                        <p>May delay or modify the characteristic opening transition.</p>
+                    </div>
+
+                    <div class="degradation-card">
+                        <h4>Return spring degradation</h4>
+                        <p>May influence both opening and closing dynamics.</p>
+                    </div>
+
+                    <div class="degradation-card">
+                        <h4>Increased friction</h4>
+                        <p>May change the timing and repeatability of injector movement.</p>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <p class="section-text" style="margin-top:0;">
+                        A useful diagnostic method should therefore combine <strong>multiple signal
+                        features</strong> instead of relying on only one point or one threshold.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="features" data-stage="features">
+            <div class="section-inner">
+                <div class="section-label">04 / Features</div>
+                <h2 class="section-title">Which current features are <span>useful?</span></h2>
+
+                <p class="section-text">
+                    Instead of analysing only the maximum current value, a diagnostic approach can
+                    use a set of time-domain and frequency-domain features describing different
+                    parts of the injection event.
+                </p>
+
+                <div class="feature-list">
+                    <div class="feature-item">Peak Current</div>
+                    <div class="feature-item">Rise Time</div>
+                    <div class="feature-item">Peak Duration</div>
+                    <div class="feature-item">Hold Current</div>
+                    <div class="feature-item">Hold Ripple</div>
+                    <div class="feature-item">Opening Transition</div>
+                    <div class="feature-item">Closing Transition</div>
+                    <div class="feature-item">Frequency-Domain Indicators</div>
+                </div>
+
+                <p class="section-text">
+                    Different features may carry information about different physical mechanisms.
+                    That is why feature selection is a central part of signal-based injector diagnostics.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="impact" data-stage="impact">
+            <div class="section-inner">
+                <div class="section-label">05 / Diagnostics</div>
+                <h2 class="section-title">Why does this matter for <span>diagnostics?</span></h2>
+
+                <p class="section-text">
+                    The main advantage of current-based diagnostics is that the electrical signal
+                    can be measured without direct access to the injector needle. If relationships
+                    between waveform features and physical injector behaviour are identified correctly,
+                    current analysis may provide a non-invasive way to detect changes in injector condition.
+                </p>
+
+                <p class="section-text">
+                    In practical terms, this can support earlier detection of abnormal behaviour
+                    than a simple logic based only on fault codes or threshold events.
+                </p>
+            </div>
+        </section>
+
+        <section class="section" id="research" data-stage="research">
+            <div class="section-inner">
+                <div class="section-label">06 / My perspective</div>
+                <h2 class="section-title">How this fits into <span>my research</span></h2>
+
+                <p class="section-text">
+                    In my research, I use mathematical modelling, multidomain simulation and
+                    laboratory current measurements to investigate these relationships. The objective
+                    is not only to detect that a waveform has changed, but also to understand
+                    which physical processes may be responsible for that change.
+                </p>
+
+                <p class="section-text">
+                    This approach connects physical interpretation with signal processing, which is
+                    important for the development of reliable and meaningful diagnostic indicators.
+                </p>
+
+                <div class="note-box">
+                    <p class="section-text" style="margin-top:0;">
+                        <strong>Long-term goal:</strong> connect waveform features with injector condition,
+                        degradation mechanisms and reliability-oriented assessment.
+                    </p>
+                </div>
+
+                <div class="section-label" style="margin-top:34px;">Related work</div>
+
+                <div class="related-grid">
+                    <a href="injector-modelling.html" class="related-card">
+                        <div>
+                            <div class="related-label">Research</div>
+                            <h4>Injector Modelling</h4>
+                            <p>Mathematical and multidomain description of injector behaviour.</p>
+                        </div>
+                        <div class="related-open">OPEN →</div>
+                    </a>
+
+                    <a href="injector-simulation.html" class="related-card">
+                        <div>
+                            <div class="related-label">Project</div>
+                            <h4>Injector Multidomain Simulation</h4>
+                            <p>Simulation environment linking electrical, mechanical and hydraulic domains.</p>
+                        </div>
+                        <div class="related-open">OPEN →</div>
+                    </a>
+
+                    <a href="injector-diagnostic.html" class="related-card">
+                        <div>
+                            <div class="related-label">Project</div>
+                            <h4>Injector Diagnostic Software</h4>
+                            <p>LabVIEW-based analysis of injector current waveforms and extracted features.</p>
+                        </div>
+                        <div class="related-open">OPEN →</div>
+                    </a>
+                </div>
+
+                <footer>
+                    © 2026 Maja Antkowiak
+                    <br>
+                    Automotive Engineering · Research · Diagnostics
+                </footer>
+            </div>
+        </section>
+
+    </section>
+
+
+    <aside class="visual-column">
+        <div class="visual-sticky">
+            <div class="visual-card" id="visualCard">
+                <div class="scene-title">Injector current waveform</div>
+                <div class="scene-caption" id="sceneCaption">
+                    Current is not only an electrical quantity here — it can also carry indirect
+                    information about mechanical and electromagnetic processes.
+                </div>
+
+                <div class="panel-tag">Interactive research note</div>
+
+                <div class="panel-stage" id="panelStage">Introduction</div>
+
+                <div class="visual-graph-area graph-active-intro" id="graphArea">
+                    <div class="graph-overlay-label">Current response</div>
+                    <div class="graph-subnote">Peak & Hold control</div>
+
+                    <div class="phase-tag tag-peak">Peak</div>
+                    <div class="phase-tag tag-transition">Transition</div>
+                    <div class="phase-tag tag-hold">Hold</div>
+                    <div class="phase-tag tag-switch">Switch-off</div>
+
+                    <svg class="wave-svg" viewBox="0 0 720 300" fill="none">
+                        <!-- grid -->
+                        <line class="grid-line" x1="78" y1="62" x2="672" y2="62"/>
+                        <line class="grid-line" x1="78" y1="104" x2="672" y2="104"/>
+                        <line class="grid-line" x1="78" y1="146" x2="672" y2="146"/>
+                        <line class="grid-line" x1="78" y1="188" x2="672" y2="188"/>
+                        <line class="grid-line" x1="78" y1="230" x2="672" y2="230"/>
+
+                        <!-- axes -->
+                        <line class="axis-line" x1="78" y1="230" x2="672" y2="230"/>
+                        <line class="axis-line" x1="78" y1="38" x2="78" y2="230"/>
+
+                        <text class="axis-label" x="320" y="273">Time</text>
+                        <text class="axis-label" transform="translate(22 155) rotate(-90)">Current [A]</text>
+
+                        <!-- full waveform -->
+                        <path class="base-wave"
+                            d="M88 230
+                               L132 230
+                               L150 228
+                               L174 106
+                               L192 72
+                               L210 56
+                               L228 86
+                               L246 138
+                               L268 160
+                               L288 154
+                               L306 160
+                               L324 154
+                               L342 160
+                               L360 154
+                               L378 160
+                               L396 154
+                               L414 160
+                               L432 154
+                               L450 160
+                               L468 154
+                               L486 160
+                               L504 154
+                               L522 160
+                               L540 154
+                               L558 160
+                               L576 154
+                               L594 160
+                               L612 154
+                               L630 160
+                               L648 230"/>
+
+                        <!-- intro / first emphasis -->
+                        <path class="seg seg-intro"
+                            d="M88 230
+                               L132 230
+                               L150 228
+                               L174 106
+                               L192 72
+                               L210 56
+                               L228 86
+                               L246 138
+                               L268 160
+                               L288 154
+                               L306 160
+                               L324 154
+                               L342 160
+                               L360 154
+                               L378 160
+                               L396 154
+                               L414 160
+                               L432 154
+                               L450 160
+                               L468 154
+                               L486 160
+                               L504 154
+                               L522 160
+                               L540 154
+                               L558 160
+                               L576 154
+                               L594 160
+                               L612 154
+                               L630 160
+                               L648 230"/>
+
+                        <path class="seg seg-peak"
+                            d="M150 228
+                               L174 106
+                               L192 72
+                               L210 56
+                               L228 86"/>
+
+                        <path class="seg seg-transition"
+                            d="M228 86
+                               L246 138
+                               L268 160"/>
+
+                        <path class="seg seg-hold"
+                            d="M268 160
+                               L288 154
+                               L306 160
+                               L324 154
+                               L342 160
+                               L360 154
+                               L378 160
+                               L396 154
+                               L414 160
+                               L432 154
+                               L450 160
+                               L468 154
+                               L486 160
+                               L504 154
+                               L522 160
+                               L540 154
+                               L558 160
+                               L576 154
+                               L594 160
+                               L612 154
+                               L630 160"/>
+
+                        <path class="seg seg-switch"
+                            d="M630 160
+                               L648 230"/>
+
+                        <!-- degraded comparison -->
+                        <path class="degraded-wave"
+                            d="M88 230
+                               L132 230
+                               L150 229
+                               L176 136
+                               L194 92
+                               L212 68
+                               L232 94
+                               L254 150
+                               L276 172
+                               L296 166
+                               L314 171
+                               L332 166
+                               L350 171
+                               L368 166
+                               L386 171
+                               L404 166
+                               L422 171
+                               L440 166
+                               L458 171
+                               L476 166
+                               L494 171
+                               L512 166
+                               L530 171
+                               L548 166
+                               L566 171
+                               L584 166
+                               L602 171
+                               L620 166
+                               L638 171
+                               L654 230"/>
+                    </svg>
+
+                    <div class="wave-legend">
+                        <div class="legend-box">
+                            <div class="legend-title" id="legendTitleA">Main observation</div>
+                            <div class="legend-text" id="legendTextA">
+                                The waveform represents a complete injection event, not only a single current value.
+                            </div>
+                        </div>
+
+                        <div class="legend-box">
+                            <div class="legend-title" id="legendTitleB">Why it matters</div>
+                            <div class="legend-text" id="legendTextB">
+                                Different parts of the waveform may contain different diagnostic information.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-panel">
+                    <div class="info-panel-title" id="infoTitle">Coupled behaviour</div>
+                    <div class="info-panel-text" id="infoText">
+                        Electrical, magnetic and mechanical processes inside the injector are linked.
+                    </div>
+
+                    <div class="mini-chain" id="miniChain">
+                        <div class="mini-node">Electrical</div>
+                        <div class="mini-arrow">→</div>
+                        <div class="mini-node">Magnetic</div>
+                        <div class="mini-arrow">→</div>
+                        <div class="mini-node">Mechanical</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </aside>
+
+</main>
+
+<script>
+const stageData = {
+    intro:{
+        panelStage:'Introduction',
+        caption:'Current is not only an electrical quantity here — it can also carry indirect information about mechanical and electromagnetic processes.',
+        graphClass:'graph-active-intro',
+        legendTitleA:'Main observation',
+        legendTextA:'The waveform represents a complete injection event, not only a single current value.',
+        legendTitleB:'Why it matters',
+        legendTextB:'Different parts of the waveform may contain different diagnostic information.',
+        infoTitle:'Coupled behaviour',
+        infoText:'Electrical, magnetic and mechanical processes inside the injector are linked.',
+        chain:['Electrical','Magnetic','Mechanical']
+    },
+
+    phases:{
+        panelStage:'Injection phases',
+        caption:'A single injection event can be divided into peak, transition, hold and switch-off.',
+        graphClass:'graph-active-phases',
+        legendTitleA:'Peak focus',
+        legendTextA:'The highlighted region shows the rapid current rise used to generate injector opening force.',
+        legendTitleB:'Interpretation',
+        legendTextB:'The waveform should be understood as a sequence of phases, not as one amplitude value.',
+        infoTitle:'Phase structure',
+        infoText:'Peak & Hold control creates a characteristic waveform that can be analysed phase by phase.',
+        chain:['Peak','Transition','Hold','Switch-off']
+    },
+
+    mechanics:{
+        panelStage:'Mechanical coupling',
+        caption:'Needle motion may influence the magnetic circuit and therefore modify the current waveform.',
+        graphClass:'graph-active-mechanics',
+        legendTitleA:'Transition focus',
+        legendTextA:'The opening transition is often one of the most interesting regions for physical interpretation.',
+        legendTitleB:'Mechanism',
+        legendTextB:'Needle motion changes the magnetic circuit geometry and may affect inductance.',
+        infoTitle:'Physical link',
+        infoText:'Needle motion → magnetic circuit → inductance → current waveform.',
+        chain:['Needle motion','Magnetic circuit','Inductance','Current']
+    },
+
+    degradation:{
+        panelStage:'Degradation effects',
+        caption:'Condition changes may shift timing, shape or repeatability of the waveform.',
+        graphClass:'graph-active-degradation',
+        legendTitleA:'Reference vs changed behaviour',
+        legendTextA:'The dashed waveform illustrates how degradation may modify the opening and hold response.',
+        legendTitleB:'Important note',
+        legendTextB:'A change in waveform does not automatically mean one unique fault mechanism.',
+        infoTitle:'Interpretation caution',
+        infoText:'Several causes may produce similar signal changes, so more than one feature should be analysed.',
+        chain:['Condition change','Waveform shift','Feature set','Assessment']
+    },
+
+    features:{
+        panelStage:'Diagnostic features',
+        caption:'Useful diagnostics should combine several time-domain and frequency-domain indicators.',
+        graphClass:'graph-active-features',
+        legendTitleA:'Hold-phase focus',
+        legendTextA:'Stable and oscillatory behaviour during hold may provide useful diagnostic information.',
+        legendTitleB:'Feature strategy',
+        legendTextB:'Peak current alone is usually not enough for a reliable interpretation.',
+        infoTitle:'Feature examples',
+        infoText:'Peak current, rise time, peak duration, hold mean, hold ripple and transition timing may all be useful.',
+        chain:['Time domain','Frequency domain','Feature extraction']
+    },
+
+    impact:{
+        panelStage:'Diagnostic meaning',
+        caption:'Current-based diagnostics can provide non-invasive access to injector behaviour.',
+        graphClass:'graph-active-impact',
+        legendTitleA:'Switch-off focus',
+        legendTextA:'Closing behaviour is also part of the diagnostic story, not only the opening event.',
+        legendTitleB:'Practical value',
+        legendTextB:'Signal analysis may reveal changes in behaviour before a simple threshold-based fault logic does.',
+        infoTitle:'Non-invasive advantage',
+        infoText:'The injector needle does not need to be measured directly if waveform features are interpreted correctly.',
+        chain:['Signal measurement','Feature interpretation','Condition detection']
+    },
+
+    research:{
+        panelStage:'Research perspective',
+        caption:'My work connects modelling, measurements and feature interpretation.',
+        graphClass:'graph-active-research',
+        legendTitleA:'Research focus',
+        legendTextA:'The objective is not only to detect waveform change, but also to understand its physical cause.',
+        legendTitleB:'Methodological link',
+        legendTextB:'Simulation and experiment are used together to evaluate assumptions and diagnostic meaning.',
+        infoTitle:'My approach',
+        infoText:'I combine mathematical modelling, multidomain simulation and laboratory measurements in injector research.',
+        chain:['Modelling','Simulation','Measurement','Interpretation']
+    }
+};
+
+const sections = document.querySelectorAll('[data-stage]');
+const graphArea = document.getElementById('graphArea');
+const panelStage = document.getElementById('panelStage');
+const sceneCaption = document.getElementById('sceneCaption');
+const legendTitleA = document.getElementById('legendTitleA');
+const legendTextA = document.getElementById('legendTextA');
+const legendTitleB = document.getElementById('legendTitleB');
+const legendTextB = document.getElementById('legendTextB');
+const infoTitle = document.getElementById('infoTitle');
+const infoText = document.getElementById('infoText');
+const miniChain = document.getElementById('miniChain');
+
+function renderChain(items){
+    miniChain.innerHTML = '';
+    items.forEach((item,index)=>{
+        const node = document.createElement('div');
+        node.className = 'mini-node';
+        node.textContent = item;
+        miniChain.appendChild(node);
+
+        if(index < items.length - 1){
+            const arrow = document.createElement('div');
+            arrow.className = 'mini-arrow';
+            arrow.textContent = '→';
+            miniChain.appendChild(arrow);
+        }
+    });
+}
+
+function activateStage(stage){
+    const data = stageData[stage];
+    if(!data) return;
+
+    graphArea.className = 'visual-graph-area ' + data.graphClass;
+    panelStage.textContent = data.panelStage;
+    sceneCaption.textContent = data.caption;
+    legendTitleA.textContent = data.legendTitleA;
+    legendTextA.textContent = data.legendTextA;
+    legendTitleB.textContent = data.legendTitleB;
+    legendTextB.textContent = data.legendTextB;
+    infoTitle.textContent = data.infoTitle;
+    infoText.textContent = data.infoText;
+    renderChain(data.chain);
+}
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            activateStage(entry.target.dataset.stage);
+        }
+    });
+},{
+    rootMargin:'-35% 0px -45% 0px',
+    threshold:0
+});
+
+sections.forEach(section => observer.observe(section));
+activateStage('intro');
+</script>
+
+</body>
+</html>
