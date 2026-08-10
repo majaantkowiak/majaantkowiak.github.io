@@ -46,9 +46,7 @@ a{
 }
 
 
-/* =========================================================
-   NAV
-========================================================= */
+/* NAV */
 
 nav{
     position:fixed;
@@ -98,9 +96,7 @@ nav a.active{
 }
 
 
-/* =========================================================
-   PAGE
-========================================================= */
+/* PAGE */
 
 .page{
     display:grid;
@@ -123,12 +119,19 @@ nav a.active{
     position:relative;
 }
 
+
+/* RIGHT STICKY PANEL */
+
 .visual-sticky{
     position:sticky;
-    top:110px;
 
-    height:calc(100vh - 140px);
-    min-height:620px;
+    top:100px;
+
+    height:calc(100vh - 125px);
+    height:calc(100dvh - 125px);
+
+    max-height:760px;
+    min-height:560px;
 }
 
 .visual-card{
@@ -155,9 +158,7 @@ nav a.active{
 }
 
 
-/* =========================================================
-   BASIC SECTIONS
-========================================================= */
+/* BASIC SECTIONS */
 
 .step{
     min-height:92vh;
@@ -212,9 +213,7 @@ nav a.active{
 }
 
 
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero-title{
     margin-bottom:25px;
@@ -275,14 +274,11 @@ nav a.active{
 }
 
 
-/* =========================================================
-   SIMPLE CARDS
-========================================================= */
+/* SIMPLE CARDS */
 
 .grid-2{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
-
     gap:18px;
 }
 
@@ -304,19 +300,15 @@ nav a.active{
 
 .info-card p{
     color:var(--muted);
-
     font-size:.91rem;
     line-height:1.67;
 }
 
 
-/* =========================================================
-   NEW RESEARCH SECTION
-========================================================= */
+/* RESEARCH */
 
 .research-step{
     min-height:auto;
-
     padding-top:100px;
     padding-bottom:110px;
 }
@@ -329,9 +321,6 @@ nav a.active{
     margin-bottom:42px;
 }
 
-
-/* RESEARCH FLOW */
-
 .research-flow{
     display:flex;
     align-items:center;
@@ -340,7 +329,6 @@ nav a.active{
     gap:7px;
 
     margin-bottom:34px;
-
     padding:20px;
 
     border:1px solid rgba(174,184,194,.58);
@@ -362,8 +350,6 @@ nav a.active{
     line-height:1.45;
 
     text-align:center;
-
-    letter-spacing:.02em;
 }
 
 .research-flow-arrow{
@@ -371,12 +357,8 @@ nav a.active{
     font-size:.9rem;
 }
 
-
-/* RESEARCH CARDS */
-
 .research-card{
     position:relative;
-
     overflow:hidden;
 
     margin-bottom:24px;
@@ -393,14 +375,11 @@ nav a.active{
 
     box-shadow:0 16px 38px rgba(45,55,65,.06);
 
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+    transition:.3s ease;
 }
 
 .research-card:hover{
     transform:translateY(-4px);
-
     box-shadow:0 23px 48px rgba(45,55,65,.09);
 }
 
@@ -454,12 +433,7 @@ nav a.active{
     height:6px;
 
     border-radius:50%;
-
     background:#909aa5;
-}
-
-.research-badge.ongoing::before{
-    background:#66727e;
 }
 
 .research-card h3{
@@ -477,11 +451,7 @@ nav a.active{
     line-height:1.8;
 
     text-align:justify;
-    text-justify:inter-word;
 }
-
-
-/* RESEARCH VISUAL */
 
 .research-visual{
     margin:0 20px;
@@ -505,9 +475,6 @@ nav a.active{
         );
 }
 
-
-/* signal waveform */
-
 .signal-visual{
     width:100%;
     height:165px;
@@ -517,9 +484,6 @@ nav a.active{
     width:100%;
     height:100%;
 }
-
-
-/* modelling flow */
 
 .model-flow{
     width:100%;
@@ -555,9 +519,6 @@ nav a.active{
     color:#99a4ae;
 }
 
-
-/* degradation visual */
-
 .degradation-visual{
     width:100%;
 
@@ -574,7 +535,6 @@ nav a.active{
 .degradation-types{
     display:flex;
     flex-direction:column;
-
     gap:7px;
 }
 
@@ -594,9 +554,7 @@ nav a.active{
 
 .degradation-arrow{
     color:#949faa;
-
     font-size:1.5rem;
-
     text-align:center;
 }
 
@@ -614,7 +572,6 @@ nav a.active{
         );
 
     color:#4f5b67;
-
     text-align:center;
 }
 
@@ -627,19 +584,14 @@ nav a.active{
     font-weight:700;
 
     letter-spacing:.13em;
-
     text-transform:uppercase;
 }
 
 .condition-main{
     font-size:.83rem;
     font-weight:800;
-
     line-height:1.45;
 }
-
-
-/* research footer */
 
 .research-card-footer{
     display:flex;
@@ -647,11 +599,9 @@ nav a.active{
     justify-content:space-between;
 
     gap:15px;
-
     flex-wrap:wrap;
 
     margin:0 30px;
-
     padding:20px 0 25px;
 
     border-top:1px solid rgba(180,188,197,.44);
@@ -660,7 +610,6 @@ nav a.active{
 .research-tags{
     display:flex;
     flex-wrap:wrap;
-
     gap:7px;
 }
 
@@ -679,33 +628,19 @@ nav a.active{
 }
 
 .research-link{
-    display:inline-flex;
-    align-items:center;
-
-    gap:9px;
-
     color:#56626e;
 
     font-size:.66rem;
     font-weight:800;
 
     letter-spacing:.09em;
-
-    transition:.2s ease;
-}
-
-.research-link:hover{
-    transform:translateX(3px);
 }
 
 
-/* =========================================================
-   PROJECTS
-========================================================= */
+/* PROJECTS */
 
 .projects-step{
     min-height:auto;
-
     padding-top:95px;
     padding-bottom:110px;
 }
@@ -740,7 +675,6 @@ nav a.active{
 
 .project-featured:hover{
     transform:translateY(-4px);
-
     box-shadow:0 25px 52px rgba(43,53,64,.10);
 }
 
@@ -754,7 +688,6 @@ nav a.active{
     justify-content:space-between;
 
     gap:12px;
-
     flex-wrap:wrap;
 
     margin-bottom:18px;
@@ -797,7 +730,6 @@ nav a.active{
     height:6px;
 
     border-radius:50%;
-
     background:#89939e;
 }
 
@@ -817,7 +749,6 @@ nav a.active{
     line-height:1.78;
 
     text-align:justify;
-    text-justify:inter-word;
 }
 
 .project-highlight-grid{
@@ -845,13 +776,10 @@ nav a.active{
     color:#a1aab4;
 
     font-size:.59rem;
-
     padding-top:2px;
 }
 
 .project-main-image{
-    position:relative;
-
     padding:0 20px 20px;
 }
 
@@ -880,7 +808,6 @@ nav a.active{
     object-fit:contain;
 
     border-radius:12px;
-
     background:white;
 }
 
@@ -904,11 +831,9 @@ nav a.active{
     justify-content:space-between;
 
     gap:15px;
-
     flex-wrap:wrap;
 
     margin:0 32px;
-
     padding:20px 0 25px;
 
     border-top:1px solid rgba(179,188,197,.45);
@@ -918,7 +843,6 @@ nav a.active{
     display:flex;
     align-items:center;
     flex-wrap:wrap;
-
     gap:7px;
 }
 
@@ -942,11 +866,8 @@ nav a.active{
 }
 
 .tool img{
-    display:block;
-
     width:19px;
     height:19px;
-
     object-fit:contain;
 }
 
@@ -978,20 +899,10 @@ nav a.active{
     font-weight:800;
 
     letter-spacing:.10em;
-
-    transition:.25s ease;
-}
-
-.project-button:hover{
-    transform:translateY(-2px);
-
-    box-shadow:0 9px 20px rgba(60,70,80,.15);
 }
 
 
-/* =========================================================
-   INSIGHTS
-========================================================= */
+/* INSIGHTS */
 
 .grid-3{
     display:grid;
@@ -1026,7 +937,6 @@ nav a.active{
 
 .insight-card p{
     color:var(--muted);
-
     font-size:.91rem;
     line-height:1.67;
 }
@@ -1053,9 +963,7 @@ nav a.active{
 }
 
 
-/* =========================================================
-   PUBLICATIONS
-========================================================= */
+/* PUBLICATIONS */
 
 #publications{
     min-height:auto;
@@ -1081,9 +989,7 @@ nav a.active{
 
 .publications-subtitle::after{
     content:"";
-
     flex:1;
-
     height:1px;
 
     background:
@@ -1096,11 +1002,9 @@ nav a.active{
 
 .journal-card{
     position:relative;
-
     overflow:hidden;
 
     margin-bottom:17px;
-
     padding:26px;
 
     border:1px solid rgba(173,183,193,.68);
@@ -1115,7 +1019,6 @@ nav a.active{
     content:"";
 
     position:absolute;
-
     left:0;
     top:0;
 
@@ -1172,7 +1075,6 @@ nav a.active{
 
 .journal-card h3{
     margin-bottom:10px;
-
     font-size:1.22rem;
     line-height:1.45;
 }
@@ -1214,9 +1116,6 @@ nav a.active{
 
     letter-spacing:.06em;
 }
-
-
-/* conferences */
 
 .conference-head{
     margin:26px 0;
@@ -1307,7 +1206,6 @@ nav a.active{
     border-radius:999px;
 
     color:white;
-
     background:#65717d;
 
     font-size:.57rem;
@@ -1339,7 +1237,6 @@ nav a.active{
 
     font-size:.98rem;
     font-weight:700;
-
     line-height:1.4;
 }
 
@@ -1359,9 +1256,7 @@ nav a.active{
 }
 
 
-/* =========================================================
-   RIGHT PANEL
-========================================================= */
+/* RIGHT PANEL HEADER */
 
 .scene-top{
     display:flex;
@@ -1456,7 +1351,7 @@ nav a.active{
 }
 
 
-/* ABOUT RIGHT */
+/* ABOUT VISUAL */
 
 .about-art{
     position:absolute;
@@ -1482,16 +1377,14 @@ nav a.active{
 }
 
 
-/* NEW RESEARCH RIGHT */
+/* RESEARCH RIGHT */
 
 .research-map{
     position:absolute;
-
     inset:18px;
 
     display:flex;
     flex-direction:column;
-
     justify-content:center;
 
     gap:14px;
@@ -1500,8 +1393,7 @@ nav a.active{
 .research-map-row{
     display:grid;
 
-    grid-template-columns:
-        45px 1fr 60px;
+    grid-template-columns:45px 1fr 60px;
 
     align-items:center;
 
@@ -1513,8 +1405,6 @@ nav a.active{
 
     font-size:.62rem;
     font-weight:700;
-
-    letter-spacing:.12em;
 }
 
 .research-map-card{
@@ -1532,13 +1422,11 @@ nav a.active{
     margin-bottom:4px;
 
     color:#56616d;
-
     font-size:.78rem;
 }
 
 .research-map-card span{
     color:#87919b;
-
     font-size:.60rem;
 }
 
@@ -1546,26 +1434,10 @@ nav a.active{
     position:relative;
 
     height:1px;
-
     background:#aab3bc;
 }
 
-.research-map-arrow::after{
-    content:"";
-
-    position:absolute;
-
-    right:-2px;
-    top:-4px;
-
-    border-left:7px solid #aab3bc;
-    border-top:4px solid transparent;
-    border-bottom:4px solid transparent;
-}
-
 .research-destination{
-    margin-top:3px;
-
     padding:14px;
 
     border:1px solid rgba(134,146,158,.62);
@@ -1588,7 +1460,6 @@ nav a.active{
     font-weight:700;
 
     letter-spacing:.13em;
-
     text-transform:uppercase;
 }
 
@@ -1606,7 +1477,6 @@ nav a.active{
 
 .projects-showcase{
     position:absolute;
-
     inset:4px 0 0;
 
     display:flex;
@@ -1660,7 +1530,6 @@ nav a.active{
     position:relative;
 
     flex:1;
-
     min-height:260px;
 
     overflow:hidden;
@@ -1674,13 +1543,10 @@ nav a.active{
             rgba(255,255,255,.94),
             rgba(237,241,244,.86)
         );
-
-    box-shadow:0 15px 32px rgba(51,62,73,.06);
 }
 
 .project-preview{
     position:absolute;
-
     inset:0;
 
     padding:16px;
@@ -1714,13 +1580,9 @@ nav a.active{
     border-radius:14px;
 
     background:white;
-
-    box-shadow:0 7px 18px rgba(54,64,75,.07);
 }
 
 .preview-image-frame img{
-    display:block;
-
     width:100%;
     height:100%;
 
@@ -1746,7 +1608,6 @@ nav a.active{
     font-weight:700;
 
     letter-spacing:.15em;
-    text-transform:uppercase;
 }
 
 .preview-title{
@@ -1761,8 +1622,6 @@ nav a.active{
 
     font-size:.62rem;
     font-weight:700;
-
-    letter-spacing:.08em;
 }
 
 
@@ -1770,7 +1629,6 @@ nav a.active{
 
 .insight-stack{
     position:absolute;
-
     inset:25px;
 
     display:grid;
@@ -1798,7 +1656,6 @@ nav a.active{
 
 .pub-stack{
     position:absolute;
-
     inset:18px;
 
     display:flex;
@@ -1824,7 +1681,6 @@ nav a.active{
     font-size:.57rem;
 
     letter-spacing:.15em;
-    text-transform:uppercase;
 }
 
 .pub-sheet-title{
@@ -1837,9 +1693,7 @@ nav a.active{
 }
 
 
-/* =========================================================
-   CAR
-========================================================= */
+/* CAR */
 
 .car-zone{
     position:absolute;
@@ -1894,7 +1748,6 @@ nav a.active{
 }
 
 .car-body{
-    display:block;
     width:100%;
 }
 
@@ -1918,10 +1771,6 @@ nav a.active{
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
-
 footer{
     padding:50px 0 10px;
 
@@ -1933,7 +1782,7 @@ footer{
 
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE WIDTH
 ========================================================= */
 
 @media(max-width:1100px){
@@ -1951,7 +1800,9 @@ footer{
 
         top:0;
 
-        height:680px;
+        height:650px;
+        min-height:0;
+        max-height:none;
     }
 
     .step{
@@ -1963,6 +1814,223 @@ footer{
         grid-template-columns:1fr;
     }
 }
+
+
+/* =========================================================
+   IMPORTANT:
+   RESPONSIVE HEIGHT FOR SHORTER DESKTOP SCREENS
+========================================================= */
+
+@media (min-width:1101px) and (max-height:900px){
+
+    .page{
+        padding-top:95px;
+    }
+
+    .visual-sticky{
+        top:82px;
+
+        height:calc(100vh - 95px);
+        height:calc(100dvh - 95px);
+
+        min-height:0;
+        max-height:none;
+    }
+
+    .visual-card{
+        padding:21px;
+
+        border-radius:27px;
+    }
+
+    .scene-top{
+        margin-bottom:14px;
+        gap:18px;
+    }
+
+    .scene-number{
+        font-size:.64rem;
+    }
+
+    .scene-title{
+        margin-top:4px;
+        font-size:1.22rem;
+    }
+
+    .scene-caption{
+        max-width:250px;
+
+        font-size:.78rem;
+        line-height:1.45;
+    }
+
+    .mini-tag{
+        padding:6px 10px;
+        font-size:.63rem;
+    }
+
+    .graphic-stage{
+        height:245px;
+        margin-top:10px;
+    }
+
+    .about-art{
+        inset:10px;
+        border-radius:20px;
+    }
+
+    .about-wave{
+        left:28px;
+        right:28px;
+
+        top:95px;
+
+        height:60px;
+    }
+
+    .research-map{
+        inset:6px 10px;
+        gap:8px;
+    }
+
+    .research-map-row{
+        grid-template-columns:32px 1fr 35px;
+        gap:7px;
+    }
+
+    .research-map-card{
+        padding:9px 11px;
+    }
+
+    .research-destination{
+        padding:10px;
+    }
+
+    .showcase-tabs{
+        margin-bottom:8px;
+    }
+
+    .showcase-tab{
+        padding:5px 9px;
+        font-size:.55rem;
+    }
+
+    .showcase-screen{
+        min-height:190px;
+    }
+
+    .project-preview{
+        padding:10px;
+    }
+
+    .preview-image-frame{
+        height:125px;
+    }
+
+    .preview-meta{
+        padding-top:7px;
+    }
+
+    .preview-title{
+        font-size:.75rem;
+    }
+
+    .preview-kicker,
+    .preview-open{
+        font-size:.51rem;
+    }
+
+    .insight-stack{
+        inset:10px;
+        gap:8px;
+    }
+
+    .note{
+        padding:11px;
+        font-size:.72rem;
+    }
+
+    .pub-stack{
+        inset:8px;
+        gap:8px;
+    }
+
+    .pub-sheet{
+        padding:10px 12px;
+    }
+
+    .pub-sheet-title{
+        font-size:.64rem;
+    }
+
+    .car-zone{
+        left:15px;
+        right:15px;
+
+        bottom:7px;
+
+        height:155px;
+    }
+
+    .road-svg{
+        bottom:12px;
+
+        height:108px;
+    }
+
+    .car-wrap{
+        width:170px;
+    }
+
+    .hint{
+        right:2px;
+
+        font-size:.56rem;
+    }
+}
+
+
+/* EXTRA SHORT DISPLAY */
+
+@media (min-width:1101px) and (max-height:730px){
+
+    .visual-sticky{
+        top:76px;
+
+        height:calc(100dvh - 84px);
+    }
+
+    .visual-card{
+        padding:16px;
+    }
+
+    .scene-caption{
+        font-size:.72rem;
+    }
+
+    .graphic-stage{
+        height:190px;
+    }
+
+    .car-zone{
+        height:125px;
+    }
+
+    .road-svg{
+        height:88px;
+    }
+
+    .car-wrap{
+        width:145px;
+    }
+
+    .about-wave{
+        top:70px;
+    }
+}
+
+
+/* PHONE */
 
 @media(max-width:760px){
 
@@ -2013,10 +2081,6 @@ footer{
     .scene-top{
         flex-direction:column;
     }
-
-    .visual-sticky{
-        height:700px;
-    }
 }
 
 </style>
@@ -2034,37 +2098,11 @@ footer{
     </div>
 
     <ul>
-
-        <li>
-            <a href="#about" class="nav-link active">
-                About
-            </a>
-        </li>
-
-        <li>
-            <a href="#research" class="nav-link">
-                Research
-            </a>
-        </li>
-
-        <li>
-            <a href="#projects" class="nav-link">
-                Projects
-            </a>
-        </li>
-
-        <li>
-            <a href="#insights" class="nav-link">
-                Insights
-            </a>
-        </li>
-
-        <li>
-            <a href="#publications" class="nav-link">
-                Publications
-            </a>
-        </li>
-
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#insights" class="nav-link">Insights</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
     </ul>
 
 </nav>
@@ -2075,10 +2113,6 @@ footer{
 <section class="content-column">
 
 
-<!-- =========================================================
-     ABOUT
-========================================================= -->
-
 <section class="step" id="about" data-scene="about">
 
     <div class="step-inner">
@@ -2088,13 +2122,8 @@ footer{
         </div>
 
         <h1 class="hero-title">
-
             Maja<br>
-
-            <span class="silver">
-                Antkowiak
-            </span>
-
+            <span class="silver">Antkowiak</span>
         </h1>
 
         <p class="step-text">
@@ -2120,14 +2149,11 @@ footer{
 
         </div>
 
-
         <div class="grid-2">
 
             <div class="info-card">
 
-                <h3>
-                    Experience
-                </h3>
+                <h3>Experience</h3>
 
                 <p>
                     Research, conference participation,
@@ -2137,12 +2163,9 @@ footer{
 
             </div>
 
-
             <div class="info-card">
 
-                <h3>
-                    Contact
-                </h3>
+                <h3>Contact</h3>
 
                 <p>
                     GitHub · LinkedIn · E-mail · academic profile
@@ -2157,10 +2180,6 @@ footer{
 </section>
 
 
-<!-- =========================================================
-     RESEARCH
-========================================================= -->
-
 <section
     class="step research-step"
     id="research"
@@ -2172,14 +2191,9 @@ footer{
             01 / Research
         </div>
 
-
         <h2 class="step-title">
-
-            Research
-            <span>Focus</span>
-
+            Research <span>Focus</span>
         </h2>
-
 
         <p class="step-text research-intro">
 
@@ -2192,41 +2206,31 @@ footer{
         </p>
 
 
-        <!-- RESEARCH FLOW -->
-
         <div class="research-flow">
 
             <div class="research-flow-node">
                 Physical<br>degradation
             </div>
 
-            <div class="research-flow-arrow">
-                →
-            </div>
+            <div class="research-flow-arrow">→</div>
 
             <div class="research-flow-node">
                 Injector<br>behaviour
             </div>
 
-            <div class="research-flow-arrow">
-                →
-            </div>
+            <div class="research-flow-arrow">→</div>
 
             <div class="research-flow-node">
                 Electrical<br>signal
             </div>
 
-            <div class="research-flow-arrow">
-                →
-            </div>
+            <div class="research-flow-arrow">→</div>
 
             <div class="research-flow-node">
                 Diagnostic<br>features
             </div>
 
-            <div class="research-flow-arrow">
-                →
-            </div>
+            <div class="research-flow-arrow">→</div>
 
             <div class="research-flow-node">
                 Condition<br>assessment
@@ -2234,8 +2238,6 @@ footer{
 
         </div>
 
-
-        <!-- RESEARCH 01 -->
 
         <article class="research-card">
 
@@ -2253,11 +2255,9 @@ footer{
 
                 </div>
 
-
                 <h3>
                     Signal-Based Injector Diagnostics
                 </h3>
-
 
                 <p class="research-card-description">
 
@@ -2387,8 +2387,6 @@ footer{
         </article>
 
 
-        <!-- RESEARCH 02 -->
-
         <article class="research-card">
 
             <div class="research-card-top">
@@ -2405,11 +2403,9 @@ footer{
 
                 </div>
 
-
                 <h3>
                     Injector Modelling
                 </h3>
-
 
                 <p class="research-card-description">
 
@@ -2431,33 +2427,16 @@ footer{
 
                 <div class="model-flow">
 
-                    <div class="model-node">
-                        Electrical
-                    </div>
+                    <div class="model-node">Electrical</div>
+                    <div class="model-arrow">→</div>
 
-                    <div class="model-arrow">
-                        →
-                    </div>
+                    <div class="model-node">Electromagnetic</div>
+                    <div class="model-arrow">→</div>
 
-                    <div class="model-node">
-                        Electromagnetic
-                    </div>
+                    <div class="model-node">Mechanical</div>
+                    <div class="model-arrow">→</div>
 
-                    <div class="model-arrow">
-                        →
-                    </div>
-
-                    <div class="model-node">
-                        Mechanical
-                    </div>
-
-                    <div class="model-arrow">
-                        →
-                    </div>
-
-                    <div class="model-node">
-                        Hydraulic
-                    </div>
+                    <div class="model-node">Hydraulic</div>
 
                 </div>
 
@@ -2482,21 +2461,14 @@ footer{
 
                 </div>
 
-
-                <a
-                    href="injector-modelling.html"
-                    class="research-link">
-
+                <a href="injector-modelling.html" class="research-link">
                     EXPLORE RESEARCH →
-
                 </a>
 
             </div>
 
         </article>
 
-
-        <!-- RESEARCH 03 -->
 
         <article class="research-card">
 
@@ -2508,17 +2480,15 @@ footer{
                         03 / DEGRADATION & RELIABILITY
                     </span>
 
-                    <span class="research-badge ongoing">
+                    <span class="research-badge">
                         Ongoing Research
                     </span>
 
                 </div>
 
-
                 <h3>
                     Degradation & Reliability Research
                 </h3>
-
 
                 <p class="research-card-description">
 
@@ -2541,7 +2511,6 @@ footer{
             <div class="research-visual">
 
                 <div class="degradation-visual">
-
 
                     <div class="degradation-types">
 
@@ -2567,11 +2536,9 @@ footer{
 
                     </div>
 
-
                     <div class="degradation-arrow">
                         →
                     </div>
-
 
                     <div class="condition-box">
 
@@ -2584,7 +2551,6 @@ footer{
                         </div>
 
                     </div>
-
 
                 </div>
 
@@ -2609,7 +2575,6 @@ footer{
 
                 </div>
 
-
                 <a
                     href="degradation-reliability.html"
                     class="research-link">
@@ -2622,15 +2587,10 @@ footer{
 
         </article>
 
-
     </div>
 
 </section>
 
-
-<!-- =========================================================
-     PROJECTS
-========================================================= -->
 
 <section
     class="step projects-step"
@@ -2644,10 +2604,7 @@ footer{
         </div>
 
         <h2 class="step-title">
-
-            Selected
-            <span>Projects</span>
-
+            Selected <span>Projects</span>
         </h2>
 
         <p class="step-text projects-intro">
@@ -2658,8 +2615,6 @@ footer{
 
         </p>
 
-
-        <!-- PROJECT 01 -->
 
         <article class="project-featured">
 
@@ -2734,9 +2689,7 @@ footer{
                 </div>
 
                 <div class="project-image-caption">
-
                     Simulated injector current waveform · Peak & Hold control
-
                 </div>
 
             </div>
@@ -2774,8 +2727,6 @@ footer{
 
         </article>
 
-
-        <!-- PROJECT 02 -->
 
         <article class="project-featured">
 
@@ -2850,9 +2801,7 @@ footer{
                 </div>
 
                 <div class="project-image-caption">
-
                     Time-domain analysis and automatic injector current feature extraction
-
                 </div>
 
             </div>
@@ -2894,15 +2843,10 @@ footer{
 
         </article>
 
-
     </div>
 
 </section>
 
-
-<!-- =========================================================
-     INSIGHTS
-========================================================= -->
 
 <section class="step" id="insights" data-scene="insights">
 
@@ -2913,10 +2857,7 @@ footer{
         </div>
 
         <h2 class="step-title">
-
-            Automotive
-            <span>Insights</span>
-
+            Automotive <span>Insights</span>
         </h2>
 
         <p class="step-text">
@@ -2926,7 +2867,6 @@ footer{
             from my own work.
 
         </p>
-
 
         <div class="grid-3">
 
@@ -3014,14 +2954,7 @@ footer{
 </section>
 
 
-<!-- =========================================================
-     PUBLICATIONS
-========================================================= -->
-
-<section
-    class="step"
-    id="publications"
-    data-scene="publications">
+<section class="step" id="publications" data-scene="publications">
 
 <div class="step-inner">
 
@@ -3030,10 +2963,7 @@ footer{
     </div>
 
     <h2 class="step-title">
-
-        Publications &
-        <span>Conferences</span>
-
+        Publications & <span>Conferences</span>
     </h2>
 
     <p class="step-text">
@@ -3124,10 +3054,7 @@ footer{
         </h3>
 
         <div class="journal-authors">
-
-            Manuscript submitted to
-            <strong>Transport Problems</strong>
-
+            Manuscript submitted to <strong>Transport Problems</strong>
         </div>
 
         <div class="journal-meta">
@@ -3157,11 +3084,9 @@ footer{
         </h3>
 
         <p>
-
             Oral presentations and posters documenting
             the development of my research from signal
             identification to model-based diagnostics.
-
         </p>
 
     </div>
@@ -3169,10 +3094,7 @@ footer{
 
     <div class="conference-timeline">
 
-        <div class="year-marker">
-            2026
-        </div>
-
+        <div class="year-marker">2026</div>
 
         <div class="conf-item">
 
@@ -3296,9 +3218,7 @@ footer{
         </div>
 
 
-        <div class="year-marker">
-            2025
-        </div>
+        <div class="year-marker">2025</div>
 
 
         <div class="conf-item">
@@ -3334,9 +3254,7 @@ footer{
         </div>
 
 
-        <div class="year-marker">
-            2022
-        </div>
+        <div class="year-marker">2022</div>
 
 
         <div class="conf-item">
@@ -3416,12 +3334,9 @@ footer{
 
 </section>
 
+
 </section>
 
-
-<!-- =========================================================
-     RIGHT PANEL
-========================================================= -->
 
 <aside class="visual-column">
 
@@ -3462,8 +3377,6 @@ footer{
     <div class="graphic-stage">
 
 
-        <!-- ABOUT -->
-
         <div class="graphic active" data-graphic="about">
 
             <div class="about-art"></div>
@@ -3485,75 +3398,43 @@ footer{
         </div>
 
 
-        <!-- RESEARCH -->
-
         <div class="graphic" data-graphic="research">
 
             <div class="research-map">
 
-
                 <div class="research-map-row">
 
-                    <div class="research-map-number">
-                        01
-                    </div>
+                    <div class="research-map-number">01</div>
 
                     <div class="research-map-card">
-
-                        <strong>
-                            Signal Diagnostics
-                        </strong>
-
-                        <span>
-                            current waveform → features
-                        </span>
-
+                        <strong>Signal Diagnostics</strong>
+                        <span>current waveform → features</span>
                     </div>
 
                     <div class="research-map-arrow"></div>
 
                 </div>
 
-
                 <div class="research-map-row">
 
-                    <div class="research-map-number">
-                        02
-                    </div>
+                    <div class="research-map-number">02</div>
 
                     <div class="research-map-card">
-
-                        <strong>
-                            Injector Modelling
-                        </strong>
-
-                        <span>
-                            physical domains → response
-                        </span>
-
+                        <strong>Injector Modelling</strong>
+                        <span>physical domains → response</span>
                     </div>
 
                     <div class="research-map-arrow"></div>
 
                 </div>
 
-
                 <div class="research-map-row">
 
-                    <div class="research-map-number">
-                        03
-                    </div>
+                    <div class="research-map-number">03</div>
 
                     <div class="research-map-card">
-
-                        <strong>
-                            Degradation & Reliability
-                        </strong>
-
-                        <span>
-                            faults → technical condition
-                        </span>
-
+                        <strong>Degradation & Reliability</strong>
+                        <span>faults → technical condition</span>
                     </div>
 
                     <div class="research-map-arrow"></div>
@@ -3573,13 +3454,10 @@ footer{
 
                 </div>
 
-
             </div>
 
         </div>
 
-
-        <!-- PROJECTS -->
 
         <div class="graphic" data-graphic="projects">
 
@@ -3607,7 +3485,6 @@ footer{
 
 
                 <div class="showcase-screen">
-
 
                     <div
                         class="project-preview active"
@@ -3686,42 +3563,26 @@ footer{
 
                     </div>
 
-
                 </div>
 
             </div>
 
         </div>
 
-
-        <!-- INSIGHTS -->
 
         <div class="graphic" data-graphic="insights">
 
             <div class="insight-stack">
 
-                <div class="note">
-                    Research papers
-                </div>
-
-                <div class="note">
-                    Automotive trends
-                </div>
-
-                <div class="note">
-                    Laboratory notes
-                </div>
-
-                <div class="note">
-                    Behind the research
-                </div>
+                <div class="note">Research papers</div>
+                <div class="note">Automotive trends</div>
+                <div class="note">Laboratory notes</div>
+                <div class="note">Behind the research</div>
 
             </div>
 
         </div>
 
-
-        <!-- PUBLICATIONS -->
 
         <div class="graphic" data-graphic="publications">
 
@@ -3743,7 +3604,6 @@ footer{
 
                 </div>
 
-
                 <div class="pub-sheet">
 
                     <div class="pub-sheet-label">
@@ -3762,8 +3622,6 @@ footer{
 
     </div>
 
-
-    <!-- ROAD -->
 
     <div class="car-zone" id="carZone">
 
@@ -4058,14 +3916,9 @@ const scenes={
 };
 
 
-const steps=
-    document.querySelectorAll('.step');
-
-const graphics=
-    document.querySelectorAll('.graphic');
-
-const navLinks=
-    document.querySelectorAll('.nav-link');
+const steps=document.querySelectorAll('.step');
+const graphics=document.querySelectorAll('.graphic');
+const navLinks=document.querySelectorAll('.nav-link');
 
 
 function activateScene(id){
@@ -4076,18 +3929,10 @@ function activateScene(id){
         return;
     }
 
-    document.getElementById('sceneNumber').textContent=
-        scene.number;
-
-    document.getElementById('sceneTitle').textContent=
-        scene.title;
-
-    document.getElementById('sceneCaption').textContent=
-        scene.caption;
-
-    document.getElementById('sceneTag').textContent=
-        scene.tag;
-
+    document.getElementById('sceneNumber').textContent=scene.number;
+    document.getElementById('sceneTitle').textContent=scene.title;
+    document.getElementById('sceneCaption').textContent=scene.caption;
+    document.getElementById('sceneTag').textContent=scene.tag;
 
     graphics.forEach(graphic=>{
 
@@ -4097,7 +3942,6 @@ function activateScene(id){
         );
 
     });
-
 
     navLinks.forEach(link=>{
 
@@ -4111,8 +3955,7 @@ function activateScene(id){
 }
 
 
-const observer=
-new IntersectionObserver(
+const observer=new IntersectionObserver(
 
     entries=>{
 
@@ -4180,23 +4023,12 @@ previewButtons.forEach(button=>{
 });
 
 
-const carWrap=
-    document.getElementById('carWrap');
-
-const carZone=
-    document.getElementById('carZone');
-
-const roadSvg=
-    document.getElementById('roadSvg');
-
-const motionPath=
-    document.getElementById('motionPath');
-
-const frontWheel=
-    document.getElementById('frontWheel');
-
-const rearWheel=
-    document.getElementById('rearWheel');
+const carWrap=document.getElementById('carWrap');
+const carZone=document.getElementById('carZone');
+const roadSvg=document.getElementById('roadSvg');
+const motionPath=document.getElementById('motionPath');
+const frontWheel=document.getElementById('frontWheel');
+const rearWheel=document.getElementById('rearWheel');
 
 
 function clamp(value,min,max){
@@ -4236,8 +4068,7 @@ function getScrollRange(){
 
 function calculateScrollProgress(){
 
-    const range=
-        getScrollRange();
+    const range=getScrollRange();
 
     const position=
         window.scrollY+
@@ -4267,8 +4098,7 @@ function calculateScrollProgress(){
 
 function progressToScroll(progress){
 
-    const range=
-        getScrollRange();
+    const range=getScrollRange();
 
     const target=
 
@@ -4290,11 +4120,7 @@ function progressToScroll(progress){
         document.documentElement.scrollHeight-
         window.innerHeight;
 
-    return clamp(
-        target,
-        0,
-        max
-    );
+    return clamp(target,0,max);
 
 }
 
@@ -4339,7 +4165,8 @@ function renderCar(progress){
         point.x*scaleX;
 
     const y=
-        roadTop+point.y*scaleY;
+        roadTop+
+        point.y*scaleY;
 
     let angle=
 
@@ -4355,10 +4182,12 @@ function renderCar(progress){
         clamp(angle,-5,5);
 
     const carX=
-        x-carWrap.offsetWidth*.50;
+        x-
+        carWrap.offsetWidth*.50;
 
     const carY=
-        y-carWrap.offsetHeight*.82;
+        y-
+        carWrap.offsetHeight*.82;
 
     carWrap.style.transform=
         `translate3d(${carX}px,${carY}px,0) rotate(${angle}deg)`;
@@ -4478,19 +4307,14 @@ function dragTo(clientX){
     const progress=
         pointerToProgress(clientX);
 
-    targetProgress=
-        progress;
-
-    currentProgress=
-        progress;
+    targetProgress=progress;
+    currentProgress=progress;
 
     renderCar(progress);
 
     window.scrollTo({
 
-        top:
-            progressToScroll(progress),
-
+        top:progressToScroll(progress),
         behavior:'auto'
 
     });
@@ -4504,16 +4328,11 @@ carWrap.addEventListener(
 
         isDragging=true;
 
-        carWrap.classList.add(
-            'dragging'
-        );
+        carWrap.classList.add('dragging');
 
         if(animationFrame!==null){
 
-            cancelAnimationFrame(
-                animationFrame
-            );
-
+            cancelAnimationFrame(animationFrame);
             animationFrame=null;
 
         }
@@ -4522,9 +4341,7 @@ carWrap.addEventListener(
             event.pointerId
         );
 
-        dragTo(
-            event.clientX
-        );
+        dragTo(event.clientX);
 
     }
 );
@@ -4538,9 +4355,7 @@ carWrap.addEventListener(
             return;
         }
 
-        dragTo(
-            event.clientX
-        );
+        dragTo(event.clientX);
 
     }
 );
@@ -4554,9 +4369,7 @@ function finishDrag(event){
 
     isDragging=false;
 
-    carWrap.classList.remove(
-        'dragging'
-    );
+    carWrap.classList.remove('dragging');
 
     if(
         carWrap.hasPointerCapture(
@@ -4576,9 +4389,7 @@ function finishDrag(event){
     currentProgress=
         targetProgress;
 
-    renderCar(
-        currentProgress
-    );
+    renderCar(currentProgress);
 
 }
 
@@ -4604,9 +4415,7 @@ window.addEventListener(
         currentProgress=
             targetProgress;
 
-        renderCar(
-            currentProgress
-        );
+        renderCar(currentProgress);
 
     }
 );
@@ -4625,5 +4434,4 @@ renderCar(currentProgress);
 </script>
 
 </body>
-
 </html>
