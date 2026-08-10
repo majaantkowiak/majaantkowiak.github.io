@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Maja Antkowiak | Automotive Research Portfolio</title>
 
 <style>
@@ -12,2098 +10,1916 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root{
-    --text:#1f2732;
-    --muted:#68727e;
-    --silver:#7e8995;
-    --silver-dark:#4f5b68;
-    --border:rgba(177,187,198,.62);
+--text:#1f2732;
+--muted:#68727e;
+--silver:#7e8995;
+--silver-dark:#4f5b68;
+--border:rgba(177,187,198,.62);
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    color:var(--text);
-    overflow-x:hidden;
+font-family:'Inter',sans-serif;
+color:var(--text);
+overflow-x:hidden;
 
-    background:
-        radial-gradient(circle at 10% 3%,#fff,transparent 25%),
-        radial-gradient(circle at 90% 18%,rgba(207,215,224,.32),transparent 22%),
-        linear-gradient(180deg,#f8f9fa,#eef1f4);
+background:
+radial-gradient(circle at 10% 3%,#fff,transparent 25%),
+radial-gradient(circle at 90% 18%,rgba(207,215,224,.32),transparent 22%),
+linear-gradient(180deg,#f8f9fa,#eef1f4);
 }
 
 a{
-    color:inherit;
-    text-decoration:none;
+color:inherit;
+text-decoration:none;
 }
-
 
 /* NAV */
 
 nav{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:1000;
-
-    width:100%;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:20px 6%;
-
-    background:rgba(248,249,250,.84);
-    backdrop-filter:blur(15px);
-
-    border-bottom:1px solid rgba(175,185,195,.36);
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 6%;
+background:rgba(248,249,250,.84);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(175,185,195,.36);
 }
 
 .logo{
-    font-size:1.25rem;
-    font-weight:800;
-    letter-spacing:-.04em;
+font-size:1.25rem;
+font-weight:800;
+letter-spacing:-.04em;
 }
 
 .logo span{
-    color:#8f99a4;
+color:#8f99a4;
 }
 
 nav ul{
-    list-style:none;
-    display:flex;
-    gap:29px;
+list-style:none;
+display:flex;
+gap:29px;
 }
 
 nav a{
-    color:#68727e;
-    font-size:.91rem;
-    transition:.2s ease;
+color:#68727e;
+font-size:.91rem;
+transition:.2s ease;
 }
 
 nav a:hover,
 nav a.active{
-    color:#1e2731;
+color:#1e2731;
 }
-
 
 /* PAGE */
 
 .page{
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
-
-    gap:45px;
-
-    max-width:1500px;
-    margin:0 auto;
-
-    padding:110px 6% 60px;
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:45px;
+max-width:1500px;
+margin:0 auto;
+padding:110px 6% 60px;
 }
 
 .content-column{
-    position:relative;
-    z-index:2;
+position:relative;
+z-index:2;
 }
 
 .visual-column{
-    position:relative;
+position:relative;
 }
-
 
 /* RIGHT STICKY PANEL */
 
 .visual-sticky{
-    position:sticky;
+position:sticky;
+top:100px;
 
-    top:100px;
+height:calc(100vh - 125px);
+height:calc(100dvh - 125px);
 
-    height:calc(100vh - 125px);
-    height:calc(100dvh - 125px);
-
-    max-height:760px;
-    min-height:560px;
+max-height:760px;
+min-height:560px;
 }
 
 .visual-card{
-    position:relative;
+position:relative;
+width:100%;
+height:100%;
+overflow:hidden;
+padding:30px;
 
-    width:100%;
-    height:100%;
+border:1px solid rgba(185,194,203,.56);
+border-radius:31px;
 
-    overflow:hidden;
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.94),
+rgba(255,255,255,.72)
+);
 
-    padding:30px;
-
-    border:1px solid rgba(185,194,203,.56);
-    border-radius:31px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.94),
-            rgba(255,255,255,.72)
-        );
-
-    box-shadow:0 22px 50px rgba(40,50,60,.08);
+box-shadow:0 22px 50px rgba(40,50,60,.08);
 }
-
 
 /* BASIC SECTIONS */
 
 .step{
-    min-height:92vh;
-
-    display:flex;
-    align-items:center;
-
-    padding:25px 0;
-
-    scroll-margin-top:105px;
+min-height:92vh;
+display:flex;
+align-items:center;
+padding:25px 0;
+scroll-margin-top:105px;
 }
 
 .step-inner{
-    width:100%;
-    max-width:650px;
+width:100%;
+max-width:650px;
 }
 
 .step-kicker{
-    margin-bottom:16px;
-
-    color:#87919c;
-
-    font-size:.76rem;
-    font-weight:600;
-
-    letter-spacing:.21em;
-    text-transform:uppercase;
+margin-bottom:16px;
+color:#87919c;
+font-size:.76rem;
+font-weight:600;
+letter-spacing:.21em;
+text-transform:uppercase;
 }
 
 .step-title{
-    margin-bottom:24px;
-
-    font-size:clamp(2.6rem,5vw,5rem);
-
-    line-height:.97;
-    letter-spacing:-.055em;
+margin-bottom:24px;
+font-size:clamp(2.6rem,5vw,5rem);
+line-height:.97;
+letter-spacing:-.055em;
 }
 
 .step-title span{
-    color:#5d6975;
+color:#5d6975;
 }
 
 .step-text{
-    max-width:590px;
-
-    margin-bottom:27px;
-
-    color:var(--muted);
-
-    font-size:1.06rem;
-    line-height:1.82;
+max-width:590px;
+margin-bottom:27px;
+color:var(--muted);
+font-size:1.06rem;
+line-height:1.82;
 }
-
 
 /* HERO */
 
 .hero-title{
-    margin-bottom:25px;
-
-    font-size:clamp(3.8rem,7vw,7rem);
-
-    line-height:.89;
-    letter-spacing:-.07em;
+margin-bottom:25px;
+font-size:clamp(3.8rem,7vw,7rem);
+line-height:.89;
+letter-spacing:-.07em;
 }
 
 .hero-title .silver{
-    background:
-        linear-gradient(
-            90deg,
-            #46515e,
-            #949da7,
-            #c2c8ce
-        );
+background:
+linear-gradient(
+90deg,
+#46515e,
+#949da7,
+#c2c8ce
+);
 
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-
-    gap:13px;
-
-    margin:28px 0 32px;
+display:flex;
+flex-wrap:wrap;
+gap:13px;
+margin:28px 0 32px;
 }
 
 .btn{
-    padding:13px 19px;
-
-    border-radius:999px;
-
-    font-size:.91rem;
-    font-weight:600;
+padding:13px 19px;
+border-radius:999px;
+font-size:.91rem;
+font-weight:600;
 }
 
 .btn-primary{
-    color:white;
+color:white;
 
-    background:
-        linear-gradient(
-            135deg,
-            #4b5663,
-            #7e8995
-        );
+background:
+linear-gradient(
+135deg,
+#4b5663,
+#7e8995
+);
 
-    box-shadow:0 12px 25px rgba(71,82,94,.17);
+box-shadow:0 12px 25px rgba(71,82,94,.17);
 }
 
 .btn-secondary{
-    border:1px solid rgba(151,161,171,.65);
-    background:rgba(255,255,255,.55);
+border:1px solid rgba(151,161,171,.65);
+background:rgba(255,255,255,.55);
 }
-
 
 /* SIMPLE CARDS */
 
 .grid-2{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:18px;
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:18px;
 }
 
 .info-card{
-    padding:22px;
-
-    border:1px solid var(--border);
-    border-radius:21px;
-
-    background:rgba(255,255,255,.61);
-
-    box-shadow:0 11px 28px rgba(50,60,70,.04);
+padding:22px;
+border:1px solid var(--border);
+border-radius:21px;
+background:rgba(255,255,255,.61);
+box-shadow:0 11px 28px rgba(50,60,70,.04);
 }
 
 .info-card h3{
-    margin-bottom:11px;
-    font-size:1.08rem;
+margin-bottom:11px;
+font-size:1.08rem;
 }
 
 .info-card p{
-    color:var(--muted);
-    font-size:.91rem;
-    line-height:1.67;
+color:var(--muted);
+font-size:.91rem;
+line-height:1.67;
 }
-
 
 /* RESEARCH */
 
 .research-step{
-    min-height:auto;
-    padding-top:100px;
-    padding-bottom:110px;
+min-height:auto;
+padding-top:100px;
+padding-bottom:110px;
 }
 
 .research-inner{
-    max-width:760px;
+max-width:760px;
 }
 
 .research-intro{
-    margin-bottom:42px;
+margin-bottom:42px;
 }
 
 .research-flow{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:7px;
+margin-bottom:34px;
+padding:20px;
 
-    gap:7px;
+border:1px solid rgba(174,184,194,.58);
+border-radius:22px;
 
-    margin-bottom:34px;
-    padding:20px;
+background:rgba(255,255,255,.55);
 
-    border:1px solid rgba(174,184,194,.58);
-    border-radius:22px;
-
-    background:rgba(255,255,255,.55);
-
-    box-shadow:0 12px 28px rgba(47,57,68,.04);
+box-shadow:0 12px 28px rgba(47,57,68,.04);
 }
 
 .research-flow-node{
-    flex:1;
-
-    color:#626d79;
-
-    font-size:.63rem;
-    font-weight:700;
-
-    line-height:1.45;
-
-    text-align:center;
+flex:1;
+color:#626d79;
+font-size:.63rem;
+font-weight:700;
+line-height:1.45;
+text-align:center;
 }
 
 .research-flow-arrow{
-    color:#a5aeb7;
-    font-size:.9rem;
+color:#a5aeb7;
+font-size:.9rem;
 }
 
 .research-card{
-    position:relative;
-    overflow:hidden;
+position:relative;
+overflow:hidden;
+margin-bottom:24px;
 
-    margin-bottom:24px;
+border:1px solid rgba(168,179,190,.68);
+border-radius:28px;
 
-    border:1px solid rgba(168,179,190,.68);
-    border-radius:28px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.95),
+rgba(241,244,247,.75)
+);
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.95),
-            rgba(241,244,247,.75)
-        );
+box-shadow:0 16px 38px rgba(45,55,65,.06);
 
-    box-shadow:0 16px 38px rgba(45,55,65,.06);
-
-    transition:.3s ease;
+transition:.3s ease;
 }
 
 .research-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 23px 48px rgba(45,55,65,.09);
+transform:translateY(-4px);
+box-shadow:0 23px 48px rgba(45,55,65,.09);
 }
 
 .research-card-top{
-    padding:29px 30px 22px;
+padding:29px 30px 22px;
 }
 
 .research-card-meta{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:19px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+margin-bottom:19px;
 }
 
 .research-number{
-    color:#9aa4ae;
-
-    font-size:.65rem;
-    font-weight:700;
-
-    letter-spacing:.16em;
+color:#9aa4ae;
+font-size:.65rem;
+font-weight:700;
+letter-spacing:.16em;
 }
 
 .research-badge{
-    display:inline-flex;
-    align-items:center;
+display:inline-flex;
+align-items:center;
+gap:7px;
 
-    gap:7px;
+padding:6px 9px;
 
-    padding:6px 9px;
+border:1px solid rgba(162,172,182,.48);
+border-radius:999px;
 
-    border:1px solid rgba(162,172,182,.48);
-    border-radius:999px;
+color:#6e7984;
 
-    color:#6e7984;
+font-size:.56rem;
+font-weight:700;
 
-    font-size:.56rem;
-    font-weight:700;
-
-    letter-spacing:.12em;
-    text-transform:uppercase;
+letter-spacing:.12em;
+text-transform:uppercase;
 }
 
 .research-badge::before{
-    content:"";
-
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-    background:#909aa5;
+content:"";
+width:6px;
+height:6px;
+border-radius:50%;
+background:#909aa5;
 }
 
 .research-card h3{
-    margin-bottom:15px;
-
-    font-size:1.6rem;
-
-    letter-spacing:-.04em;
+margin-bottom:15px;
+font-size:1.6rem;
+letter-spacing:-.04em;
 }
 
 .research-card-description{
-    color:#64707c;
-
-    font-size:.90rem;
-    line-height:1.8;
-
-    text-align:justify;
+color:#64707c;
+font-size:.90rem;
+line-height:1.8;
+text-align:justify;
 }
 
 .research-visual{
-    margin:0 20px;
+margin:0 20px;
+min-height:180px;
 
-    min-height:180px;
+display:flex;
+align-items:center;
+justify-content:center;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+overflow:hidden;
 
-    overflow:hidden;
+border:1px solid rgba(178,187,196,.48);
+border-radius:18px;
 
-    border:1px solid rgba(178,187,196,.48);
-    border-radius:18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #f7f8fa,
-            #edf1f4
-        );
+background:
+linear-gradient(
+145deg,
+#f7f8fa,
+#edf1f4
+);
 }
 
 .signal-visual{
-    width:100%;
-    height:165px;
+width:100%;
+height:165px;
 }
 
 .signal-visual svg{
-    width:100%;
-    height:100%;
+width:100%;
+height:100%;
 }
 
 .model-flow{
-    width:100%;
+width:100%;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+display:flex;
+align-items:center;
+justify-content:center;
 
-    gap:8px;
+gap:8px;
 
-    padding:25px 20px;
+padding:25px 20px;
 }
 
 .model-node{
-    min-width:105px;
+min-width:105px;
 
-    padding:19px 11px;
+padding:19px 11px;
 
-    border:1px solid rgba(153,164,175,.58);
-    border-radius:14px;
+border:1px solid rgba(153,164,175,.58);
+border-radius:14px;
 
-    background:rgba(255,255,255,.76);
+background:rgba(255,255,255,.76);
 
-    color:#5e6975;
+color:#5e6975;
 
-    font-size:.66rem;
-    font-weight:700;
+font-size:.66rem;
+font-weight:700;
 
-    text-align:center;
+text-align:center;
 }
 
 .model-arrow{
-    color:#99a4ae;
+color:#99a4ae;
 }
 
 .degradation-visual{
-    width:100%;
+width:100%;
 
-    display:grid;
-    grid-template-columns:1fr 50px 1fr;
+display:grid;
+grid-template-columns:1fr 50px 1fr;
 
-    align-items:center;
+align-items:center;
 
-    gap:12px;
+gap:12px;
 
-    padding:22px;
+padding:22px;
 }
 
 .degradation-types{
-    display:flex;
-    flex-direction:column;
-    gap:7px;
+display:flex;
+flex-direction:column;
+gap:7px;
 }
 
 .degradation-type{
-    padding:8px 11px;
+padding:8px 11px;
 
-    border:1px solid rgba(170,180,190,.52);
-    border-radius:8px;
+border:1px solid rgba(170,180,190,.52);
+border-radius:8px;
 
-    background:rgba(255,255,255,.72);
+background:rgba(255,255,255,.72);
 
-    color:#6a7580;
+color:#6a7580;
 
-    font-size:.60rem;
-    font-weight:600;
+font-size:.60rem;
+font-weight:600;
 }
 
 .degradation-arrow{
-    color:#949faa;
-    font-size:1.5rem;
-    text-align:center;
+color:#949faa;
+font-size:1.5rem;
+text-align:center;
 }
 
 .condition-box{
-    padding:25px 15px;
+padding:25px 15px;
 
-    border:1px solid rgba(127,139,151,.68);
-    border-radius:17px;
+border:1px solid rgba(127,139,151,.68);
+border-radius:17px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.92),
-            rgba(226,232,237,.82)
-        );
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.92),
+rgba(226,232,237,.82)
+);
 
-    color:#4f5b67;
-    text-align:center;
+color:#4f5b67;
+text-align:center;
 }
 
 .condition-small{
-    margin-bottom:7px;
-
-    color:#89939e;
-
-    font-size:.55rem;
-    font-weight:700;
-
-    letter-spacing:.13em;
-    text-transform:uppercase;
+margin-bottom:7px;
+color:#89939e;
+font-size:.55rem;
+font-weight:700;
+letter-spacing:.13em;
+text-transform:uppercase;
 }
 
 .condition-main{
-    font-size:.83rem;
-    font-weight:800;
-    line-height:1.45;
+font-size:.83rem;
+font-weight:800;
+line-height:1.45;
 }
 
 .research-card-footer{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-    gap:15px;
-    flex-wrap:wrap;
+gap:15px;
+flex-wrap:wrap;
 
-    margin:0 30px;
-    padding:20px 0 25px;
+margin:0 30px;
+padding:20px 0 25px;
 
-    border-top:1px solid rgba(180,188,197,.44);
+border-top:1px solid rgba(180,188,197,.44);
 }
 
 .research-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:7px;
+display:flex;
+flex-wrap:wrap;
+gap:7px;
 }
 
 .research-tag{
-    padding:6px 9px;
+padding:6px 9px;
 
-    border:1px solid rgba(173,183,193,.52);
-    border-radius:7px;
+border:1px solid rgba(173,183,193,.52);
+border-radius:7px;
 
-    color:#747f8a;
+color:#747f8a;
 
-    background:rgba(249,250,251,.75);
+background:rgba(249,250,251,.75);
 
-    font-size:.60rem;
-    font-weight:600;
+font-size:.60rem;
+font-weight:600;
 }
 
 .research-link{
-    color:#56626e;
-
-    font-size:.66rem;
-    font-weight:800;
-
-    letter-spacing:.09em;
+color:#56626e;
+font-size:.66rem;
+font-weight:800;
+letter-spacing:.09em;
 }
-
 
 /* PROJECTS */
 
 .projects-step{
-    min-height:auto;
-    padding-top:95px;
-    padding-bottom:110px;
+min-height:auto;
+padding-top:95px;
+padding-bottom:110px;
 }
 
 .projects-inner{
-    max-width:760px;
+max-width:760px;
 }
 
 .projects-intro{
-    margin-bottom:38px;
+margin-bottom:38px;
 }
 
 .project-featured{
-    margin-bottom:30px;
+margin-bottom:30px;
+overflow:hidden;
 
-    overflow:hidden;
+border:1px solid rgba(166,177,188,.72);
+border-radius:29px;
 
-    border:1px solid rgba(166,177,188,.72);
-    border-radius:29px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.96),
+rgba(243,246,248,.80)
+);
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.96),
-            rgba(243,246,248,.80)
-        );
+box-shadow:0 18px 42px rgba(43,53,64,.07);
 
-    box-shadow:0 18px 42px rgba(43,53,64,.07);
-
-    transition:.3s ease;
+transition:.3s ease;
 }
 
 .project-featured:hover{
-    transform:translateY(-4px);
-    box-shadow:0 25px 52px rgba(43,53,64,.10);
+transform:translateY(-4px);
+box-shadow:0 25px 52px rgba(43,53,64,.10);
 }
 
 .project-featured-body{
-    padding:32px 32px 25px;
+padding:32px 32px 25px;
 }
 
 .project-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-    gap:12px;
-    flex-wrap:wrap;
+gap:12px;
+flex-wrap:wrap;
 
-    margin-bottom:18px;
+margin-bottom:18px;
 }
 
 .project-type{
-    color:#7d8893;
-
-    font-size:.65rem;
-    font-weight:700;
-
-    letter-spacing:.17em;
-    text-transform:uppercase;
+color:#7d8893;
+font-size:.65rem;
+font-weight:700;
+letter-spacing:.17em;
+text-transform:uppercase;
 }
 
 .project-status{
-    display:inline-flex;
-    align-items:center;
+display:inline-flex;
+align-items:center;
+gap:7px;
 
-    gap:7px;
+padding:6px 10px;
 
-    padding:6px 10px;
+border:1px solid rgba(158,168,178,.48);
+border-radius:999px;
 
-    border:1px solid rgba(158,168,178,.48);
-    border-radius:999px;
+color:#68737f;
 
-    color:#68737f;
+font-size:.58rem;
+font-weight:700;
 
-    font-size:.58rem;
-    font-weight:700;
-
-    letter-spacing:.11em;
-    text-transform:uppercase;
+letter-spacing:.11em;
+text-transform:uppercase;
 }
 
 .project-status::before{
-    content:"";
-
-    width:6px;
-    height:6px;
-
-    border-radius:50%;
-    background:#89939e;
+content:"";
+width:6px;
+height:6px;
+border-radius:50%;
+background:#89939e;
 }
 
 .project-featured h3{
-    margin-bottom:16px;
-
-    font-size:1.78rem;
-
-    line-height:1.15;
-    letter-spacing:-.04em;
+margin-bottom:16px;
+font-size:1.78rem;
+line-height:1.15;
+letter-spacing:-.04em;
 }
 
 .project-description{
-    color:#64707c;
-
-    font-size:.92rem;
-    line-height:1.78;
-
-    text-align:justify;
+color:#64707c;
+font-size:.92rem;
+line-height:1.78;
+text-align:justify;
 }
 
 .project-highlight-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-
-    gap:10px 20px;
-
-    margin-top:23px;
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px 20px;
+margin-top:23px;
 }
 
 .project-highlight{
-    display:grid;
-    grid-template-columns:27px 1fr;
-
-    gap:8px;
-
-    color:#596572;
-
-    font-size:.77rem;
-    line-height:1.45;
+display:grid;
+grid-template-columns:27px 1fr;
+gap:8px;
+color:#596572;
+font-size:.77rem;
+line-height:1.45;
 }
 
 .project-highlight span{
-    color:#a1aab4;
-
-    font-size:.59rem;
-    padding-top:2px;
+color:#a1aab4;
+font-size:.59rem;
+padding-top:2px;
 }
 
 .project-main-image{
-    padding:0 20px 20px;
+padding:0 20px 20px;
 }
 
 .project-main-image-frame{
-    overflow:hidden;
+overflow:hidden;
+padding:13px;
 
-    padding:13px;
+border:1px solid rgba(176,185,194,.50);
+border-radius:19px;
 
-    border:1px solid rgba(176,185,194,.50);
-    border-radius:19px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #f3f6f8,
-            #e9edf1
-        );
+background:
+linear-gradient(
+145deg,
+#f3f6f8,
+#e9edf1
+);
 }
 
 .project-main-image-frame img{
-    display:block;
-
-    width:100%;
-    max-height:340px;
-
-    object-fit:contain;
-
-    border-radius:12px;
-    background:white;
+display:block;
+width:100%;
+max-height:340px;
+object-fit:contain;
+border-radius:12px;
+background:white;
 }
 
 .project-image-caption{
-    margin-top:10px;
-
-    color:#89939d;
-
-    font-size:.60rem;
-    font-weight:600;
-
-    letter-spacing:.08em;
-
-    text-align:center;
-    text-transform:uppercase;
+margin-top:10px;
+color:#89939d;
+font-size:.60rem;
+font-weight:600;
+letter-spacing:.08em;
+text-align:center;
+text-transform:uppercase;
 }
 
 .project-footer{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+display:flex;
+align-items:center;
+justify-content:space-between;
 
-    gap:15px;
-    flex-wrap:wrap;
+gap:15px;
+flex-wrap:wrap;
 
-    margin:0 32px;
-    padding:20px 0 25px;
+margin:0 32px;
+padding:20px 0 25px;
 
-    border-top:1px solid rgba(179,188,197,.45);
+border-top:1px solid rgba(179,188,197,.45);
 }
 
 .project-tools{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:7px;
+display:flex;
+align-items:center;
+flex-wrap:wrap;
+gap:7px;
 }
 
 .tool{
-    display:inline-flex;
-    align-items:center;
+display:inline-flex;
+align-items:center;
 
-    gap:7px;
+gap:7px;
 
-    padding:6px 9px;
+padding:6px 9px;
 
-    border:1px solid rgba(173,183,193,.54);
-    border-radius:8px;
+border:1px solid rgba(173,183,193,.54);
+border-radius:8px;
 
-    background:rgba(249,250,251,.82);
+background:rgba(249,250,251,.82);
 
-    color:#707b87;
+color:#707b87;
 
-    font-size:.62rem;
-    font-weight:600;
+font-size:.62rem;
+font-weight:600;
 }
 
 .tool img{
-    width:19px;
-    height:19px;
-    object-fit:contain;
+width:19px;
+height:19px;
+object-fit:contain;
 }
 
 .tool-logo-wide img{
-    width:34px;
-    height:20px;
+width:34px;
+height:20px;
 }
 
 .project-button{
-    display:inline-flex;
-    align-items:center;
+display:inline-flex;
+align-items:center;
 
-    gap:11px;
+gap:11px;
 
-    padding:11px 15px;
+padding:11px 15px;
 
-    border-radius:999px;
+border-radius:999px;
 
-    color:white;
+color:white;
 
-    background:
-        linear-gradient(
-            135deg,
-            #4d5966,
-            #788490
-        );
+background:
+linear-gradient(
+135deg,
+#4d5966,
+#788490
+);
 
-    font-size:.67rem;
-    font-weight:800;
-
-    letter-spacing:.10em;
+font-size:.67rem;
+font-weight:800;
+letter-spacing:.10em;
 }
-
 
 /* INSIGHTS */
 
 .grid-3{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-
-    gap:17px;
-
-    margin-top:28px;
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:17px;
+margin-top:28px;
 }
 
 .insight-card{
-    min-height:245px;
+min-height:245px;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 
-    padding:22px;
+padding:22px;
 
-    border:1px solid var(--border);
-    border-radius:21px;
+border:1px solid var(--border);
+border-radius:21px;
 
-    background:rgba(255,255,255,.61);
+background:rgba(255,255,255,.61);
 
-    box-shadow:0 11px 28px rgba(50,60,70,.04);
+box-shadow:0 11px 28px rgba(50,60,70,.04);
 }
 
 .insight-card h3{
-    margin-bottom:11px;
-    font-size:1.08rem;
+margin-bottom:11px;
+font-size:1.08rem;
 }
 
 .insight-card p{
-    color:var(--muted);
-    font-size:.91rem;
-    line-height:1.67;
+color:var(--muted);
+font-size:.91rem;
+line-height:1.67;
 }
 
 .card-label{
-    margin-bottom:17px;
+margin-bottom:17px;
 
-    color:#89949f;
+color:#89949f;
 
-    font-size:.68rem;
-    font-weight:700;
+font-size:.68rem;
+font-weight:700;
 
-    letter-spacing:.16em;
-    text-transform:uppercase;
+letter-spacing:.16em;
+text-transform:uppercase;
 }
 
 .read-more{
-    margin-top:18px;
-
-    color:#586470;
-
-    font-size:.88rem;
-    font-weight:600;
+margin-top:18px;
+color:#586470;
+font-size:.88rem;
+font-weight:600;
 }
-
 
 /* PUBLICATIONS */
 
 #publications{
-    min-height:auto;
-    padding-top:90px;
+min-height:auto;
+padding-top:90px;
 }
 
 .publications-subtitle{
-    display:flex;
-    align-items:center;
+display:flex;
+align-items:center;
+gap:14px;
 
-    gap:14px;
+margin:35px 0 18px;
 
-    margin:35px 0 18px;
+color:#818c97;
 
-    color:#818c97;
+font-size:.72rem;
+font-weight:700;
 
-    font-size:.72rem;
-    font-weight:700;
-
-    letter-spacing:.18em;
-    text-transform:uppercase;
+letter-spacing:.18em;
+text-transform:uppercase;
 }
 
 .publications-subtitle::after{
-    content:"";
-    flex:1;
-    height:1px;
+content:"";
+flex:1;
+height:1px;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(135,146,157,.45),
-            transparent
-        );
+background:
+linear-gradient(
+90deg,
+rgba(135,146,157,.45),
+transparent
+);
 }
 
 .journal-card{
-    position:relative;
-    overflow:hidden;
+position:relative;
+overflow:hidden;
 
-    margin-bottom:17px;
-    padding:26px;
+margin-bottom:17px;
+padding:26px;
 
-    border:1px solid rgba(173,183,193,.68);
-    border-radius:23px;
+border:1px solid rgba(173,183,193,.68);
+border-radius:23px;
 
-    background:rgba(255,255,255,.70);
+background:rgba(255,255,255,.70);
 
-    box-shadow:0 12px 30px rgba(45,55,65,.05);
+box-shadow:0 12px 30px rgba(45,55,65,.05);
 }
 
 .journal-card::before{
-    content:"";
-
-    position:absolute;
-    left:0;
-    top:0;
-
-    width:4px;
-    height:100%;
-
-    background:linear-gradient(#697582,#b5bdc6);
+content:"";
+position:absolute;
+left:0;
+top:0;
+width:4px;
+height:100%;
+background:linear-gradient(#697582,#b5bdc6);
 }
 
 .journal-top{
-    display:flex;
-    justify-content:space-between;
-
-    gap:15px;
-
-    margin-bottom:19px;
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-bottom:19px;
 }
 
 .journal-type{
-    color:#818c97;
-
-    font-size:.67rem;
-    font-weight:700;
-
-    letter-spacing:.16em;
-    text-transform:uppercase;
+color:#818c97;
+font-size:.67rem;
+font-weight:700;
+letter-spacing:.16em;
+text-transform:uppercase;
 }
 
 .status{
-    padding:6px 10px;
+padding:6px 10px;
 
-    border:1px solid rgba(160,170,180,.48);
-    border-radius:999px;
+border:1px solid rgba(160,170,180,.48);
+border-radius:999px;
 
-    color:#65707c;
+color:#65707c;
 
-    font-size:.60rem;
-    font-weight:700;
+font-size:.60rem;
+font-weight:700;
 
-    letter-spacing:.10em;
-    text-transform:uppercase;
+letter-spacing:.10em;
+text-transform:uppercase;
 }
 
 .journal-year{
-    margin-bottom:12px;
-
-    color:#d0d5da;
-
-    font-size:2.8rem;
-    font-weight:700;
-
-    letter-spacing:-.06em;
+margin-bottom:12px;
+color:#d0d5da;
+font-size:2.8rem;
+font-weight:700;
+letter-spacing:-.06em;
 }
 
 .journal-card h3{
-    margin-bottom:10px;
-    font-size:1.22rem;
-    line-height:1.45;
+margin-bottom:10px;
+font-size:1.22rem;
+line-height:1.45;
 }
 
 .journal-authors{
-    margin-bottom:17px;
-
-    color:#737d88;
-
-    font-size:.85rem;
-    line-height:1.6;
+margin-bottom:17px;
+color:#737d88;
+font-size:.85rem;
+line-height:1.6;
 }
 
 .journal-meta{
-    display:flex;
-    flex-wrap:wrap;
-
-    gap:7px;
-
-    margin-bottom:18px;
+display:flex;
+flex-wrap:wrap;
+gap:7px;
+margin-bottom:18px;
 }
 
 .meta-chip{
-    padding:6px 9px;
-
-    border:1px solid rgba(177,186,195,.53);
-    border-radius:7px;
-
-    color:#747f8a;
-
-    font-size:.69rem;
+padding:6px 9px;
+border:1px solid rgba(177,186,195,.53);
+border-radius:7px;
+color:#747f8a;
+font-size:.69rem;
 }
 
 .paper-link{
-    color:#525e6a;
-
-    font-size:.75rem;
-    font-weight:700;
-
-    letter-spacing:.06em;
+color:#525e6a;
+font-size:.75rem;
+font-weight:700;
+letter-spacing:.06em;
 }
 
 .conference-head{
-    margin:26px 0;
+margin:26px 0;
 }
 
 .conference-head h3{
-    margin-bottom:9px;
-    font-size:1.7rem;
+margin-bottom:9px;
+font-size:1.7rem;
 }
 
 .conference-head p{
-    color:var(--muted);
-
-    font-size:.91rem;
-    line-height:1.65;
+color:var(--muted);
+font-size:.91rem;
+line-height:1.65;
 }
 
 .conference-timeline{
-    position:relative;
-    padding-left:28px;
+position:relative;
+padding-left:28px;
 }
 
 .conference-timeline::before{
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    left:7px;
-    top:10px;
-    bottom:10px;
+left:7px;
+top:10px;
+bottom:10px;
 
-    width:2px;
+width:2px;
 
-    background:linear-gradient(#78838e,#d2d7dc);
+background:linear-gradient(#78838e,#d2d7dc);
 }
 
 .year-marker{
-    margin:8px 0 25px 25px;
+margin:8px 0 25px 25px;
 
-    color:#d0d5da;
+color:#d0d5da;
 
-    font-size:2.5rem;
-    font-weight:700;
+font-size:2.5rem;
+font-weight:700;
 
-    letter-spacing:-.06em;
+letter-spacing:-.06em;
 }
 
 .conf-item{
-    position:relative;
-
-    padding:0 0 31px 25px;
+position:relative;
+padding:0 0 31px 25px;
 }
 
 .conf-item::before{
-    content:"";
+content:"";
 
-    position:absolute;
+position:absolute;
 
-    left:-26px;
-    top:7px;
+left:-26px;
+top:7px;
 
-    width:11px;
-    height:11px;
+width:11px;
+height:11px;
 
-    border:3px solid #89949f;
-    border-radius:50%;
+border:3px solid #89949f;
+border-radius:50%;
 
-    background:#f6f7f8;
+background:#f6f7f8;
 }
 
 .conf-date{
-    margin-bottom:8px;
-
-    color:#89939e;
-
-    font-size:.66rem;
-    font-weight:700;
-
-    letter-spacing:.13em;
-    text-transform:uppercase;
+margin-bottom:8px;
+color:#89939e;
+font-size:.66rem;
+font-weight:700;
+letter-spacing:.13em;
+text-transform:uppercase;
 }
 
 .upcoming-badge{
-    margin-left:8px;
-
-    padding:4px 7px;
-
-    border-radius:999px;
-
-    color:white;
-    background:#65717d;
-
-    font-size:.57rem;
+margin-left:8px;
+padding:4px 7px;
+border-radius:999px;
+color:white;
+background:#65717d;
+font-size:.57rem;
 }
 
 .conf-card{
-    padding:18px 20px;
-
-    border:1px solid rgba(178,187,196,.54);
-    border-radius:17px;
-
-    background:rgba(255,255,255,.55);
+padding:18px 20px;
+border:1px solid rgba(178,187,196,.54);
+border-radius:17px;
+background:rgba(255,255,255,.55);
 }
 
 .conf-type{
-    margin-bottom:8px;
-
-    color:#737e89;
-
-    font-size:.62rem;
-    font-weight:700;
-
-    letter-spacing:.15em;
-    text-transform:uppercase;
+margin-bottom:8px;
+color:#737e89;
+font-size:.62rem;
+font-weight:700;
+letter-spacing:.15em;
+text-transform:uppercase;
 }
 
 .conf-event{
-    margin-bottom:5px;
-
-    font-size:.98rem;
-    font-weight:700;
-    line-height:1.4;
+margin-bottom:5px;
+font-size:.98rem;
+font-weight:700;
+line-height:1.4;
 }
 
 .conf-location{
-    margin-bottom:11px;
-
-    color:#87909a;
-
-    font-size:.77rem;
+margin-bottom:11px;
+color:#87909a;
+font-size:.77rem;
 }
 
 .conf-title{
-    color:#59646f;
-
-    font-size:.86rem;
-    line-height:1.6;
+color:#59646f;
+font-size:.86rem;
+line-height:1.6;
 }
 
-
-/* RIGHT PANEL HEADER */
+/* RIGHT PANEL */
 
 .scene-top{
-    display:flex;
-    justify-content:space-between;
-
-    gap:28px;
-
-    margin-bottom:25px;
-}
-
-.scene-number{
-    color:#7f8995;
-
-    font-size:.75rem;
-
-    letter-spacing:.21em;
-    text-transform:uppercase;
+display:flex;
+align-items:flex-start;
+justify-content:space-between;
+gap:28px;
+margin-bottom:25px;
 }
 
 .scene-title{
-    margin-top:7px;
-
-    font-size:1.38rem;
-    font-weight:700;
+margin-top:0;
+font-size:1.38rem;
+font-weight:700;
 }
 
 .scene-caption{
-    max-width:290px;
-
-    color:#66717d;
-
-    font-size:.91rem;
-    line-height:1.7;
+max-width:290px;
+color:#66717d;
+font-size:.91rem;
+line-height:1.7;
 }
 
 .mini-tag{
-    display:inline-flex;
-    align-items:center;
+display:inline-flex;
+align-items:center;
+gap:8px;
 
-    gap:8px;
+padding:8px 12px;
 
-    padding:8px 12px;
+border:1px solid rgba(169,179,189,.58);
+border-radius:999px;
 
-    border:1px solid rgba(169,179,189,.58);
-    border-radius:999px;
+color:#697581;
 
-    color:#697581;
-
-    font-size:.72rem;
+font-size:.72rem;
 }
 
 .mini-tag::before{
-    content:"";
-
-    width:7px;
-    height:7px;
-
-    border-radius:50%;
-
-    background:#a4afb9;
+content:"";
+width:7px;
+height:7px;
+border-radius:50%;
+background:#a4afb9;
 }
 
 .graphic-stage{
-    position:relative;
-
-    height:335px;
-
-    margin-top:18px;
+position:relative;
+height:335px;
+margin-top:18px;
 }
 
 .graphic{
-    position:absolute;
-    inset:0;
+position:absolute;
+inset:0;
 
-    opacity:0;
-    transform:translateY(12px);
+opacity:0;
+transform:translateY(12px);
 
-    transition:
-        opacity .4s ease,
-        transform .4s ease;
+transition:
+opacity .4s ease,
+transform .4s ease;
 
-    pointer-events:none;
+pointer-events:none;
 }
 
 .graphic.active{
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
+transform:translateY(0);
 }
 
 .graphic[data-graphic="projects"].active{
-    pointer-events:auto;
+pointer-events:auto;
 }
-
 
 /* ABOUT VISUAL */
 
 .about-art{
-    position:absolute;
-    inset:20px;
+position:absolute;
+inset:20px;
 
-    border:1px solid rgba(184,193,202,.55);
-    border-radius:24px;
+border:1px solid rgba(184,193,202,.55);
+border-radius:24px;
 }
 
 .about-wave{
-    position:absolute;
+position:absolute;
 
-    left:35px;
-    right:35px;
-    top:140px;
+left:35px;
+right:35px;
+top:140px;
 
-    height:80px;
+height:80px;
 }
 
 .about-wave svg{
-    width:100%;
-    height:100%;
+width:100%;
+height:100%;
 }
-
 
 /* RESEARCH RIGHT */
 
 .research-map{
-    position:absolute;
-    inset:18px;
+position:absolute;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+/* opuszczamy diagram, żeby badge nie nachodził na pierwszą kartę */
+inset:38px 18px 4px;
 
-    gap:14px;
+display:flex;
+flex-direction:column;
+justify-content:flex-start;
+
+gap:10px;
 }
 
 .research-map-row{
-    display:grid;
-
-    grid-template-columns:45px 1fr 60px;
-
-    align-items:center;
-
-    gap:10px;
+display:grid;
+grid-template-columns:45px 1fr 60px;
+align-items:center;
+gap:10px;
 }
 
 .research-map-number{
-    color:#9ca6b0;
-
-    font-size:.62rem;
-    font-weight:700;
+color:#9ca6b0;
+font-size:.62rem;
+font-weight:700;
 }
 
 .research-map-card{
-    padding:14px 15px;
+padding:14px 15px;
 
-    border:1px solid rgba(174,184,194,.58);
-    border-radius:15px;
+border:1px solid rgba(174,184,194,.58);
+border-radius:15px;
 
-    background:rgba(255,255,255,.60);
+background:rgba(255,255,255,.60);
 }
 
 .research-map-card strong{
-    display:block;
-
-    margin-bottom:4px;
-
-    color:#56616d;
-    font-size:.78rem;
+display:block;
+margin-bottom:4px;
+color:#56616d;
+font-size:.78rem;
 }
 
 .research-map-card span{
-    color:#87919b;
-    font-size:.60rem;
+color:#87919b;
+font-size:.60rem;
 }
 
 .research-map-arrow{
-    position:relative;
-
-    height:1px;
-    background:#aab3bc;
+position:relative;
+height:1px;
+background:#aab3bc;
 }
 
 .research-destination{
-    padding:14px;
+padding:14px;
 
-    border:1px solid rgba(134,146,158,.62);
-    border-radius:16px;
+border:1px solid rgba(134,146,158,.62);
+border-radius:16px;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.88),
-            rgba(225,231,236,.78)
-        );
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.88),
+rgba(225,231,236,.78)
+);
 
-    text-align:center;
+text-align:center;
 }
 
 .research-destination-small{
-    color:#929ca6;
-
-    font-size:.56rem;
-    font-weight:700;
-
-    letter-spacing:.13em;
-    text-transform:uppercase;
+color:#929ca6;
+font-size:.56rem;
+font-weight:700;
+letter-spacing:.13em;
+text-transform:uppercase;
 }
 
 .research-destination-main{
-    margin-top:5px;
-
-    color:#505c68;
-
-    font-size:.84rem;
-    font-weight:800;
+margin-top:5px;
+color:#505c68;
+font-size:.84rem;
+font-weight:800;
 }
-
 
 /* PROJECT RIGHT */
 
 .projects-showcase{
-    position:absolute;
-    inset:4px 0 0;
-
-    display:flex;
-    flex-direction:column;
+position:absolute;
+inset:4px 0 0;
+display:flex;
+flex-direction:column;
 }
 
 .showcase-tabs{
-    display:flex;
-
-    gap:8px;
-
-    margin-bottom:13px;
+display:flex;
+gap:8px;
+margin-bottom:13px;
 }
 
 .showcase-tab{
-    appearance:none;
+appearance:none;
 
-    padding:7px 12px;
+padding:7px 12px;
 
-    border:1px solid rgba(166,177,188,.55);
-    border-radius:999px;
+border:1px solid rgba(166,177,188,.55);
+border-radius:999px;
 
-    background:rgba(255,255,255,.60);
+background:rgba(255,255,255,.60);
 
-    color:#7a8590;
+color:#7a8590;
 
-    cursor:pointer;
+cursor:pointer;
 
-    font-family:inherit;
-
-    font-size:.61rem;
-    font-weight:700;
-
-    letter-spacing:.10em;
+font-family:inherit;
+font-size:.61rem;
+font-weight:700;
+letter-spacing:.10em;
 }
 
 .showcase-tab.active{
-    color:white;
+color:white;
 
-    border-color:#67737f;
+border-color:#67737f;
 
-    background:
-        linear-gradient(
-            135deg,
-            #56626f,
-            #87929d
-        );
+background:
+linear-gradient(
+135deg,
+#56626f,
+#87929d
+);
 }
 
 .showcase-screen{
-    position:relative;
+position:relative;
+flex:1;
+min-height:260px;
 
-    flex:1;
-    min-height:260px;
+overflow:hidden;
 
-    overflow:hidden;
+border:1px solid rgba(166,177,188,.62);
+border-radius:22px;
 
-    border:1px solid rgba(166,177,188,.62);
-    border-radius:22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.94),
-            rgba(237,241,244,.86)
-        );
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.94),
+rgba(237,241,244,.86)
+);
 }
 
 .project-preview{
-    position:absolute;
-    inset:0;
+position:absolute;
+inset:0;
+padding:16px;
 
-    padding:16px;
+opacity:0;
+transform:scale(.985);
 
-    opacity:0;
-    transform:scale(.985);
+transition:.3s ease;
 
-    transition:.3s ease;
-
-    pointer-events:none;
+pointer-events:none;
 }
 
 .project-preview.active{
-    opacity:1;
-    transform:scale(1);
-
-    pointer-events:auto;
+opacity:1;
+transform:scale(1);
+pointer-events:auto;
 }
 
 .preview-image-frame{
-    height:190px;
+height:190px;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+display:flex;
+align-items:center;
+justify-content:center;
 
-    padding:10px;
+padding:10px;
 
-    overflow:hidden;
+overflow:hidden;
 
-    border-radius:14px;
+border-radius:14px;
 
-    background:white;
+background:white;
 }
 
 .preview-image-frame img{
-    width:100%;
-    height:100%;
-
-    object-fit:contain;
+width:100%;
+height:100%;
+object-fit:contain;
 }
 
 .preview-meta{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-
-    gap:15px;
-
-    padding-top:12px;
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+gap:15px;
+padding-top:12px;
 }
 
 .preview-kicker{
-    margin-bottom:4px;
-
-    color:#9099a3;
-
-    font-size:.57rem;
-    font-weight:700;
-
-    letter-spacing:.15em;
+margin-bottom:4px;
+color:#9099a3;
+font-size:.57rem;
+font-weight:700;
+letter-spacing:.15em;
 }
 
 .preview-title{
-    color:#4e5a66;
-
-    font-size:.90rem;
-    font-weight:700;
+color:#4e5a66;
+font-size:.90rem;
+font-weight:700;
 }
 
 .preview-open{
-    color:#697581;
-
-    font-size:.62rem;
-    font-weight:700;
+color:#697581;
+font-size:.62rem;
+font-weight:700;
 }
-
 
 /* INSIGHTS RIGHT */
 
 .insight-stack{
-    position:absolute;
-    inset:25px;
+position:absolute;
+inset:25px;
 
-    display:grid;
-    grid-template-columns:1fr 1fr;
+display:grid;
+grid-template-columns:1fr 1fr;
 
-    gap:13px;
+gap:13px;
 }
 
 .note{
-    padding:17px;
+padding:17px;
 
-    border:1px solid rgba(179,188,197,.58);
-    border-radius:18px;
+border:1px solid rgba(179,188,197,.58);
+border-radius:18px;
 
-    background:rgba(255,255,255,.57);
+background:rgba(255,255,255,.57);
 
-    color:#5b6672;
+color:#5b6672;
 
-    font-size:.82rem;
-    font-weight:600;
+font-size:.82rem;
+font-weight:600;
 }
-
 
 /* PUBLICATIONS RIGHT */
 
 .pub-stack{
-    position:absolute;
-    inset:18px;
+position:absolute;
+inset:18px;
 
-    display:flex;
-    flex-direction:column;
+display:flex;
+flex-direction:column;
 
-    gap:12px;
+gap:12px;
 }
 
 .pub-sheet{
-    padding:15px 17px;
+padding:15px 17px;
 
-    border:1px solid rgba(177,186,195,.60);
-    border-radius:16px;
+border:1px solid rgba(177,186,195,.60);
+border-radius:16px;
 
-    background:rgba(255,255,255,.63);
+background:rgba(255,255,255,.63);
 }
 
 .pub-sheet-label{
-    margin-bottom:7px;
-
-    color:#8d97a1;
-
-    font-size:.57rem;
-
-    letter-spacing:.15em;
+margin-bottom:7px;
+color:#8d97a1;
+font-size:.57rem;
+letter-spacing:.15em;
 }
 
 .pub-sheet-title{
-    color:#59646f;
-
-    font-size:.74rem;
-    font-weight:700;
-
-    line-height:1.42;
+color:#59646f;
+font-size:.74rem;
+font-weight:700;
+line-height:1.42;
 }
-
 
 /* CAR */
 
 .car-zone{
-    position:absolute;
-
-    left:24px;
-    right:24px;
-    bottom:12px;
-
-    height:215px;
-
-    overflow:hidden;
+position:absolute;
+left:24px;
+right:24px;
+bottom:12px;
+height:215px;
+overflow:hidden;
 }
 
 .road-svg{
-    position:absolute;
-
-    left:0;
-    bottom:20px;
-
-    width:100%;
-    height:150px;
-
-    overflow:visible;
+position:absolute;
+left:0;
+bottom:20px;
+width:100%;
+height:150px;
+overflow:visible;
 }
 
 .car-wrap{
-    position:absolute;
+position:absolute;
+left:0;
+top:0;
+z-index:5;
 
-    left:0;
-    top:0;
+width:225px;
 
-    z-index:5;
+cursor:grab;
+touch-action:none;
+user-select:none;
 
-    width:225px;
+will-change:transform;
+transform-origin:50% 80%;
 
-    cursor:grab;
-    touch-action:none;
-    user-select:none;
-
-    will-change:transform;
-    transform-origin:50% 80%;
-
-    filter:
-        drop-shadow(
-            0 9px 8px
-            rgba(63,73,84,.11)
-        );
+filter:
+drop-shadow(
+0 9px 8px
+rgba(63,73,84,.11)
+);
 }
 
 .car-wrap.dragging{
-    cursor:grabbing;
+cursor:grabbing;
 }
 
 .car-body{
-    width:100%;
+width:100%;
 }
 
 .wheel-spokes{
-    transform-box:fill-box;
-    transform-origin:center;
+transform-box:fill-box;
+transform-origin:center;
 }
 
 .hint{
-    position:absolute;
+position:absolute;
+right:3px;
+bottom:0;
 
-    right:3px;
-    bottom:0;
+color:#939da7;
 
-    color:#939da7;
+font-size:.66rem;
 
-    font-size:.66rem;
-
-    letter-spacing:.13em;
-    text-transform:uppercase;
+letter-spacing:.13em;
+text-transform:uppercase;
 }
-
 
 footer{
-    padding:50px 0 10px;
+padding:50px 0 10px;
 
-    color:#808a94;
+color:#808a94;
 
-    font-size:.80rem;
-    line-height:1.7;
+font-size:.80rem;
+line-height:1.7;
 }
 
-
-/* =========================================================
-   RESPONSIVE WIDTH
-========================================================= */
+/* RESPONSIVE WIDTH */
 
 @media(max-width:1100px){
 
-    .page{
-        grid-template-columns:1fr;
-    }
-
-    .visual-column{
-        order:-1;
-    }
-
-    .visual-sticky{
-        position:relative;
-
-        top:0;
-
-        height:650px;
-        min-height:0;
-        max-height:none;
-    }
-
-    .step{
-        min-height:auto;
-        padding:80px 0;
-    }
-
-    .grid-3{
-        grid-template-columns:1fr;
-    }
+.page{
+grid-template-columns:1fr;
 }
 
+.visual-column{
+order:-1;
+}
 
-/* =========================================================
-   IMPORTANT:
-   RESPONSIVE HEIGHT FOR SHORTER DESKTOP SCREENS
-========================================================= */
+.visual-sticky{
+position:relative;
+top:0;
+height:650px;
+min-height:0;
+max-height:none;
+}
+
+.step{
+min-height:auto;
+padding:80px 0;
+}
+
+.grid-3{
+grid-template-columns:1fr;
+}
+
+}
+
+/* SHORTER DESKTOP */
 
 @media (min-width:1101px) and (max-height:900px){
 
-    .page{
-        padding-top:95px;
-    }
-
-    .visual-sticky{
-        top:82px;
-
-        height:calc(100vh - 95px);
-        height:calc(100dvh - 95px);
-
-        min-height:0;
-        max-height:none;
-    }
-
-    .visual-card{
-        padding:21px;
-
-        border-radius:27px;
-    }
-
-    .scene-top{
-        margin-bottom:14px;
-        gap:18px;
-    }
-
-    .scene-number{
-        font-size:.64rem;
-    }
-
-    .scene-title{
-        margin-top:4px;
-        font-size:1.22rem;
-    }
-
-    .scene-caption{
-        max-width:250px;
-
-        font-size:.78rem;
-        line-height:1.45;
-    }
-
-    .mini-tag{
-        padding:6px 10px;
-        font-size:.63rem;
-    }
-
-    .graphic-stage{
-        height:245px;
-        margin-top:10px;
-    }
-
-    .about-art{
-        inset:10px;
-        border-radius:20px;
-    }
-
-    .about-wave{
-        left:28px;
-        right:28px;
-
-        top:95px;
-
-        height:60px;
-    }
-
-    .research-map{
-        inset:6px 10px;
-        gap:8px;
-    }
-
-    .research-map-row{
-        grid-template-columns:32px 1fr 35px;
-        gap:7px;
-    }
-
-    .research-map-card{
-        padding:9px 11px;
-    }
-
-    .research-destination{
-        padding:10px;
-    }
-
-    .showcase-tabs{
-        margin-bottom:8px;
-    }
-
-    .showcase-tab{
-        padding:5px 9px;
-        font-size:.55rem;
-    }
-
-    .showcase-screen{
-        min-height:190px;
-    }
-
-    .project-preview{
-        padding:10px;
-    }
-
-    .preview-image-frame{
-        height:125px;
-    }
-
-    .preview-meta{
-        padding-top:7px;
-    }
-
-    .preview-title{
-        font-size:.75rem;
-    }
-
-    .preview-kicker,
-    .preview-open{
-        font-size:.51rem;
-    }
-
-    .insight-stack{
-        inset:10px;
-        gap:8px;
-    }
-
-    .note{
-        padding:11px;
-        font-size:.72rem;
-    }
-
-    .pub-stack{
-        inset:8px;
-        gap:8px;
-    }
-
-    .pub-sheet{
-        padding:10px 12px;
-    }
-
-    .pub-sheet-title{
-        font-size:.64rem;
-    }
-
-    .car-zone{
-        left:15px;
-        right:15px;
-
-        bottom:7px;
-
-        height:155px;
-    }
-
-    .road-svg{
-        bottom:12px;
-
-        height:108px;
-    }
-
-    .car-wrap{
-        width:170px;
-    }
-
-    .hint{
-        right:2px;
-
-        font-size:.56rem;
-    }
+.page{
+padding-top:95px;
 }
 
+.visual-sticky{
+top:82px;
+
+height:calc(100vh - 95px);
+height:calc(100dvh - 95px);
+
+min-height:0;
+max-height:none;
+}
+
+.visual-card{
+padding:21px;
+border-radius:27px;
+}
+
+.scene-top{
+margin-bottom:14px;
+gap:18px;
+}
+
+.scene-title{
+margin-top:0;
+font-size:1.22rem;
+}
+
+.scene-caption{
+max-width:250px;
+font-size:.78rem;
+line-height:1.45;
+}
+
+.mini-tag{
+padding:6px 10px;
+font-size:.63rem;
+}
+
+.graphic-stage{
+height:245px;
+margin-top:10px;
+}
+
+.about-art{
+inset:10px;
+border-radius:20px;
+}
+
+.about-wave{
+left:28px;
+right:28px;
+top:95px;
+height:60px;
+}
+
+/* również opuszczamy Research Focus na niższym ekranie */
+
+.research-map{
+inset:20px 10px 2px;
+gap:6px;
+justify-content:flex-start;
+}
+
+.research-map-row{
+grid-template-columns:32px 1fr 35px;
+gap:7px;
+}
+
+.research-map-card{
+padding:8px 11px;
+}
+
+.research-destination{
+padding:8px 10px;
+}
+
+.showcase-tabs{
+margin-bottom:8px;
+}
+
+.showcase-tab{
+padding:5px 9px;
+font-size:.55rem;
+}
+
+.showcase-screen{
+min-height:190px;
+}
+
+.project-preview{
+padding:10px;
+}
+
+.preview-image-frame{
+height:125px;
+}
+
+.preview-meta{
+padding-top:7px;
+}
+
+.preview-title{
+font-size:.75rem;
+}
+
+.preview-kicker,
+.preview-open{
+font-size:.51rem;
+}
+
+.insight-stack{
+inset:10px;
+gap:8px;
+}
+
+.note{
+padding:11px;
+font-size:.72rem;
+}
+
+.pub-stack{
+inset:8px;
+gap:8px;
+}
+
+.pub-sheet{
+padding:10px 12px;
+}
+
+.pub-sheet-title{
+font-size:.64rem;
+}
+
+.car-zone{
+left:15px;
+right:15px;
+bottom:7px;
+height:155px;
+}
+
+.road-svg{
+bottom:12px;
+height:108px;
+}
+
+.car-wrap{
+width:170px;
+}
+
+.hint{
+right:2px;
+font-size:.56rem;
+}
+
+}
 
 /* EXTRA SHORT DISPLAY */
 
 @media (min-width:1101px) and (max-height:730px){
 
-    .visual-sticky{
-        top:76px;
-
-        height:calc(100dvh - 84px);
-    }
-
-    .visual-card{
-        padding:16px;
-    }
-
-    .scene-caption{
-        font-size:.72rem;
-    }
-
-    .graphic-stage{
-        height:190px;
-    }
-
-    .car-zone{
-        height:125px;
-    }
-
-    .road-svg{
-        height:88px;
-    }
-
-    .car-wrap{
-        width:145px;
-    }
-
-    .about-wave{
-        top:70px;
-    }
+.visual-sticky{
+top:76px;
+height:calc(100dvh - 84px);
 }
 
+.visual-card{
+padding:16px;
+}
+
+.scene-caption{
+font-size:.72rem;
+}
+
+.graphic-stage{
+height:190px;
+}
+
+.car-zone{
+height:125px;
+}
+
+.road-svg{
+height:88px;
+}
+
+.car-wrap{
+width:145px;
+}
+
+.about-wave{
+top:70px;
+}
+
+.research-map{
+inset:8px 8px 0;
+gap:4px;
+justify-content:flex-start;
+}
+
+.research-map-row{
+grid-template-columns:27px 1fr 28px;
+gap:5px;
+}
+
+.research-map-card{
+padding:6px 8px;
+}
+
+.research-map-card strong{
+margin-bottom:2px;
+font-size:.66rem;
+}
+
+.research-map-card span{
+font-size:.52rem;
+}
+
+.research-destination{
+padding:6px 8px;
+}
+
+.research-destination-small{
+font-size:.47rem;
+}
+
+.research-destination-main{
+margin-top:3px;
+font-size:.70rem;
+}
+
+}
 
 /* PHONE */
 
 @media(max-width:760px){
 
-    nav ul{
-        gap:13px;
-    }
+nav ul{
+gap:13px;
+}
 
-    nav a{
-        font-size:.76rem;
-    }
+nav a{
+font-size:.76rem;
+}
 
-    .page{
-        padding:95px 5% 40px;
-    }
+.page{
+padding:95px 5% 40px;
+}
 
-    .grid-2{
-        grid-template-columns:1fr;
-    }
+.grid-2{
+grid-template-columns:1fr;
+}
 
-    .project-highlight-grid{
-        grid-template-columns:1fr;
-    }
+.project-highlight-grid{
+grid-template-columns:1fr;
+}
 
-    .research-flow{
-        flex-direction:column;
-    }
+.research-flow{
+flex-direction:column;
+}
 
-    .research-flow-arrow{
-        transform:rotate(90deg);
-    }
+.research-flow-arrow{
+transform:rotate(90deg);
+}
 
-    .model-flow{
-        flex-direction:column;
-    }
+.model-flow{
+flex-direction:column;
+}
 
-    .model-arrow{
-        transform:rotate(90deg);
-    }
+.model-arrow{
+transform:rotate(90deg);
+}
 
-    .degradation-visual{
-        grid-template-columns:1fr;
-    }
+.degradation-visual{
+grid-template-columns:1fr;
+}
 
-    .degradation-arrow{
-        transform:rotate(90deg);
-    }
+.degradation-arrow{
+transform:rotate(90deg);
+}
 
-    .scene-top{
-        flex-direction:column;
-    }
+.scene-top{
+flex-direction:column;
+}
+
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
 <nav>
 
-    <div class="logo">
-        MA<span>.</span>
-    </div>
+<div class="logo">
+MA<span>.</span>
+</div>
 
-    <ul>
-        <li><a href="#about" class="nav-link active">About</a></li>
-        <li><a href="#research" class="nav-link">Research</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#insights" class="nav-link">Insights</a></li>
-        <li><a href="#publications" class="nav-link">Publications</a></li>
-    </ul>
+<ul>
+<li><a href="#about" class="nav-link active">About</a></li>
+<li><a href="#research" class="nav-link">Research</a></li>
+<li><a href="#projects" class="nav-link">Projects</a></li>
+<li><a href="#insights" class="nav-link">Insights</a></li>
+<li><a href="#publications" class="nav-link">Publications</a></li>
+</ul>
 
 </nav>
 
@@ -2113,1222 +1929,1244 @@ footer{
 <section class="content-column">
 
 
+<!-- ABOUT -->
+
 <section class="step" id="about" data-scene="about">
-
-    <div class="step-inner">
-
-        <div class="step-kicker">
-            Mechanical Engineering · Mechatronics · Automotive
-        </div>
-
-        <h1 class="hero-title">
-            Maja<br>
-            <span class="silver">Antkowiak</span>
-        </h1>
-
-        <p class="step-text">
-
-            PhD researcher working at the intersection
-            of automotive engineering, mechatronics
-            and intelligent diagnostics.
-
-            My work focuses on diagnostics,
-            signal analysis and signal modelling.
-
-        </p>
-
-        <div class="hero-actions">
-
-            <a href="#research" class="btn btn-primary">
-                Explore my work
-            </a>
-
-            <a href="#insights" class="btn btn-secondary">
-                Read insights
-            </a>
-
-        </div>
-
-        <div class="grid-2">
-
-            <div class="info-card">
-
-                <h3>Experience</h3>
-
-                <p>
-                    Research, conference participation,
-                    technical projects and academic work
-                    in automotive mechatronics.
-                </p>
-
-            </div>
-
-            <div class="info-card">
-
-                <h3>Contact</h3>
-
-                <p>
-                    GitHub · LinkedIn · E-mail · academic profile
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section
-    class="step research-step"
-    id="research"
-    data-scene="research">
-
-    <div class="step-inner research-inner">
-
-        <div class="step-kicker">
-            01 / Research
-        </div>
-
-        <h2 class="step-title">
-            Research <span>Focus</span>
-        </h2>
-
-        <p class="step-text research-intro">
-
-            My research follows the relationship between
-            physical degradation, injector behaviour and
-            measurable electrical signals, with the aim
-            of developing methods for condition assessment
-            and diagnostics.
-
-        </p>
-
-
-        <div class="research-flow">
-
-            <div class="research-flow-node">
-                Physical<br>degradation
-            </div>
-
-            <div class="research-flow-arrow">→</div>
-
-            <div class="research-flow-node">
-                Injector<br>behaviour
-            </div>
-
-            <div class="research-flow-arrow">→</div>
-
-            <div class="research-flow-node">
-                Electrical<br>signal
-            </div>
-
-            <div class="research-flow-arrow">→</div>
-
-            <div class="research-flow-node">
-                Diagnostic<br>features
-            </div>
-
-            <div class="research-flow-arrow">→</div>
-
-            <div class="research-flow-node">
-                Condition<br>assessment
-            </div>
-
-        </div>
-
-
-        <article class="research-card">
-
-            <div class="research-card-top">
-
-                <div class="research-card-meta">
-
-                    <span class="research-number">
-                        01 / SIGNAL DIAGNOSTICS
-                    </span>
-
-                    <span class="research-badge">
-                        Core Research
-                    </span>
-
-                </div>
-
-                <h3>
-                    Signal-Based Injector Diagnostics
-                </h3>
-
-                <p class="research-card-description">
-
-                    Development of non-invasive diagnostic
-                    methods based on electrical current
-                    waveforms of electromagnetic fuel injectors.
-                    The research focuses on identifying signal
-                    features associated with injector operation,
-                    technical condition and progressive degradation.
-
-                </p>
-
-            </div>
-
-
-            <div class="research-visual">
-
-                <div class="signal-visual">
-
-                    <svg viewBox="0 0 700 165" fill="none">
-
-                        <path
-                            d="
-                            M20 130
-                            L80 130
-                            L118 128
-                            L153 41
-                            L175 26
-                            L191 42
-                            L215 82
-                            L256 94
-                            L272 110
-                            L284 109
-                            L296 113
-                            L308 108
-                            L320 113
-                            L332 108
-                            L344 113
-                            L356 108
-                            L368 113
-                            L380 108
-                            L392 113
-                            L404 108
-                            L416 113
-                            L428 108
-                            L440 113
-                            L452 108
-                            L464 113
-                            L476 108
-                            L488 113
-                            L500 108
-                            L512 113
-                            L524 108
-                            L536 113
-                            L548 108
-                            L560 113
-                            L572 108
-                            L584 113
-                            L596 108
-                            L608 113
-                            L620 108
-                            L632 113
-                            L645 130
-                            L680 130"
-                            stroke="#63707D"
-                            stroke-width="2.3"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"/>
-
-                        <line
-                            x1="20"
-                            y1="130"
-                            x2="680"
-                            y2="130"
-                            stroke="#D1D7DD"
-                            stroke-width="1"/>
-
-                        <text
-                            x="148"
-                            y="19"
-                            fill="#8A949E"
-                            font-size="11"
-                            font-family="Inter">
-
-                            PEAK
-
-                        </text>
-
-                        <text
-                            x="430"
-                            y="96"
-                            fill="#8A949E"
-                            font-size="11"
-                            font-family="Inter">
-
-                            HOLD
-
-                        </text>
-
-                    </svg>
-
-                </div>
-
-            </div>
-
-
-            <div class="research-card-footer">
-
-                <div class="research-tags">
-
-                    <span class="research-tag">
-                        Current Waveforms
-                    </span>
-
-                    <span class="research-tag">
-                        Peak & Hold
-                    </span>
-
-                    <span class="research-tag">
-                        Signal Features
-                    </span>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <article class="research-card">
-
-            <div class="research-card-top">
-
-                <div class="research-card-meta">
-
-                    <span class="research-number">
-                        02 / MODELLING
-                    </span>
-
-                    <span class="research-badge">
-                        Research Method
-                    </span>
-
-                </div>
-
-                <h3>
-                    Injector Modelling
-                </h3>
-
-                <p class="research-card-description">
-
-                    Mathematical and multidomain modelling is
-                    used to describe relationships between the
-                    electrical, electromagnetic, mechanical and
-                    hydraulic behaviour of the injector.
-                    Analytical models support interpretation of
-                    current and voltage transients, while numerical
-                    simulation enables investigation of coupled
-                    physical phenomena.
-
-                </p>
-
-            </div>
-
-
-            <div class="research-visual">
-
-                <div class="model-flow">
-
-                    <div class="model-node">Electrical</div>
-                    <div class="model-arrow">→</div>
-
-                    <div class="model-node">Electromagnetic</div>
-                    <div class="model-arrow">→</div>
-
-                    <div class="model-node">Mechanical</div>
-                    <div class="model-arrow">→</div>
-
-                    <div class="model-node">Hydraulic</div>
-
-                </div>
-
-            </div>
-
-
-            <div class="research-card-footer">
-
-                <div class="research-tags">
-
-                    <span class="research-tag">
-                        Mathematical Model
-                    </span>
-
-                    <span class="research-tag">
-                        Multidomain
-                    </span>
-
-                    <span class="research-tag">
-                        Transient Response
-                    </span>
-
-                </div>
-
-                <a href="injector-modelling.html" class="research-link">
-                    EXPLORE RESEARCH →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <article class="research-card">
-
-            <div class="research-card-top">
-
-                <div class="research-card-meta">
-
-                    <span class="research-number">
-                        03 / DEGRADATION & RELIABILITY
-                    </span>
-
-                    <span class="research-badge">
-                        Ongoing Research
-                    </span>
-
-                </div>
-
-                <h3>
-                    Degradation & Reliability Research
-                </h3>
-
-                <p class="research-card-description">
-
-                    Current research also focuses on describing
-                    injector degradation as a measurable change
-                    in technical condition. Electrical,
-                    electromagnetic, mechanical, hydraulic and
-                    thermal degradation mechanisms are analysed
-                    together with their observable diagnostic
-                    indicators. The long-term objective is to
-                    combine these effects into a quantitative
-                    indicator describing injector condition
-                    and reliability.
-
-                </p>
-
-            </div>
-
-
-            <div class="research-visual">
-
-                <div class="degradation-visual">
-
-                    <div class="degradation-types">
-
-                        <div class="degradation-type">
-                            Hydraulic degradation
-                        </div>
-
-                        <div class="degradation-type">
-                            Mechanical degradation
-                        </div>
-
-                        <div class="degradation-type">
-                            Electrical degradation
-                        </div>
-
-                        <div class="degradation-type">
-                            Electromagnetic degradation
-                        </div>
-
-                        <div class="degradation-type">
-                            Thermal degradation
-                        </div>
-
-                    </div>
-
-                    <div class="degradation-arrow">
-                        →
-                    </div>
-
-                    <div class="condition-box">
-
-                        <div class="condition-small">
-                            Research Objective
-                        </div>
-
-                        <div class="condition-main">
-                            Condition & Reliability Assessment
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="research-card-footer">
-
-                <div class="research-tags">
-
-                    <span class="research-tag">
-                        Degradation
-                    </span>
-
-                    <span class="research-tag">
-                        Condition Indicator
-                    </span>
-
-                    <span class="research-tag">
-                        Reliability
-                    </span>
-
-                </div>
-
-                <a
-                    href="degradation-reliability.html"
-                    class="research-link">
-
-                    EXPLORE RESEARCH →
-
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<section
-    class="step projects-step"
-    id="projects"
-    data-scene="projects">
-
-    <div class="step-inner projects-inner">
-
-        <div class="step-kicker">
-            02 / Projects
-        </div>
-
-        <h2 class="step-title">
-            Selected <span>Projects</span>
-        </h2>
-
-        <p class="step-text projects-intro">
-
-            Research and engineering projects combining
-            automotive mechatronics, simulation,
-            signal processing and diagnostics.
-
-        </p>
-
-
-        <article class="project-featured">
-
-            <div class="project-featured-body">
-
-                <div class="project-top">
-
-                    <span class="project-type">
-                        Multidomain Simulation
-                    </span>
-
-                    <span class="project-status">
-                        Research Project
-                    </span>
-
-                </div>
-
-                <h3>
-                    Injector Multidomain Simulation
-                </h3>
-
-                <p class="project-description">
-
-                    A coupled MATLAB/Simulink and Simscape
-                    representation of an electromagnetic
-                    direct-injection fuel injector, developed
-                    to investigate how electrical excitation
-                    propagates through electromagnetic force,
-                    needle dynamics and hydraulic fuel flow.
-                    The model reproduces the characteristic
-                    Peak & Hold current response and supports
-                    parameter-sensitivity studies and validation
-                    against laboratory measurements.
-
-                </p>
-
-                <div class="project-highlight-grid">
-
-                    <div class="project-highlight">
-                        <span>01</span>
-                        Electrical and electromagnetic behaviour
-                    </div>
-
-                    <div class="project-highlight">
-                        <span>02</span>
-                        Needle dynamics and mechanical response
-                    </div>
-
-                    <div class="project-highlight">
-                        <span>03</span>
-                        Hydraulic flow and injected fuel mass
-                    </div>
-
-                    <div class="project-highlight">
-                        <span>04</span>
-                        Validation and parameter sensitivity
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-main-image">
-
-                <div class="project-main-image-frame">
-
-                    <img
-                        src="assets/injector-current-waveform.png"
-                        alt="Simulated injector current waveform">
-
-                </div>
-
-                <div class="project-image-caption">
-                    Simulated injector current waveform · Peak & Hold control
-                </div>
-
-            </div>
-
-
-            <div class="project-footer">
-
-                <div class="project-tools">
-
-                    <span class="tool tool-logo-wide">
-
-                        <img
-                            src="assets/matlab-simulink-logo.png"
-                            alt="MATLAB Simulink">
-
-                        MATLAB / Simulink
-
-                    </span>
-
-                    <span class="tool">
-                        Simscape
-                    </span>
-
-                </div>
-
-                <a
-                    href="injector-simulation.html"
-                    class="project-button">
-
-                    VIEW PROJECT →
-
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <article class="project-featured">
-
-            <div class="project-featured-body">
-
-                <div class="project-top">
-
-                    <span class="project-type">
-                        Diagnostic Software
-                    </span>
-
-                    <span class="project-status">
-                        Research Software
-                    </span>
-
-                </div>
-
-                <h3>
-                    Injector Diagnostic Software
-                </h3>
-
-                <p class="project-description">
-
-                    A LabVIEW-based research application developed
-                    for automated analysis of electromagnetic injector
-                    current signals. The software identifies individual
-                    injection events, detects characteristic waveform
-                    phases and extracts time-domain and frequency-domain
-                    diagnostic features. Reference-based comparison and
-                    diagnostic maps support evaluation of injector
-                    behaviour, while dedicated reporting tools summarize
-                    results obtained from individual injections and
-                    complete measurement series.
-
-                </p>
-
-                <div class="project-highlight-grid">
-
-                    <div class="project-highlight">
-                        <span>01</span>
-                        Automatic injection and phase detection
-                    </div>
-
-                    <div class="project-highlight">
-                        <span>02</span>
-                        Time-domain feature extraction
-                    </div>
-
-                    <div class="project-highlight">
-                        <span>03</span>
-                        FFT and frequency-domain analysis
-                    </div>
-
-                    <div class="project-highlight">
-                        <span>04</span>
-                        Reference comparison and diagnostic mapping
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-main-image">
-
-                <div class="project-main-image-frame">
-
-                    <img
-                        src="assets/injector-diagnostic-software.png"
-                        alt="Injector diagnostic software developed in LabVIEW">
-
-                </div>
-
-                <div class="project-image-caption">
-                    Time-domain analysis and automatic injector current feature extraction
-                </div>
-
-            </div>
-
-
-            <div class="project-footer">
-
-                <div class="project-tools">
-
-                    <span class="tool">
-
-                        <img
-                            src="assets/labview-logo.png"
-                            alt="LabVIEW">
-
-                        LabVIEW
-
-                    </span>
-
-                    <span class="tool">
-                        Signal Analysis
-                    </span>
-
-                    <span class="tool">
-                        Diagnostics
-                    </span>
-
-                </div>
-
-                <a
-                    href="injector-diagnostic.html"
-                    class="project-button">
-
-                    VIEW PROJECT →
-
-                </a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<section class="step" id="insights" data-scene="insights">
-
-    <div class="step-inner">
-
-        <div class="step-kicker">
-            03 / Insights
-        </div>
-
-        <h2 class="step-title">
-            Automotive <span>Insights</span>
-        </h2>
-
-        <p class="step-text">
-
-            Short research notes, automotive technologies,
-            interesting scientific papers and observations
-            from my own work.
-
-        </p>
-
-        <div class="grid-3">
-
-            <div class="insight-card">
-
-                <div>
-
-                    <div class="card-label">
-                        Research Note
-                    </div>
-
-                    <h3>
-                        Can injector current reveal mechanical degradation?
-                    </h3>
-
-                    <p>
-                        How electrical signals may reflect
-                        physical processes inside an injector.
-                    </p>
-
-                </div>
-
-                <div class="read-more">
-                    Read more →
-                </div>
-
-            </div>
-
-
-            <div class="insight-card">
-
-                <div>
-
-                    <div class="card-label">
-                        Automotive
-                    </div>
-
-                    <h3>
-                        Why raw signals may matter more than fault codes
-                    </h3>
-
-                    <p>
-                        A note on modern diagnostics and the
-                        limitations of conventional OBD logic.
-                    </p>
-
-                </div>
-
-                <div class="read-more">
-                    Read more →
-                </div>
-
-            </div>
-
-
-            <div class="insight-card">
-
-                <div>
-
-                    <div class="card-label">
-                        Behind the Research
-                    </div>
-
-                    <h3>
-                        From Simulink to a real injector signal
-                    </h3>
-
-                    <p>
-                        Connecting simulation results
-                        with laboratory measurements.
-                    </p>
-
-                </div>
-
-                <div class="read-more">
-                    Read more →
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="step" id="publications" data-scene="publications">
 
 <div class="step-inner">
 
-    <div class="step-kicker">
-        04 / Publications
-    </div>
+<div class="step-kicker">
+Mechanical Engineering · Mechatronics · Automotive
+</div>
 
-    <h2 class="step-title">
-        Publications & <span>Conferences</span>
-    </h2>
+<h1 class="hero-title">
+Maja<br>
+<span class="silver">Antkowiak</span>
+</h1>
 
-    <p class="step-text">
+<p class="step-text">
 
-        Selected journal publications and conference
-        contributions related to automotive diagnostics,
-        signal analysis and fuel injection systems.
+PhD researcher working at the intersection
+of automotive engineering, mechatronics
+and intelligent diagnostics.
 
-    </p>
+My work focuses on diagnostics,
+signal analysis and signal modelling.
 
+</p>
 
-    <div class="publications-subtitle">
-        Journal Publications
-    </div>
+<div class="hero-actions">
 
+<a href="#research" class="btn btn-primary">
+Explore my work
+</a>
 
-    <article class="journal-card">
+<a href="#insights" class="btn btn-secondary">
+Read insights
+</a>
 
-        <div class="journal-top">
+</div>
 
-            <div class="journal-type">
-                Journal Article
-            </div>
+<div class="grid-2">
 
-            <div class="status">
-                Published
-            </div>
+<div class="info-card">
 
-        </div>
+<h3>Experience</h3>
 
-        <div class="journal-year">
-            2022
-        </div>
+<p>
+Research, conference participation,
+technical projects and academic work
+in automotive mechatronics.
+</p>
 
-        <h3>
-            Recognizing Significant Components of Electrical
-            Waveforms of Actuators Operated by Vehicle Controllers
-        </h3>
+</div>
 
-        <div class="journal-authors">
 
-            Krzysztof Więcławski ·
-            <strong>Maja Antkowiak</strong> ·
-            Tomasz Figlus
+<div class="info-card">
 
-        </div>
+<h3>Contact</h3>
 
-        <div class="journal-meta">
+<p>
+GitHub · LinkedIn · E-mail · academic profile
+</p>
 
-            <span class="meta-chip">Sensors</span>
-            <span class="meta-chip">22(20)</span>
-            <span class="meta-chip">7945</span>
+</div>
 
-        </div>
+</div>
 
-        <a
-            href="https://www.mdpi.com/1424-8220/22/20/7945"
-            target="_blank"
-            class="paper-link">
+</div>
 
-            VIEW PAPER →
+</section>
 
-        </a>
 
-    </article>
+<!-- RESEARCH -->
 
+<section
+class="step research-step"
+id="research"
+data-scene="research">
 
-    <article class="journal-card">
+<div class="step-inner research-inner">
 
-        <div class="journal-top">
+<div class="step-kicker">
+01 / Research
+</div>
 
-            <div class="journal-type">
-                Journal Article
-            </div>
+<h2 class="step-title">
+Research <span>Focus</span>
+</h2>
 
-            <div class="status">
-                Under Review
-            </div>
+<p class="step-text research-intro">
 
-        </div>
+My research follows the relationship between
+physical degradation, injector behaviour and
+measurable electrical signals, with the aim
+of developing methods for condition assessment
+and diagnostics.
 
-        <div class="journal-year">
-            2026
-        </div>
+</p>
 
-        <h3>
-            Model-Based Diagnostics of Fuel Injectors
-        </h3>
 
-        <div class="journal-authors">
-            Manuscript submitted to <strong>Transport Problems</strong>
-        </div>
+<div class="research-flow">
 
-        <div class="journal-meta">
+<div class="research-flow-node">
+Physical<br>degradation
+</div>
 
-            <span class="meta-chip">
-                Injector Diagnostics
-            </span>
+<div class="research-flow-arrow">→</div>
 
-            <span class="meta-chip">
-                Modelling
-            </span>
+<div class="research-flow-node">
+Injector<br>behaviour
+</div>
+
+<div class="research-flow-arrow">→</div>
+
+<div class="research-flow-node">
+Electrical<br>signal
+</div>
+
+<div class="research-flow-arrow">→</div>
+
+<div class="research-flow-node">
+Diagnostic<br>features
+</div>
+
+<div class="research-flow-arrow">→</div>
+
+<div class="research-flow-node">
+Condition<br>assessment
+</div>
+
+</div>
+
+
+<article class="research-card">
+
+<div class="research-card-top">
+
+<div class="research-card-meta">
+
+<span class="research-number">
+01 / SIGNAL DIAGNOSTICS
+</span>
+
+<span class="research-badge">
+Core Research
+</span>
+
+</div>
+
+<h3>
+Signal-Based Injector Diagnostics
+</h3>
+
+<p class="research-card-description">
+
+Development of non-invasive diagnostic
+methods based on electrical current
+waveforms of electromagnetic fuel injectors.
+The research focuses on identifying signal
+features associated with injector operation,
+technical condition and progressive degradation.
+
+</p>
+
+</div>
+
+
+<div class="research-visual">
+
+<div class="signal-visual">
+
+<svg viewBox="0 0 700 165" fill="none">
+
+<path
+d="
+M20 130
+L80 130
+L118 128
+L153 41
+L175 26
+L191 42
+L215 82
+L256 94
+L272 110
+L284 109
+L296 113
+L308 108
+L320 113
+L332 108
+L344 113
+L356 108
+L368 113
+L380 108
+L392 113
+L404 108
+L416 113
+L428 108
+L440 113
+L452 108
+L464 113
+L476 108
+L488 113
+L500 108
+L512 113
+L524 108
+L536 113
+L548 108
+L560 113
+L572 108
+L584 113
+L596 108
+L608 113
+L620 108
+L632 113
+L645 130
+L680 130"
+stroke="#63707D"
+stroke-width="2.3"
+stroke-linecap="round"
+stroke-linejoin="round"/>
 
-        </div>
+<line
+x1="20"
+y1="130"
+x2="680"
+y2="130"
+stroke="#D1D7DD"
+stroke-width="1"/>
 
-    </article>
+<text
+x="148"
+y="19"
+fill="#8A949E"
+font-size="11"
+font-family="Inter">
 
+PEAK
 
-    <div class="publications-subtitle">
-        Conference Contributions
-    </div>
+</text>
 
+<text
+x="430"
+y="96"
+fill="#8A949E"
+font-size="11"
+font-family="Inter">
 
-    <div class="conference-head">
+HOLD
 
-        <h3>
-            Research Journey
-        </h3>
+</text>
 
-        <p>
-            Oral presentations and posters documenting
-            the development of my research from signal
-            identification to model-based diagnostics.
-        </p>
+</svg>
 
-    </div>
+</div>
 
+</div>
 
-    <div class="conference-timeline">
 
-        <div class="year-marker">2026</div>
+<div class="research-card-footer">
 
-        <div class="conf-item">
+<div class="research-tags">
 
-            <div class="conf-date">
+<span class="research-tag">
+Current Waveforms
+</span>
 
-                23–25 SEPTEMBER 2026
+<span class="research-tag">
+Peak & Hold
+</span>
 
-                <span class="upcoming-badge">
-                    UPCOMING
-                </span>
+<span class="research-tag">
+Signal Features
+</span>
 
-            </div>
+</div>
 
-            <div class="conf-card">
+</div>
 
-                <div class="conf-type">
-                    Oral Presentation
-                </div>
+</article>
 
-                <div class="conf-event">
-                    8th International Congress on Technical Diagnostics
-                </div>
 
-                <div class="conf-location">
-                    Gdańsk · Poland
-                </div>
+<article class="research-card">
 
-                <div class="conf-title">
-                    “Model-Based Diagnostic of Fuel Injectors”
-                </div>
+<div class="research-card-top">
 
-            </div>
+<div class="research-card-meta">
 
-        </div>
+<span class="research-number">
+02 / MODELLING
+</span>
 
+<span class="research-badge">
+Research Method
+</span>
 
-        <div class="conf-item">
+</div>
 
-            <div class="conf-date">
-                3–5 JULY 2026
-            </div>
+<h3>
+Injector Modelling
+</h3>
 
-            <div class="conf-card">
+<p class="research-card-description">
 
-                <div class="conf-type">
-                    Poster Presentation
-                </div>
+Mathematical and multidomain modelling is
+used to describe relationships between the
+electrical, electromagnetic, mechanical and
+hydraulic behaviour of the injector.
+Analytical models support interpretation of
+current and voltage transients, while numerical
+simulation enables investigation of coupled
+physical phenomena.
 
-                <div class="conf-event">
-                    Kongres Młodej Nauki 2026
-                </div>
+</p>
 
-                <div class="conf-location">
-                    Gdańsk · Poland
-                </div>
+</div>
 
-                <div class="conf-title">
-                    “Identyfikacja nieprawidłowości działania układu paliwowego”
-                </div>
 
-            </div>
+<div class="research-visual">
 
-        </div>
+<div class="model-flow">
 
+<div class="model-node">Electrical</div>
+<div class="model-arrow">→</div>
 
-        <div class="conf-item">
+<div class="model-node">Electromagnetic</div>
+<div class="model-arrow">→</div>
 
-            <div class="conf-date">
-                8–10 APRIL 2026
-            </div>
+<div class="model-node">Mechanical</div>
+<div class="model-arrow">→</div>
 
-            <div class="conf-card">
+<div class="model-node">Hydraulic</div>
 
-                <div class="conf-type">
-                    Oral Presentation
-                </div>
+</div>
 
-                <div class="conf-event">
-                    XXII International Technical Systems Degradation Conference
-                </div>
+</div>
 
-                <div class="conf-location">
-                    Liptovský Mikuláš · Slovakia
-                </div>
 
-                <div class="conf-title">
-                    “Modeling the TSI Injector in the MATLAB/Simulink Environment”
-                </div>
+<div class="research-card-footer">
 
-            </div>
+<div class="research-tags">
 
-        </div>
+<span class="research-tag">
+Mathematical Model
+</span>
 
+<span class="research-tag">
+Multidomain
+</span>
 
-        <div class="conf-item">
+<span class="research-tag">
+Transient Response
+</span>
 
-            <div class="conf-date">
-                8–10 APRIL 2026
-            </div>
+</div>
 
-            <div class="conf-card">
+<a href="injector-modelling.html" class="research-link">
+EXPLORE RESEARCH →
+</a>
 
-                <div class="conf-type">
-                    Poster Presentation
-                </div>
+</div>
 
-                <div class="conf-event">
-                    XXII International Technical Systems Degradation Conference
-                </div>
+</article>
 
-                <div class="conf-location">
-                    Liptovský Mikuláš · Slovakia
-                </div>
 
-                <div class="conf-title">
-                    “Problem of Maintaining Constant Pressure in TSI Injection Test Bench”
-                </div>
+<article class="research-card">
 
-            </div>
+<div class="research-card-top">
 
-        </div>
+<div class="research-card-meta">
 
+<span class="research-number">
+03 / DEGRADATION & RELIABILITY
+</span>
 
-        <div class="year-marker">2025</div>
+<span class="research-badge">
+Ongoing Research
+</span>
 
+</div>
 
-        <div class="conf-item">
+<h3>
+Degradation & Reliability Research
+</h3>
 
-            <div class="conf-date">
-                25 SEPTEMBER 2025
-            </div>
+<p class="research-card-description">
 
-            <div class="conf-card">
+Current research also focuses on describing
+injector degradation as a measurable change
+in technical condition. Electrical,
+electromagnetic, mechanical, hydraulic and
+thermal degradation mechanisms are analysed
+together with their observable diagnostic
+indicators. The long-term objective is to
+combine these effects into a quantitative
+indicator describing injector condition
+and reliability.
 
-                <div class="conf-type">
-                    Oral Presentation
-                </div>
+</p>
 
-                <div class="conf-event">
-                    SiMRTRANS 2025
-                </div>
+</div>
 
-                <div class="conf-location">
-                    Warsaw · Poland
-                </div>
 
-                <div class="conf-title">
+<div class="research-visual">
 
-                    “Identyfikacja przebiegów prądowych sterowania
-                    wtryskiwaczem paliwowym o wtrysku bezpośrednim
-                    z zapłonem iskrowym”
+<div class="degradation-visual">
 
-                </div>
+<div class="degradation-types">
 
-            </div>
+<div class="degradation-type">
+Hydraulic degradation
+</div>
 
-        </div>
+<div class="degradation-type">
+Mechanical degradation
+</div>
 
+<div class="degradation-type">
+Electrical degradation
+</div>
 
-        <div class="year-marker">2022</div>
+<div class="degradation-type">
+Electromagnetic degradation
+</div>
 
+<div class="degradation-type">
+Thermal degradation
+</div>
 
-        <div class="conf-item">
+</div>
 
-            <div class="conf-date">
-                14–16 DECEMBER 2022
-            </div>
+<div class="degradation-arrow">
+→
+</div>
 
-            <div class="conf-card">
+<div class="condition-box">
 
-                <div class="conf-type">
-                    Oral Presentation
-                </div>
+<div class="condition-small">
+Research Objective
+</div>
 
-                <div class="conf-event">
-                    XIX International Technical Systems Degradation Conference
-                </div>
+<div class="condition-main">
+Condition & Reliability Assessment
+</div>
 
-                <div class="conf-location">
-                    Liptovský Mikuláš · Slovakia
-                </div>
+</div>
 
-                <div class="conf-title">
-                    “Algorithm as a Tool for Injector's Diagnostics”
-                </div>
+</div>
 
-            </div>
+</div>
 
-        </div>
 
+<div class="research-card-footer">
 
-        <div class="conf-item">
+<div class="research-tags">
 
-            <div class="conf-date">
-                14–16 SEPTEMBER 2022
-            </div>
+<span class="research-tag">
+Degradation
+</span>
 
-            <div class="conf-card">
+<span class="research-tag">
+Condition Indicator
+</span>
 
-                <div class="conf-type">
-                    Oral Presentation
-                </div>
+<span class="research-tag">
+Reliability
+</span>
 
-                <div class="conf-event">
-                    7th International Congress on Technical Diagnostics
-                </div>
+</div>
 
-                <div class="conf-location">
-                    Radom · Poland
-                </div>
+<a
+href="degradation-reliability.html"
+class="research-link">
 
-                <div class="conf-title">
+EXPLORE RESEARCH →
 
-                    “Identification of Waveforms of Electric Actuators
-                    Managed by Vehicle Controllers”
+</a>
 
-                </div>
+</div>
 
-            </div>
+</article>
 
-        </div>
+</div>
 
-    </div>
+</section>
 
 
-    <footer>
+<!-- PROJECTS -->
 
-        © 2026 Maja Antkowiak
+<section
+class="step projects-step"
+id="projects"
+data-scene="projects">
 
-        <br>
+<div class="step-inner projects-inner">
 
-        Automotive Engineering · Research · Diagnostics
+<div class="step-kicker">
+02 / Projects
+</div>
 
-    </footer>
+<h2 class="step-title">
+Selected <span>Projects</span>
+</h2>
+
+<p class="step-text projects-intro">
+
+Research and engineering projects combining
+automotive mechatronics, simulation,
+signal processing and diagnostics.
+
+</p>
+
+
+<article class="project-featured">
+
+<div class="project-featured-body">
+
+<div class="project-top">
+
+<span class="project-type">
+Multidomain Simulation
+</span>
+
+<span class="project-status">
+Research Project
+</span>
+
+</div>
+
+<h3>
+Injector Multidomain Simulation
+</h3>
+
+<p class="project-description">
+
+A coupled MATLAB/Simulink and Simscape
+representation of an electromagnetic
+direct-injection fuel injector, developed
+to investigate how electrical excitation
+propagates through electromagnetic force,
+needle dynamics and hydraulic fuel flow.
+The model reproduces the characteristic
+Peak & Hold current response and supports
+parameter-sensitivity studies and validation
+against laboratory measurements.
+
+</p>
+
+<div class="project-highlight-grid">
+
+<div class="project-highlight">
+<span>01</span>
+Electrical and electromagnetic behaviour
+</div>
+
+<div class="project-highlight">
+<span>02</span>
+Needle dynamics and mechanical response
+</div>
+
+<div class="project-highlight">
+<span>03</span>
+Hydraulic flow and injected fuel mass
+</div>
+
+<div class="project-highlight">
+<span>04</span>
+Validation and parameter sensitivity
+</div>
+
+</div>
+
+</div>
+
+
+<div class="project-main-image">
+
+<div class="project-main-image-frame">
+
+<img
+src="assets/injector-current-waveform.png"
+alt="Simulated injector current waveform">
+
+</div>
+
+<div class="project-image-caption">
+Simulated injector current waveform · Peak & Hold control
+</div>
+
+</div>
+
+
+<div class="project-footer">
+
+<div class="project-tools">
+
+<span class="tool tool-logo-wide">
+
+<img
+src="assets/matlab-simulink-logo.png"
+alt="MATLAB Simulink">
+
+MATLAB / Simulink
+
+</span>
+
+<span class="tool">
+Simscape
+</span>
+
+</div>
+
+<a
+href="injector-simulation.html"
+class="project-button">
+
+VIEW PROJECT →
+
+</a>
+
+</div>
+
+</article>
+
+
+<article class="project-featured">
+
+<div class="project-featured-body">
+
+<div class="project-top">
+
+<span class="project-type">
+Diagnostic Software
+</span>
+
+<span class="project-status">
+Research Software
+</span>
+
+</div>
+
+<h3>
+Injector Diagnostic Software
+</h3>
+
+<p class="project-description">
+
+A LabVIEW-based research application developed
+for automated analysis of electromagnetic injector
+current signals. The software identifies individual
+injection events, detects characteristic waveform
+phases and extracts time-domain and frequency-domain
+diagnostic features. Reference-based comparison and
+diagnostic maps support evaluation of injector
+behaviour, while dedicated reporting tools summarize
+results obtained from individual injections and
+complete measurement series.
+
+</p>
+
+<div class="project-highlight-grid">
+
+<div class="project-highlight">
+<span>01</span>
+Automatic injection and phase detection
+</div>
+
+<div class="project-highlight">
+<span>02</span>
+Time-domain feature extraction
+</div>
+
+<div class="project-highlight">
+<span>03</span>
+FFT and frequency-domain analysis
+</div>
+
+<div class="project-highlight">
+<span>04</span>
+Reference comparison and diagnostic mapping
+</div>
+
+</div>
+
+</div>
+
+
+<div class="project-main-image">
+
+<div class="project-main-image-frame">
+
+<img
+src="assets/injector-diagnostic-software.png"
+alt="Injector diagnostic software developed in LabVIEW">
+
+</div>
+
+<div class="project-image-caption">
+Time-domain analysis and automatic injector current feature extraction
+</div>
+
+</div>
+
+
+<div class="project-footer">
+
+<div class="project-tools">
+
+<span class="tool">
+
+<img
+src="assets/labview-logo.png"
+alt="LabVIEW">
+
+LabVIEW
+
+</span>
+
+<span class="tool">
+Signal Analysis
+</span>
+
+<span class="tool">
+Diagnostics
+</span>
+
+</div>
+
+<a
+href="injector-diagnostic.html"
+class="project-button">
+
+VIEW PROJECT →
+
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- INSIGHTS -->
+
+<section class="step" id="insights" data-scene="insights">
+
+<div class="step-inner">
+
+<div class="step-kicker">
+03 / Insights
+</div>
+
+<h2 class="step-title">
+Automotive <span>Insights</span>
+</h2>
+
+<p class="step-text">
+
+Short research notes, automotive technologies,
+interesting scientific papers and observations
+from my own work.
+
+</p>
+
+<div class="grid-3">
+
+<div class="insight-card">
+
+<div>
+
+<div class="card-label">
+Research Note
+</div>
+
+<h3>
+Can injector current reveal mechanical degradation?
+</h3>
+
+<p>
+How electrical signals may reflect
+physical processes inside an injector.
+</p>
+
+</div>
+
+<div class="read-more">
+Read more →
+</div>
+
+</div>
+
+
+<div class="insight-card">
+
+<div>
+
+<div class="card-label">
+Automotive
+</div>
+
+<h3>
+Why raw signals may matter more than fault codes
+</h3>
+
+<p>
+A note on modern diagnostics and the
+limitations of conventional OBD logic.
+</p>
+
+</div>
+
+<div class="read-more">
+Read more →
+</div>
+
+</div>
+
+
+<div class="insight-card">
+
+<div>
+
+<div class="card-label">
+Behind the Research
+</div>
+
+<h3>
+From Simulink to a real injector signal
+</h3>
+
+<p>
+Connecting simulation results
+with laboratory measurements.
+</p>
+
+</div>
+
+<div class="read-more">
+Read more →
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PUBLICATIONS -->
+
+<section
+class="step"
+id="publications"
+data-scene="publications">
+
+<div class="step-inner">
+
+<div class="step-kicker">
+04 / Publications
+</div>
+
+<h2 class="step-title">
+Publications & <span>Conferences</span>
+</h2>
+
+<p class="step-text">
+
+Selected journal publications and conference
+contributions related to automotive diagnostics,
+signal analysis and fuel injection systems.
+
+</p>
+
+
+<div class="publications-subtitle">
+Journal Publications
+</div>
+
+
+<article class="journal-card">
+
+<div class="journal-top">
+
+<div class="journal-type">
+Journal Article
+</div>
+
+<div class="status">
+Published
+</div>
+
+</div>
+
+<div class="journal-year">
+2022
+</div>
+
+<h3>
+Recognizing Significant Components of Electrical
+Waveforms of Actuators Operated by Vehicle Controllers
+</h3>
+
+<div class="journal-authors">
+
+Krzysztof Więcławski ·
+<strong>Maja Antkowiak</strong> ·
+Tomasz Figlus
+
+</div>
+
+<div class="journal-meta">
+
+<span class="meta-chip">Sensors</span>
+<span class="meta-chip">22(20)</span>
+<span class="meta-chip">7945</span>
+
+</div>
+
+<a
+href="https://www.mdpi.com/1424-8220/22/20/7945"
+target="_blank"
+class="paper-link">
+
+VIEW PAPER →
+
+</a>
+
+</article>
+
+
+<article class="journal-card">
+
+<div class="journal-top">
+
+<div class="journal-type">
+Journal Article
+</div>
+
+<div class="status">
+Under Review
+</div>
+
+</div>
+
+<div class="journal-year">
+2026
+</div>
+
+<h3>
+Model-Based Diagnostics of Fuel Injectors
+</h3>
+
+<div class="journal-authors">
+Manuscript submitted to <strong>Transport Problems</strong>
+</div>
+
+<div class="journal-meta">
+
+<span class="meta-chip">
+Injector Diagnostics
+</span>
+
+<span class="meta-chip">
+Modelling
+</span>
+
+</div>
+
+</article>
+
+
+<div class="publications-subtitle">
+Conference Contributions
+</div>
+
+
+<div class="conference-head">
+
+<h3>
+Research Journey
+</h3>
+
+<p>
+Oral presentations and posters documenting
+the development of my research from signal
+identification to model-based diagnostics.
+</p>
+
+</div>
+
+
+<div class="conference-timeline">
+
+<div class="year-marker">
+2026
+</div>
+
+
+<div class="conf-item">
+
+<div class="conf-date">
+
+23–25 SEPTEMBER 2026
+
+<span class="upcoming-badge">
+UPCOMING
+</span>
+
+</div>
+
+<div class="conf-card">
+
+<div class="conf-type">
+Oral Presentation
+</div>
+
+<div class="conf-event">
+8th International Congress on Technical Diagnostics
+</div>
+
+<div class="conf-location">
+Gdańsk · Poland
+</div>
+
+<div class="conf-title">
+“Model-Based Diagnostic of Fuel Injectors”
+</div>
+
+</div>
+
+</div>
+
+
+<div class="conf-item">
+
+<div class="conf-date">
+3–5 JULY 2026
+</div>
+
+<div class="conf-card">
+
+<div class="conf-type">
+Poster Presentation
+</div>
+
+<div class="conf-event">
+Kongres Młodej Nauki 2026
+</div>
+
+<div class="conf-location">
+Gdańsk · Poland
+</div>
+
+<div class="conf-title">
+“Identyfikacja nieprawidłowości działania układu paliwowego”
+</div>
+
+</div>
+
+</div>
+
+
+<div class="conf-item">
+
+<div class="conf-date">
+8–10 APRIL 2026
+</div>
+
+<div class="conf-card">
+
+<div class="conf-type">
+Oral Presentation
+</div>
+
+<div class="conf-event">
+XXII International Technical Systems Degradation Conference
+</div>
+
+<div class="conf-location">
+Liptovský Mikuláš · Slovakia
+</div>
+
+<div class="conf-title">
+“Modeling the TSI Injector in the MATLAB/Simulink Environment”
+</div>
+
+</div>
+
+</div>
+
+
+<div class="conf-item">
+
+<div class="conf-date">
+8–10 APRIL 2026
+</div>
+
+<div class="conf-card">
+
+<div class="conf-type">
+Poster Presentation
+</div>
+
+<div class="conf-event">
+XXII International Technical Systems Degradation Conference
+</div>
+
+<div class="conf-location">
+Liptovský Mikuláš · Slovakia
+</div>
+
+<div class="conf-title">
+“Problem of Maintaining Constant Pressure in TSI Injection Test Bench”
+</div>
+
+</div>
+
+</div>
+
+
+<div class="year-marker">
+2025
+</div>
+
+
+<div class="conf-item">
+
+<div class="conf-date">
+25 SEPTEMBER 2025
+</div>
+
+<div class="conf-card">
+
+<div class="conf-type">
+Oral Presentation
+</div>
+
+<div class="conf-event">
+SiMRTRANS 2025
+</div>
+
+<div class="conf-location">
+Warsaw · Poland
+</div>
+
+<div class="conf-title">
+
+“Identyfikacja przebiegów prądowych sterowania
+wtryskiwaczem paliwowym o wtrysku bezpośrednim
+z zapłonem iskrowym”
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="year-marker">
+2022
+</div>
+
+
+<div class="conf-item">
+
+<div class="conf-date">
+14–16 DECEMBER 2022
+</div>
+
+<div class="conf-card">
+
+<div class="conf-type">
+Oral Presentation
+</div>
+
+<div class="conf-event">
+XIX International Technical Systems Degradation Conference
+</div>
+
+<div class="conf-location">
+Liptovský Mikuláš · Slovakia
+</div>
+
+<div class="conf-title">
+“Algorithm as a Tool for Injector's Diagnostics”
+</div>
+
+</div>
+
+</div>
+
+
+<div class="conf-item">
+
+<div class="conf-date">
+14–16 SEPTEMBER 2022
+</div>
+
+<div class="conf-card">
+
+<div class="conf-type">
+Oral Presentation
+</div>
+
+<div class="conf-event">
+7th International Congress on Technical Diagnostics
+</div>
+
+<div class="conf-location">
+Radom · Poland
+</div>
+
+<div class="conf-title">
+
+“Identification of Waveforms of Electric Actuators
+Managed by Vehicle Controllers”
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 Maja Antkowiak
+
+<br>
+
+Automotive Engineering · Research · Diagnostics
+
+</footer>
+
 
 </div>
 
@@ -3338,6 +3176,8 @@ footer{
 </section>
 
 
+<!-- RIGHT VISUAL -->
+
 <aside class="visual-column">
 
 <div class="visual-sticky">
@@ -3345,525 +3185,629 @@ footer{
 <div class="visual-card">
 
 
-    <div class="scene-top">
+<div class="scene-top">
 
-        <div>
+<div>
 
-            <div class="scene-number" id="sceneNumber">
-                Scene / 00
-            </div>
+<div
+class="scene-title"
+id="sceneTitle">
 
-            <div class="scene-title" id="sceneTitle">
-                About Me
-            </div>
+About Me
 
-        </div>
+</div>
 
-        <div class="scene-caption" id="sceneCaption">
+</div>
 
-            Automotive engineering,
-            diagnostics and signal-based research.
 
-        </div>
+<div
+class="scene-caption"
+id="sceneCaption">
 
-    </div>
+Automotive engineering,
+diagnostics and signal-based research.
 
+</div>
 
-    <div class="mini-tag" id="sceneTag">
-        Automotive portfolio
-    </div>
+</div>
 
 
-    <div class="graphic-stage">
+<div
+class="mini-tag"
+id="sceneTag">
 
+Automotive portfolio
 
-        <div class="graphic active" data-graphic="about">
+</div>
 
-            <div class="about-art"></div>
 
-            <div class="about-wave">
+<div class="graphic-stage">
 
-                <svg viewBox="0 0 500 80">
 
-                    <path
-                        d="M0 55 L85 55 L125 53 L153 11 L177 53 L230 53 L252 42 L272 54 L500 54"
-                        fill="none"
-                        stroke="#75818D"
-                        stroke-width="2"/>
+<!-- ABOUT -->
 
-                </svg>
+<div
+class="graphic active"
+data-graphic="about">
 
-            </div>
+<div class="about-art"></div>
 
-        </div>
+<div class="about-wave">
 
+<svg viewBox="0 0 500 80">
 
-        <div class="graphic" data-graphic="research">
+<path
+d="M0 55 L85 55 L125 53 L153 11 L177 53 L230 53 L252 42 L272 54 L500 54"
+fill="none"
+stroke="#75818D"
+stroke-width="2"/>
 
-            <div class="research-map">
+</svg>
 
-                <div class="research-map-row">
+</div>
 
-                    <div class="research-map-number">01</div>
+</div>
 
-                    <div class="research-map-card">
-                        <strong>Signal Diagnostics</strong>
-                        <span>current waveform → features</span>
-                    </div>
 
-                    <div class="research-map-arrow"></div>
+<!-- RESEARCH -->
 
-                </div>
+<div
+class="graphic"
+data-graphic="research">
 
-                <div class="research-map-row">
+<div class="research-map">
 
-                    <div class="research-map-number">02</div>
 
-                    <div class="research-map-card">
-                        <strong>Injector Modelling</strong>
-                        <span>physical domains → response</span>
-                    </div>
+<div class="research-map-row">
 
-                    <div class="research-map-arrow"></div>
+<div class="research-map-number">
+01
+</div>
 
-                </div>
+<div class="research-map-card">
 
-                <div class="research-map-row">
+<strong>
+Signal Diagnostics
+</strong>
 
-                    <div class="research-map-number">03</div>
+<span>
+current waveform → features
+</span>
 
-                    <div class="research-map-card">
-                        <strong>Degradation & Reliability</strong>
-                        <span>faults → technical condition</span>
-                    </div>
+</div>
 
-                    <div class="research-map-arrow"></div>
+<div class="research-map-arrow"></div>
 
-                </div>
+</div>
 
 
-                <div class="research-destination">
+<div class="research-map-row">
 
-                    <div class="research-destination-small">
-                        Research Direction
-                    </div>
+<div class="research-map-number">
+02
+</div>
 
-                    <div class="research-destination-main">
-                        Condition Assessment
-                    </div>
+<div class="research-map-card">
 
-                </div>
+<strong>
+Injector Modelling
+</strong>
 
-            </div>
+<span>
+physical domains → response
+</span>
 
-        </div>
+</div>
 
+<div class="research-map-arrow"></div>
 
-        <div class="graphic" data-graphic="projects">
+</div>
 
-            <div class="projects-showcase">
 
-                <div class="showcase-tabs">
+<div class="research-map-row">
 
-                    <button
-                        class="showcase-tab active"
-                        data-project-preview="simulation">
+<div class="research-map-number">
+03
+</div>
 
-                        01 / SIMULATION
+<div class="research-map-card">
 
-                    </button>
+<strong>
+Degradation & Reliability
+</strong>
 
-                    <button
-                        class="showcase-tab"
-                        data-project-preview="software">
+<span>
+faults → technical condition
+</span>
 
-                        02 / SOFTWARE
+</div>
 
-                    </button>
+<div class="research-map-arrow"></div>
 
-                </div>
+</div>
 
 
-                <div class="showcase-screen">
+<div class="research-destination">
 
-                    <div
-                        class="project-preview active"
-                        data-project-panel="simulation">
+<div class="research-destination-small">
+Research Direction
+</div>
 
-                        <div class="preview-image-frame">
+<div class="research-destination-main">
+Condition Assessment
+</div>
 
-                            <img
-                                src="assets/injector-current-waveform.png"
-                                alt="Injector current waveform">
+</div>
 
-                        </div>
 
-                        <div class="preview-meta">
+</div>
 
-                            <div>
+</div>
 
-                                <div class="preview-kicker">
-                                    MATLAB / SIMULINK / SIMSCAPE
-                                </div>
 
-                                <div class="preview-title">
-                                    Injector Multidomain Simulation
-                                </div>
+<!-- PROJECTS -->
 
-                            </div>
+<div
+class="graphic"
+data-graphic="projects">
 
-                            <a
-                                href="injector-simulation.html"
-                                class="preview-open">
+<div class="projects-showcase">
 
-                                OPEN →
+<div class="showcase-tabs">
 
-                            </a>
+<button
+class="showcase-tab active"
+data-project-preview="simulation">
 
-                        </div>
+01 / SIMULATION
 
-                    </div>
+</button>
 
+<button
+class="showcase-tab"
+data-project-preview="software">
 
-                    <div
-                        class="project-preview"
-                        data-project-panel="software">
+02 / SOFTWARE
 
-                        <div class="preview-image-frame">
+</button>
 
-                            <img
-                                src="assets/injector-diagnostic-software.png"
-                                alt="Injector diagnostic software">
+</div>
 
-                        </div>
 
-                        <div class="preview-meta">
+<div class="showcase-screen">
 
-                            <div>
 
-                                <div class="preview-kicker">
-                                    LABVIEW / SIGNAL ANALYSIS
-                                </div>
+<div
+class="project-preview active"
+data-project-panel="simulation">
 
-                                <div class="preview-title">
-                                    Injector Diagnostic Software
-                                </div>
+<div class="preview-image-frame">
 
-                            </div>
+<img
+src="assets/injector-current-waveform.png"
+alt="Injector current waveform">
 
-                            <a
-                                href="injector-diagnostic.html"
-                                class="preview-open">
+</div>
 
-                                OPEN →
+<div class="preview-meta">
 
-                            </a>
+<div>
 
-                        </div>
+<div class="preview-kicker">
+MATLAB / SIMULINK / SIMSCAPE
+</div>
 
-                    </div>
+<div class="preview-title">
+Injector Multidomain Simulation
+</div>
 
-                </div>
+</div>
 
-            </div>
+<a
+href="injector-simulation.html"
+class="preview-open">
 
-        </div>
+OPEN →
 
+</a>
 
-        <div class="graphic" data-graphic="insights">
+</div>
 
-            <div class="insight-stack">
+</div>
 
-                <div class="note">Research papers</div>
-                <div class="note">Automotive trends</div>
-                <div class="note">Laboratory notes</div>
-                <div class="note">Behind the research</div>
 
-            </div>
+<div
+class="project-preview"
+data-project-panel="software">
 
-        </div>
+<div class="preview-image-frame">
 
+<img
+src="assets/injector-diagnostic-software.png"
+alt="Injector diagnostic software">
 
-        <div class="graphic" data-graphic="publications">
+</div>
 
-            <div class="pub-stack">
+<div class="preview-meta">
 
-                <div class="pub-sheet">
+<div>
 
-                    <div class="pub-sheet-label">
-                        PUBLISHED · 2022
-                    </div>
+<div class="preview-kicker">
+LABVIEW / SIGNAL ANALYSIS
+</div>
 
-                    <div class="pub-sheet-title">
+<div class="preview-title">
+Injector Diagnostic Software
+</div>
 
-                        Recognizing Significant Components of
-                        Electrical Waveforms of Actuators Operated
-                        by Vehicle Controllers
+</div>
 
-                    </div>
+<a
+href="injector-diagnostic.html"
+class="preview-open">
 
-                </div>
+OPEN →
 
-                <div class="pub-sheet">
+</a>
 
-                    <div class="pub-sheet-label">
-                        UNDER REVIEW · 2026
-                    </div>
+</div>
 
-                    <div class="pub-sheet-title">
-                        Model-Based Diagnostics of Fuel Injectors
-                    </div>
+</div>
 
-                </div>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 
-    <div class="car-zone" id="carZone">
+<!-- INSIGHTS -->
 
-        <svg
-            class="road-svg"
-            id="roadSvg"
-            viewBox="0 0 900 150"
-            preserveAspectRatio="none">
+<div
+class="graphic"
+data-graphic="insights">
 
-            <path
-                d="
-                M0 101
-                C115 82 185 74 285 88
-                C395 104 470 121 560 92
-                C660 59 755 67 900 89
-                L900 111
-                C755 89 660 81 560 114
-                C470 143 395 126 285 110
-                C185 96 115 104 0 123
-                Z"
-                fill="rgba(184,192,201,.08)"/>
+<div class="insight-stack">
 
-            <path
-                d="
-                M0 101
-                C115 82 185 74 285 88
-                C395 104 470 121 560 92
-                C660 59 755 67 900 89"
-                fill="none"
-                stroke="#A9B2BC"
-                stroke-width="2.2"/>
+<div class="note">
+Research papers
+</div>
 
-            <path
-                d="
-                M0 123
-                C115 104 185 96 285 110
-                C395 126 470 143 560 114
-                C660 81 755 89 900 111"
-                fill="none"
-                stroke="#D0D6DC"
-                stroke-width="1.5"/>
+<div class="note">
+Automotive trends
+</div>
 
-            <path
-                d="
-                M0 112
-                C115 93 185 85 285 99
-                C395 115 470 132 560 103
-                C660 70 755 78 900 100"
-                fill="none"
-                stroke="#89939E"
-                stroke-width="1.6"
-                stroke-dasharray="24 25"
-                opacity=".4"/>
+<div class="note">
+Laboratory notes
+</div>
 
-            <path
-                id="motionPath"
-                d="
-                M145 87
-                C225 75 285 79 350 91
-                C430 106 485 111 560 87
-                C635 63 695 66 765 77"
-                fill="none"
-                stroke="transparent"/>
+<div class="note">
+Behind the research
+</div>
 
-        </svg>
+</div>
 
+</div>
 
-        <div
-            class="car-wrap"
-            id="carWrap"
-            title="Drag the car to navigate">
 
-            <svg
-                class="car-body"
-                viewBox="0 0 340 125"
-                fill="none">
+<!-- PUBLICATIONS -->
 
-                <defs>
+<div
+class="graphic"
+data-graphic="publications">
 
-                    <linearGradient
-                        id="carMetal"
-                        x1="35"
-                        y1="20"
-                        x2="300"
-                        y2="115">
+<div class="pub-stack">
 
-                        <stop stop-color="#3E4854"/>
-                        <stop offset=".32" stop-color="#929CA7"/>
-                        <stop offset=".58" stop-color="#596572"/>
-                        <stop offset=".78" stop-color="#BAC1C8"/>
-                        <stop offset="1" stop-color="#4E5965"/>
+<div class="pub-sheet">
 
-                    </linearGradient>
+<div class="pub-sheet-label">
+PUBLISHED · 2022
+</div>
 
-                    <linearGradient
-                        id="glass"
-                        x1="110"
-                        y1="35"
-                        x2="230"
-                        y2="75">
+<div class="pub-sheet-title">
 
-                        <stop stop-color="#E8EDF1"/>
-                        <stop offset="1" stop-color="#87939F"/>
+Recognizing Significant Components of
+Electrical Waveforms of Actuators Operated
+by Vehicle Controllers
 
-                    </linearGradient>
+</div>
 
-                </defs>
+</div>
 
-                <path
-                    d="
-                    M28 79
-                    C44 75 58 70 75 65
-                    L104 42
-                    C119 30 139 24 167 23
-                    L199 23
-                    C220 24 239 31 253 42
-                    L278 62
-                    C292 65 305 68 316 72
-                    C326 76 330 82 327 90
-                    C324 97 316 100 304 100
-                    L285 100
-                    C281 113 270 121 256 121
-                    C242 121 230 113 226 100
-                    L106 100
-                    C102 113 90 121 76 121
-                    C62 121 50 113 46 100
-                    L31 100
-                    C20 100 13 94 14 87
-                    C15 83 20 80 28 79
-                    Z"
-                    fill="rgba(124,136,149,.10)"
-                    stroke="url(#carMetal)"
-                    stroke-width="3"
-                    stroke-linejoin="round"/>
 
-                <path
-                    d="
-                    M103 43
-                    C121 27 143 18 169 18
-                    L199 18
-                    C224 20 245 31 261 50"
-                    stroke="url(#carMetal)"
-                    stroke-width="2.6"/>
+<div class="pub-sheet">
 
-                <path
-                    d="
-                    M113 43
-                    C130 29 146 24 166 23
-                    L176 23
-                    L176 54
-                    L105 54
-                    Z"
-                    fill="url(#glass)"
-                    opacity=".34"
-                    stroke="#88939F"
-                    stroke-width="1.5"/>
+<div class="pub-sheet-label">
+UNDER REVIEW · 2026
+</div>
 
-                <path
-                    d="
-                    M183 23
-                    L198 23
-                    C218 25 237 35 250 52
-                    L183 52
-                    Z"
-                    fill="url(#glass)"
-                    opacity=".34"
-                    stroke="#88939F"
-                    stroke-width="1.5"/>
+<div class="pub-sheet-title">
+Model-Based Diagnostics of Fuel Injectors
+</div>
 
-                <path
-                    d="
-                    M43 75
-                    C99 69 154 67 207 68
-                    C244 68 275 71 307 78"
-                    stroke="#77838F"
-                    stroke-width="1.4"/>
+</div>
 
-                <circle
-                    cx="76"
-                    cy="100"
-                    r="22"
-                    fill="#F4F6F8"
-                    stroke="#4F5965"
-                    stroke-width="3"/>
+</div>
 
-                <circle
-                    cx="256"
-                    cy="100"
-                    r="22"
-                    fill="#F4F6F8"
-                    stroke="#4F5965"
-                    stroke-width="3"/>
+</div>
 
-                <circle
-                    cx="76"
-                    cy="100"
-                    r="12"
-                    stroke="#8A949F"
-                    stroke-width="2"/>
 
-                <circle
-                    cx="256"
-                    cy="100"
-                    r="12"
-                    stroke="#8A949F"
-                    stroke-width="2"/>
+</div>
 
-                <g class="wheel-spokes" id="rearWheel">
 
-                    <path
-                        d="
-                        M76 88V112
-                        M64 100H88
-                        M67 91L85 109
-                        M85 91L67 109"
-                        stroke="#8A949F"
-                        stroke-width="1.4"/>
+<!-- CAR -->
 
-                </g>
+<div
+class="car-zone"
+id="carZone">
 
-                <g class="wheel-spokes" id="frontWheel">
+<svg
+class="road-svg"
+id="roadSvg"
+viewBox="0 0 900 150"
+preserveAspectRatio="none">
 
-                    <path
-                        d="
-                        M256 88V112
-                        M244 100H268
-                        M247 91L265 109
-                        M265 91L247 109"
-                        stroke="#8A949F"
-                        stroke-width="1.4"/>
 
-                </g>
+<path
+d="
+M0 101
+C115 82 185 74 285 88
+C395 104 470 121 560 92
+C660 59 755 67 900 89
+L900 111
+C755 89 660 81 560 114
+C470 143 395 126 285 110
+C185 96 115 104 0 123
+Z"
+fill="rgba(184,192,201,.08)"/>
 
-            </svg>
 
-        </div>
+<path
+d="
+M0 101
+C115 82 185 74 285 88
+C395 104 470 121 560 92
+C660 59 755 67 900 89"
+fill="none"
+stroke="#A9B2BC"
+stroke-width="2.2"/>
 
-        <div class="hint">
-            Scroll to drive
-        </div>
 
-    </div>
+<path
+d="
+M0 123
+C115 104 185 96 285 110
+C395 126 470 143 560 114
+C660 81 755 89 900 111"
+fill="none"
+stroke="#D0D6DC"
+stroke-width="1.5"/>
+
+
+<path
+d="
+M0 112
+C115 93 185 85 285 99
+C395 115 470 132 560 103
+C660 70 755 78 900 100"
+fill="none"
+stroke="#89939E"
+stroke-width="1.6"
+stroke-dasharray="24 25"
+opacity=".4"/>
+
+
+<path
+id="motionPath"
+d="
+M145 87
+C225 75 285 79 350 91
+C430 106 485 111 560 87
+C635 63 695 66 765 77"
+fill="none"
+stroke="transparent"/>
+
+
+</svg>
+
+
+<div
+class="car-wrap"
+id="carWrap"
+title="Drag the car to navigate">
+
+<svg
+class="car-body"
+viewBox="0 0 340 125"
+fill="none">
+
+
+<defs>
+
+<linearGradient
+id="carMetal"
+x1="35"
+y1="20"
+x2="300"
+y2="115">
+
+<stop stop-color="#3E4854"/>
+<stop offset=".32" stop-color="#929CA7"/>
+<stop offset=".58" stop-color="#596572"/>
+<stop offset=".78" stop-color="#BAC1C8"/>
+<stop offset="1" stop-color="#4E5965"/>
+
+</linearGradient>
+
+
+<linearGradient
+id="glass"
+x1="110"
+y1="35"
+x2="230"
+y2="75">
+
+<stop stop-color="#E8EDF1"/>
+<stop offset="1" stop-color="#87939F"/>
+
+</linearGradient>
+
+</defs>
+
+
+<path
+d="
+M28 79
+C44 75 58 70 75 65
+L104 42
+C119 30 139 24 167 23
+L199 23
+C220 24 239 31 253 42
+L278 62
+C292 65 305 68 316 72
+C326 76 330 82 327 90
+C324 97 316 100 304 100
+L285 100
+C281 113 270 121 256 121
+C242 121 230 113 226 100
+L106 100
+C102 113 90 121 76 121
+C62 121 50 113 46 100
+L31 100
+C20 100 13 94 14 87
+C15 83 20 80 28 79
+Z"
+fill="rgba(124,136,149,.10)"
+stroke="url(#carMetal)"
+stroke-width="3"
+stroke-linejoin="round"/>
+
+
+<path
+d="
+M103 43
+C121 27 143 18 169 18
+L199 18
+C224 20 245 31 261 50"
+stroke="url(#carMetal)"
+stroke-width="2.6"/>
+
+
+<path
+d="
+M113 43
+C130 29 146 24 166 23
+L176 23
+L176 54
+L105 54
+Z"
+fill="url(#glass)"
+opacity=".34"
+stroke="#88939F"
+stroke-width="1.5"/>
+
+
+<path
+d="
+M183 23
+L198 23
+C218 25 237 35 250 52
+L183 52
+Z"
+fill="url(#glass)"
+opacity=".34"
+stroke="#88939F"
+stroke-width="1.5"/>
+
+
+<path
+d="
+M43 75
+C99 69 154 67 207 68
+C244 68 275 71 307 78"
+stroke="#77838F"
+stroke-width="1.4"/>
+
+
+<circle
+cx="76"
+cy="100"
+r="22"
+fill="#F4F6F8"
+stroke="#4F5965"
+stroke-width="3"/>
+
+
+<circle
+cx="256"
+cy="100"
+r="22"
+fill="#F4F6F8"
+stroke="#4F5965"
+stroke-width="3"/>
+
+
+<circle
+cx="76"
+cy="100"
+r="12"
+stroke="#8A949F"
+stroke-width="2"/>
+
+
+<circle
+cx="256"
+cy="100"
+r="12"
+stroke="#8A949F"
+stroke-width="2"/>
+
+
+<g
+class="wheel-spokes"
+id="rearWheel">
+
+<path
+d="
+M76 88V112
+M64 100H88
+M67 91L85 109
+M85 91L67 109"
+stroke="#8A949F"
+stroke-width="1.4"/>
+
+</g>
+
+
+<g
+class="wheel-spokes"
+id="frontWheel">
+
+<path
+d="
+M256 88V112
+M244 100H268
+M247 91L265 109
+M265 91L247 109"
+stroke="#8A949F"
+stroke-width="1.4"/>
+
+</g>
+
+
+</svg>
+
+</div>
+
+
+<div class="hint">
+Scroll to drive
+</div>
+
+
+</div>
+
 
 </div>
 
@@ -3876,330 +3820,466 @@ footer{
 
 <script>
 
+
 const scenes={
 
-    about:{
-        number:'Scene / 00',
-        title:'About Me',
-        caption:'Automotive engineering, diagnostics and signal-based research.',
-        tag:'Automotive portfolio'
-    },
+about:{
+title:'About Me',
+caption:'Automotive engineering, diagnostics and signal-based research.',
+tag:'Automotive portfolio'
+},
 
-    research:{
-        number:'Scene / 01',
-        title:'Research Focus',
-        caption:'Signal diagnostics, injector modelling and degradation-oriented condition assessment.',
-        tag:'Research directions'
-    },
+research:{
+title:'Research Focus',
+caption:'Signal diagnostics, injector modelling and degradation-oriented condition assessment.',
+tag:'Research directions'
+},
 
-    projects:{
-        number:'Scene / 02',
-        title:'Selected Projects',
-        caption:'Two engineering implementations supporting injector simulation and signal-based diagnostics.',
-        tag:'Engineering projects'
-    },
+projects:{
+title:'Selected Projects',
+caption:'Two engineering implementations supporting injector simulation and signal-based diagnostics.',
+tag:'Engineering projects'
+},
 
-    insights:{
-        number:'Scene / 03',
-        title:'Insights',
-        caption:'Research papers, automotive technologies and observations from my own work.',
-        tag:'Research notes & trends'
-    },
+insights:{
+title:'Insights',
+caption:'Research papers, automotive technologies and observations from my own work.',
+tag:'Research notes & trends'
+},
 
-    publications:{
-        number:'Scene / 04',
-        title:'Research Journey',
-        caption:'Journal publications and conference contributions from 2022 to 2026.',
-        tag:'Publications & conferences'
-    }
+publications:{
+title:'Research Journey',
+caption:'Journal publications and conference contributions from 2022 to 2026.',
+tag:'Publications & conferences'
+}
 
 };
 
 
-const steps=document.querySelectorAll('.step');
-const graphics=document.querySelectorAll('.graphic');
-const navLinks=document.querySelectorAll('.nav-link');
+const steps=
+document.querySelectorAll('.step');
+
+const graphics=
+document.querySelectorAll('.graphic');
+
+const navLinks=
+document.querySelectorAll('.nav-link');
 
 
 function activateScene(id){
 
-    const scene=scenes[id];
+const scene=
+scenes[id];
 
-    if(!scene){
-        return;
-    }
+if(!scene){
+return;
+}
 
-    document.getElementById('sceneNumber').textContent=scene.number;
-    document.getElementById('sceneTitle').textContent=scene.title;
-    document.getElementById('sceneCaption').textContent=scene.caption;
-    document.getElementById('sceneTag').textContent=scene.tag;
+document
+.getElementById('sceneTitle')
+.textContent=
+scene.title;
 
-    graphics.forEach(graphic=>{
+document
+.getElementById('sceneCaption')
+.textContent=
+scene.caption;
 
-        graphic.classList.toggle(
-            'active',
-            graphic.dataset.graphic===id
-        );
+document
+.getElementById('sceneTag')
+.textContent=
+scene.tag;
 
-    });
 
-    navLinks.forEach(link=>{
+graphics.forEach(
+graphic=>{
 
-        link.classList.toggle(
-            'active',
-            link.getAttribute('href')==='#'+id
-        );
+graphic.classList.toggle(
+'active',
+graphic.dataset.graphic===id
+);
 
-    });
+}
+);
+
+
+navLinks.forEach(
+link=>{
+
+link.classList.toggle(
+'active',
+link.getAttribute('href')==='#'+id
+);
+
+}
+);
 
 }
 
 
-const observer=new IntersectionObserver(
+const observer=
+new IntersectionObserver(
 
-    entries=>{
+entries=>{
 
-        entries.forEach(entry=>{
+entries.forEach(
+entry=>{
 
-            if(entry.isIntersecting){
+if(entry.isIntersecting){
 
-                activateScene(
-                    entry.target.dataset.scene
-                );
+activateScene(
+entry.target.dataset.scene
+);
 
-            }
+}
 
-        });
+}
+);
 
-    },
+},
 
-    {
-        rootMargin:'-35% 0px -45% 0px',
-        threshold:0
-    }
+{
+rootMargin:'-35% 0px -45% 0px',
+threshold:0
+}
 
 );
 
 
-steps.forEach(step=>{
-    observer.observe(step);
-});
+steps.forEach(
+step=>{
 
+observer.observe(step);
+
+}
+);
+
+
+/* PROJECT PREVIEW */
 
 const previewButtons=
-    document.querySelectorAll('[data-project-preview]');
+document.querySelectorAll(
+'[data-project-preview]'
+);
 
 const previewPanels=
-    document.querySelectorAll('[data-project-panel]');
+document.querySelectorAll(
+'[data-project-panel]'
+);
 
 
-previewButtons.forEach(button=>{
+previewButtons.forEach(
+button=>{
 
-    button.addEventListener('click',()=>{
+button.addEventListener(
+'click',
+()=>{
 
-        const selected=
-            button.dataset.projectPreview;
-
-        previewButtons.forEach(item=>{
-
-            item.classList.toggle(
-                'active',
-                item===button
-            );
-
-        });
-
-        previewPanels.forEach(panel=>{
-
-            panel.classList.toggle(
-                'active',
-                panel.dataset.projectPanel===selected
-            );
-
-        });
-
-    });
-
-});
+const selected=
+button.dataset.projectPreview;
 
 
-const carWrap=document.getElementById('carWrap');
-const carZone=document.getElementById('carZone');
-const roadSvg=document.getElementById('roadSvg');
-const motionPath=document.getElementById('motionPath');
-const frontWheel=document.getElementById('frontWheel');
-const rearWheel=document.getElementById('rearWheel');
+previewButtons.forEach(
+item=>{
+
+item.classList.toggle(
+'active',
+item===button
+);
+
+}
+);
 
 
-function clamp(value,min,max){
+previewPanels.forEach(
+panel=>{
 
-    return Math.min(
-        Math.max(value,min),
-        max
-    );
+panel.classList.toggle(
+'active',
+panel.dataset.projectPanel===selected
+);
+
+}
+);
+
+}
+);
+
+}
+);
+
+
+/* CAR */
+
+const carWrap=
+document.getElementById(
+'carWrap'
+);
+
+const carZone=
+document.getElementById(
+'carZone'
+);
+
+const roadSvg=
+document.getElementById(
+'roadSvg'
+);
+
+const motionPath=
+document.getElementById(
+'motionPath'
+);
+
+const frontWheel=
+document.getElementById(
+'frontWheel'
+);
+
+const rearWheel=
+document.getElementById(
+'rearWheel'
+);
+
+
+function clamp(
+value,
+min,
+max
+){
+
+return Math.min(
+Math.max(value,min),
+max
+);
 
 }
 
 
 function getScrollRange(){
 
-    const firstRect=
-        steps[0].getBoundingClientRect();
+const firstRect=
+steps[0]
+.getBoundingClientRect();
 
-    const lastRect=
-        steps[steps.length-1].getBoundingClientRect();
+const lastRect=
+steps[
+steps.length-1
+]
+.getBoundingClientRect();
 
-    const pageTop=
-        window.scrollY+
-        firstRect.top;
 
-    const pageBottom=
-        window.scrollY+
-        lastRect.bottom-
-        window.innerHeight*.55;
+const pageTop=
+window.scrollY+
+firstRect.top;
 
-    return{
-        pageTop,
-        pageBottom
-    };
+
+const pageBottom=
+window.scrollY+
+lastRect.bottom-
+window.innerHeight*.55;
+
+
+return{
+pageTop,
+pageBottom
+};
 
 }
 
 
 function calculateScrollProgress(){
 
-    const range=getScrollRange();
+const range=
+getScrollRange();
 
-    const position=
-        window.scrollY+
-        window.innerHeight*.52;
-
-    return clamp(
-
-        (
-            position-
-            range.pageTop
-        )
-
-        /
-
-        (
-            range.pageBottom-
-            range.pageTop
-        ),
-
-        0,
-        1
-
-    );
-
-}
+const position=
+window.scrollY+
+window.innerHeight*.52;
 
 
-function progressToScroll(progress){
+return clamp(
 
-    const range=getScrollRange();
+(
+position-
+range.pageTop
+)
 
-    const target=
+/
 
-        range.pageTop
+(
+range.pageBottom-
+range.pageTop
+),
 
-        +
+0,
+1
 
-        progress*
-        (
-            range.pageBottom-
-            range.pageTop
-        )
-
-        -
-
-        window.innerHeight*.52;
-
-    const max=
-        document.documentElement.scrollHeight-
-        window.innerHeight;
-
-    return clamp(target,0,max);
+);
 
 }
 
 
-function renderCar(progress){
+function progressToScroll(
+progress
+){
 
-    const length=
-        motionPath.getTotalLength();
+const range=
+getScrollRange();
 
-    const distance=
-        length*progress;
 
-    const point=
-        motionPath.getPointAtLength(distance);
+const target=
 
-    const before=
-        motionPath.getPointAtLength(
-            Math.max(0,distance-4)
-        );
+range.pageTop
 
-    const after=
-        motionPath.getPointAtLength(
-            Math.min(length,distance+4)
-        );
++
 
-    const svgRect=
-        roadSvg.getBoundingClientRect();
+progress*
+(
+range.pageBottom-
+range.pageTop
+)
 
-    const zoneRect=
-        carZone.getBoundingClientRect();
+-
 
-    const scaleX=
-        svgRect.width/900;
+window.innerHeight*.52;
 
-    const scaleY=
-        svgRect.height/150;
 
-    const roadTop=
-        svgRect.top-zoneRect.top;
+const max=
+document.documentElement.scrollHeight-
+window.innerHeight;
 
-    const x=
-        point.x*scaleX;
 
-    const y=
-        roadTop+
-        point.y*scaleY;
+return clamp(
+target,
+0,
+max
+);
 
-    let angle=
+}
 
-        Math.atan2(
-            (after.y-before.y)*scaleY,
-            (after.x-before.x)*scaleX
-        )
 
-        *180/
-        Math.PI;
+function renderCar(
+progress
+){
 
-    angle=
-        clamp(angle,-5,5);
+const length=
+motionPath.getTotalLength();
 
-    const carX=
-        x-
-        carWrap.offsetWidth*.50;
 
-    const carY=
-        y-
-        carWrap.offsetHeight*.82;
+const distance=
+length*progress;
 
-    carWrap.style.transform=
-        `translate3d(${carX}px,${carY}px,0) rotate(${angle}deg)`;
 
-    const wheelRotation=
-        progress*1500;
+const point=
+motionPath.getPointAtLength(
+distance
+);
 
-    frontWheel.style.transform=
-        `rotate(${wheelRotation}deg)`;
 
-    rearWheel.style.transform=
-        `rotate(${wheelRotation}deg)`;
+const before=
+motionPath.getPointAtLength(
+Math.max(
+0,
+distance-4
+)
+);
+
+
+const after=
+motionPath.getPointAtLength(
+Math.min(
+length,
+distance+4
+)
+);
+
+
+const svgRect=
+roadSvg
+.getBoundingClientRect();
+
+
+const zoneRect=
+carZone
+.getBoundingClientRect();
+
+
+const scaleX=
+svgRect.width/900;
+
+
+const scaleY=
+svgRect.height/150;
+
+
+const roadTop=
+svgRect.top-
+zoneRect.top;
+
+
+const x=
+point.x*
+scaleX;
+
+
+const y=
+roadTop+
+point.y*
+scaleY;
+
+
+let angle=
+
+Math.atan2(
+
+(after.y-before.y)*
+scaleY,
+
+(after.x-before.x)*
+scaleX
+
+)
+
+*180/
+Math.PI;
+
+
+angle=
+clamp(
+angle,
+-5,
+5
+);
+
+
+const carX=
+
+x-
+carWrap.offsetWidth*.50;
+
+
+const carY=
+
+y-
+carWrap.offsetHeight*.82;
+
+
+carWrap.style.transform=
+
+`translate3d(${carX}px,${carY}px,0) rotate(${angle}deg)`;
+
+
+const wheelRotation=
+progress*1500;
+
+
+frontWheel.style.transform=
+`rotate(${wheelRotation}deg)`;
+
+
+rearWheel.style.transform=
+`rotate(${wheelRotation}deg)`;
 
 }
 
@@ -4212,224 +4292,348 @@ let isDragging=false;
 
 function updateCar(){
 
-    if(isDragging){
+if(isDragging){
 
-        animationFrame=null;
-        return;
+animationFrame=null;
 
-    }
+return;
 
-    currentProgress+=
-        (
-            targetProgress-
-            currentProgress
-        )*.095;
+}
 
-    renderCar(currentProgress);
 
-    if(
-        Math.abs(
-            targetProgress-
-            currentProgress
-        )>.0002
-    ){
+currentProgress+=
 
-        animationFrame=
-            requestAnimationFrame(updateCar);
+(
+targetProgress-
+currentProgress
+)
 
-    }
+*.095;
 
-    else{
 
-        currentProgress=
-            targetProgress;
+renderCar(
+currentProgress
+);
 
-        renderCar(currentProgress);
 
-        animationFrame=null;
+if(
 
-    }
+Math.abs(
+targetProgress-
+currentProgress
+)
+
+>.0002
+
+){
+
+animationFrame=
+requestAnimationFrame(
+updateCar
+);
+
+}
+
+else{
+
+currentProgress=
+targetProgress;
+
+renderCar(
+currentProgress
+);
+
+animationFrame=null;
+
+}
 
 }
 
 
 function requestCarUpdate(){
 
-    if(isDragging){
-        return;
-    }
-
-    targetProgress=
-        calculateScrollProgress();
-
-    if(animationFrame===null){
-
-        animationFrame=
-            requestAnimationFrame(updateCar);
-
-    }
-
+if(isDragging){
+return;
 }
 
-
-window.addEventListener(
-    'scroll',
-    requestCarUpdate,
-    {passive:true}
-);
-
-
-function pointerToProgress(clientX){
-
-    const rect=
-        roadSvg.getBoundingClientRect();
-
-    const scaleX=
-        rect.width/900;
-
-    const start=
-        rect.left+145*scaleX;
-
-    const end=
-        rect.left+765*scaleX;
-
-    return clamp(
-        (clientX-start)/(end-start),
-        0,
-        1
-    );
-
-}
-
-
-function dragTo(clientX){
-
-    const progress=
-        pointerToProgress(clientX);
-
-    targetProgress=progress;
-    currentProgress=progress;
-
-    renderCar(progress);
-
-    window.scrollTo({
-
-        top:progressToScroll(progress),
-        behavior:'auto'
-
-    });
-
-}
-
-
-carWrap.addEventListener(
-    'pointerdown',
-    event=>{
-
-        isDragging=true;
-
-        carWrap.classList.add('dragging');
-
-        if(animationFrame!==null){
-
-            cancelAnimationFrame(animationFrame);
-            animationFrame=null;
-
-        }
-
-        carWrap.setPointerCapture(
-            event.pointerId
-        );
-
-        dragTo(event.clientX);
-
-    }
-);
-
-
-carWrap.addEventListener(
-    'pointermove',
-    event=>{
-
-        if(!isDragging){
-            return;
-        }
-
-        dragTo(event.clientX);
-
-    }
-);
-
-
-function finishDrag(event){
-
-    if(!isDragging){
-        return;
-    }
-
-    isDragging=false;
-
-    carWrap.classList.remove('dragging');
-
-    if(
-        carWrap.hasPointerCapture(
-            event.pointerId
-        )
-    ){
-
-        carWrap.releasePointerCapture(
-            event.pointerId
-        );
-
-    }
-
-    targetProgress=
-        calculateScrollProgress();
-
-    currentProgress=
-        targetProgress;
-
-    renderCar(currentProgress);
-
-}
-
-
-carWrap.addEventListener(
-    'pointerup',
-    finishDrag
-);
-
-carWrap.addEventListener(
-    'pointercancel',
-    finishDrag
-);
-
-
-window.addEventListener(
-    'resize',
-    ()=>{
-
-        targetProgress=
-            calculateScrollProgress();
-
-        currentProgress=
-            targetProgress;
-
-        renderCar(currentProgress);
-
-    }
-);
-
-
-activateScene('about');
 
 targetProgress=
-    calculateScrollProgress();
+calculateScrollProgress();
+
+
+if(
+animationFrame===null
+){
+
+animationFrame=
+requestAnimationFrame(
+updateCar
+);
+
+}
+
+}
+
+
+window.addEventListener(
+
+'scroll',
+
+requestCarUpdate,
+
+{
+passive:true
+}
+
+);
+
+
+function pointerToProgress(
+clientX
+){
+
+const rect=
+roadSvg
+.getBoundingClientRect();
+
+
+const scaleX=
+rect.width/900;
+
+
+const start=
+rect.left+
+145*scaleX;
+
+
+const end=
+rect.left+
+765*scaleX;
+
+
+return clamp(
+
+(
+clientX-
+start
+)
+
+/
+
+(
+end-
+start
+),
+
+0,
+1
+
+);
+
+}
+
+
+function dragTo(
+clientX
+){
+
+const progress=
+pointerToProgress(
+clientX
+);
+
+
+targetProgress=
+progress;
+
 
 currentProgress=
-    targetProgress;
+progress;
 
-renderCar(currentProgress);
+
+renderCar(
+progress
+);
+
+
+window.scrollTo({
+
+top:
+progressToScroll(
+progress
+),
+
+behavior:'auto'
+
+});
+
+}
+
+
+carWrap.addEventListener(
+
+'pointerdown',
+
+event=>{
+
+isDragging=true;
+
+carWrap
+.classList
+.add(
+'dragging'
+);
+
+
+if(
+animationFrame!==null
+){
+
+cancelAnimationFrame(
+animationFrame
+);
+
+animationFrame=null;
+
+}
+
+
+carWrap.setPointerCapture(
+event.pointerId
+);
+
+
+dragTo(
+event.clientX
+);
+
+}
+
+);
+
+
+carWrap.addEventListener(
+
+'pointermove',
+
+event=>{
+
+if(!isDragging){
+return;
+}
+
+dragTo(
+event.clientX
+);
+
+}
+
+);
+
+
+function finishDrag(
+event
+){
+
+if(!isDragging){
+return;
+}
+
+
+isDragging=false;
+
+
+carWrap
+.classList
+.remove(
+'dragging'
+);
+
+
+if(
+
+carWrap
+.hasPointerCapture(
+event.pointerId
+)
+
+){
+
+carWrap
+.releasePointerCapture(
+event.pointerId
+);
+
+}
+
+
+targetProgress=
+calculateScrollProgress();
+
+
+currentProgress=
+targetProgress;
+
+
+renderCar(
+currentProgress
+);
+
+}
+
+
+carWrap.addEventListener(
+'pointerup',
+finishDrag
+);
+
+
+carWrap.addEventListener(
+'pointercancel',
+finishDrag
+);
+
+
+window.addEventListener(
+
+'resize',
+
+()=>{
+
+targetProgress=
+calculateScrollProgress();
+
+
+currentProgress=
+targetProgress;
+
+
+renderCar(
+currentProgress
+);
+
+}
+
+);
+
+
+activateScene(
+'about'
+);
+
+
+targetProgress=
+calculateScrollProgress();
+
+
+currentProgress=
+targetProgress;
+
+
+renderCar(
+currentProgress
+);
+
 
 </script>
 
