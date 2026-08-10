@@ -1,0 +1,3172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Why Raw Signals May Matter More Than Fault Codes | Maja Antkowiak</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --text:#1f2732;
+    --muted:#68727e;
+    --border:rgba(177,187,198,.62);
+    --silver:#7e8995;
+    --dark:#4f5b68;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 4%,
+            #ffffff,
+            transparent 24%
+        ),
+
+        radial-gradient(
+            circle at 92% 16%,
+            rgba(207,215,224,.30),
+            transparent 20%
+        ),
+
+        linear-gradient(
+            180deg,
+            #f8f9fa,
+            #eef1f4
+        );
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:
+        18px 6%;
+
+    background:
+        rgba(248,249,250,.86);
+
+    backdrop-filter:
+        blur(14px);
+
+    border-bottom:
+        1px solid
+        rgba(175,185,195,.36);
+}
+
+.logo{
+
+    font-size:1.18rem;
+
+    font-weight:800;
+
+    letter-spacing:-.04em;
+}
+
+.logo span{
+    color:#8f99a4;
+}
+
+.back-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid
+        rgba(166,176,186,.56);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.58);
+
+    color:#626e79;
+
+    font-size:.83rem;
+
+    font-weight:600;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page{
+
+    max-width:1500px;
+
+    margin:0 auto;
+
+    padding:
+        102px 6%
+        60px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.06fr .94fr;
+
+    gap:44px;
+}
+
+.content-column{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.visual-column{
+    position:relative;
+}
+
+
+/* =========================================================
+   RIGHT STICKY
+========================================================= */
+
+.visual-sticky{
+
+    position:sticky;
+
+    top:96px;
+
+    height:
+        calc(100vh - 120px);
+
+    height:
+        calc(100dvh - 120px);
+
+    min-height:560px;
+
+    max-height:760px;
+}
+
+.visual-card{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    border:
+        1px solid
+        rgba(185,194,203,.56);
+
+    border-radius:31px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.94),
+            rgba(255,255,255,.74)
+        );
+
+    box-shadow:
+        0 22px 50px
+        rgba(40,50,60,.08);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:82vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:
+        26px 0
+        48px;
+}
+
+.hero-inner{
+    max-width:700px;
+}
+
+.kicker{
+
+    margin-bottom:16px;
+
+    color:#87919c;
+
+    font-size:.76rem;
+
+    font-weight:700;
+
+    letter-spacing:.20em;
+
+    text-transform:uppercase;
+}
+
+.hero-title{
+
+    margin-bottom:22px;
+
+    font-size:
+        clamp(
+            2.9rem,
+            5.6vw,
+            5.6rem
+        );
+
+    line-height:.95;
+
+    letter-spacing:-.06em;
+}
+
+.hero-title span{
+    color:#5e6975;
+}
+
+.hero-subtitle{
+
+    max-width:640px;
+
+    margin-bottom:22px;
+
+    color:var(--muted);
+
+    font-size:1.08rem;
+
+    line-height:1.85;
+}
+
+.hero-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-bottom:30px;
+}
+
+.hero-tag{
+
+    padding:
+        8px 11px;
+
+    border:
+        1px solid
+        rgba(170,180,190,.54);
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.56);
+
+    color:#6f7a85;
+
+    font-size:.64rem;
+
+    font-weight:700;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+}
+
+.hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:
+        13px 18px;
+
+    border-radius:999px;
+
+    font-size:.88rem;
+
+    font-weight:700;
+}
+
+.btn-primary{
+
+    color:white;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #4b5663,
+            #7e8995
+        );
+
+    box-shadow:
+        0 12px 25px
+        rgba(71,82,94,.17);
+}
+
+.btn-secondary{
+
+    border:
+        1px solid
+        rgba(151,161,171,.65);
+
+    background:
+        rgba(255,255,255,.58);
+
+    color:#5c6773;
+}
+
+
+/* =========================================================
+   ARTICLE SECTIONS
+========================================================= */
+
+.section{
+
+    min-height:82vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:
+        38px 0;
+
+    scroll-margin-top:100px;
+}
+
+.section-inner{
+
+    width:100%;
+
+    max-width:720px;
+}
+
+.section-label{
+
+    margin-bottom:16px;
+
+    color:#8a949e;
+
+    font-size:.68rem;
+
+    font-weight:700;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+.section-title{
+
+    margin-bottom:18px;
+
+    font-size:
+        clamp(
+            2rem,
+            3.1vw,
+            3.35rem
+        );
+
+    line-height:1.04;
+
+    letter-spacing:-.05em;
+}
+
+.section-title span{
+    color:#5d6975;
+}
+
+.section-text{
+
+    color:var(--muted);
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+    text-align:justify;
+}
+
+.section-text + .section-text{
+    margin-top:15px;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.note-box{
+
+    margin-top:24px;
+
+    padding:
+        20px 22px;
+
+    border:
+        1px solid
+        rgba(173,183,193,.55);
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.58);
+
+    box-shadow:
+        0 10px 24px
+        rgba(47,57,68,.04);
+}
+
+.note-box strong{
+    color:#4a5662;
+}
+
+
+/* =========================================================
+   SIGNAL VS DTC
+========================================================= */
+
+.comparison-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:15px;
+
+    margin-top:25px;
+}
+
+.comparison-card{
+
+    padding:
+        21px;
+
+    border:
+        1px solid
+        rgba(171,181,191,.54);
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.60);
+}
+
+.comparison-number{
+
+    margin-bottom:17px;
+
+    color:#c0c7cd;
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    letter-spacing:-.06em;
+}
+
+.comparison-card h4{
+
+    margin-bottom:10px;
+
+    color:#52606c;
+
+    font-size:1rem;
+}
+
+.comparison-card p{
+
+    color:#72808b;
+
+    font-size:.83rem;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   SIGNAL CHAIN
+========================================================= */
+
+.signal-chain{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:27px;
+
+    padding:
+        20px;
+
+    border:
+        1px solid
+        rgba(174,184,194,.58);
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.55);
+}
+
+.chain-node{
+
+    padding:
+        12px 14px;
+
+    border:
+        1px solid
+        rgba(169,179,189,.58);
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.74);
+
+    color:#5f6b77;
+
+    font-size:.76rem;
+
+    font-weight:700;
+
+    text-align:center;
+}
+
+.chain-arrow{
+
+    color:#9ca7b1;
+
+    font-size:1rem;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   FEATURE GRID
+========================================================= */
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:12px;
+
+    margin-top:24px;
+}
+
+.feature-card{
+
+    padding:
+        17px;
+
+    border:
+        1px solid
+        rgba(172,182,192,.54);
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.60);
+}
+
+.feature-card h4{
+
+    margin-bottom:7px;
+
+    color:#53606c;
+
+    font-size:.87rem;
+}
+
+.feature-card p{
+
+    color:#78848f;
+
+    font-size:.77rem;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-list{
+
+    margin-top:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.process-item{
+
+    display:grid;
+
+    grid-template-columns:
+        45px 1fr;
+
+    gap:13px;
+
+    padding:
+        16px;
+
+    border:
+        1px solid
+        rgba(172,182,192,.54);
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.59);
+}
+
+.process-number{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#a4adb6;
+
+    font-size:.72rem;
+
+    font-weight:800;
+}
+
+.process-content strong{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    color:#53606c;
+
+    font-size:.85rem;
+}
+
+.process-content p{
+
+    color:#77838e;
+
+    font-size:.79rem;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   RELATED
+========================================================= */
+
+.related-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap:16px;
+
+    margin-top:28px;
+}
+
+.related-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    min-height:180px;
+
+    padding:20px;
+
+    border:
+        1px solid
+        rgba(173,183,193,.58);
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.62);
+
+    box-shadow:
+        0 10px 24px
+        rgba(47,57,68,.04);
+
+    transition:.25s ease;
+}
+
+.related-card:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 36px
+        rgba(47,57,68,.08);
+}
+
+.related-label{
+
+    margin-bottom:12px;
+
+    color:#8a949e;
+
+    font-size:.62rem;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+}
+
+.related-card h4{
+
+    margin-bottom:12px;
+
+    font-size:1rem;
+
+    line-height:1.35;
+}
+
+.related-card p{
+
+    color:#73808c;
+
+    font-size:.82rem;
+
+    line-height:1.65;
+}
+
+.related-open{
+
+    margin-top:16px;
+
+    color:#57636f;
+
+    font-size:.76rem;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    padding:
+        50px 0
+        10px;
+
+    color:#808a94;
+
+    font-size:.80rem;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   RIGHT PANEL
+========================================================= */
+
+.scene-title{
+
+    font-size:1.34rem;
+
+    font-weight:700;
+
+    margin-bottom:7px;
+}
+
+.scene-caption{
+
+    max-width:390px;
+
+    color:#69747f;
+
+    font-size:.9rem;
+
+    line-height:1.7;
+}
+
+.panel-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:18px;
+
+    padding:
+        8px 12px;
+
+    border:
+        1px solid
+        rgba(169,179,189,.58);
+
+    border-radius:999px;
+
+    color:#697581;
+
+    font-size:.72rem;
+
+    font-weight:600;
+}
+
+.panel-tag::before{
+
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#a4afb9;
+}
+
+.stage-label{
+
+    margin-top:23px;
+
+    color:#909aa5;
+
+    font-size:.65rem;
+
+    font-weight:800;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   DIAGNOSTIC VISUAL
+========================================================= */
+
+.diagnostic-visual{
+
+    position:relative;
+
+    margin-top:14px;
+
+    min-height:335px;
+
+    padding:
+        18px;
+
+    border:
+        1px solid
+        rgba(178,187,196,.48);
+
+    border-radius:22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #f7f8fa,
+            #edf1f4
+        );
+
+    overflow:hidden;
+}
+
+.visual-heading{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-bottom:17px;
+}
+
+.visual-heading strong{
+
+    color:#596571;
+
+    font-size:.72rem;
+
+    letter-spacing:.06em;
+
+    text-transform:uppercase;
+}
+
+.visual-heading span{
+
+    color:#98a2ac;
+
+    font-size:.65rem;
+}
+
+
+/* =========================================================
+   WAVEFORM
+========================================================= */
+
+.mini-wave{
+
+    position:relative;
+
+    height:100px;
+
+    margin-bottom:15px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(180,189,198,.51);
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.70);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.mini-wave svg{
+
+    width:100%;
+    height:100%;
+}
+
+.wave-label{
+
+    position:absolute;
+
+    left:12px;
+    top:10px;
+
+    z-index:3;
+
+    color:#7f8994;
+
+    font-size:.56rem;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+.wave-path{
+
+    fill:none;
+
+    stroke:#717d89;
+
+    stroke-width:2.3;
+
+    stroke-linejoin:round;
+
+    stroke-linecap:round;
+}
+
+
+/* =========================================================
+   LANES
+========================================================= */
+
+.lanes{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:12px;
+}
+
+.lane{
+
+    padding:
+        14px;
+
+    border:
+        1px solid
+        rgba(176,186,196,.55);
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.60);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.lane-title{
+
+    margin-bottom:12px;
+
+    color:#727e89;
+
+    font-size:.57rem;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+.lane-flow{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:6px;
+}
+
+.lane-node{
+
+    position:relative;
+
+    padding:
+        9px 10px;
+
+    border:
+        1px solid
+        rgba(177,186,195,.53);
+
+    border-radius:10px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    color:#687480;
+
+    font-size:.66rem;
+
+    font-weight:700;
+
+    text-align:center;
+
+    transition:.3s ease;
+}
+
+.lane-arrow{
+
+    color:#a3adb7;
+
+    text-align:center;
+
+    font-size:.72rem;
+}
+
+.lane-result{
+
+    padding:
+        11px;
+
+    border:
+        1px solid
+        rgba(143,154,165,.62);
+
+    border-radius:11px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.92),
+            rgba(229,234,239,.80)
+        );
+
+    color:#4f5b67;
+
+    font-size:.67rem;
+
+    font-weight:800;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   VISUAL ACTIVE STATES
+========================================================= */
+
+.diagnostic-visual .lane,
+.diagnostic-visual .mini-wave{
+
+    opacity:.42;
+}
+
+.stage-intro .mini-wave,
+.stage-raw .mini-wave,
+.stage-features .mini-wave,
+.stage-compensation .mini-wave{
+
+    opacity:1;
+}
+
+.stage-code .code-lane,
+.stage-threshold .code-lane{
+
+    opacity:1;
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(112,125,138,.68);
+
+    box-shadow:
+        0 10px 22px
+        rgba(54,65,76,.07);
+}
+
+.stage-raw .raw-lane,
+.stage-features .raw-lane,
+.stage-compensation .raw-lane,
+.stage-diagnostics .raw-lane,
+.stage-research .raw-lane{
+
+    opacity:1;
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(112,125,138,.68);
+
+    box-shadow:
+        0 10px 22px
+        rgba(54,65,76,.07);
+}
+
+.stage-features
+.node-features,
+
+.stage-compensation
+.node-trend,
+
+.stage-diagnostics
+.node-condition,
+
+.stage-research
+.node-condition,
+
+.stage-threshold
+.node-threshold,
+
+.stage-code
+.node-dtc{
+
+    color:white;
+
+    border-color:#65727e;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #56626f,
+            #87929d
+        );
+}
+
+.stage-intro .raw-lane,
+.stage-intro .code-lane{
+
+    opacity:.72;
+}
+
+
+/* =========================================================
+   PANEL INFO
+========================================================= */
+
+.info-panel{
+
+    margin-top:15px;
+
+    padding:17px;
+
+    border:
+        1px solid
+        rgba(174,184,194,.58);
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.60);
+}
+
+.info-title{
+
+    margin-bottom:8px;
+
+    color:#56626e;
+
+    font-size:.78rem;
+
+    font-weight:800;
+
+    letter-spacing:.06em;
+
+    text-transform:uppercase;
+}
+
+.info-text{
+
+    color:#73808c;
+
+    font-size:.81rem;
+
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .page{
+        grid-template-columns:1fr;
+    }
+
+    .visual-column{
+        order:-1;
+    }
+
+    .visual-sticky{
+
+        position:relative;
+
+        top:0;
+
+        height:650px;
+
+        min-height:0;
+
+        max-height:none;
+    }
+
+    .hero,
+    .section{
+
+        min-height:auto;
+
+        padding:
+            70px 0;
+    }
+}
+
+
+@media(max-width:820px){
+
+    .comparison-grid,
+    .feature-grid,
+    .related-grid{
+
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-width:760px){
+
+    nav{
+        padding:
+            16px 5%;
+    }
+
+    .page{
+
+        padding:
+            92px 5%
+            42px;
+    }
+
+    .back-link{
+
+        padding:
+            9px 12px;
+
+        font-size:.78rem;
+    }
+
+    .signal-chain{
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+    .chain-arrow{
+
+        transform:
+            rotate(90deg);
+
+        text-align:center;
+    }
+
+    .lanes{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- =========================================================
+     NAV
+========================================================= -->
+
+<nav>
+
+
+    <div class="logo">
+
+        MA<span>.</span>
+
+    </div>
+
+
+    <a
+        href="index.html#insights"
+        class="back-link">
+
+        ← Back to Insights
+
+    </a>
+
+
+</nav>
+
+
+
+<main class="page">
+
+
+
+<!-- =========================================================
+     CONTENT
+========================================================= -->
+
+<section class="content-column">
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    class="hero"
+    id="top"
+    data-stage="intro">
+
+
+<div class="hero-inner">
+
+
+    <div class="kicker">
+
+        Automotive Insight · Diagnostics · Vehicle Signals
+
+    </div>
+
+
+    <h1 class="hero-title">
+
+        Why Raw Signals May Matter More Than
+
+        <span>
+            Fault Codes
+        </span>
+
+    </h1>
+
+
+    <p class="hero-subtitle">
+
+        A diagnostic trouble code can tell us that a defined
+        condition has been detected. A raw electrical signal,
+        however, may contain much more information about how
+        the component actually behaves before that final
+        diagnostic decision is made.
+
+    </p>
+
+
+    <div class="hero-tags">
+
+
+        <span class="hero-tag">
+            Raw Signals
+        </span>
+
+
+        <span class="hero-tag">
+            Diagnostics
+        </span>
+
+
+        <span class="hero-tag">
+            Signal Features
+        </span>
+
+
+        <span class="hero-tag">
+            Condition Assessment
+        </span>
+
+
+    </div>
+
+
+    <div class="hero-actions">
+
+
+        <a
+            href="#fault-code"
+            class="btn btn-primary">
+
+            Explore the note
+
+        </a>
+
+
+        <a
+            href="index.html#research"
+            class="btn btn-secondary">
+
+            See my research
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     01 FAULT CODE
+========================================================= -->
+
+<section
+    class="section"
+    id="fault-code"
+    data-stage="code">
+
+
+<div class="section-inner">
+
+
+    <div class="section-label">
+        01 / Diagnostic decision
+    </div>
+
+
+    <h2 class="section-title">
+
+        A fault code is often the
+
+        <span>
+            end of the process
+        </span>
+
+    </h2>
+
+
+    <p class="section-text">
+
+        A diagnostic trouble code is usually generated after
+        a diagnostic condition has been satisfied. From the
+        driver's or service technician's perspective, the code
+        is extremely useful because it provides a clear indication
+        that the control system has recognised an abnormal state.
+
+    </p>
+
+
+    <p class="section-text">
+
+        But this information is already highly processed. The
+        original sensor or actuator signal has passed through
+        control logic, thresholds and diagnostic rules before
+        being converted into a discrete diagnostic message.
+
+    </p>
+
+
+    <div class="signal-chain">
+
+
+        <div class="chain-node">
+            Physical behaviour
+        </div>
+
+
+        <div class="chain-arrow">
+            →
+        </div>
+
+
+        <div class="chain-node">
+            Signal
+        </div>
+
+
+        <div class="chain-arrow">
+            →
+        </div>
+
+
+        <div class="chain-node">
+            Diagnostic logic
+        </div>
+
+
+        <div class="chain-arrow">
+            →
+        </div>
+
+
+        <div class="chain-node">
+            Fault code
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     02 RAW SIGNAL
+========================================================= -->
+
+<section
+    class="section"
+    id="raw-signal"
+    data-stage="raw">
+
+
+<div class="section-inner">
+
+
+    <div class="section-label">
+        02 / Signal information
+    </div>
+
+
+    <h2 class="section-title">
+
+        The raw signal preserves
+
+        <span>
+            system dynamics
+        </span>
+
+    </h2>
+
+
+    <p class="section-text">
+
+        A raw waveform contains information about how a component
+        responds over time. Rise rate, transient behaviour,
+        oscillations, phase duration and repeatability can all
+        describe physical processes that are no longer visible
+        in a simple pass-or-fail result.
+
+    </p>
+
+
+    <p class="section-text">
+
+        This does not mean that every small signal variation
+        represents a fault. Instead, it means that the signal
+        provides a richer source of information from which
+        meaningful diagnostic features can be extracted.
+
+    </p>
+
+
+    <div class="comparison-grid">
+
+
+        <div class="comparison-card">
+
+
+            <div class="comparison-number">
+                01
+            </div>
+
+
+            <h4>
+                Fault code
+            </h4>
+
+
+            <p>
+
+                A compact diagnostic decision generated
+                after specific conditions are satisfied.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="comparison-card">
+
+
+            <div class="comparison-number">
+                02
+            </div>
+
+
+            <h4>
+                Raw signal
+            </h4>
+
+
+            <p>
+
+                A time-dependent record containing details
+                about the dynamic behaviour of the component.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     03 FEATURES
+========================================================= -->
+
+<section
+    class="section"
+    id="features"
+    data-stage="features">
+
+
+<div class="section-inner">
+
+
+    <div class="section-label">
+        03 / Feature extraction
+    </div>
+
+
+    <h2 class="section-title">
+
+        The useful information is often hidden in
+
+        <span>
+            signal features
+        </span>
+
+    </h2>
+
+
+    <p class="section-text">
+
+        Analysing a signal does not necessarily mean storing
+        and comparing thousands of individual samples. Instead,
+        characteristic features can be extracted to describe
+        relevant parts of the waveform.
+
+    </p>
+
+
+    <div class="feature-grid">
+
+
+        <div class="feature-card">
+
+
+            <h4>
+                Amplitude
+            </h4>
+
+
+            <p>
+
+                Peak values, mean levels or characteristic
+                operating amplitudes.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+
+            <h4>
+                Timing
+            </h4>
+
+
+            <p>
+
+                Rise time, event duration, transition points
+                and time delays.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+
+            <h4>
+                Signal shape
+            </h4>
+
+
+            <p>
+
+                Slopes, transient characteristics and
+                phase-specific behaviour.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="feature-card">
+
+
+            <h4>
+                Frequency content
+            </h4>
+
+
+            <p>
+
+                Periodic ripple, oscillations and spectral
+                components that may not be obvious in time plots.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="note-box">
+
+
+        <p
+            class="section-text"
+            style="margin-top:0;">
+
+
+            <strong>
+                The objective is not to replace fault codes.
+            </strong>
+
+            Signal analysis provides an additional layer of
+            information that can support more detailed
+            condition assessment.
+
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     04 COMPENSATION
+========================================================= -->
+
+<section
+    class="section"
+    id="compensation"
+    data-stage="compensation">
+
+
+<div class="section-inner">
+
+
+    <div class="section-label">
+        04 / Control system
+    </div>
+
+
+    <h2 class="section-title">
+
+        Control can reduce the
+
+        <span>
+            visible symptoms
+        </span>
+
+    </h2>
+
+
+    <p class="section-text">
+
+        Modern vehicle controllers continuously use feedback
+        and correction strategies to maintain the required
+        operating conditions. This is one of the major strengths
+        of electronic control systems.
+
+    </p>
+
+
+    <p class="section-text">
+
+        It also means that a component may begin to behave
+        differently while the overall system still compensates
+        for part of that deviation. The final vehicle-level
+        symptom may therefore appear later than the change
+        visible directly in a component signal.
+
+    </p>
+
+
+    <div class="signal-chain">
+
+
+        <div class="chain-node">
+            Component change
+        </div>
+
+
+        <div class="chain-arrow">
+            →
+        </div>
+
+
+        <div class="chain-node">
+            Signal deviation
+        </div>
+
+
+        <div class="chain-arrow">
+            →
+        </div>
+
+
+        <div class="chain-node">
+            Control correction
+        </div>
+
+
+        <div class="chain-arrow">
+            →
+        </div>
+
+
+        <div class="chain-node">
+            System output
+        </div>
+
+
+    </div>
+
+
+    <div class="note-box">
+
+
+        <p
+            class="section-text"
+            style="margin-top:0;">
+
+            This is one reason why monitoring the component
+            signal itself can be interesting for degradation-oriented
+            diagnostics.
+
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     05 THRESHOLDS
+========================================================= -->
+
+<section
+    class="section"
+    id="thresholds"
+    data-stage="threshold">
+
+
+<div class="section-inner">
+
+
+    <div class="section-label">
+        05 / Thresholds
+    </div>
+
+
+    <h2 class="section-title">
+
+        Before the threshold there may be
+
+        <span>
+            a trend
+        </span>
+
+    </h2>
+
+
+    <p class="section-text">
+
+        Conventional diagnostic logic frequently needs a
+        sufficiently clear deviation before it can classify
+        the situation as abnormal. Before this point is reached,
+        the measured signal may already be changing gradually.
+
+    </p>
+
+
+    <p class="section-text">
+
+        Looking at repeated measurements, reference comparisons
+        and trends can therefore provide a different perspective
+        from looking only at the moment when a threshold is crossed.
+
+    </p>
+
+
+    <div class="process-list">
+
+
+        <div class="process-item">
+
+
+            <div class="process-number">
+                01
+            </div>
+
+
+            <div class="process-content">
+
+
+                <strong>
+                    Reference condition
+                </strong>
+
+
+                <p>
+
+                    Establish the characteristic behaviour
+                    of the healthy or baseline system.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="process-item">
+
+
+            <div class="process-number">
+                02
+            </div>
+
+
+            <div class="process-content">
+
+
+                <strong>
+                    Feature tracking
+                </strong>
+
+
+                <p>
+
+                    Observe changes in selected parameters
+                    over repeated operating events.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="process-item">
+
+
+            <div class="process-number">
+                03
+            </div>
+
+
+            <div class="process-content">
+
+
+                <strong>
+                    Condition interpretation
+                </strong>
+
+
+                <p>
+
+                    Evaluate whether the observed deviations
+                    may indicate a meaningful change in
+                    component behaviour.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     06 DIAGNOSTICS
+========================================================= -->
+
+<section
+    class="section"
+    id="diagnostics"
+    data-stage="diagnostics">
+
+
+<div class="section-inner">
+
+
+    <div class="section-label">
+        06 / Diagnostic strategy
+    </div>
+
+
+    <h2 class="section-title">
+
+        Signals and fault codes should
+
+        <span>
+            complement each other
+        </span>
+
+    </h2>
+
+
+    <p class="section-text">
+
+        Fault codes remain essential for practical vehicle
+        diagnostics. They provide standardised information
+        that can quickly guide troubleshooting.
+
+    </p>
+
+
+    <p class="section-text">
+
+        Raw-signal analysis serves a different purpose.
+        It can support deeper investigation of dynamic behaviour,
+        reference comparison and condition monitoring. The
+        strongest diagnostic strategy is therefore not necessarily
+        signal analysis instead of fault codes, but a combination
+        of both levels of information.
+
+    </p>
+
+
+    <div class="comparison-grid">
+
+
+        <div class="comparison-card">
+
+
+            <h4>
+                Fault-code level
+            </h4>
+
+
+            <p>
+
+                Clear diagnostic decision, practical servicing
+                information and system-level fault indication.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="comparison-card">
+
+
+            <h4>
+                Signal level
+            </h4>
+
+
+            <p>
+
+                Dynamic component behaviour, subtle deviations,
+                feature trends and physical interpretation.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     07 RESEARCH
+========================================================= -->
+
+<section
+    class="section"
+    id="research"
+    data-stage="research">
+
+
+<div class="section-inner">
+
+
+    <div class="section-label">
+        07 / My perspective
+    </div>
+
+
+    <h2 class="section-title">
+
+        Why I work with
+
+        <span>
+            injector current signals
+        </span>
+
+    </h2>
+
+
+    <p class="section-text">
+
+        In my research, the injector current waveform is treated
+        as a source of information about the physical behaviour
+        of the electromagnetic injector. Instead of reducing the
+        measurement to one value, I analyse characteristic phases,
+        time-domain parameters and frequency-domain features.
+
+    </p>
+
+
+    <p class="section-text">
+
+        Mathematical modelling, multidomain simulation and
+        laboratory measurements are used together to investigate
+        which signal changes may be connected with changes in
+        injector condition.
+
+    </p>
+
+
+    <div class="note-box">
+
+
+        <p
+            class="section-text"
+            style="margin-top:0;">
+
+
+            <strong>
+                Research objective:
+            </strong>
+
+            move from simple signal observation toward
+            physically interpretable indicators of injector
+            technical condition.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div
+        class="section-label"
+        style="margin-top:35px;">
+
+        Related work
+
+    </div>
+
+
+
+    <div class="related-grid">
+
+
+        <a
+            href="insight-injector-current.html"
+            class="related-card">
+
+
+            <div>
+
+
+                <div class="related-label">
+                    Research Note
+                </div>
+
+
+                <h4>
+                    Can Injector Current Reveal Mechanical Degradation?
+                </h4>
+
+
+                <p>
+
+                    How mechanical and electromagnetic processes
+                    can leave information in a current waveform.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="related-open">
+                OPEN →
+            </div>
+
+
+        </a>
+
+
+
+        <a
+            href="injector-diagnostic.html"
+            class="related-card">
+
+
+            <div>
+
+
+                <div class="related-label">
+                    Project
+                </div>
+
+
+                <h4>
+                    Injector Diagnostic Software
+                </h4>
+
+
+                <p>
+
+                    LabVIEW-based extraction and comparison
+                    of injector current signal features.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="related-open">
+                OPEN →
+            </div>
+
+
+        </a>
+
+
+
+        <a
+            href="degradation-reliability.html"
+            class="related-card">
+
+
+            <div>
+
+
+                <div class="related-label">
+                    Research
+                </div>
+
+
+                <h4>
+                    Degradation & Reliability
+                </h4>
+
+
+                <p>
+
+                    Relative degradation indicators based
+                    on multiple groups of diagnostic symptoms.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="related-open">
+                OPEN →
+            </div>
+
+
+        </a>
+
+
+    </div>
+
+
+
+    <footer>
+
+        © 2026 Maja Antkowiak
+
+        <br>
+
+        Automotive Engineering · Research · Diagnostics
+
+    </footer>
+
+
+</div>
+
+
+</section>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     RIGHT VISUAL
+========================================================= -->
+
+<aside class="visual-column">
+
+
+<div class="visual-sticky">
+
+
+<div class="visual-card">
+
+
+    <div class="scene-title">
+
+        Signal vs. Fault Code
+
+    </div>
+
+
+    <div
+        class="scene-caption"
+        id="sceneCaption">
+
+        Two diagnostic levels can describe the same
+        physical system in very different ways.
+
+    </div>
+
+
+    <div class="panel-tag">
+
+        Diagnostic information flow
+
+    </div>
+
+
+    <div
+        class="stage-label"
+        id="stageLabel">
+
+        Introduction
+
+    </div>
+
+
+
+    <div
+        class="diagnostic-visual stage-intro"
+        id="diagnosticVisual">
+
+
+        <div class="visual-heading">
+
+
+            <strong>
+                Diagnostic information
+            </strong>
+
+
+            <span>
+                component → decision
+            </span>
+
+
+        </div>
+
+
+
+        <!-- RAW WAVEFORM -->
+
+        <div class="mini-wave">
+
+
+            <div class="wave-label">
+                Measured signal
+            </div>
+
+
+            <svg
+                viewBox="0 0 600 100"
+                fill="none">
+
+
+                <path
+                    d="
+                    M18 77
+                    L74 77
+                    L95 76
+                    L112 34
+                    L128 18
+                    L144 31
+                    L161 57
+                    L182 65
+                    L195 63
+                    L208 67
+                    L221 63
+                    L234 67
+                    L247 63
+                    L260 67
+                    L273 63
+                    L286 67
+                    L299 63
+                    L312 67
+                    L325 63
+                    L338 67
+                    L351 63
+                    L364 67
+                    L377 63
+                    L390 67
+                    L403 63
+                    L416 67
+                    L429 63
+                    L442 67
+                    L455 63
+                    L468 67
+                    L481 63
+                    L494 67
+                    L507 63
+                    L520 67
+                    L533 63
+                    L546 77
+                    L582 77"
+
+                    class="wave-path"/>
+
+
+                <line
+                    x1="18"
+                    y1="77"
+                    x2="582"
+                    y2="77"
+
+                    stroke="#D5DAE0"
+
+                    stroke-width="1"/>
+
+
+            </svg>
+
+
+        </div>
+
+
+
+        <!-- LANES -->
+
+        <div class="lanes">
+
+
+
+            <!-- RAW SIGNAL LANE -->
+
+            <div class="lane raw-lane">
+
+
+                <div class="lane-title">
+
+                    Signal-based assessment
+
+                </div>
+
+
+                <div class="lane-flow">
+
+
+                    <div class="lane-node">
+                        Raw signal
+                    </div>
+
+
+                    <div class="lane-arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="lane-node node-features">
+                        Features
+                    </div>
+
+
+                    <div class="lane-arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="lane-node node-trend">
+                        Trend / deviation
+                    </div>
+
+
+                    <div class="lane-arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="lane-result node-condition">
+                        Condition assessment
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CODE LANE -->
+
+            <div class="lane code-lane">
+
+
+                <div class="lane-title">
+
+                    Fault-code logic
+
+                </div>
+
+
+                <div class="lane-flow">
+
+
+                    <div class="lane-node">
+                        Monitored value
+                    </div>
+
+
+                    <div class="lane-arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="lane-node node-threshold">
+                        Diagnostic threshold
+                    </div>
+
+
+                    <div class="lane-arrow">
+                        ↓
+                    </div>
+
+
+                    <div class="lane-result node-dtc">
+                        Fault Code
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="info-panel">
+
+
+        <div
+            class="info-title"
+            id="infoTitle">
+
+            Two levels of information
+
+        </div>
+
+
+        <div
+            class="info-text"
+            id="infoText">
+
+            Fault codes provide a clear diagnostic result,
+            while raw signals retain more detail about
+            component dynamics.
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+</aside>
+
+
+</main>
+
+
+
+<script>
+
+
+/* =========================================================
+   STAGE DATA
+========================================================= */
+
+const stageData={
+
+
+    intro:{
+
+        label:
+            'Introduction',
+
+        caption:
+            'Two diagnostic levels can describe the same physical system in very different ways.',
+
+        className:
+            'stage-intro',
+
+        infoTitle:
+            'Two levels of information',
+
+        infoText:
+            'Fault codes provide a clear diagnostic result, while raw signals retain more detail about component dynamics.'
+
+    },
+
+
+    code:{
+
+        label:
+            'Fault-code decision',
+
+        caption:
+            'A diagnostic trouble code is usually the result of processing and diagnostic logic.',
+
+        className:
+            'stage-code',
+
+        infoTitle:
+            'Processed information',
+
+        infoText:
+            'The final fault code is useful and compact, but much of the original waveform detail has already been reduced.'
+
+    },
+
+
+    raw:{
+
+        label:
+            'Raw signal',
+
+        caption:
+            'The raw waveform preserves time-dependent information about component behaviour.',
+
+        className:
+            'stage-raw',
+
+        infoTitle:
+            'Dynamic behaviour',
+
+        infoText:
+            'Amplitude, timing, slopes, oscillations and repeatability can all be contained in the original signal.'
+
+    },
+
+
+    features:{
+
+        label:
+            'Feature extraction',
+
+        caption:
+            'Signal analysis converts the waveform into parameters that can be compared and interpreted.',
+
+        className:
+            'stage-features',
+
+        infoTitle:
+            'From waveform to features',
+
+        infoText:
+            'Useful features may include peak values, rise time, phase duration, ripple and frequency-domain indicators.'
+
+    },
+
+
+    compensation:{
+
+        label:
+            'Control compensation',
+
+        caption:
+            'Closed-loop control may reduce visible system-level symptoms while the component signal is already changing.',
+
+        className:
+            'stage-compensation',
+
+        infoTitle:
+            'Component-level information',
+
+        infoText:
+            'Monitoring the actuator signal itself can provide information that is different from observing only the final controlled output.'
+
+    },
+
+
+    threshold:{
+
+        label:
+            'Diagnostic threshold',
+
+        caption:
+            'A gradual trend may exist before a diagnostic threshold is finally exceeded.',
+
+        className:
+            'stage-threshold',
+
+        infoTitle:
+            'Trend before threshold',
+
+        infoText:
+            'Reference comparison and repeated measurements may reveal progressive signal deviation before a binary diagnostic event.'
+
+    },
+
+
+    diagnostics:{
+
+        label:
+            'Combined diagnostics',
+
+        caption:
+            'Signal analysis and fault-code diagnostics serve different purposes and can complement each other.',
+
+        className:
+            'stage-diagnostics',
+
+        infoTitle:
+            'Complementary information',
+
+        infoText:
+            'Fault codes support practical troubleshooting. Signal features provide deeper information about dynamic component behaviour.'
+
+    },
+
+
+    research:{
+
+        label:
+            'My research perspective',
+
+        caption:
+            'My work uses injector current signals to connect measurable electrical behaviour with physical injector condition.',
+
+        className:
+            'stage-research',
+
+        infoTitle:
+            'Research objective',
+
+        infoText:
+            'Modelling, simulation and laboratory measurements are combined to develop physically interpretable condition indicators.'
+
+    }
+
+
+};
+
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const sections=
+    document.querySelectorAll(
+        '[data-stage]'
+    );
+
+
+const diagnosticVisual=
+    document.getElementById(
+        'diagnosticVisual'
+    );
+
+
+const stageLabel=
+    document.getElementById(
+        'stageLabel'
+    );
+
+
+const sceneCaption=
+    document.getElementById(
+        'sceneCaption'
+    );
+
+
+const infoTitle=
+    document.getElementById(
+        'infoTitle'
+    );
+
+
+const infoText=
+    document.getElementById(
+        'infoText'
+    );
+
+
+
+/* =========================================================
+   ACTIVATE
+========================================================= */
+
+function activateStage(stage){
+
+
+    const data=
+        stageData[stage];
+
+
+    if(!data){
+        return;
+    }
+
+
+    diagnosticVisual.className=
+
+        'diagnostic-visual '+
+        data.className;
+
+
+    stageLabel.textContent=
+        data.label;
+
+
+    sceneCaption.textContent=
+        data.caption;
+
+
+    infoTitle.textContent=
+        data.infoTitle;
+
+
+    infoText.textContent=
+        data.infoText;
+
+
+}
+
+
+
+/* =========================================================
+   OBSERVER
+========================================================= */
+
+const observer=
+    new IntersectionObserver(
+
+
+        entries=>{
+
+
+            entries.forEach(
+                entry=>{
+
+
+                    if(
+                        entry.isIntersecting
+                    ){
+
+
+                        activateStage(
+                            entry.target.dataset.stage
+                        );
+
+
+                    }
+
+
+                }
+            );
+
+
+        },
+
+
+        {
+
+            rootMargin:
+                '-35% 0px -45% 0px',
+
+            threshold:0
+
+        }
+
+
+    );
+
+
+
+sections.forEach(
+    section=>{
+
+
+        observer.observe(
+            section
+        );
+
+
+    }
+);
+
+
+
+activateStage(
+    'intro'
+);
+
+
+</script>
+
+
+</body>
+
+</html>
