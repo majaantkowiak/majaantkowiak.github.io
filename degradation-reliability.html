@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-Relative Injector Degradation Index | Maja Antkowiak
+Degradation & Reliability Research | Maja Antkowiak
 </title>
 
 
@@ -16,12 +16,14 @@ Relative Injector Degradation Index | Maja Antkowiak
 ========================================================= -->
 
 <script>
+
 window.MathJax = {
 
     tex:{
         inlineMath:[
             ['\\(','\\)']
         ],
+
         displayMath:[
             ['\\[','\\]']
         ]
@@ -32,12 +34,15 @@ window.MathJax = {
     }
 
 };
+
 </script>
+
 
 <script
     defer
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
+
 
 
 <style>
@@ -124,6 +129,7 @@ p{
 }
 
 
+
 /* =========================================================
    NAV
 ========================================================= */
@@ -201,6 +207,7 @@ nav{
 }
 
 
+
 /* =========================================================
    MAIN
 ========================================================= */
@@ -216,6 +223,7 @@ main{
         90px;
 
 }
+
 
 
 /* =========================================================
@@ -341,6 +349,7 @@ h1 span{
 }
 
 
+
 /* =========================================================
    LAYOUT
 ========================================================= */
@@ -363,6 +372,7 @@ h1 span{
 .case-content{
     min-width:0;
 }
+
 
 
 /* =========================================================
@@ -442,6 +452,7 @@ h1 span{
     line-height:1.92;
 
 }
+
 
 
 /* =========================================================
@@ -549,6 +560,7 @@ h1 span{
 }
 
 
+
 /* =========================================================
    NOTES
 ========================================================= */
@@ -587,13 +599,13 @@ h1 span{
 
     margin-bottom:11px;
 
-    color:#9aa4ae;
+    color:#7e8994;
 
-    font-size:.56rem;
+    font-size:.59rem;
 
     font-weight:700;
 
-    letter-spacing:.14em;
+    letter-spacing:.12em;
 
 }
 
@@ -618,8 +630,9 @@ h1 span{
 }
 
 
+
 /* =========================================================
-   IMPORTANT NOTE
+   INFORMATION NOTE
 ========================================================= */
 
 .model-note{
@@ -682,6 +695,7 @@ h1 span{
 }
 
 
+
 /* =========================================================
    DOMAIN CARDS
 ========================================================= */
@@ -711,7 +725,7 @@ h1 span{
     border-radius:19px;
 
     background:
-        rgba(255,255,255,.62);
+        rgba(255,255,255,.64);
 
 }
 
@@ -724,17 +738,57 @@ h1 span{
 }
 
 
+/*
+WYRAŹNY SYMBOL
+*/
+
 .domain-code{
 
-    margin-bottom:12px;
+    display:inline-flex;
 
-    color:#9ca6b0;
+    align-items:center;
 
-    font-size:.58rem;
+    gap:6px;
+
+    margin-bottom:14px;
+
+    padding:
+        6px 9px;
+
+    border-radius:8px;
+
+    background:
+        rgba(231,235,239,.72);
+
+    color:#4d5b67;
+
+    font-size:.61rem;
 
     font-weight:700;
 
-    letter-spacing:.14em;
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+}
+
+
+.domain-code .math-symbol{
+
+    font-family:
+        Georgia,
+        'Times New Roman',
+        serif;
+
+    font-size:.92rem;
+
+    font-weight:400;
+
+    font-style:italic;
+
+    text-transform:none;
+
+    letter-spacing:0;
 
 }
 
@@ -757,6 +811,122 @@ h1 span{
     line-height:1.68;
 
 }
+
+
+
+/* =========================================================
+   D / HI EXPLANATION
+========================================================= */
+
+.index-explanation{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:15px;
+
+    margin-top:28px;
+
+}
+
+
+.index-explanation-card{
+
+    padding:24px;
+
+    border:
+        1px solid
+        rgba(168,178,188,.58);
+
+    border-radius:19px;
+
+    background:
+        rgba(255,255,255,.64);
+
+}
+
+
+.index-explanation-symbol{
+
+    margin-bottom:11px;
+
+    color:#334451;
+
+    font-family:
+        Georgia,
+        'Times New Roman',
+        serif;
+
+    font-size:1.35rem;
+
+    font-style:italic;
+
+}
+
+
+.index-explanation-card h3{
+
+    margin-bottom:9px;
+
+    font-size:.96rem;
+
+}
+
+
+.index-explanation-card p{
+
+    color:#697580;
+
+    font-size:.77rem;
+
+    line-height:1.7;
+
+}
+
+
+.index-scale{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    margin-top:16px;
+
+}
+
+
+.index-scale-item{
+
+    flex:1;
+
+    padding:
+        10px 8px;
+
+    border:
+        1px solid
+        rgba(177,186,195,.50);
+
+    border-radius:10px;
+
+    color:#65717d;
+
+    background:
+        rgba(246,248,250,.80);
+
+    font-size:.63rem;
+
+    font-weight:600;
+
+    text-align:center;
+
+}
+
 
 
 /* =========================================================
@@ -825,6 +995,7 @@ h1 span{
 }
 
 
+
 /* =========================================================
    VISUAL HEADER
 ========================================================= */
@@ -885,6 +1056,7 @@ h1 span{
 }
 
 
+
 /* =========================================================
    CLICKABLE NAV
 ========================================================= */
@@ -912,7 +1084,8 @@ h1 span{
 
     min-height:37px;
 
-    padding:6px 3px;
+    padding:
+        6px 3px;
 
     border:
         1px solid
@@ -973,8 +1146,9 @@ h1 span{
 }
 
 
+
 /* =========================================================
-   VISUAL BODY
+   VISUAL STAGE
 ========================================================= */
 
 .visual-stage{
@@ -1007,6 +1181,7 @@ h1 span{
 }
 
 
+
 /* =========================================================
    FLOW
 ========================================================= */
@@ -1017,8 +1192,14 @@ h1 span{
 
     inset:0;
 
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
     padding:
-        28px 25px;
+        22px 24px;
 
 }
 
@@ -1033,14 +1214,12 @@ h1 span{
 
     gap:10px;
 
-    margin-top:5px;
-
 }
 
 
 .flow-box{
 
-    min-width:115px;
+    min-width:125px;
 
     padding:
         12px 12px;
@@ -1094,6 +1273,38 @@ h1 span{
 }
 
 
+
+/* =========================================================
+   CONNECTORS
+========================================================= */
+
+.connector{
+
+    width:1px;
+    height:27px;
+
+    margin:
+        8px auto;
+
+    background:#c3cbd2;
+
+}
+
+
+.connector-small{
+
+    width:1px;
+    height:24px;
+
+    margin:
+        10px auto;
+
+    background:#c3cbd2;
+
+}
+
+
+
 /* =========================================================
    FIVE DOMAINS
 ========================================================= */
@@ -1106,8 +1317,6 @@ h1 span{
         repeat(5,1fr);
 
     gap:6px;
-
-    margin-top:50px;
 
 }
 
@@ -1152,7 +1361,7 @@ h1 span{
         'Times New Roman',
         serif;
 
-    font-size:1.05rem;
+    font-size:1.15rem;
 
     font-style:italic;
 
@@ -1161,7 +1370,7 @@ h1 span{
 
 .visual-domain-name{
 
-    font-size:.45rem;
+    font-size:.44rem;
 
     font-weight:700;
 
@@ -1176,8 +1385,7 @@ h1 span{
 
     border-color:#334654;
 
-    background:
-        #334654;
+    background:#334654;
 
     transform:
         translateY(-3px);
@@ -1189,49 +1397,20 @@ h1 span{
 }
 
 
-/* =========================================================
-   CONNECTORS
-========================================================= */
-
-.connector{
-
-    width:1px;
-    height:35px;
-
-    margin:
-        0 auto;
-
-    background:#c3cbd2;
-
-}
-
-
-.connector-small{
-
-    width:1px;
-    height:25px;
-
-    margin:
-        16px auto;
-
-    background:#c3cbd2;
-
-}
-
 
 /* =========================================================
-   MAIN INDEX
+   TOTAL INDEX
 ========================================================= */
 
 .index-box{
 
-    width:235px;
+    width:255px;
 
     margin:
         0 auto;
 
     padding:
-        19px 18px;
+        17px 18px;
 
     border:
         1px solid
@@ -1282,7 +1461,7 @@ h1 span{
 
 .index-value{
 
-    margin-top:7px;
+    margin-top:5px;
 
     color:#31424f;
 
@@ -1298,15 +1477,52 @@ h1 span{
 }
 
 
-.index-range{
+.index-description{
 
     margin-top:6px;
 
-    color:#929ca6;
+    color:#6d7984;
 
-    font-size:.54rem;
+    font-size:.55rem;
+
+    font-weight:600;
+
+    line-height:1.4;
 
 }
+
+
+.index-scale-small{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:7px;
+
+    margin-top:9px;
+
+}
+
+
+.index-scale-small span{
+
+    padding:
+        5px 7px;
+
+    border-radius:7px;
+
+    background:
+        rgba(229,234,238,.70);
+
+    color:#77838e;
+
+    font-size:.48rem;
+
+    font-weight:600;
+
+}
+
 
 
 /* =========================================================
@@ -1323,23 +1539,23 @@ h1 span{
 
     gap:10px;
 
-    margin-top:16px;
+    margin-top:12px;
 
 }
 
 
 .health-box{
 
-    min-width:145px;
+    min-width:255px;
 
     padding:
-        12px;
+        13px 15px;
 
     border:
         1px solid
         #c3cbd2;
 
-    border-radius:13px;
+    border-radius:15px;
 
     color:#77838e;
 
@@ -1363,6 +1579,21 @@ h1 span{
 }
 
 
+.health-title{
+
+    margin-bottom:4px;
+
+    font-size:.50rem;
+
+    font-weight:700;
+
+    letter-spacing:.10em;
+
+    text-transform:uppercase;
+
+}
+
+
 .health-symbol{
 
     font-family:
@@ -1377,47 +1608,20 @@ h1 span{
 }
 
 
-/* =========================================================
-   DYNAMIC FOOT NOTE
-========================================================= */
+.health-description{
 
-.visual-note{
+    margin-top:6px;
 
-    position:absolute;
+    font-family:'Inter',sans-serif;
 
-    left:25px;
-    right:25px;
-    bottom:21px;
+    font-size:.49rem;
 
-    min-height:56px;
+    font-style:normal;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:
-        11px 17px;
-
-    border:
-        1px solid
-        rgba(177,186,195,.46);
-
-    border-radius:14px;
-
-    color:#67737e;
-
-    background:
-        rgba(247,249,250,.88);
-
-    font-size:.63rem;
-
-    line-height:1.5;
-
-    text-align:center;
+    line-height:1.4;
 
 }
+
 
 
 /* =========================================================
@@ -1509,6 +1713,7 @@ h1 span{
 }
 
 
+
 /* =========================================================
    SHORT SCREEN
 ========================================================= */
@@ -1576,34 +1781,42 @@ h1 span{
     .flow{
 
         padding:
-            16px 18px;
+            12px 16px;
 
     }
 
 
-    .visual-domains{
+    .flow-box{
 
-        margin-top:26px;
+        padding:
+            8px 10px;
 
     }
 
 
     .visual-domain{
-        min-height:67px;
+
+        min-height:65px;
+
     }
 
 
     .connector{
-        height:21px;
+
+        height:17px;
+
+        margin:
+            4px auto;
+
     }
 
 
     .connector-small{
 
-        height:16px;
+        height:14px;
 
         margin:
-            8px auto;
+            5px auto;
 
     }
 
@@ -1611,39 +1824,50 @@ h1 span{
     .index-box{
 
         padding:
-            12px 14px;
+            10px 13px;
 
     }
 
 
     .index-value{
-        font-size:1.45rem;
+        font-size:1.4rem;
+    }
+
+
+    .index-description{
+        font-size:.47rem;
+    }
+
+
+    .index-scale-small{
+        margin-top:5px;
+    }
+
+
+    .index-scale-small span{
+        padding:3px 5px;
     }
 
 
     .health-row{
-        margin-top:8px;
+        margin-top:6px;
     }
 
 
     .health-box{
-        padding:8px;
+
+        padding:
+            8px 10px;
+
     }
 
 
-    .visual-note{
-
-        left:18px;
-        right:18px;
-        bottom:12px;
-
-        min-height:43px;
-
-        font-size:.54rem;
-
+    .health-description{
+        margin-top:3px;
     }
 
 }
+
 
 
 /* =========================================================
@@ -1702,6 +1926,7 @@ h1 span{
 }
 
 
+
 /* =========================================================
    MOBILE
 ========================================================= */
@@ -1718,7 +1943,8 @@ h1 span{
 
 
     .two-column,
-    .domain-grid{
+    .domain-grid,
+    .index-explanation{
 
         grid-template-columns:1fr;
 
@@ -1731,7 +1957,7 @@ h1 span{
 
 
     .visual-sticky{
-        height:590px;
+        height:610px;
     }
 
 
@@ -1764,13 +1990,21 @@ h1 span{
 
 
     .visual-domain{
-        min-height:65px;
+        min-height:64px;
     }
 
 
     .measurement-row{
-
         flex-wrap:wrap;
+    }
+
+
+    .index-box,
+    .health-box{
+
+        width:90%;
+
+        min-width:0;
 
     }
 
@@ -1788,6 +2022,7 @@ h1 span{
 </style>
 
 </head>
+
 
 
 <body>
@@ -1819,6 +2054,7 @@ h1 span{
 </nav>
 
 
+
 <main>
 
 
@@ -1832,7 +2068,7 @@ h1 span{
     <div>
 
         <div class="kicker">
-            Research · Degradation Assessment
+            Research · Degradation & Reliability
         </div>
 
 
@@ -1905,7 +2141,7 @@ h1 span{
 
 
 <!-- =========================================================
-     01 ASSUMPTIONS
+     01
 ========================================================= -->
 
 <section
@@ -1940,9 +2176,7 @@ h1 span{
 
         The proposed quantity \(D_{TSI}\) is a relative
         degradation index defined within the interval
-        \([0,1]\). A value close to zero represents the
-        reference condition, while a value approaching one
-        represents a strongly degraded or limiting condition.
+        \([0,1]\).
 
     </p>
 
@@ -1964,11 +2198,96 @@ h1 span{
     </div>
 
 
-    <p class="section-lead">
+    <div class="index-explanation">
 
-        A complementary health index can be defined so that
-        the interpretation is reversed: a value close to one
-        corresponds to good technical condition.
+
+        <div class="index-explanation-card">
+
+
+            <div class="index-explanation-symbol">
+                \(D_{TSI}\)
+            </div>
+
+
+            <h3>
+                Overall degradation index
+            </h3>
+
+
+            <p>
+
+                Describes the relative level of injector
+                degradation. The value increases as the
+                measured injector condition moves away
+                from the healthy reference state.
+
+            </p>
+
+
+            <div class="index-scale">
+
+                <div class="index-scale-item">
+                    0 = healthy reference
+                </div>
+
+                <div class="index-scale-item">
+                    1 = limiting degradation
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="index-explanation-card">
+
+
+            <div class="index-explanation-symbol">
+                \(HI_{TSI}\)
+            </div>
+
+
+            <h3>
+                Health index
+            </h3>
+
+
+            <p>
+
+                Provides the same condition information
+                using the opposite interpretation:
+                higher values represent better injector
+                condition.
+
+            </p>
+
+
+            <div class="index-scale">
+
+                <div class="index-scale-item">
+                    1 = healthy
+                </div>
+
+                <div class="index-scale-item">
+                    0 = limiting condition
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <p
+        class="section-lead"
+        style="margin-top:30px;">
+
+        The relationship between the two indices is
 
     </p>
 
@@ -1989,22 +2308,15 @@ h1 span{
 
         </div>
 
-        <div class="equation-caption">
-
-            Relative technical-condition index.
-
-        </div>
-
     </div>
 
 
     <div class="model-note">
 
-        This model is not a probability-of-failure model
-        expressed as a function of operating time. It is
-        a diagnostic framework describing the relative
-        level of degradation from deviations of measured
-        parameters from their reference values.
+        The proposed model is a relative diagnostic
+        degradation framework. It should not be interpreted
+        directly as a probability of failure expressed
+        as a function of operating time.
 
     </div>
 
@@ -2036,19 +2348,18 @@ h1 span{
     <p class="section-lead">
 
         Diagnostic variables have different physical units,
-        ranges and sensitivities. Before they can be
-        aggregated, each measurement \(z_j\) is transformed
-        into a dimensionless degradation symptom \(s_j\).
+        ranges and sensitivities. Before they can be combined,
+        each measurement \(z_j\) is transformed into a
+        dimensionless degradation symptom \(s_j\).
 
     </p>
 
 
     <p class="section-lead">
 
-        The reference value must be determined for defined
-        operating conditions. For this reason, the reference
-        value is treated as a function of the operating-state
-        vector \(\chi\).
+        The reference value is determined for defined
+        operating conditions and is therefore treated as
+        a function of the operating-state vector \(\chi\).
 
     </p>
 
@@ -2145,14 +2456,6 @@ h1 span{
     </div>
 
 
-    <p class="section-lead">
-
-        The saturation function constrains every symptom
-        to the same interval.
-
-    </p>
-
-
     <div class="equation-card">
 
         <div class="equation-number">
@@ -2182,17 +2485,17 @@ h1 span{
         <div class="note-card">
 
             <div class="note-index">
-                REFERENCE
+                SYMPTOM VALUE · 0
             </div>
 
             <h3>
-                \(s_j=0\)
+                Reference condition
             </h3>
 
             <p>
 
                 No diagnostically significant deviation
-                from the reference injector characteristic.
+                from the reference characteristic.
 
             </p>
 
@@ -2202,18 +2505,18 @@ h1 span{
         <div class="note-card">
 
             <div class="note-index">
-                LIMITING CONDITION
+                SYMPTOM VALUE · 1
             </div>
 
             <h3>
-                \(s_j=1\)
+                Limiting deviation
             </h3>
 
             <p>
 
-                The defined limiting deviation for the
-                considered diagnostic variable has been
-                reached or exceeded.
+                The defined limiting deviation for
+                the considered diagnostic variable
+                has been reached or exceeded.
 
             </p>
 
@@ -2311,8 +2614,9 @@ h1 span{
 
     <p class="section-lead">
 
-        The simplest partial degradation index is a weighted
-        sum of the symptoms belonging to the considered group.
+        The simplest partial degradation index is calculated
+        as a weighted sum of the symptoms belonging to the
+        considered group.
 
     </p>
 
@@ -2361,8 +2665,8 @@ h1 span{
 
     <p class="section-lead">
 
-        If the index should react more strongly to one
-        dominant symptom, the weighted power norm can be used.
+        A weighted power norm can be used when the index
+        should react more strongly to one dominant symptom.
 
     </p>
 
@@ -2390,52 +2694,6 @@ h1 span{
     </div>
 
 
-    <div class="two-column">
-
-
-        <div class="note-card">
-
-            <div class="note-index">
-                \(p_g=1\)
-            </div>
-
-            <h3>
-                Weighted sum
-            </h3>
-
-            <p>
-
-                All symptoms contribute according to their
-                defined weights.
-
-            </p>
-
-        </div>
-
-
-        <div class="note-card">
-
-            <div class="note-index">
-                \(p_g>1\)
-            </div>
-
-            <h3>
-                Dominant symptom sensitivity
-            </h3>
-
-            <p>
-
-                A strong individual symptom has a greater
-                influence on the resulting partial index.
-
-            </p>
-
-        </div>
-
-
-    </div>
-
-
 </section>
 
 
@@ -2458,16 +2716,6 @@ h1 span{
     <h2 class="section-title">
         Hydraulic symptom vector
     </h2>
-
-
-    <p class="section-lead">
-
-        The hydraulic group combines information associated
-        with fuel flow, injected mass, spray geometry,
-        droplet size, particle-number emissions and
-        end-of-injection fuel behaviour.
-
-    </p>
 
 
     <div class="equation-card">
@@ -2531,10 +2779,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{\dot m}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{\dot m}\)
+                </span>
+
             </div>
 
-            <h3>Fuel flow</h3>
+            <h3>
+                Fuel flow
+            </h3>
 
             <p>
                 Reduction or deviation of fuel-flow rate.
@@ -2546,10 +2802,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_m\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_m\)
+                </span>
+
             </div>
 
-            <h3>Injected mass</h3>
+            <h3>
+                Injected mass
+            </h3>
 
             <p>
                 Deviation of the delivered fuel dose.
@@ -2561,10 +2825,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{\alpha}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{\alpha}\)
+                </span>
+
             </div>
 
-            <h3>Spray angle</h3>
+            <h3>
+                Spray angle
+            </h3>
 
             <p>
                 Change in spray geometry.
@@ -2576,10 +2848,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{SMD}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{SMD}\)
+                </span>
+
             </div>
 
-            <h3>Droplet size</h3>
+            <h3>
+                Droplet size
+            </h3>
 
             <p>
                 Increase in characteristic droplet diameter.
@@ -2591,10 +2871,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{PN},\,s_{dr}\)
+
+                SYMPTOMS ·
+
+                <span class="math-symbol">
+                    \(s_{PN},\,s_{dr}\)
+                </span>
+
             </div>
 
-            <h3>Emission & dribbling</h3>
+            <h3>
+                Emission and dribbling
+            </h3>
 
             <p>
 
@@ -2691,10 +2979,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{t_{op}}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{t_{op}}\)
+                </span>
+
             </div>
 
-            <h3>Opening delay</h3>
+            <h3>
+                Opening delay
+            </h3>
 
             <p>
                 Change in injector opening delay.
@@ -2706,10 +3002,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{t_{cl}}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{t_{cl}}\)
+                </span>
+
             </div>
 
-            <h3>Closing time</h3>
+            <h3>
+                Closing time
+            </h3>
 
             <p>
                 Change in injector closing dynamics.
@@ -2721,10 +3025,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_x\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_x\)
+                </span>
+
             </div>
 
-            <h3>Needle lift</h3>
+            <h3>
+                Needle lift
+            </h3>
 
             <p>
                 Deviation of maximum needle displacement.
@@ -2736,10 +3048,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{\sigma x}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{\sigma x}\)
+                </span>
+
             </div>
 
-            <h3>Cycle variability</h3>
+            <h3>
+                Cycle variability
+            </h3>
 
             <p>
                 Variability of needle motion between cycles.
@@ -2751,10 +3071,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_b\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_b\)
+                </span>
+
             </div>
 
-            <h3>Needle bounce</h3>
+            <h3>
+                Needle bounce
+            </h3>
 
             <p>
                 Intensity of needle or armature rebound.
@@ -2858,10 +3186,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_R\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_R\)
+                </span>
+
             </div>
 
-            <h3>Resistance</h3>
+            <h3>
+                Resistance
+            </h3>
 
             <p>
                 Change in coil or connection resistance.
@@ -2873,10 +3209,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{I_p},\,s_{I_h}\)
+
+                SYMPTOMS ·
+
+                <span class="math-symbol">
+                    \(s_{I_p},\,s_{I_h}\)
+                </span>
+
             </div>
 
-            <h3>Peak & Hold current</h3>
+            <h3>
+                Peak & Hold current
+            </h3>
 
             <p>
                 Deviations of characteristic current levels.
@@ -2888,10 +3232,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{\frac{di}{dt}}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{\frac{di}{dt}}\)
+                </span>
+
             </div>
 
-            <h3>Current slope</h3>
+            <h3>
+                Current slope
+            </h3>
 
             <p>
                 Change in current build-up dynamics.
@@ -2903,10 +3255,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{\sigma I}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{\sigma I}\)
+                </span>
+
             </div>
 
-            <h3>Repeatability</h3>
+            <h3>
+                Repeatability
+            </h3>
 
             <p>
                 Cycle-to-cycle current instability.
@@ -2918,10 +3278,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{oc},\,s_{sc}\)
+
+                SYMPTOMS ·
+
+                <span class="math-symbol">
+                    \(s_{oc},\,s_{sc}\)
+                </span>
+
             </div>
 
-            <h3>Circuit faults</h3>
+            <h3>
+                Circuit faults
+            </h3>
 
             <p>
                 Open-circuit and short-circuit symptoms.
@@ -3015,10 +3383,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_L\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_L\)
+                </span>
+
             </div>
 
-            <h3>Inductance</h3>
+            <h3>
+                Inductance
+            </h3>
 
             <p>
                 Deviation of effective coil inductance.
@@ -3030,13 +3406,21 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{U_{ind}}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{U_{ind}}\)
+                </span>
+
             </div>
 
-            <h3>Induced voltage</h3>
+            <h3>
+                Induced voltage
+            </h3>
 
             <p>
-                Change in the characteristic induced-voltage transient.
+                Change in the induced-voltage transient.
             </p>
 
         </div>
@@ -3045,10 +3429,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{\tau_m}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{\tau_m}\)
+                </span>
+
             </div>
 
-            <h3>Magnetic dynamics</h3>
+            <h3>
+                Magnetic dynamics
+            </h3>
 
             <p>
                 Change in magnetic-field build-up or decay.
@@ -3060,10 +3452,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{F_{em}}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{F_{em}}\)
+                </span>
+
             </div>
 
-            <h3>Electromagnetic force</h3>
+            <h3>
+                Electromagnetic force
+            </h3>
 
             <p>
                 Change in estimated electromagnetic force.
@@ -3075,10 +3475,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_g\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_g\)
+                </span>
+
             </div>
 
-            <h3>Magnetic gap</h3>
+            <h3>
+                Magnetic gap
+            </h3>
 
             <p>
                 Change in magnetic gap or armature position.
@@ -3169,10 +3577,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_T\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_T\)
+                </span>
+
             </div>
 
-            <h3>Temperature</h3>
+            <h3>
+                Temperature
+            </h3>
 
             <p>
                 Increase in coil or core temperature.
@@ -3184,10 +3600,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{R_T}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{R_T}\)
+                </span>
+
             </div>
 
-            <h3>Permanent resistance change</h3>
+            <h3>
+                Permanent resistance change
+            </h3>
 
             <p>
                 Resistance deviation remaining after cooling.
@@ -3199,10 +3623,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{ins}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{ins}\)
+                </span>
+
             </div>
 
-            <h3>Insulation condition</h3>
+            <h3>
+                Insulation condition
+            </h3>
 
             <p>
                 Deterioration of winding insulation.
@@ -3214,10 +3646,18 @@ h1 span{
         <div class="domain-card">
 
             <div class="domain-code">
-                \(s_{tip}\)
+
+                SYMPTOM ·
+
+                <span class="math-symbol">
+                    \(s_{tip}\)
+                </span>
+
             </div>
 
-            <h3>Injector-tip condition</h3>
+            <h3>
+                Injector-tip condition
+            </h3>
 
             <p>
                 Thermal influence on tip wetting and deposit formation.
@@ -3234,13 +3674,13 @@ h1 span{
 
 
 <!-- =========================================================
-     09 TOTAL INDEX
+     09 COMBINE
 ========================================================= -->
 
 <section
     class="model-section"
     id="total-index"
-    data-stage="aggregate">
+    data-stage="combine">
 
 
     <div class="section-label">
@@ -3256,7 +3696,7 @@ h1 span{
     <p class="section-lead">
 
         Once all partial degradation indices have been
-        calculated, they are combined into the overall
+        calculated, they are combined into one overall
         injector degradation index.
 
     </p>
@@ -3286,6 +3726,12 @@ h1 span{
 
         </div>
 
+        <div class="equation-caption">
+
+            Overall relative degradation index of the injector.
+
+        </div>
+
     </div>
 
 
@@ -3308,14 +3754,54 @@ h1 span{
     </div>
 
 
-    <p class="section-lead">
+    <div class="index-explanation">
 
-        The group weights define the relative importance
-        of each degradation domain. Their final values
-        require calibration against experimental data and
-        can depend on the diagnostic objective.
 
-    </p>
+        <div class="index-explanation-card">
+
+
+            <div class="index-explanation-symbol">
+                \(D_{TSI}=0\)
+            </div>
+
+            <h3>
+                Healthy reference condition
+            </h3>
+
+            <p>
+
+                The measured diagnostic symptoms correspond
+                to the reference injector condition within
+                the assumed tolerance ranges.
+
+            </p>
+
+        </div>
+
+
+        <div class="index-explanation-card">
+
+
+            <div class="index-explanation-symbol">
+                \(D_{TSI}=1\)
+            </div>
+
+            <h3>
+                Limiting degraded condition
+            </h3>
+
+            <p>
+
+                The combined degradation level reaches
+                the limiting value defined within the
+                diagnostic framework.
+
+            </p>
+
+        </div>
+
+
+    </div>
 
 
 </section>
@@ -3378,12 +3864,6 @@ h1 span{
 
         </div>
 
-        <div class="equation-caption">
-
-            Confidence-adjusted normalized group weight.
-
-        </div>
-
     </div>
 
 
@@ -3393,7 +3873,7 @@ h1 span{
         <div class="note-card">
 
             <div class="note-index">
-                \(\beta_g\)
+                PARAMETER · βg
             </div>
 
             <h3>
@@ -3413,7 +3893,7 @@ h1 span{
         <div class="note-card">
 
             <div class="note-index">
-                \(c_g\)
+                PARAMETER · cg
             </div>
 
             <h3>
@@ -3448,7 +3928,7 @@ h1 span{
 
 
     <div class="section-label">
-        11 / Nonlinear Aggregation
+        11 / Nonlinear Combination
     </div>
 
 
@@ -3459,11 +3939,10 @@ h1 span{
 
     <p class="section-lead">
 
-        A linear weighted sum may distribute the influence
-        of degradation across all groups. When a single
-        severe degradation mode should have a stronger
-        influence on the final assessment, the overall
-        index can be written using a weighted power norm.
+        When a single severe degradation mode should have
+        a stronger influence on the final assessment,
+        the overall index can be written using a weighted
+        power norm.
 
     </p>
 
@@ -3503,17 +3982,17 @@ h1 span{
         <div class="note-card">
 
             <div class="note-index">
-                \(p=1\)
+                p = 1
             </div>
 
             <h3>
-                Linear aggregation
+                Linear combination
             </h3>
 
             <p>
 
-                The equation reduces to the classical
-                weighted sum of partial indices.
+                The equation reduces to the weighted
+                sum of partial degradation indices.
 
             </p>
 
@@ -3523,16 +4002,16 @@ h1 span{
         <div class="note-card">
 
             <div class="note-index">
-                \(p>1\)
+                p &gt; 1
             </div>
 
             <h3>
-                Dominant-domain sensitivity
+                Dominant degradation sensitivity
             </h3>
 
             <p>
 
-                A strongly degraded individual subsystem
+                A strongly degraded individual domain
                 has a greater influence on the final index.
 
             </p>
@@ -3581,7 +4060,7 @@ h1 span{
     <div class="equation-card">
 
         <div class="equation-number">
-            CONDITION RELATION
+            EQ / 25
         </div>
 
         <div class="equation">
@@ -3594,50 +4073,86 @@ h1 span{
 
         </div>
 
+        <div class="equation-caption">
+
+            Health index derived from the overall
+            degradation index.
+
+        </div>
+
     </div>
 
 
-    <div class="two-column">
+    <div class="index-explanation">
 
 
-        <div class="note-card">
+        <div class="index-explanation-card">
 
-            <div class="note-index">
-                LEVEL 01
+
+            <div class="index-explanation-symbol">
+                \(D_{TSI}\)
             </div>
 
             <h3>
-                Partial diagnosis
+                Degradation index
             </h3>
 
             <p>
 
-                \(D_H\), \(D_M\), \(D_E\), \(D_{EM}\)
-                and \(D_T\) identify which degradation
-                domain contributes most strongly.
+                Higher value means a greater relative
+                degradation level.
 
             </p>
+
+
+            <div class="index-scale">
+
+                <div class="index-scale-item">
+                    0 = healthy
+                </div>
+
+                <div class="index-scale-item">
+                    1 = limiting
+                </div>
+
+            </div>
+
 
         </div>
 
 
-        <div class="note-card">
 
-            <div class="note-index">
-                LEVEL 02
+        <div class="index-explanation-card">
+
+
+            <div class="index-explanation-symbol">
+                \(HI_{TSI}\)
             </div>
 
             <h3>
-                Overall condition
+                Health index
             </h3>
 
             <p>
 
-                \(D_{TSI}\) reduces multidimensional
-                diagnostic information to one relative
-                condition indicator.
+                Higher value means a better relative
+                technical condition.
 
             </p>
+
+
+            <div class="index-scale">
+
+                <div class="index-scale-item">
+                    1 = healthy
+                </div>
+
+                <div class="index-scale-item">
+                    0 = limiting
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -3647,10 +4162,10 @@ h1 span{
 
     <div class="model-note">
 
-        The model should be treated as a mathematical
-        diagnostic framework requiring experimental
-        calibration. It does not replace physical analysis
-        of individual degradation mechanisms.
+        The proposed indices provide a mathematical
+        diagnostic framework. Their practical thresholds
+        and weighting coefficients require experimental
+        calibration.
 
     </div>
 
@@ -3701,7 +4216,7 @@ h1 span{
             id="visualDescription">
 
             Diagnostic information is transformed
-            and aggregated into a relative injector
+            and combined into a relative injector
             condition index.
 
         </div>
@@ -3741,9 +4256,9 @@ h1 span{
         <a
             href="#total-index"
             class="visual-nav-item"
-            data-nav="aggregate">
+            data-nav="combine">
 
-            AGGREGATE
+            COMBINE
 
         </a>
 
@@ -3773,7 +4288,7 @@ h1 span{
 
 
     <!-- =====================================================
-         DYNAMIC MODEL DIAGRAM
+         MODEL DIAGRAM
     ====================================================== -->
 
     <div class="visual-stage">
@@ -3782,7 +4297,7 @@ h1 span{
         <div class="flow">
 
 
-            <!-- MEASUREMENT -> SYMPTOM -->
+            <!-- MEASUREMENT -->
 
             <div class="measurement-row">
 
@@ -3822,7 +4337,7 @@ h1 span{
 
 
 
-            <!-- FIVE DEGRADATION DOMAINS -->
+            <!-- FIVE DOMAINS -->
 
             <div class="visual-domains">
 
@@ -3910,7 +4425,7 @@ h1 span{
 
 
 
-            <!-- TOTAL -->
+            <!-- OVERALL DEGRADATION INDEX -->
 
             <div
                 class="index-box"
@@ -3918,7 +4433,7 @@ h1 span{
 
 
                 <div class="index-label">
-                    Overall degradation
+                    Overall degradation index
                 </div>
 
 
@@ -3927,8 +4442,21 @@ h1 span{
                 </div>
 
 
-                <div class="index-range">
-                    0 · reference &nbsp;&nbsp; → &nbsp;&nbsp; 1 · limiting
+                <div class="index-description">
+                    Relative degradation level
+                </div>
+
+
+                <div class="index-scale-small">
+
+                    <span>
+                        0 = healthy
+                    </span>
+
+                    <span>
+                        1 = limiting
+                    </span>
+
                 </div>
 
 
@@ -3936,14 +4464,20 @@ h1 span{
 
 
 
-            <!-- HEALTH -->
+            <!-- HEALTH INDEX -->
 
             <div class="health-row">
 
 
                 <div class="flow-arrow">
-                    →
+                    ↓
                 </div>
+
+
+            </div>
+
+
+            <div class="health-row">
 
 
                 <div
@@ -3951,8 +4485,22 @@ h1 span{
                     id="healthBox">
 
 
+                    <div class="health-title">
+                        Health index
+                    </div>
+
+
                     <div class="health-symbol">
                         \(HI_{TSI}=1-D_{TSI}\)
+                    </div>
+
+
+                    <div class="health-description">
+
+                        1 = healthy condition
+                        &nbsp; · &nbsp;
+                        0 = limiting condition
+
                     </div>
 
 
@@ -3961,18 +4509,6 @@ h1 span{
 
             </div>
 
-
-        </div>
-
-
-
-        <div
-            class="visual-note"
-            id="visualNote">
-
-            Measurements are first converted into
-            dimensionless symptoms before degradation
-            indices are calculated.
 
         </div>
 
@@ -4058,7 +4594,7 @@ const stageData={
             'Relative Condition Assessment',
 
         description:
-            'The model describes relative degradation rather than probability of failure over time.',
+            'Two complementary indices describe relative degradation and relative health.',
 
         nav:null,
 
@@ -4070,10 +4606,7 @@ const stageData={
 
         total:true,
 
-        health:true,
-
-        note:
-            'D_TSI = 0 represents the reference state; D_TSI = 1 represents the defined limiting condition.'
+        health:true
 
     },
 
@@ -4096,10 +4629,7 @@ const stageData={
 
         total:false,
 
-        health:false,
-
-        note:
-            'z_j  →  reference correction and tolerance  →  s_j ∈ [0,1]'
+        health:false
 
     },
 
@@ -4128,10 +4658,7 @@ const stageData={
 
         total:false,
 
-        health:false,
-
-        note:
-            'Each partial index D_g aggregates the symptoms assigned to one degradation group.'
+        health:false
 
     },
 
@@ -4156,10 +4683,7 @@ const stageData={
 
         total:false,
 
-        health:false,
-
-        note:
-            'Hydraulic symptoms → D_H'
+        health:false
 
     },
 
@@ -4184,10 +4708,7 @@ const stageData={
 
         total:false,
 
-        health:false,
-
-        note:
-            'Mechanical symptoms → D_M'
+        health:false
 
     },
 
@@ -4212,10 +4733,7 @@ const stageData={
 
         total:false,
 
-        health:false,
-
-        note:
-            'Current and circuit symptoms → D_E'
+        health:false
 
     },
 
@@ -4240,10 +4758,7 @@ const stageData={
 
         total:false,
 
-        health:false,
-
-        note:
-            'Electromagnetic symptoms → D_EM'
+        health:false
 
     },
 
@@ -4254,7 +4769,7 @@ const stageData={
             'Thermal Degradation',
 
         description:
-            'Temperature, permanent resistance change and insulation condition form the thermal index.',
+            'Temperature, resistance and insulation-related symptoms form the thermal index.',
 
         nav:'partial',
 
@@ -4268,15 +4783,12 @@ const stageData={
 
         total:false,
 
-        health:false,
-
-        note:
-            'Thermal symptoms → D_T'
+        health:false
 
     },
 
 
-    aggregate:{
+    combine:{
 
         title:
             'Overall Degradation Index',
@@ -4284,7 +4796,7 @@ const stageData={
         description:
             'Five partial degradation indices are combined into one relative injector condition value.',
 
-        nav:'aggregate',
+        nav:'combine',
 
         domains:[
             'H',
@@ -4300,10 +4812,7 @@ const stageData={
 
         total:true,
 
-        health:false,
-
-        note:
-            'D_H + D_M + D_E + D_EM + D_T  →  D_TSI'
+        health:false
 
     },
 
@@ -4332,10 +4841,7 @@ const stageData={
 
         total:true,
 
-        health:false,
-
-        note:
-            'Base importance β_g is modified by diagnostic confidence c_g.'
+        health:false
 
     },
 
@@ -4343,12 +4849,12 @@ const stageData={
     nonlinear:{
 
         title:
-            'Nonlinear Aggregation',
+            'Nonlinear Combination',
 
         description:
             'The power parameter increases sensitivity to one dominant degradation domain.',
 
-        nav:'aggregate',
+        nav:'combine',
 
         domains:[
             'H',
@@ -4364,10 +4870,7 @@ const stageData={
 
         total:true,
 
-        health:false,
-
-        note:
-            'p = 1 → weighted sum · p > 1 → stronger response to the dominant degradation group'
+        health:false
 
     },
 
@@ -4378,7 +4881,7 @@ const stageData={
             'Diagnostic Interpretation',
 
         description:
-            'Partial indices preserve physical information while the total index summarizes overall condition.',
+            'D_TSI describes degradation, while HI_TSI expresses the same condition as a health index.',
 
         nav:'interpretation',
 
@@ -4396,10 +4899,7 @@ const stageData={
 
         total:true,
 
-        health:true,
-
-        note:
-            'Partial diagnosis → D_g · Overall assessment → D_TSI · Health interpretation → HI_TSI'
+        health:true
 
     }
 
@@ -4472,12 +4972,6 @@ const visualDescription=
     );
 
 
-const visualNote=
-    document.getElementById(
-        'visualNote'
-    );
-
-
 let activeStage=null;
 
 
@@ -4516,12 +5010,6 @@ function activateStage(name){
         data.description;
 
 
-    visualNote.textContent=
-        data.note;
-
-
-
-    /* TOP NAV */
 
     navItems.forEach(
         item=>{
@@ -4539,8 +5027,6 @@ function activateStage(name){
 
 
 
-    /* MEASUREMENT */
-
     measurementBox.classList.toggle(
         'active',
         data.measurement
@@ -4548,16 +5034,12 @@ function activateStage(name){
 
 
 
-    /* NORMALIZED SYMPTOM */
-
     symptomBox.classList.toggle(
         'active',
         data.symptom
     );
 
 
-
-    /* FIVE DOMAINS */
 
     domains.forEach(
         domain=>{
@@ -4580,16 +5062,12 @@ function activateStage(name){
 
 
 
-    /* TOTAL INDEX */
-
     totalIndexBox.classList.toggle(
         'active',
         data.total
     );
 
 
-
-    /* HEALTH */
 
     healthBox.classList.toggle(
         'active',
@@ -4739,7 +5217,7 @@ window.addEventListener(
 
 
 /* =========================================================
-   CLICKABLE TOP NAV
+   CLICK NAVIGATION
 ========================================================= */
 
 navItems.forEach(
@@ -4773,10 +5251,10 @@ navItems.forEach(
                 }
 
 
-                if(name==='aggregate'){
+                if(name==='combine'){
 
                     activateStage(
-                        'aggregate'
+                        'combine'
                     );
 
                 }
