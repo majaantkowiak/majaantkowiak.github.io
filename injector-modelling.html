@@ -1,1 +1,4151 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>
+Analytical Model of Injector Current & Voltage | Maja Antkowiak
+</title>
+
+
+<!-- =========================================================
+     MATHJAX
+========================================================= -->
+
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['\\(','\\)']],
+        displayMath: [['\\[','\\]']]
+    },
+    svg: {
+        fontCache: 'global'
+    }
+};
+</script>
+
+<script
+    defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+:root{
+
+    --text:#1c2732;
+    --muted:#687480;
+
+    --dark:#4d5965;
+    --silver:#84909b;
+    --silver-light:#c7ced5;
+
+    --border:
+        rgba(172,182,192,.60);
+
+    --panel:
+        rgba(255,255,255,.72);
+
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 2%,
+            #ffffff,
+            transparent 26%
+        ),
+
+        radial-gradient(
+            circle at 93% 15%,
+            rgba(201,210,219,.30),
+            transparent 24%
+        ),
+
+        linear-gradient(
+            180deg,
+            #f9fafb,
+            #eef1f4
+        );
+
+}
+
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+p{
+    text-align:justify;
+    text-justify:inter-word;
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    z-index:1000;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    padding:20px 6%;
+
+    background:
+        rgba(248,249,250,.88);
+
+    backdrop-filter:
+        blur(16px);
+
+    border-bottom:
+        1px solid
+        rgba(177,186,195,.36);
+
+}
+
+
+.brand{
+
+    font-size:1.2rem;
+
+    font-weight:800;
+
+    letter-spacing:-.04em;
+
+}
+
+
+.brand span{
+    color:#9099a3;
+}
+
+
+.back{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    color:#65717c;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    transition:.2s ease;
+
+}
+
+
+.back:hover{
+    transform:translateX(-3px);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main{
+
+    max-width:1450px;
+
+    margin:0 auto;
+
+    padding:
+        145px 6%
+        90px;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    display:grid;
+
+    grid-template-columns:
+        1.18fr .82fr;
+
+    gap:75px;
+
+    align-items:end;
+
+    min-height:650px;
+
+    padding-bottom:100px;
+
+}
+
+
+.kicker{
+
+    margin-bottom:18px;
+
+    color:#87929d;
+
+    font-size:.70rem;
+
+    font-weight:700;
+
+    letter-spacing:.19em;
+
+    text-transform:uppercase;
+
+}
+
+
+h1{
+
+    max-width:800px;
+
+    font-size:
+        clamp(
+            3.3rem,
+            7vw,
+            6.3rem
+        );
+
+    line-height:.92;
+
+    letter-spacing:-.065em;
+
+}
+
+
+h1 span{
+
+    display:block;
+
+    color:#6b7783;
+
+}
+
+
+.hero-right{
+
+    max-width:520px;
+
+    padding-bottom:8px;
+
+}
+
+
+.hero-description{
+
+    color:#616d79;
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+    text-align:justify;
+
+}
+
+
+.hero-description strong{
+    color:#394551;
+}
+
+
+.hero-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:25px;
+
+}
+
+
+.hero-tag{
+
+    padding:8px 11px;
+
+    border:
+        1px solid
+        rgba(167,177,187,.59);
+
+    border-radius:9px;
+
+    background:
+        rgba(255,255,255,.66);
+
+    color:#6c7782;
+
+    font-size:.64rem;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   CASE STUDY GRID
+========================================================= */
+
+.case-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1.08fr)
+        minmax(390px,.92fr);
+
+    gap:70px;
+
+    align-items:start;
+
+}
+
+
+.case-content{
+    min-width:0;
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.model-section{
+
+    min-height:74vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:
+        80px 0
+        100px;
+
+    border-bottom:
+        1px solid
+        rgba(177,186,195,.38);
+
+}
+
+
+.section-label{
+
+    margin-bottom:17px;
+
+    color:#919ba5;
+
+    font-size:.68rem;
+
+    font-weight:700;
+
+    letter-spacing:.19em;
+
+    text-transform:uppercase;
+
+}
+
+
+.section-title{
+
+    max-width:790px;
+
+    margin-bottom:28px;
+
+    font-size:
+        clamp(
+            2.15rem,
+            4vw,
+            3.85rem
+        );
+
+    line-height:1.04;
+
+    letter-spacing:-.055em;
+
+}
+
+
+.section-lead{
+
+    max-width:800px;
+
+    margin-bottom:30px;
+
+    color:#64707c;
+
+    font-size:.98rem;
+
+    line-height:1.93;
+
+}
+
+
+/* =========================================================
+   EQUATIONS
+========================================================= */
+
+.equation-card{
+
+    position:relative;
+
+    margin:
+        22px 0
+        26px;
+
+    padding:
+        28px 30px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(159,170,181,.64);
+
+    border-radius:22px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(236,241,245,.81)
+        );
+
+    box-shadow:
+        0 14px 34px
+        rgba(48,58,69,.06);
+
+}
+
+
+.equation-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:4px;
+    height:100%;
+
+    background:
+
+        linear-gradient(
+            #586572,
+            #b5bdc5
+        );
+
+}
+
+
+.equation-number{
+
+    position:absolute;
+
+    right:17px;
+    top:13px;
+
+    color:#9ba5af;
+
+    font-size:.57rem;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+}
+
+
+.equation{
+
+    color:#27333f;
+
+    font-size:1.08rem;
+
+    overflow-x:auto;
+
+}
+
+
+.equation-caption{
+
+    margin-top:17px;
+
+    color:#7b8691;
+
+    font-size:.73rem;
+
+    line-height:1.6;
+
+    text-align:center;
+
+}
+
+
+/* =========================================================
+   SMALL TWO-COLUMN NOTES
+========================================================= */
+
+.two-column{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+
+.note-card{
+
+    padding:20px;
+
+    border:
+        1px solid
+        rgba(175,185,195,.57);
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.59);
+
+}
+
+
+.note-index{
+
+    margin-bottom:11px;
+
+    color:#9aa4ae;
+
+    font-size:.56rem;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+}
+
+
+.note-card h3{
+
+    margin-bottom:8px;
+
+    font-size:.93rem;
+
+}
+
+
+.note-card p{
+
+    color:#6b7681;
+
+    font-size:.78rem;
+
+    line-height:1.66;
+
+}
+
+
+/* =========================================================
+   VARIABLE LEGEND
+========================================================= */
+
+.variable-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:10px;
+
+    margin-top:27px;
+
+}
+
+
+.variable{
+
+    padding:13px 14px;
+
+    border:
+        1px solid
+        rgba(177,186,195,.48);
+
+    border-radius:13px;
+
+    background:
+        rgba(255,255,255,.52);
+
+}
+
+
+.variable-symbol{
+
+    margin-bottom:4px;
+
+    color:#4f5b67;
+
+    font-family:
+        Georgia,
+        'Times New Roman',
+        serif;
+
+    font-style:italic;
+
+    font-size:1rem;
+
+}
+
+
+.variable-description{
+
+    color:#7d8791;
+
+    font-size:.64rem;
+
+    line-height:1.5;
+
+}
+
+
+/* =========================================================
+   IMPORTANT NOTE
+========================================================= */
+
+.model-note{
+
+    position:relative;
+
+    margin-top:28px;
+
+    padding:
+        21px 22px
+        21px 52px;
+
+    border:
+        1px solid
+        rgba(161,172,183,.55);
+
+    border-radius:18px;
+
+    background:
+        rgba(238,242,245,.70);
+
+    color:#616d79;
+
+    font-size:.82rem;
+
+    line-height:1.75;
+
+    text-align:justify;
+
+}
+
+
+.model-note::before{
+
+    content:"i";
+
+    position:absolute;
+
+    left:18px;
+    top:20px;
+
+    width:20px;
+    height:20px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:
+        1px solid
+        #82909d;
+
+    border-radius:50%;
+
+    color:#63717e;
+
+    font-family:Georgia,serif;
+
+    font-style:italic;
+
+    font-size:.78rem;
+
+}
+
+
+/* =========================================================
+   PHASE BLOCK
+========================================================= */
+
+.phase-sequence{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+    margin:
+        28px 0
+        8px;
+
+}
+
+
+.phase-pill{
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid
+        rgba(162,173,184,.58);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.67);
+
+    color:#5f6b77;
+
+    font-size:.67rem;
+
+    font-weight:700;
+
+    letter-spacing:.04em;
+
+}
+
+
+.phase-arrow{
+    color:#a1aab4;
+}
+
+
+/* =========================================================
+   RESULT CARDS
+========================================================= */
+
+.result-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+
+.result-card{
+
+    padding:23px;
+
+    border:
+        1px solid
+        rgba(171,181,191,.58);
+
+    border-radius:19px;
+
+    background:
+        rgba(255,255,255,.62);
+
+}
+
+
+.result-number{
+
+    margin-bottom:13px;
+
+    color:#a0a9b2;
+
+    font-size:.57rem;
+
+    font-weight:700;
+
+    letter-spacing:.14em;
+
+}
+
+
+.result-card h3{
+
+    margin-bottom:9px;
+
+    font-size:.98rem;
+
+}
+
+
+.result-card p{
+
+    color:#697580;
+
+    font-size:.79rem;
+
+    line-height:1.68;
+
+}
+
+
+/* =========================================================
+   RIGHT STICKY VISUAL
+========================================================= */
+
+.visual-column{
+    min-width:0;
+}
+
+
+.visual-sticky{
+
+    position:sticky;
+
+    top:100px;
+
+    height:
+        calc(100vh - 125px);
+
+    height:
+        calc(100dvh - 125px);
+
+    min-height:600px;
+
+    max-height:800px;
+
+}
+
+
+.visual-card{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    padding:27px;
+
+    border:
+        1px solid
+        rgba(177,187,197,.60);
+
+    border-radius:29px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.94),
+            rgba(247,249,250,.78)
+        );
+
+    box-shadow:
+
+        0 22px 50px
+        rgba(43,53,64,.08);
+
+}
+
+
+/* VISUAL HEADER */
+
+.visual-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:22px;
+
+    margin-bottom:20px;
+
+}
+
+
+.visual-kicker{
+
+    color:#8f99a4;
+
+    font-size:.60rem;
+
+    font-weight:700;
+
+    letter-spacing:.17em;
+
+    text-transform:uppercase;
+
+}
+
+
+.visual-phase{
+
+    margin-top:6px;
+
+    color:#25313d;
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+}
+
+
+.visual-description{
+
+    max-width:210px;
+
+    color:#747f8a;
+
+    font-size:.70rem;
+
+    line-height:1.5;
+
+    text-align:right;
+
+}
+
+
+/* PHASE TIMELINE */
+
+.visual-timeline{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:5px;
+
+    margin-bottom:19px;
+
+}
+
+
+.timeline-item{
+
+    padding:
+        7px 3px;
+
+    border:
+        1px solid
+        rgba(175,185,195,.45);
+
+    border-radius:7px;
+
+    color:#a0a9b2;
+
+    background:
+        rgba(248,250,251,.65);
+
+    font-size:.51rem;
+
+    font-weight:700;
+
+    text-align:center;
+
+    letter-spacing:.05em;
+
+    transition:.25s ease;
+
+}
+
+
+.timeline-item.active{
+
+    color:white;
+
+    border-color:#5f6c79;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #4d5a67,
+            #7c8894
+        );
+
+}
+
+
+/* CHART AREA */
+
+.plot-container{
+
+    position:relative;
+
+    height:370px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(178,187,196,.56);
+
+    border-radius:21px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.94),
+            rgba(242,245,247,.86)
+        );
+
+}
+
+
+.plot-view{
+
+    position:absolute;
+
+    inset:0;
+
+    padding:14px;
+
+    opacity:0;
+
+    transform:
+        translateY(8px);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
+}
+
+
+.plot-view.active{
+
+    opacity:1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.plot-view svg{
+
+    width:100%;
+    height:100%;
+
+}
+
+
+/* SVG CURRENT */
+
+.axis-line{
+
+    stroke:#c5ccd3;
+    stroke-width:1.2;
+
+}
+
+
+.grid-line{
+
+    stroke:#e4e8ec;
+    stroke-width:1;
+
+}
+
+
+.wave-base{
+
+    fill:none;
+
+    stroke:#c4cbd2;
+
+    stroke-width:2.4;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+}
+
+
+.wave-segment{
+
+    fill:none;
+
+    stroke:#b5bdc5;
+
+    stroke-width:2.6;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+    opacity:.35;
+
+    transition:
+        stroke .3s ease,
+        opacity .3s ease,
+        stroke-width .3s ease;
+
+}
+
+
+.wave-segment.active{
+
+    stroke:#465664;
+
+    stroke-width:4;
+
+    opacity:1;
+
+}
+
+
+.wave-marker{
+
+    stroke:#aeb7c0;
+
+    stroke-width:1.1;
+
+    stroke-dasharray:5 5;
+
+}
+
+
+.marker-label{
+
+    fill:#8a959f;
+
+    font-family:Inter,sans-serif;
+
+    font-size:11px;
+
+}
+
+
+.axis-label{
+
+    fill:#8d97a1;
+
+    font-family:Inter,sans-serif;
+
+    font-size:10px;
+
+}
+
+
+.plot-label{
+
+    fill:#6e7984;
+
+    font-family:Inter,sans-serif;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+/* VISUAL EQUATION */
+
+.visual-equation{
+
+    margin-top:16px;
+
+    min-height:90px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:16px;
+
+    border:
+        1px solid
+        rgba(176,185,194,.46);
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    color:#4e5b67;
+
+    text-align:center;
+
+    font-family:
+        Georgia,
+        'Times New Roman',
+        serif;
+
+    font-size:1.05rem;
+
+    font-style:italic;
+
+    transition:.25s ease;
+
+}
+
+
+/* =========================================================
+   FINAL RESEARCH SIGNIFICANCE
+========================================================= */
+
+.significance{
+
+    padding:
+        50px 0
+        40px;
+
+}
+
+
+.significance-panel{
+
+    padding:38px;
+
+    border:
+        1px solid
+        rgba(164,175,185,.62);
+
+    border-radius:27px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.90),
+            rgba(233,238,242,.75)
+        );
+
+    box-shadow:
+        0 18px 42px
+        rgba(46,56,66,.06);
+
+}
+
+
+.significance-panel h2{
+
+    max-width:800px;
+
+    margin-bottom:20px;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.5rem
+        );
+
+    line-height:1.06;
+
+    letter-spacing:-.05em;
+
+}
+
+
+.significance-panel > p{
+
+    max-width:850px;
+
+    color:#65717d;
+
+    font-size:.95rem;
+
+    line-height:1.9;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.project-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-top:75px;
+
+    padding-top:30px;
+
+    border-top:
+        1px solid
+        rgba(175,185,195,.48);
+
+}
+
+
+.project-footer p{
+
+    color:#818b95;
+
+    font-size:.75rem;
+
+}
+
+
+.footer-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+
+.footer-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:
+        11px 16px;
+
+    border:
+        1px solid
+        rgba(162,173,184,.58);
+
+    border-radius:999px;
+
+    color:#606c78;
+
+    background:
+        rgba(255,255,255,.63);
+
+    font-size:.67rem;
+
+    font-weight:700;
+
+}
+
+
+.footer-button.primary{
+
+    color:white;
+
+    border-color:#596673;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #4e5b68,
+            #7b8792
+        );
+
+}
+
+
+/* =========================================================
+   RESPONSIVE WIDTH
+========================================================= */
+
+@media(max-width:1050px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+        min-height:auto;
+
+        padding-bottom:80px;
+
+    }
+
+
+    .hero-right{
+        max-width:800px;
+    }
+
+
+    .case-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .visual-column{
+        order:-1;
+    }
+
+
+    .visual-sticky{
+
+        position:relative;
+
+        top:0;
+
+        height:620px;
+
+        min-height:0;
+
+        max-height:none;
+
+    }
+
+
+    .model-section{
+
+        min-height:auto;
+
+        padding:
+            75px 0;
+
+    }
+
+}
+
+
+@media(max-width:720px){
+
+    main{
+
+        padding:
+            120px 5%
+            60px;
+
+    }
+
+
+    nav{
+
+        padding:
+            17px 5%;
+
+    }
+
+
+    h1{
+
+        font-size:
+            clamp(
+                3rem,
+                16vw,
+                5rem
+            );
+
+    }
+
+
+    .two-column,
+    .result-grid,
+    .variable-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .visual-sticky{
+        height:560px;
+    }
+
+
+    .visual-description{
+        display:none;
+    }
+
+
+    .visual-timeline{
+
+        grid-template-columns:
+            repeat(3,1fr);
+
+    }
+
+
+    .plot-container{
+        height:300px;
+    }
+
+
+    .equation-card{
+
+        padding:
+            26px 16px;
+
+    }
+
+
+    .project-footer{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE HEIGHT
+========================================================= */
+
+@media(min-width:1051px) and (max-height:900px){
+
+    main{
+        padding-top:120px;
+    }
+
+
+    .visual-sticky{
+
+        top:82px;
+
+        height:
+            calc(100dvh - 98px);
+
+        min-height:0;
+
+        max-height:none;
+
+    }
+
+
+    .visual-card{
+        padding:20px;
+    }
+
+
+    .visual-top{
+        margin-bottom:12px;
+    }
+
+
+    .visual-phase{
+        font-size:1rem;
+    }
+
+
+    .visual-description{
+        font-size:.64rem;
+    }
+
+
+    .visual-timeline{
+        margin-bottom:10px;
+    }
+
+
+    .timeline-item{
+        padding:5px 2px;
+    }
+
+
+    .plot-container{
+        height:300px;
+    }
+
+
+    .visual-equation{
+
+        min-height:65px;
+
+        margin-top:10px;
+
+        padding:10px;
+
+        font-size:.92rem;
+
+    }
+
+}
+
+
+@media(min-width:1051px) and (max-height:720px){
+
+    .visual-sticky{
+
+        top:75px;
+
+        height:
+            calc(100dvh - 85px);
+
+    }
+
+
+    .visual-card{
+        padding:15px;
+    }
+
+
+    .visual-description{
+        display:none;
+    }
+
+
+    .plot-container{
+        height:245px;
+    }
+
+
+    .visual-equation{
+        min-height:55px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAV
+========================================================= -->
+
+<nav>
+
+    <a
+        href="index.html"
+        class="brand">
+
+        MA<span>.</span>
+
+    </a>
+
+
+    <a
+        href="index.html#research"
+        class="back">
+
+        ← Back to Research
+
+    </a>
+
+</nav>
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+
+    <div>
+
+        <div class="kicker">
+            Research · Injector Modelling
+        </div>
+
+
+        <h1>
+
+            Analytical Model
+
+            <span>
+                of Injector Current & Voltage
+            </span>
+
+        </h1>
+
+    </div>
+
+
+    <div class="hero-right">
+
+
+        <p class="hero-description">
+
+            An analytical description of the electrical
+            response of an electromagnetic fuel injector
+            during the <strong>Peak, Hold and switch-off
+            phases</strong>. The model uses an equivalent
+            RL representation to connect electrical
+            parameters with the characteristic current
+            and voltage transients observed during
+            injector operation.
+
+        </p>
+
+
+        <div class="hero-tags">
+
+            <span class="hero-tag">
+                Equivalent RL Model
+            </span>
+
+            <span class="hero-tag">
+                Peak & Hold
+            </span>
+
+            <span class="hero-tag">
+                Current Response
+            </span>
+
+            <span class="hero-tag">
+                Voltage Response
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     CASE STUDY
+========================================================= -->
+
+<div class="case-layout">
+
+
+<!-- =========================================================
+     LEFT CONTENT
+========================================================= -->
+
+<div class="case-content">
+
+
+<!-- =========================================================
+     01 MODEL ASSUMPTIONS
+========================================================= -->
+
+<section
+    class="model-section"
+    data-phase="model">
+
+
+    <div class="section-label">
+        01 / Model Assumptions
+    </div>
+
+
+    <h2 class="section-title">
+        Equivalent electrical representation
+    </h2>
+
+
+    <p class="section-lead">
+
+        In its simplest analytical form, the electromagnetic
+        injector coil can be represented as a series connection
+        of resistance and inductance. Kirchhoff's voltage law
+        then separates the applied voltage into a resistive
+        voltage drop and an inductive component associated
+        with the changing current.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            EQ / 01
+        </div>
+
+        <div class="equation">
+
+            \[
+            U(t)
+            =
+            L\frac{dI(t)}{dt}
+            +
+            R I(t)
+            \]
+
+        </div>
+
+        <div class="equation-caption">
+
+            Basic voltage equation for the equivalent
+            series RL representation.
+
+        </div>
+
+    </div>
+
+
+    <div class="two-column">
+
+
+        <div class="note-card">
+
+            <div class="note-index">
+                RESISTIVE COMPONENT
+            </div>
+
+            <h3>
+                \(R I(t)\)
+            </h3>
+
+            <p>
+
+                Represents the instantaneous voltage
+                drop caused by the electrical resistance
+                of the injector coil.
+
+            </p>
+
+        </div>
+
+
+        <div class="note-card">
+
+            <div class="note-index">
+                INDUCTIVE COMPONENT
+            </div>
+
+            <h3>
+                \(L\,dI/dt\)
+            </h3>
+
+            <p>
+
+                Represents the voltage associated with
+                a changing coil current and therefore
+                with energy storage in the magnetic field.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <p class="section-lead" style="margin-top:28px;">
+
+        Before the control pulse is applied, no current
+        flows through the injector coil. The initial
+        condition for the analytical model is therefore
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            INITIAL CONDITION
+        </div>
+
+        <div class="equation">
+
+            \[
+            I(0)=0
+            \]
+
+        </div>
+
+    </div>
+
+
+    <div class="variable-grid">
+
+        <div class="variable">
+
+            <div class="variable-symbol">
+                \(U(t)\)
+            </div>
+
+            <div class="variable-description">
+                injector coil voltage
+            </div>
+
+        </div>
+
+
+        <div class="variable">
+
+            <div class="variable-symbol">
+                \(I(t)\)
+            </div>
+
+            <div class="variable-description">
+                injector coil current
+            </div>
+
+        </div>
+
+
+        <div class="variable">
+
+            <div class="variable-symbol">
+                \(R\)
+            </div>
+
+            <div class="variable-description">
+                coil resistance
+            </div>
+
+        </div>
+
+
+        <div class="variable">
+
+            <div class="variable-symbol">
+                \(L\)
+            </div>
+
+            <div class="variable-description">
+                effective coil inductance
+            </div>
+
+        </div>
+
+
+        <div class="variable">
+
+            <div class="variable-symbol">
+                \(t\)
+            </div>
+
+            <div class="variable-description">
+                time
+            </div>
+
+        </div>
+
+
+        <div class="variable">
+
+            <div class="variable-symbol">
+                \(dI/dt\)
+            </div>
+
+            <div class="variable-description">
+                rate of current change
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     02 CURRENT BUILD UP
+========================================================= -->
+
+<section
+    class="model-section"
+    data-phase="peak">
+
+
+    <div class="section-label">
+        02 / Current Build-Up
+    </div>
+
+
+    <h2 class="section-title">
+        Peak phase and exponential current rise
+    </h2>
+
+
+    <p class="section-lead">
+
+        At the beginning of an injection event, the driver
+        applies a high excitation voltage \(U_{peak}\).
+        Because the injector coil is inductive, the current
+        cannot change instantaneously. Instead, it rises
+        progressively toward the steady-state value
+        determined by the applied voltage and coil resistance.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            EQ / 02
+        </div>
+
+        <div class="equation">
+
+            \[
+            I(t)
+            =
+            \frac{U_{peak}}{R}
+            \left(
+            1-e^{-t/\tau}
+            \right)
+            \]
+
+        </div>
+
+        <div class="equation-caption">
+
+            Current response to a constant voltage step
+            for an RL circuit with zero initial current.
+
+        </div>
+
+    </div>
+
+
+    <p class="section-lead">
+
+        The rate at which the current approaches its
+        steady value is determined by the electrical
+        time constant
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            EQ / 03
+        </div>
+
+        <div class="equation">
+
+            \[
+            \tau
+            =
+            \frac{L}{R}
+            \]
+
+        </div>
+
+    </div>
+
+
+    <div class="two-column">
+
+
+        <div class="note-card">
+
+            <div class="note-index">
+                STEADY LIMIT
+            </div>
+
+            <h3>
+                \(U_{peak}/R\)
+            </h3>
+
+            <p>
+
+                If the Peak voltage were maintained long
+                enough, the current would asymptotically
+                approach this value.
+
+            </p>
+
+        </div>
+
+
+        <div class="note-card">
+
+            <div class="note-index">
+                TIME CONSTANT
+            </div>
+
+            <h3>
+                \(\tau=L/R\)
+            </h3>
+
+            <p>
+
+                A change in resistance or inductance
+                modifies the rate of current rise and
+                therefore changes the waveform shape.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     03 NEEDLE MOTION
+========================================================= -->
+
+<section
+    class="model-section"
+    data-phase="motion">
+
+
+    <div class="section-label">
+        03 / Needle Motion & Inductance
+    </div>
+
+
+    <h2 class="section-title">
+        The electrical response changes when the needle moves
+    </h2>
+
+
+    <p class="section-lead">
+
+        Before mechanical movement begins, the injector can
+        be approximated using an effective inductance
+        \(L_I\). The corresponding current rise can be
+        described using the same RL solution with a
+        phase-specific time constant.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            STAGE I
+        </div>
+
+        <div class="equation">
+
+            \[
+            I_I(t)
+            =
+            \frac{U_{peak}}{R}
+            \left(
+            1-e^{-t/\tau_I}
+            \right)
+            \qquad
+            \tau_I
+            =
+            \frac{L_I}{R}
+            \]
+
+        </div>
+
+        <div class="equation-caption">
+
+            Stage I — current rise before significant
+            needle or armature displacement.
+
+        </div>
+
+    </div>
+
+
+    <p class="section-lead">
+
+        When the electromagnetic force becomes sufficient
+        to initiate movement, the magnetic geometry changes.
+        The coil inductance therefore becomes a function
+        of needle position. A more complete electrical
+        description must include not only the current
+        derivative, but also the effect of mechanical
+        displacement on magnetic flux linkage.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            COUPLED FORM
+        </div>
+
+        <div class="equation">
+
+            \[
+            U(t)
+            =
+            R I
+            +
+            L(x)\frac{dI}{dt}
+            +
+            I\frac{dL(x)}{dx}\frac{dx}{dt}
+            \]
+
+        </div>
+
+        <div class="equation-caption">
+
+            Extended equation for a position-dependent
+            inductance in the linear magnetic approximation.
+
+        </div>
+
+    </div>
+
+
+    <p class="section-lead">
+
+        For a simplified piecewise analytical description,
+        the moving stage can still be represented using a
+        second effective inductance \(L_{II}\). To maintain
+        continuity of current at the instant \(t_m\) when
+        movement begins, the response is written using the
+        current \(I_m=I(t_m)\) as the initial condition.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            STAGE II
+        </div>
+
+        <div class="equation">
+
+            \[
+            I_{II}(t)
+            =
+            \frac{U_{peak}}{R}
+            +
+            \left(
+            I_m-\frac{U_{peak}}{R}
+            \right)
+            e^{-\frac{R}{L_{II}}(t-t_m)}
+            \]
+
+        </div>
+
+        <div class="equation-caption">
+
+            Stage II — simplified current response after
+            the beginning of needle movement.
+
+        </div>
+
+    </div>
+
+
+    <div class="model-note">
+
+        The analytical model does not require a universal
+        assumption that \(L_{II}\) must always be smaller
+        or larger than \(L_I\). The important quantity is
+        the dependence \(L(x)\) and its variation during
+        movement. A change in inductance modifies the local
+        electrical time constant and the current slope.
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     04 PEAK TO HOLD
+========================================================= -->
+
+<section
+    class="model-section"
+    data-phase="transition">
+
+
+    <div class="section-label">
+        04 / Peak-to-Hold Transition
+    </div>
+
+
+    <h2 class="section-title">
+        Reducing current after rapid injector opening
+    </h2>
+
+
+    <p class="section-lead">
+
+        The high-current Peak stage is required primarily
+        for rapid actuation. Once the injector has opened,
+        the driver reduces the electrical excitation to
+        a lower Hold level. At the transition instant
+        \(t_{peak}\), the current is equal to
+        \(I_{peak}\).
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            EQ / 04
+        </div>
+
+        <div class="equation">
+
+            \[
+            I(t_{peak})
+            =
+            I_{peak}
+            \]
+
+        </div>
+
+    </div>
+
+
+    <p class="section-lead">
+
+        After switching from \(U_{peak}\) to the lower
+        effective voltage \(U_{hold}\), the current cannot
+        jump instantaneously. It decreases exponentially
+        from \(I_{peak}\) toward the new steady-state level.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            EQ / 05
+        </div>
+
+        <div class="equation">
+
+            \[
+            I(t)
+            =
+            \frac{U_{hold}}{R}
+            +
+            \left(
+            I_{peak}
+            -
+            \frac{U_{hold}}{R}
+            \right)
+            e^{-\frac{R}{L_h}(t-t_{peak})}
+            \]
+
+        </div>
+
+        <div class="equation-caption">
+
+            Current decay after transition from Peak
+            excitation to the Hold operating level.
+
+        </div>
+
+    </div>
+
+
+    <div class="phase-sequence">
+
+        <span class="phase-pill">
+            High excitation
+        </span>
+
+        <span class="phase-arrow">
+            →
+        </span>
+
+        <span class="phase-pill">
+            \(I_{peak}\)
+        </span>
+
+        <span class="phase-arrow">
+            →
+        </span>
+
+        <span class="phase-pill">
+            Current decay
+        </span>
+
+        <span class="phase-arrow">
+            →
+        </span>
+
+        <span class="phase-pill">
+            Hold level
+        </span>
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     05 HOLD
+========================================================= -->
+
+<section
+    class="model-section"
+    data-phase="hold">
+
+
+    <div class="section-label">
+        05 / Hold Phase
+    </div>
+
+
+    <h2 class="section-title">
+        Maintaining the injector at a lower current level
+    </h2>
+
+
+    <p class="section-lead">
+
+        During the Hold phase, the objective is no longer
+        to accelerate the needle but to maintain sufficient
+        electromagnetic force to keep the injector open.
+        Consequently, the required current can be significantly
+        lower than during the Peak phase.
+
+    </p>
+
+
+    <p class="section-lead">
+
+        In the averaged analytical representation, when the
+        current has reached a quasi-steady state,
+        \(dI/dt\rightarrow0\). The inductive voltage component
+        becomes small and the current is determined primarily
+        by the effective Hold voltage and coil resistance.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            EQ / 06
+        </div>
+
+        <div class="equation">
+
+            \[
+            I_{hold,\infty}
+            =
+            \frac{U_{hold}}{R}
+            \]
+
+        </div>
+
+        <div class="equation-caption">
+
+            Idealized steady-state Hold current
+            for an averaged constant-voltage model.
+
+        </div>
+
+    </div>
+
+
+    <div class="two-column">
+
+
+        <div class="note-card">
+
+            <div class="note-index">
+                PHYSICAL ROLE
+            </div>
+
+            <h3>
+                Maintain needle position
+            </h3>
+
+            <p>
+
+                The electromagnetic field is maintained
+                at a level sufficient to counteract the
+                closing forces acting on the injector.
+
+            </p>
+
+        </div>
+
+
+        <div class="note-card">
+
+            <div class="note-index">
+                REAL DRIVER
+            </div>
+
+            <h3>
+                PWM current ripple
+            </h3>
+
+            <p>
+
+                In a practical Peak & Hold driver,
+                switching control produces a small current
+                ripple around the desired Hold level rather
+                than an ideally constant current.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     06 SWITCH OFF
+========================================================= -->
+
+<section
+    class="model-section"
+    data-phase="off">
+
+
+    <div class="section-label">
+        06 / Switch-Off
+    </div>
+
+
+    <h2 class="section-title">
+        Current decay and release of magnetic energy
+    </h2>
+
+
+    <p class="section-lead">
+
+        At the end of the injection command, the driver
+        removes the excitation. The coil current cannot
+        disappear instantaneously because energy remains
+        stored in the magnetic field. The current therefore
+        continues to flow through the available discharge
+        or flyback path.
+
+    </p>
+
+
+    <p class="section-lead">
+
+        In the simplest natural RL decay model, where
+        the source voltage is removed and the remaining
+        electrical path contains only \(R\) and \(L\),
+        Kirchhoff's equation becomes
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            EQ / 07
+        </div>
+
+        <div class="equation">
+
+            \[
+            0
+            =
+            L_{off}
+            \frac{dI}{dt}
+            +
+            R I(t)
+            \]
+
+        </div>
+
+    </div>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            EQ / 08
+        </div>
+
+        <div class="equation">
+
+            \[
+            \frac{dI}{dt}
+            =
+            -
+            \frac{R}{L_{off}}
+            I(t)
+            \]
+
+        </div>
+
+    </div>
+
+
+    <p class="section-lead">
+
+        Using the current \(I_{off}\) flowing at the
+        switch-off instant \(t_{off}\), the corresponding
+        idealized decay is
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            EQ / 09
+        </div>
+
+        <div class="equation">
+
+            \[
+            I(t)
+            =
+            I_{off}
+            e^{-\frac{R}{L_{off}}
+            (t-t_{off})}
+            \]
+
+        </div>
+
+        <div class="equation-caption">
+
+            Idealized exponential decay of current
+            after the excitation source is removed.
+
+        </div>
+
+    </div>
+
+
+    <p class="section-lead">
+
+        The magnetic field contains energy immediately
+        before switch-off. This energy must either be
+        dissipated or transferred through the driver
+        protection and recovery circuit.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            MAGNETIC ENERGY
+        </div>
+
+        <div class="equation">
+
+            \[
+            E_L
+            =
+            \frac{1}{2} L I^2
+            \]
+
+        </div>
+
+    </div>
+
+
+    <div class="model-note">
+
+        In a real injector driver, “switch-off” does not
+        necessarily mean that the voltage measured directly
+        across the coil instantly becomes zero. A flyback,
+        clamp or energy-recovery circuit provides a path
+        for the remaining current and can generate a large
+        voltage excursion while the magnetic field collapses.
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     07 VOLTAGE
+========================================================= -->
+
+<section
+    class="model-section"
+    data-phase="voltage">
+
+
+    <div class="section-label">
+        07 / Voltage Response
+    </div>
+
+
+    <h2 class="section-title">
+        Peak, Hold and switch-off voltage behaviour
+    </h2>
+
+
+    <p class="section-lead">
+
+        The current waveform is only one part of the
+        electrical response. The voltage waveform reflects
+        the control strategy applied by the injector driver
+        and the inductive behaviour of the coil during
+        rapid changes of current.
+
+    </p>
+
+
+    <div class="phase-sequence">
+
+        <span class="phase-pill">
+            OFF
+        </span>
+
+        <span class="phase-arrow">
+            →
+        </span>
+
+        <span class="phase-pill">
+            PEAK
+        </span>
+
+        <span class="phase-arrow">
+            →
+        </span>
+
+        <span class="phase-pill">
+            TRANSITION
+        </span>
+
+        <span class="phase-arrow">
+            →
+        </span>
+
+        <span class="phase-pill">
+            HOLD
+        </span>
+
+        <span class="phase-arrow">
+            →
+        </span>
+
+        <span class="phase-pill">
+            SWITCH-OFF
+        </span>
+
+    </div>
+
+
+    <h3 style="
+        margin-top:35px;
+        margin-bottom:12px;
+        font-size:1.15rem;
+    ">
+        Peak voltage
+    </h3>
+
+
+    <p class="section-lead">
+
+        During the idealized Peak interval, the driver
+        applies \(U_{peak}\). The resistive and inductive
+        contributions redistribute during the current rise,
+        but their sum remains equal to the applied voltage.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            PEAK
+        </div>
+
+        <div class="equation">
+
+            \[
+            U_{peak}
+            =
+            R I(t)
+            +
+            L\frac{dI}{dt}
+            \]
+
+        </div>
+
+    </div>
+
+
+    <h3 style="
+        margin-top:35px;
+        margin-bottom:12px;
+        font-size:1.15rem;
+    ">
+        Hold voltage
+    </h3>
+
+
+    <p class="section-lead">
+
+        After the Peak stage, the effective electrical
+        excitation is reduced. In the simplified averaged
+        representation, the Hold phase can be described by
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            HOLD
+        </div>
+
+        <div class="equation">
+
+            \[
+            U_{hold}
+            =
+            R I(t)
+            +
+            L_h\frac{dI}{dt}
+            \]
+
+        </div>
+
+    </div>
+
+
+    <p class="section-lead">
+
+        When a steady Hold condition is approached,
+        \(dI/dt\rightarrow0\), and the applied effective
+        voltage mainly compensates the resistive voltage drop.
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            HOLD STEADY STATE
+        </div>
+
+        <div class="equation">
+
+            \[
+            U_{hold}
+            \approx
+            R I_{hold}
+            \]
+
+        </div>
+
+    </div>
+
+
+    <h3 style="
+        margin-top:35px;
+        margin-bottom:12px;
+        font-size:1.15rem;
+    ">
+        Switch-off voltage
+    </h3>
+
+
+    <p class="section-lead">
+
+        During rapid current decay, the inductive component
+        becomes dominant. With the voltage polarity defined
+        consistently with the current direction, the
+        inductive contribution is
+
+    </p>
+
+
+    <div class="equation-card">
+
+        <div class="equation-number">
+            FLYBACK
+        </div>
+
+        <div class="equation">
+
+            \[
+            U_L
+            =
+            L\frac{dI}{dt}
+            \]
+
+        </div>
+
+        <div class="equation-caption">
+
+            Since \(dI/dt<0\) during rapid current decay,
+            the induced voltage reverses polarity relative
+            to the excitation stage.
+
+        </div>
+
+    </div>
+
+
+    <div class="model-note">
+
+        It is useful to distinguish between the
+        <strong>driver command voltage</strong> and the
+        <strong>actual voltage measured across the coil</strong>.
+        The command may be switched off while the coil
+        terminal voltage exhibits a substantial transient
+        caused by self-induction and the driver clamp circuit.
+
+    </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     08 WHY IT MATTERS
+========================================================= -->
+
+<section
+    class="model-section"
+    data-phase="relevance">
+
+
+    <div class="section-label">
+        08 / Diagnostic Interpretation
+    </div>
+
+
+    <h2 class="section-title">
+        Why the analytical model matters
+    </h2>
+
+
+    <p class="section-lead">
+
+        The analytical model provides a direct physical
+        interpretation of characteristic regions observed
+        in measured injector current and voltage waveforms.
+        Changes in electrical parameters, electromagnetic
+        conditions and mechanical motion can modify different
+        parts of the signal, making the waveform a useful
+        source of diagnostic information.
+
+    </p>
+
+
+    <div class="result-grid">
+
+
+        <div class="result-card">
+
+            <div class="result-number">
+                01 / RESISTANCE
+            </div>
+
+            <h3>
+                Coil resistance
+            </h3>
+
+            <p>
+
+                Affects the electrical time constant,
+                current rise and the steady current level
+                predicted by the simplified RL model.
+
+            </p>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <div class="result-number">
+                02 / INDUCTANCE
+            </div>
+
+            <h3>
+                Magnetic state
+            </h3>
+
+            <p>
+
+                Changes in effective inductance alter
+                transient current behaviour and connect
+                the electrical waveform with the magnetic
+                geometry of the injector.
+
+            </p>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <div class="result-number">
+                03 / NEEDLE MOTION
+            </div>
+
+            <h3>
+                Mechanical movement
+            </h3>
+
+            <p>
+
+                Needle or armature displacement changes
+                the magnetic circuit and can introduce
+                characteristic changes in current slope.
+
+            </p>
+
+        </div>
+
+
+        <div class="result-card">
+
+            <div class="result-number">
+                04 / DRIVER
+            </div>
+
+            <h3>
+                Control strategy
+            </h3>
+
+            <p>
+
+                Peak voltage, Hold control and flyback
+                behaviour determine the major electrical
+                phases visible in the measured waveform.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="significance">
+
+        <div class="significance-panel">
+
+            <div class="section-label">
+                Research Context
+            </div>
+
+            <h2>
+                A theoretical basis for signal-based diagnostics
+            </h2>
+
+            <p>
+
+                The analytical description does not replace
+                the complete multidomain injector simulation.
+                Instead, it provides a transparent theoretical
+                layer for understanding why characteristic
+                current and voltage features appear and how
+                they depend on physical injector parameters.
+                This interpretation can then support the
+                selection of diagnostic features used in
+                measurement-based injector condition assessment.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+</div>
+
+
+<!-- =========================================================
+     RIGHT VISUAL
+========================================================= -->
+
+<aside class="visual-column">
+
+
+<div class="visual-sticky">
+
+
+<div class="visual-card">
+
+
+    <div class="visual-top">
+
+
+        <div>
+
+            <div class="visual-kicker">
+                Analytical Model
+            </div>
+
+            <div
+                class="visual-phase"
+                id="visualPhase">
+
+                Equivalent RL Model
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="visual-description"
+            id="visualDescription">
+
+            Electrical response before the injector
+            phases are analysed individually.
+
+        </div>
+
+
+    </div>
+
+
+    <!-- PHASE TIMELINE -->
+
+    <div class="visual-timeline">
+
+
+        <div
+            class="timeline-item"
+            data-timeline="peak">
+
+            PEAK
+
+        </div>
+
+
+        <div
+            class="timeline-item"
+            data-timeline="motion">
+
+            MOTION
+
+        </div>
+
+
+        <div
+            class="timeline-item"
+            data-timeline="transition">
+
+            TRANSITION
+
+        </div>
+
+
+        <div
+            class="timeline-item"
+            data-timeline="hold">
+
+            HOLD
+
+        </div>
+
+
+        <div
+            class="timeline-item"
+            data-timeline="off">
+
+            OFF
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         PLOTS
+    ====================================================== -->
+
+    <div class="plot-container">
+
+
+        <!-- CURRENT -->
+
+        <div
+            class="plot-view active"
+            id="currentPlot">
+
+
+            <svg
+                viewBox="0 0 720 330"
+                fill="none">
+
+
+                <!-- GRID -->
+
+                <line
+                    x1="58"
+                    y1="275"
+                    x2="690"
+                    y2="275"
+                    class="axis-line"/>
+
+                <line
+                    x1="58"
+                    y1="28"
+                    x2="58"
+                    y2="275"
+                    class="axis-line"/>
+
+
+                <line
+                    x1="58"
+                    y1="225"
+                    x2="690"
+                    y2="225"
+                    class="grid-line"/>
+
+                <line
+                    x1="58"
+                    y1="175"
+                    x2="690"
+                    y2="175"
+                    class="grid-line"/>
+
+                <line
+                    x1="58"
+                    y1="125"
+                    x2="690"
+                    y2="125"
+                    class="grid-line"/>
+
+                <line
+                    x1="58"
+                    y1="75"
+                    x2="690"
+                    y2="75"
+                    class="grid-line"/>
+
+
+                <!-- BASELINE BEFORE PULSE -->
+
+                <path
+                    class="wave-base"
+                    d="
+                    M58 270
+                    L105 270"/>
+
+
+                <!-- PEAK BUILD-UP -->
+
+                <path
+                    class="wave-segment"
+                    data-wave="peak"
+                    d="
+                    M105 270
+                    C118 235
+                     133 185
+                     147 128
+                    C158 85
+                     171 52
+                     184 43"/>
+
+
+                <!-- NEEDLE MOTION -->
+
+                <path
+                    class="wave-segment"
+                    data-wave="motion"
+                    d="
+                    M184 43
+                    C193 41
+                     199 44
+                     204 50
+                    C209 59
+                     213 69
+                     218 78"/>
+
+
+                <!-- TRANSITION -->
+
+                <path
+                    class="wave-segment"
+                    data-wave="transition"
+                    d="
+                    M218 78
+                    C226 108
+                     235 138
+                     250 154
+                    C266 171
+                     284 180
+                     304 188
+                    L317 224"/>
+
+
+                <!-- HOLD -->
+
+                <path
+                    class="wave-segment"
+                    data-wave="hold"
+                    d="
+                    M317 224
+                    L327 219
+                    L337 226
+                    L347 219
+                    L357 226
+                    L367 219
+                    L377 226
+                    L387 219
+                    L397 226
+                    L407 219
+                    L417 226
+                    L427 219
+                    L437 226
+                    L447 219
+                    L457 226
+                    L467 219
+                    L477 226
+                    L487 219
+                    L497 226
+                    L507 219
+                    L517 226
+                    L527 219
+                    L537 226
+                    L547 219
+                    L557 226
+                    L567 219
+                    L577 226"/>
+
+
+                <!-- SWITCH OFF -->
+
+                <path
+                    class="wave-segment"
+                    data-wave="off"
+                    d="
+                    M577 226
+                    C583 245
+                     588 260
+                     596 271
+                    C611 278
+                     637 272
+                     690 270"/>
+
+
+                <!-- MARKERS -->
+
+                <line
+                    x1="184"
+                    y1="35"
+                    x2="184"
+                    y2="275"
+                    class="wave-marker"/>
+
+                <line
+                    x1="218"
+                    y1="35"
+                    x2="218"
+                    y2="275"
+                    class="wave-marker"/>
+
+                <line
+                    x1="317"
+                    y1="35"
+                    x2="317"
+                    y2="275"
+                    class="wave-marker"/>
+
+                <line
+                    x1="577"
+                    y1="35"
+                    x2="577"
+                    y2="275"
+                    class="wave-marker"/>
+
+
+                <!-- LABELS -->
+
+                <text
+                    x="175"
+                    y="302"
+                    class="marker-label">
+
+                    tₘ
+
+                </text>
+
+                <text
+                    x="202"
+                    y="319"
+                    class="marker-label">
+
+                    tₚₑₐₖ
+
+                </text>
+
+                <text
+                    x="303"
+                    y="302"
+                    class="marker-label">
+
+                    t_hold
+
+                </text>
+
+                <text
+                    x="560"
+                    y="302"
+                    class="marker-label">
+
+                    t_off
+
+                </text>
+
+
+                <text
+                    x="340"
+                    y="323"
+                    class="axis-label">
+
+                    TIME
+
+                </text>
+
+
+                <text
+                    x="17"
+                    y="175"
+                    class="axis-label"
+                    transform="rotate(-90 17 175)">
+
+                    CURRENT
+
+                </text>
+
+
+                <text
+                    x="151"
+                    y="31"
+                    class="plot-label">
+
+                    Ipeak
+
+                </text>
+
+
+                <text
+                    x="445"
+                    y="208"
+                    class="plot-label">
+
+                    Ihold
+
+                </text>
+
+
+            </svg>
+
+
+        </div>
+
+
+        <!-- VOLTAGE -->
+
+        <div
+            class="plot-view"
+            id="voltagePlot">
+
+
+            <svg
+                viewBox="0 0 720 330"
+                fill="none">
+
+
+                <line
+                    x1="58"
+                    y1="200"
+                    x2="690"
+                    y2="200"
+                    class="axis-line"/>
+
+                <line
+                    x1="58"
+                    y1="28"
+                    x2="58"
+                    y2="286"
+                    class="axis-line"/>
+
+
+                <line
+                    x1="58"
+                    y1="95"
+                    x2="690"
+                    y2="95"
+                    class="grid-line"/>
+
+                <line
+                    x1="58"
+                    y1="245"
+                    x2="690"
+                    y2="245"
+                    class="grid-line"/>
+
+
+                <!-- OFF -->
+
+                <path
+                    d="
+                    M58 200
+                    L105 200"
+                    class="wave-base"/>
+
+
+                <!-- PEAK -->
+
+                <path
+                    d="
+                    M105 200
+                    L105 65
+                    L240 65"
+                    class="wave-segment active"/>
+
+
+                <!-- TRANSITION -->
+
+                <path
+                    d="
+                    M240 65
+                    L240 224"
+                    class="wave-segment active"/>
+
+
+                <!-- HOLD -->
+
+                <path
+                    d="
+                    M240 224
+                    L250 105
+                    L260 224
+                    L270 105
+                    L280 224
+                    L290 105
+                    L300 224
+                    L310 105
+                    L320 224
+                    L330 105
+                    L340 224
+                    L350 105
+                    L360 224
+                    L370 105
+                    L380 224
+                    L390 105
+                    L400 224
+                    L410 105
+                    L420 224
+                    L430 105
+                    L440 224
+                    L450 105
+                    L460 224
+                    L470 105
+                    L480 224
+                    L490 105
+                    L500 224
+                    L510 105
+                    L520 224
+                    L530 105
+                    L540 224"
+                    class="wave-segment active"/>
+
+
+                <!-- FLYBACK -->
+
+                <path
+                    d="
+                    M540 224
+                    L540 282
+                    C555 270
+                     575 243
+                     598 214
+                    L620 200
+                    L690 200"
+                    class="wave-segment active"/>
+
+
+                <text
+                    x="145"
+                    y="53"
+                    class="plot-label">
+
+                    Upeak
+
+                </text>
+
+
+                <text
+                    x="390"
+                    y="92"
+                    class="plot-label">
+
+                    PWM / Hold
+
+                </text>
+
+
+                <text
+                    x="545"
+                    y="304"
+                    class="plot-label">
+
+                    Flyback
+
+                </text>
+
+
+                <text
+                    x="340"
+                    y="323"
+                    class="axis-label">
+
+                    TIME
+
+                </text>
+
+
+                <text
+                    x="17"
+                    y="175"
+                    class="axis-label"
+                    transform="rotate(-90 17 175)">
+
+                    VOLTAGE
+
+                </text>
+
+
+            </svg>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- DYNAMIC EQUATION -->
+
+    <div
+        class="visual-equation"
+        id="visualEquation">
+
+        U(t) = L · dI/dt + R · I(t)
+
+    </div>
+
+
+</div>
+
+</div>
+
+</aside>
+
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<div class="project-footer">
+
+
+    <p>
+
+        Maja Antkowiak ·
+        Injector Modelling ·
+        Analytical Research Note
+
+    </p>
+
+
+    <div class="footer-actions">
+
+
+        <a
+            href="index.html#research"
+            class="footer-button">
+
+            ← Research
+
+        </a>
+
+
+        <a
+            href="injector-simulation.html"
+            class="footer-button primary">
+
+            Multidomain Simulation →
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+</main>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+const sectionData={
+
+
+    model:{
+
+        title:
+            'Equivalent RL Model',
+
+        description:
+            'Voltage is divided between the resistive and inductive components of the injector coil.',
+
+        equation:
+            'U(t) = L · dI/dt + R · I(t)',
+
+        timeline:null,
+
+        plot:'current'
+
+    },
+
+
+    peak:{
+
+        title:
+            'Peak Current Build-Up',
+
+        description:
+            'High excitation voltage produces the rapid current rise required for injector actuation.',
+
+        equation:
+            'I(t) = (Upeak / R) · (1 − e^(−t/τ))',
+
+        timeline:'peak',
+
+        plot:'current'
+
+    },
+
+
+    motion:{
+
+        title:
+            'Needle Motion',
+
+        description:
+            'Mechanical displacement changes the magnetic circuit and modifies the electrical response.',
+
+        equation:
+            'U = RI + L(x)·dI/dt + I·(dL/dx)·dx/dt',
+
+        timeline:'motion',
+
+        plot:'current'
+
+    },
+
+
+    transition:{
+
+        title:
+            'Peak-to-Hold Transition',
+
+        description:
+            'The excitation is reduced and current decays from the Peak level toward the Hold level.',
+
+        equation:
+            'I → Uhold / R',
+
+        timeline:'transition',
+
+        plot:'current'
+
+    },
+
+
+    hold:{
+
+        title:
+            'Hold Phase',
+
+        description:
+            'A lower current maintains sufficient electromagnetic force while reducing electrical load.',
+
+        equation:
+            'Ihold ≈ Uhold / R',
+
+        timeline:'hold',
+
+        plot:'current'
+
+    },
+
+
+    off:{
+
+        title:
+            'Switch-Off',
+
+        description:
+            'Stored magnetic energy is released while the current decays through the available discharge path.',
+
+        equation:
+            'I(t) = Ioff · e^[−R(t−toff)/Loff]',
+
+        timeline:'off',
+
+        plot:'current'
+
+    },
+
+
+    voltage:{
+
+        title:
+            'Voltage Response',
+
+        description:
+            'The driver voltage changes between Peak, Hold and flyback conditions during one injection event.',
+
+        equation:
+            'Ucoil = RI + L·dI/dt',
+
+        timeline:null,
+
+        plot:'voltage'
+
+    },
+
+
+    relevance:{
+
+        title:
+            'Diagnostic Interpretation',
+
+        description:
+            'Electrical parameters and mechanical motion leave characteristic information in the measured waveform.',
+
+        equation:
+            'physical change → waveform feature → diagnostic information',
+
+        timeline:null,
+
+        plot:'current'
+
+    }
+
+};
+
+
+const sections=
+    document.querySelectorAll(
+        '.model-section'
+    );
+
+
+const waveSegments=
+    document.querySelectorAll(
+        '[data-wave]'
+    );
+
+
+const timelineItems=
+    document.querySelectorAll(
+        '[data-timeline]'
+    );
+
+
+const visualPhase=
+    document.getElementById(
+        'visualPhase'
+    );
+
+
+const visualDescription=
+    document.getElementById(
+        'visualDescription'
+    );
+
+
+const visualEquation=
+    document.getElementById(
+        'visualEquation'
+    );
+
+
+const currentPlot=
+    document.getElementById(
+        'currentPlot'
+    );
+
+
+const voltagePlot=
+    document.getElementById(
+        'voltagePlot'
+    );
+
+
+function activatePhase(phase){
+
+
+    const data=
+        sectionData[phase];
+
+
+    if(!data){
+        return;
+    }
+
+
+    visualPhase.textContent=
+        data.title;
+
+
+    visualDescription.textContent=
+        data.description;
+
+
+    visualEquation.textContent=
+        data.equation;
+
+
+    /* PLOT SWITCH */
+
+    currentPlot.classList.toggle(
+        'active',
+        data.plot==='current'
+    );
+
+
+    voltagePlot.classList.toggle(
+        'active',
+        data.plot==='voltage'
+    );
+
+
+    /* TIMELINE */
+
+    timelineItems.forEach(
+        item=>{
+
+            item.classList.toggle(
+                'active',
+                item.dataset.timeline===
+                data.timeline
+            );
+
+        }
+    );
+
+
+    /* CURRENT WAVE */
+
+    waveSegments.forEach(
+        segment=>{
+
+            const name=
+                segment.dataset.wave;
+
+
+            let active=false;
+
+
+            if(phase==='model'){
+
+                active=false;
+
+            }
+
+
+            if(phase==='peak'){
+
+                active=
+                    name==='peak';
+
+            }
+
+
+            if(phase==='motion'){
+
+                active=
+                    name==='peak' ||
+                    name==='motion';
+
+            }
+
+
+            if(phase==='transition'){
+
+                active=
+                    name==='transition';
+
+            }
+
+
+            if(phase==='hold'){
+
+                active=
+                    name==='hold';
+
+            }
+
+
+            if(phase==='off'){
+
+                active=
+                    name==='off';
+
+            }
+
+
+            if(phase==='relevance'){
+
+                active=true;
+
+            }
+
+
+            segment.classList.toggle(
+                'active',
+                active
+            );
+
+        }
+    );
+
+}
+
+
+const observer=
+new IntersectionObserver(
+
+    entries=>{
+
+        entries.forEach(
+            entry=>{
+
+                if(entry.isIntersecting){
+
+                    activatePhase(
+                        entry.target.dataset.phase
+                    );
+
+                }
+
+            }
+        );
+
+    },
+
+    {
+
+        rootMargin:
+            '-35% 0px -45% 0px',
+
+        threshold:0
+
+    }
+
+);
+
+
+sections.forEach(
+    section=>{
+
+        observer.observe(section);
+
+    }
+);
+
+
+activatePhase('model');
+
+
+</script>
+
+
+</body>
+
+</html>
