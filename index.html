@@ -109,7 +109,6 @@ nav a.active{
     gap:45px;
 
     max-width:1500px;
-
     margin:0 auto;
 
     padding:110px 6% 60px;
@@ -272,7 +271,6 @@ nav a.active{
 
 .btn-secondary{
     border:1px solid rgba(151,161,171,.65);
-
     background:rgba(255,255,255,.55);
 }
 
@@ -288,17 +286,7 @@ nav a.active{
     gap:18px;
 }
 
-.grid-3{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-
-    gap:17px;
-
-    margin-top:28px;
-}
-
-.info-card,
-.insight-card{
+.info-card{
     padding:22px;
 
     border:1px solid var(--border);
@@ -309,18 +297,405 @@ nav a.active{
     box-shadow:0 11px 28px rgba(50,60,70,.04);
 }
 
-.info-card h3,
-.insight-card h3{
+.info-card h3{
     margin-bottom:11px;
     font-size:1.08rem;
 }
 
-.info-card p,
-.insight-card p{
+.info-card p{
     color:var(--muted);
 
     font-size:.91rem;
     line-height:1.67;
+}
+
+
+/* =========================================================
+   NEW RESEARCH SECTION
+========================================================= */
+
+.research-step{
+    min-height:auto;
+
+    padding-top:100px;
+    padding-bottom:110px;
+}
+
+.research-inner{
+    max-width:760px;
+}
+
+.research-intro{
+    margin-bottom:42px;
+}
+
+
+/* RESEARCH FLOW */
+
+.research-flow{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:7px;
+
+    margin-bottom:34px;
+
+    padding:20px;
+
+    border:1px solid rgba(174,184,194,.58);
+    border-radius:22px;
+
+    background:rgba(255,255,255,.55);
+
+    box-shadow:0 12px 28px rgba(47,57,68,.04);
+}
+
+.research-flow-node{
+    flex:1;
+
+    color:#626d79;
+
+    font-size:.63rem;
+    font-weight:700;
+
+    line-height:1.45;
+
+    text-align:center;
+
+    letter-spacing:.02em;
+}
+
+.research-flow-arrow{
+    color:#a5aeb7;
+    font-size:.9rem;
+}
+
+
+/* RESEARCH CARDS */
+
+.research-card{
+    position:relative;
+
+    overflow:hidden;
+
+    margin-bottom:24px;
+
+    border:1px solid rgba(168,179,190,.68);
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.95),
+            rgba(241,244,247,.75)
+        );
+
+    box-shadow:0 16px 38px rgba(45,55,65,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.research-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:0 23px 48px rgba(45,55,65,.09);
+}
+
+.research-card-top{
+    padding:29px 30px 22px;
+}
+
+.research-card-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:19px;
+}
+
+.research-number{
+    color:#9aa4ae;
+
+    font-size:.65rem;
+    font-weight:700;
+
+    letter-spacing:.16em;
+}
+
+.research-badge{
+    display:inline-flex;
+    align-items:center;
+
+    gap:7px;
+
+    padding:6px 9px;
+
+    border:1px solid rgba(162,172,182,.48);
+    border-radius:999px;
+
+    color:#6e7984;
+
+    font-size:.56rem;
+    font-weight:700;
+
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.research-badge::before{
+    content:"";
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:#909aa5;
+}
+
+.research-badge.ongoing::before{
+    background:#66727e;
+}
+
+.research-card h3{
+    margin-bottom:15px;
+
+    font-size:1.6rem;
+
+    letter-spacing:-.04em;
+}
+
+.research-card-description{
+    color:#64707c;
+
+    font-size:.90rem;
+    line-height:1.8;
+
+    text-align:justify;
+    text-justify:inter-word;
+}
+
+
+/* RESEARCH VISUAL */
+
+.research-visual{
+    margin:0 20px;
+
+    min-height:180px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    border:1px solid rgba(178,187,196,.48);
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7f8fa,
+            #edf1f4
+        );
+}
+
+
+/* signal waveform */
+
+.signal-visual{
+    width:100%;
+    height:165px;
+}
+
+.signal-visual svg{
+    width:100%;
+    height:100%;
+}
+
+
+/* modelling flow */
+
+.model-flow{
+    width:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    padding:25px 20px;
+}
+
+.model-node{
+    min-width:105px;
+
+    padding:19px 11px;
+
+    border:1px solid rgba(153,164,175,.58);
+    border-radius:14px;
+
+    background:rgba(255,255,255,.76);
+
+    color:#5e6975;
+
+    font-size:.66rem;
+    font-weight:700;
+
+    text-align:center;
+}
+
+.model-arrow{
+    color:#99a4ae;
+}
+
+
+/* degradation visual */
+
+.degradation-visual{
+    width:100%;
+
+    display:grid;
+    grid-template-columns:1fr 50px 1fr;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:22px;
+}
+
+.degradation-types{
+    display:flex;
+    flex-direction:column;
+
+    gap:7px;
+}
+
+.degradation-type{
+    padding:8px 11px;
+
+    border:1px solid rgba(170,180,190,.52);
+    border-radius:8px;
+
+    background:rgba(255,255,255,.72);
+
+    color:#6a7580;
+
+    font-size:.60rem;
+    font-weight:600;
+}
+
+.degradation-arrow{
+    color:#949faa;
+
+    font-size:1.5rem;
+
+    text-align:center;
+}
+
+.condition-box{
+    padding:25px 15px;
+
+    border:1px solid rgba(127,139,151,.68);
+    border-radius:17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.92),
+            rgba(226,232,237,.82)
+        );
+
+    color:#4f5b67;
+
+    text-align:center;
+}
+
+.condition-small{
+    margin-bottom:7px;
+
+    color:#89939e;
+
+    font-size:.55rem;
+    font-weight:700;
+
+    letter-spacing:.13em;
+
+    text-transform:uppercase;
+}
+
+.condition-main{
+    font-size:.83rem;
+    font-weight:800;
+
+    line-height:1.45;
+}
+
+
+/* research footer */
+
+.research-card-footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin:0 30px;
+
+    padding:20px 0 25px;
+
+    border-top:1px solid rgba(180,188,197,.44);
+}
+
+.research-tags{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:7px;
+}
+
+.research-tag{
+    padding:6px 9px;
+
+    border:1px solid rgba(173,183,193,.52);
+    border-radius:7px;
+
+    color:#747f8a;
+
+    background:rgba(249,250,251,.75);
+
+    font-size:.60rem;
+    font-weight:600;
+}
+
+.research-link{
+    display:inline-flex;
+    align-items:center;
+
+    gap:9px;
+
+    color:#56626e;
+
+    font-size:.66rem;
+    font-weight:800;
+
+    letter-spacing:.09em;
+
+    transition:.2s ease;
+}
+
+.research-link:hover{
+    transform:translateX(3px);
 }
 
 
@@ -365,6 +740,7 @@ nav a.active{
 
 .project-featured:hover{
     transform:translateY(-4px);
+
     box-shadow:0 25px 52px rgba(43,53,64,.10);
 }
 
@@ -508,10 +884,6 @@ nav a.active{
     background:white;
 }
 
-.project-main-image-frame.software img{
-    object-fit:contain;
-}
-
 .project-image-caption{
     margin-top:10px;
 
@@ -617,90 +989,18 @@ nav a.active{
 }
 
 
-/* SMALL MATH PROJECT */
-
-.project-math{
-    padding:27px 29px;
-
-    overflow:hidden;
-
-    border:1px solid rgba(174,184,194,.65);
-    border-radius:24px;
-
-    background:
-        linear-gradient(
-            115deg,
-            rgba(255,255,255,.84),
-            rgba(239,243,246,.70)
-        );
-
-    box-shadow:0 12px 30px rgba(48,58,68,.04);
-}
-
-.math-head{
-    display:grid;
-    grid-template-columns:45px 1fr;
-
-    gap:15px;
-}
-
-.math-number{
-    color:#9da7b1;
-
-    font-size:.68rem;
-
-    letter-spacing:.13em;
-}
-
-.project-math h3{
-    margin:8px 0 10px;
-
-    font-size:1.31rem;
-
-    letter-spacing:-.035em;
-}
-
-.project-math p{
-    color:#68737e;
-
-    font-size:.85rem;
-    line-height:1.68;
-}
-
-.math-equations{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    gap:22px;
-
-    flex-wrap:wrap;
-
-    margin:25px 0 22px;
-
-    padding:21px 12px;
-
-    border-top:1px solid rgba(180,188,197,.43);
-    border-bottom:1px solid rgba(180,188,197,.43);
-
-    color:#56616d;
-
-    font-family:Georgia,"Times New Roman",serif;
-    font-style:italic;
-}
-
-.eq-main{
-    font-size:1.28rem;
-}
-
-.eq-small{
-    font-size:1rem;
-}
-
-
 /* =========================================================
    INSIGHTS
 ========================================================= */
+
+.grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+
+    gap:17px;
+
+    margin-top:28px;
+}
 
 .insight-card{
     min-height:245px;
@@ -708,6 +1008,27 @@ nav a.active{
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+
+    padding:22px;
+
+    border:1px solid var(--border);
+    border-radius:21px;
+
+    background:rgba(255,255,255,.61);
+
+    box-shadow:0 11px 28px rgba(50,60,70,.04);
+}
+
+.insight-card h3{
+    margin-bottom:11px;
+    font-size:1.08rem;
+}
+
+.insight-card p{
+    color:var(--muted);
+
+    font-size:.91rem;
+    line-height:1.67;
 }
 
 .card-label{
@@ -794,6 +1115,7 @@ nav a.active{
     content:"";
 
     position:absolute;
+
     left:0;
     top:0;
 
@@ -894,7 +1216,7 @@ nav a.active{
 }
 
 
-/* CONFERENCES */
+/* conferences */
 
 .conference-head{
     margin:26px 0;
@@ -1112,7 +1434,6 @@ nav a.active{
 
 .graphic{
     position:absolute;
-
     inset:0;
 
     opacity:0;
@@ -1135,7 +1456,7 @@ nav a.active{
 }
 
 
-/* ABOUT */
+/* ABOUT RIGHT */
 
 .about-art{
     position:absolute;
@@ -1161,52 +1482,127 @@ nav a.active{
 }
 
 
-/* RESEARCH */
+/* NEW RESEARCH RIGHT */
 
-.research-chain{
+.research-map{
     position:absolute;
 
-    inset:33px 18px;
-
-    display:grid;
-    grid-template-columns:1fr 35px 1fr 35px 1fr;
-
-    align-items:center;
-
-    gap:5px;
-}
-
-.chain-node{
-    min-height:130px;
+    inset:18px;
 
     display:flex;
-    align-items:center;
+    flex-direction:column;
+
     justify-content:center;
 
-    padding:15px;
+    gap:14px;
+}
 
-    border:1px solid rgba(174,184,194,.60);
-    border-radius:19px;
+.research-map-row{
+    display:grid;
 
-    background:rgba(255,255,255,.58);
+    grid-template-columns:
+        45px 1fr 60px;
 
-    color:#56626e;
+    align-items:center;
+
+    gap:10px;
+}
+
+.research-map-number{
+    color:#9ca6b0;
+
+    font-size:.62rem;
+    font-weight:700;
+
+    letter-spacing:.12em;
+}
+
+.research-map-card{
+    padding:14px 15px;
+
+    border:1px solid rgba(174,184,194,.58);
+    border-radius:15px;
+
+    background:rgba(255,255,255,.60);
+}
+
+.research-map-card strong{
+    display:block;
+
+    margin-bottom:4px;
+
+    color:#56616d;
+
+    font-size:.78rem;
+}
+
+.research-map-card span{
+    color:#87919b;
+
+    font-size:.60rem;
+}
+
+.research-map-arrow{
+    position:relative;
+
+    height:1px;
+
+    background:#aab3bc;
+}
+
+.research-map-arrow::after{
+    content:"";
+
+    position:absolute;
+
+    right:-2px;
+    top:-4px;
+
+    border-left:7px solid #aab3bc;
+    border-top:4px solid transparent;
+    border-bottom:4px solid transparent;
+}
+
+.research-destination{
+    margin-top:3px;
+
+    padding:14px;
+
+    border:1px solid rgba(134,146,158,.62);
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.88),
+            rgba(225,231,236,.78)
+        );
 
     text-align:center;
-
-    font-size:.87rem;
-    font-weight:600;
-
-    line-height:1.5;
 }
 
-.chain-arrow{
-    height:1px;
-    background:#a8b2bc;
+.research-destination-small{
+    color:#929ca6;
+
+    font-size:.56rem;
+    font-weight:700;
+
+    letter-spacing:.13em;
+
+    text-transform:uppercase;
+}
+
+.research-destination-main{
+    margin-top:5px;
+
+    color:#505c68;
+
+    font-size:.84rem;
+    font-weight:800;
 }
 
 
-/* PROJECT PREVIEW */
+/* PROJECT RIGHT */
 
 .projects-showcase{
     position:absolute;
@@ -1369,33 +1765,8 @@ nav a.active{
     letter-spacing:.08em;
 }
 
-.math-preview{
-    height:100%;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    gap:23px;
-
-    color:#56616d;
-
-    font-family:Georgia,"Times New Roman",serif;
-    font-style:italic;
-}
-
-.math-preview-main{
-    font-size:1.7rem;
-}
-
-.math-preview-small{
-    font-size:1.1rem;
-    color:#77828d;
-}
-
-
-/* INSIGHTS */
+/* INSIGHTS RIGHT */
 
 .insight-stack{
     position:absolute;
@@ -1423,7 +1794,7 @@ nav a.active{
 }
 
 
-/* PUBLICATIONS */
+/* PUBLICATIONS RIGHT */
 
 .pub-stack{
     position:absolute;
@@ -1546,6 +1917,11 @@ nav a.active{
     text-transform:uppercase;
 }
 
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
 footer{
     padding:50px 0 10px;
 
@@ -1572,7 +1948,9 @@ footer{
 
     .visual-sticky{
         position:relative;
+
         top:0;
+
         height:680px;
     }
 
@@ -1608,6 +1986,30 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .research-flow{
+        flex-direction:column;
+    }
+
+    .research-flow-arrow{
+        transform:rotate(90deg);
+    }
+
+    .model-flow{
+        flex-direction:column;
+    }
+
+    .model-arrow{
+        transform:rotate(90deg);
+    }
+
+    .degradation-visual{
+        grid-template-columns:1fr;
+    }
+
+    .degradation-arrow{
+        transform:rotate(90deg);
+    }
+
     .scene-top{
         flex-direction:column;
     }
@@ -1615,17 +2017,10 @@ footer{
     .visual-sticky{
         height:700px;
     }
-
-    .research-chain{
-        grid-template-columns:1fr;
-    }
-
-    .chain-arrow{
-        display:none;
-    }
 }
 
 </style>
+
 </head>
 
 
@@ -1640,11 +2035,35 @@ footer{
 
     <ul>
 
-        <li><a href="#about" class="nav-link active">About</a></li>
-        <li><a href="#research" class="nav-link">Research</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#insights" class="nav-link">Insights</a></li>
-        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li>
+            <a href="#about" class="nav-link active">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="#research" class="nav-link">
+                Research
+            </a>
+        </li>
+
+        <li>
+            <a href="#projects" class="nav-link">
+                Projects
+            </a>
+        </li>
+
+        <li>
+            <a href="#insights" class="nav-link">
+                Insights
+            </a>
+        </li>
+
+        <li>
+            <a href="#publications" class="nav-link">
+                Publications
+            </a>
+        </li>
 
     </ul>
 
@@ -1669,8 +2088,13 @@ footer{
         </div>
 
         <h1 class="hero-title">
+
             Maja<br>
-            <span class="silver">Antkowiak</span>
+
+            <span class="silver">
+                Antkowiak
+            </span>
+
         </h1>
 
         <p class="step-text">
@@ -1696,11 +2120,14 @@ footer{
 
         </div>
 
+
         <div class="grid-2">
 
             <div class="info-card">
 
-                <h3>Experience</h3>
+                <h3>
+                    Experience
+                </h3>
 
                 <p>
                     Research, conference participation,
@@ -1710,9 +2137,12 @@ footer{
 
             </div>
 
+
             <div class="info-card">
 
-                <h3>Contact</h3>
+                <h3>
+                    Contact
+                </h3>
 
                 <p>
                     GitHub · LinkedIn · E-mail · academic profile
@@ -1731,65 +2161,467 @@ footer{
      RESEARCH
 ========================================================= -->
 
-<section class="step" id="research" data-scene="research">
+<section
+    class="step research-step"
+    id="research"
+    data-scene="research">
 
-    <div class="step-inner">
+    <div class="step-inner research-inner">
 
         <div class="step-kicker">
             01 / Research
         </div>
 
+
         <h2 class="step-title">
-            Research <span>Focus</span>
+
+            Research
+            <span>Focus</span>
+
         </h2>
 
-        <p class="step-text">
 
-            My research combines physical phenomena,
-            signal acquisition and diagnostic reasoning.
+        <p class="step-text research-intro">
 
-            The main goal is to understand what current
-            waveforms can reveal about the internal behaviour
-            and degradation of automotive injectors.
+            My research follows the relationship between
+            physical degradation, injector behaviour and
+            measurable electrical signals, with the aim
+            of developing methods for condition assessment
+            and diagnostics.
 
         </p>
 
-        <div class="grid-3">
 
-            <div class="info-card">
+        <!-- RESEARCH FLOW -->
 
-                <h3>Injector Diagnostics</h3>
+        <div class="research-flow">
 
-                <p>
-                    Non-invasive diagnostic methods
-                    based on electrical current signals.
-                </p>
-
+            <div class="research-flow-node">
+                Physical<br>degradation
             </div>
 
-            <div class="info-card">
-
-                <h3>Multidomain Simulation</h3>
-
-                <p>
-                    Coupled electrical, mechanical
-                    and hydraulic injector simulation.
-                </p>
-
+            <div class="research-flow-arrow">
+                →
             </div>
 
-            <div class="info-card">
+            <div class="research-flow-node">
+                Injector<br>behaviour
+            </div>
 
-                <h3>Signal Analysis</h3>
+            <div class="research-flow-arrow">
+                →
+            </div>
 
-                <p>
-                    Time-domain and frequency-domain
-                    analysis of injector current waveforms.
-                </p>
+            <div class="research-flow-node">
+                Electrical<br>signal
+            </div>
 
+            <div class="research-flow-arrow">
+                →
+            </div>
+
+            <div class="research-flow-node">
+                Diagnostic<br>features
+            </div>
+
+            <div class="research-flow-arrow">
+                →
+            </div>
+
+            <div class="research-flow-node">
+                Condition<br>assessment
             </div>
 
         </div>
+
+
+        <!-- RESEARCH 01 -->
+
+        <article class="research-card">
+
+            <div class="research-card-top">
+
+                <div class="research-card-meta">
+
+                    <span class="research-number">
+                        01 / SIGNAL DIAGNOSTICS
+                    </span>
+
+                    <span class="research-badge">
+                        Core Research
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Signal-Based Injector Diagnostics
+                </h3>
+
+
+                <p class="research-card-description">
+
+                    Development of non-invasive diagnostic
+                    methods based on electrical current
+                    waveforms of electromagnetic fuel injectors.
+                    The research focuses on identifying signal
+                    features associated with injector operation,
+                    technical condition and progressive degradation.
+
+                </p>
+
+            </div>
+
+
+            <div class="research-visual">
+
+                <div class="signal-visual">
+
+                    <svg viewBox="0 0 700 165" fill="none">
+
+                        <path
+                            d="
+                            M20 130
+                            L80 130
+                            L118 128
+                            L153 41
+                            L175 26
+                            L191 42
+                            L215 82
+                            L256 94
+                            L272 110
+                            L284 109
+                            L296 113
+                            L308 108
+                            L320 113
+                            L332 108
+                            L344 113
+                            L356 108
+                            L368 113
+                            L380 108
+                            L392 113
+                            L404 108
+                            L416 113
+                            L428 108
+                            L440 113
+                            L452 108
+                            L464 113
+                            L476 108
+                            L488 113
+                            L500 108
+                            L512 113
+                            L524 108
+                            L536 113
+                            L548 108
+                            L560 113
+                            L572 108
+                            L584 113
+                            L596 108
+                            L608 113
+                            L620 108
+                            L632 113
+                            L645 130
+                            L680 130"
+                            stroke="#63707D"
+                            stroke-width="2.3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"/>
+
+                        <line
+                            x1="20"
+                            y1="130"
+                            x2="680"
+                            y2="130"
+                            stroke="#D1D7DD"
+                            stroke-width="1"/>
+
+                        <text
+                            x="148"
+                            y="19"
+                            fill="#8A949E"
+                            font-size="11"
+                            font-family="Inter">
+
+                            PEAK
+
+                        </text>
+
+                        <text
+                            x="430"
+                            y="96"
+                            fill="#8A949E"
+                            font-size="11"
+                            font-family="Inter">
+
+                            HOLD
+
+                        </text>
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+
+            <div class="research-card-footer">
+
+                <div class="research-tags">
+
+                    <span class="research-tag">
+                        Current Waveforms
+                    </span>
+
+                    <span class="research-tag">
+                        Peak & Hold
+                    </span>
+
+                    <span class="research-tag">
+                        Signal Features
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- RESEARCH 02 -->
+
+        <article class="research-card">
+
+            <div class="research-card-top">
+
+                <div class="research-card-meta">
+
+                    <span class="research-number">
+                        02 / MODELLING
+                    </span>
+
+                    <span class="research-badge">
+                        Research Method
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Injector Modelling
+                </h3>
+
+
+                <p class="research-card-description">
+
+                    Mathematical and multidomain modelling is
+                    used to describe relationships between the
+                    electrical, electromagnetic, mechanical and
+                    hydraulic behaviour of the injector.
+                    Analytical models support interpretation of
+                    current and voltage transients, while numerical
+                    simulation enables investigation of coupled
+                    physical phenomena.
+
+                </p>
+
+            </div>
+
+
+            <div class="research-visual">
+
+                <div class="model-flow">
+
+                    <div class="model-node">
+                        Electrical
+                    </div>
+
+                    <div class="model-arrow">
+                        →
+                    </div>
+
+                    <div class="model-node">
+                        Electromagnetic
+                    </div>
+
+                    <div class="model-arrow">
+                        →
+                    </div>
+
+                    <div class="model-node">
+                        Mechanical
+                    </div>
+
+                    <div class="model-arrow">
+                        →
+                    </div>
+
+                    <div class="model-node">
+                        Hydraulic
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="research-card-footer">
+
+                <div class="research-tags">
+
+                    <span class="research-tag">
+                        Mathematical Model
+                    </span>
+
+                    <span class="research-tag">
+                        Multidomain
+                    </span>
+
+                    <span class="research-tag">
+                        Transient Response
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="injector-modelling.html"
+                    class="research-link">
+
+                    EXPLORE RESEARCH →
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- RESEARCH 03 -->
+
+        <article class="research-card">
+
+            <div class="research-card-top">
+
+                <div class="research-card-meta">
+
+                    <span class="research-number">
+                        03 / DEGRADATION & RELIABILITY
+                    </span>
+
+                    <span class="research-badge ongoing">
+                        Ongoing Research
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Degradation & Reliability Research
+                </h3>
+
+
+                <p class="research-card-description">
+
+                    Current research also focuses on describing
+                    injector degradation as a measurable change
+                    in technical condition. Electrical,
+                    electromagnetic, mechanical, hydraulic and
+                    thermal degradation mechanisms are analysed
+                    together with their observable diagnostic
+                    indicators. The long-term objective is to
+                    combine these effects into a quantitative
+                    indicator describing injector condition
+                    and reliability.
+
+                </p>
+
+            </div>
+
+
+            <div class="research-visual">
+
+                <div class="degradation-visual">
+
+
+                    <div class="degradation-types">
+
+                        <div class="degradation-type">
+                            Hydraulic degradation
+                        </div>
+
+                        <div class="degradation-type">
+                            Mechanical degradation
+                        </div>
+
+                        <div class="degradation-type">
+                            Electrical degradation
+                        </div>
+
+                        <div class="degradation-type">
+                            Electromagnetic degradation
+                        </div>
+
+                        <div class="degradation-type">
+                            Thermal degradation
+                        </div>
+
+                    </div>
+
+
+                    <div class="degradation-arrow">
+                        →
+                    </div>
+
+
+                    <div class="condition-box">
+
+                        <div class="condition-small">
+                            Research Objective
+                        </div>
+
+                        <div class="condition-main">
+                            Condition & Reliability Assessment
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="research-card-footer">
+
+                <div class="research-tags">
+
+                    <span class="research-tag">
+                        Degradation
+                    </span>
+
+                    <span class="research-tag">
+                        Condition Indicator
+                    </span>
+
+                    <span class="research-tag">
+                        Reliability
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="degradation-reliability.html"
+                    class="research-link">
+
+                    EXPLORE RESEARCH →
+
+                </a>
+
+            </div>
+
+        </article>
+
 
     </div>
 
@@ -1812,7 +2644,10 @@ footer{
         </div>
 
         <h2 class="step-title">
-            Selected <span>Projects</span>
+
+            Selected
+            <span>Projects</span>
+
         </h2>
 
         <p class="step-text projects-intro">
@@ -2006,7 +2841,7 @@ footer{
 
             <div class="project-main-image">
 
-                <div class="project-main-image-frame software">
+                <div class="project-main-image-frame">
 
                     <img
                         src="assets/injector-diagnostic-software.png"
@@ -2047,7 +2882,6 @@ footer{
 
                 </div>
 
-
                 <a
                     href="injector-diagnostic.html"
                     class="project-button">
@@ -2060,65 +2894,6 @@ footer{
 
         </article>
 
-
-        <!-- PROJECT 03 -->
-
-        <article class="project-math">
-
-            <div class="math-head">
-
-                <div class="math-number">
-                    03
-                </div>
-
-                <div>
-
-                    <div class="project-type">
-                        Analytical Study
-                    </div>
-
-                    <h3>
-                        Analytical Model of Injector Current & Voltage
-                    </h3>
-
-                    <p>
-
-                        Compact analytical description
-                        of injector current and voltage
-                        during Peak, Hold and switch-off
-                        phases using an equivalent RL model.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="math-equations">
-
-                <div class="eq-main">
-                    U(t) = L · dI/dt + R · I(t)
-                </div>
-
-                <div class="eq-small">
-                    τ = L/R
-                </div>
-
-                <div class="eq-small">
-                    I(t) = I₀ · e<sup>−Rt/L</sup>
-                </div>
-
-            </div>
-
-            <div class="project-tools">
-
-                <span class="tool">RL Circuit</span>
-                <span class="tool">Peak & Hold</span>
-                <span class="tool">Transient Response</span>
-
-            </div>
-
-        </article>
 
     </div>
 
@@ -2138,7 +2913,10 @@ footer{
         </div>
 
         <h2 class="step-title">
-            Automotive <span>Insights</span>
+
+            Automotive
+            <span>Insights</span>
+
         </h2>
 
         <p class="step-text">
@@ -2148,6 +2926,7 @@ footer{
             from my own work.
 
         </p>
+
 
         <div class="grid-3">
 
@@ -2176,6 +2955,7 @@ footer{
 
             </div>
 
+
             <div class="insight-card">
 
                 <div>
@@ -2200,6 +2980,7 @@ footer{
                 </div>
 
             </div>
+
 
             <div class="insight-card">
 
@@ -2249,7 +3030,10 @@ footer{
     </div>
 
     <h2 class="step-title">
-        Publications & <span>Conferences</span>
+
+        Publications &
+        <span>Conferences</span>
+
     </h2>
 
     <p class="step-text">
@@ -2285,10 +3069,8 @@ footer{
         </div>
 
         <h3>
-
             Recognizing Significant Components of Electrical
             Waveforms of Actuators Operated by Vehicle Controllers
-
         </h3>
 
         <div class="journal-authors">
@@ -2390,6 +3172,7 @@ footer{
         <div class="year-marker">
             2026
         </div>
+
 
         <div class="conf-item">
 
@@ -2517,6 +3300,7 @@ footer{
             2025
         </div>
 
+
         <div class="conf-item">
 
             <div class="conf-date">
@@ -2553,6 +3337,7 @@ footer{
         <div class="year-marker">
             2022
         </div>
+
 
         <div class="conf-item">
 
@@ -2704,23 +3489,90 @@ footer{
 
         <div class="graphic" data-graphic="research">
 
-            <div class="research-chain">
+            <div class="research-map">
 
-                <div class="chain-node">
-                    Physical<br>phenomenon
+
+                <div class="research-map-row">
+
+                    <div class="research-map-number">
+                        01
+                    </div>
+
+                    <div class="research-map-card">
+
+                        <strong>
+                            Signal Diagnostics
+                        </strong>
+
+                        <span>
+                            current waveform → features
+                        </span>
+
+                    </div>
+
+                    <div class="research-map-arrow"></div>
+
                 </div>
 
-                <div class="chain-arrow"></div>
 
-                <div class="chain-node">
-                    Signal<br>analysis
+                <div class="research-map-row">
+
+                    <div class="research-map-number">
+                        02
+                    </div>
+
+                    <div class="research-map-card">
+
+                        <strong>
+                            Injector Modelling
+                        </strong>
+
+                        <span>
+                            physical domains → response
+                        </span>
+
+                    </div>
+
+                    <div class="research-map-arrow"></div>
+
                 </div>
 
-                <div class="chain-arrow"></div>
 
-                <div class="chain-node">
-                    Diagnostic<br>information
+                <div class="research-map-row">
+
+                    <div class="research-map-number">
+                        03
+                    </div>
+
+                    <div class="research-map-card">
+
+                        <strong>
+                            Degradation & Reliability
+                        </strong>
+
+                        <span>
+                            faults → technical condition
+                        </span>
+
+                    </div>
+
+                    <div class="research-map-arrow"></div>
+
                 </div>
+
+
+                <div class="research-destination">
+
+                    <div class="research-destination-small">
+                        Research Direction
+                    </div>
+
+                    <div class="research-destination-main">
+                        Condition Assessment
+                    </div>
+
+                </div>
+
 
             </div>
 
@@ -2748,14 +3600,6 @@ footer{
                         data-project-preview="software">
 
                         02 / SOFTWARE
-
-                    </button>
-
-                    <button
-                        class="showcase-tab"
-                        data-project-preview="math">
-
-                        03 / ANALYTICAL
 
                     </button>
 
@@ -2843,28 +3687,6 @@ footer{
                     </div>
 
 
-                    <div
-                        class="project-preview"
-                        data-project-panel="math">
-
-                        <div class="math-preview">
-
-                            <div class="math-preview-main">
-                                U(t) = L · dI/dt + R · I(t)
-                            </div>
-
-                            <div class="math-preview-small">
-                                τ = L / R
-                            </div>
-
-                            <div class="preview-title">
-                                Analytical Model of Injector Current & Voltage
-                            </div>
-
-                        </div>
-
-                    </div>
-
                 </div>
 
             </div>
@@ -2878,10 +3700,21 @@ footer{
 
             <div class="insight-stack">
 
-                <div class="note">Research papers</div>
-                <div class="note">Automotive trends</div>
-                <div class="note">Laboratory notes</div>
-                <div class="note">Behind the research</div>
+                <div class="note">
+                    Research papers
+                </div>
+
+                <div class="note">
+                    Automotive trends
+                </div>
+
+                <div class="note">
+                    Laboratory notes
+                </div>
+
+                <div class="note">
+                    Behind the research
+                </div>
 
             </div>
 
@@ -2909,6 +3742,7 @@ footer{
                     </div>
 
                 </div>
+
 
                 <div class="pub-sheet">
 
@@ -3196,14 +4030,14 @@ const scenes={
     research:{
         number:'Scene / 01',
         title:'Research Focus',
-        caption:'From physical behaviour to signal analysis and diagnostic information.',
-        tag:'Signal-based diagnostics'
+        caption:'Signal diagnostics, injector modelling and degradation-oriented condition assessment.',
+        tag:'Research directions'
     },
 
     projects:{
         number:'Scene / 02',
         title:'Selected Projects',
-        caption:'Simulation, diagnostic software and analytical modelling of injector behaviour.',
+        caption:'Two engineering implementations supporting injector simulation and signal-based diagnostics.',
         tag:'Engineering projects'
     },
 
@@ -3224,9 +4058,14 @@ const scenes={
 };
 
 
-const steps=document.querySelectorAll('.step');
-const graphics=document.querySelectorAll('.graphic');
-const navLinks=document.querySelectorAll('.nav-link');
+const steps=
+    document.querySelectorAll('.step');
+
+const graphics=
+    document.querySelectorAll('.graphic');
+
+const navLinks=
+    document.querySelectorAll('.nav-link');
 
 
 function activateScene(id){
@@ -3237,10 +4076,18 @@ function activateScene(id){
         return;
     }
 
-    document.getElementById('sceneNumber').textContent=scene.number;
-    document.getElementById('sceneTitle').textContent=scene.title;
-    document.getElementById('sceneCaption').textContent=scene.caption;
-    document.getElementById('sceneTag').textContent=scene.tag;
+    document.getElementById('sceneNumber').textContent=
+        scene.number;
+
+    document.getElementById('sceneTitle').textContent=
+        scene.title;
+
+    document.getElementById('sceneCaption').textContent=
+        scene.caption;
+
+    document.getElementById('sceneTag').textContent=
+        scene.tag;
+
 
     graphics.forEach(graphic=>{
 
@@ -3250,6 +4097,7 @@ function activateScene(id){
         );
 
     });
+
 
     navLinks.forEach(link=>{
 
@@ -3263,7 +4111,8 @@ function activateScene(id){
 }
 
 
-const observer=new IntersectionObserver(
+const observer=
+new IntersectionObserver(
 
     entries=>{
 
@@ -3271,7 +4120,9 @@ const observer=new IntersectionObserver(
 
             if(entry.isIntersecting){
 
-                activateScene(entry.target.dataset.scene);
+                activateScene(
+                    entry.target.dataset.scene
+                );
 
             }
 
@@ -3287,7 +4138,9 @@ const observer=new IntersectionObserver(
 );
 
 
-steps.forEach(step=>observer.observe(step));
+steps.forEach(step=>{
+    observer.observe(step);
+});
 
 
 const previewButtons=
@@ -3327,12 +4180,23 @@ previewButtons.forEach(button=>{
 });
 
 
-const carWrap=document.getElementById('carWrap');
-const carZone=document.getElementById('carZone');
-const roadSvg=document.getElementById('roadSvg');
-const motionPath=document.getElementById('motionPath');
-const frontWheel=document.getElementById('frontWheel');
-const rearWheel=document.getElementById('rearWheel');
+const carWrap=
+    document.getElementById('carWrap');
+
+const carZone=
+    document.getElementById('carZone');
+
+const roadSvg=
+    document.getElementById('roadSvg');
+
+const motionPath=
+    document.getElementById('motionPath');
+
+const frontWheel=
+    document.getElementById('frontWheel');
+
+const rearWheel=
+    document.getElementById('rearWheel');
 
 
 function clamp(value,min,max){
@@ -3354,7 +4218,8 @@ function getScrollRange(){
         steps[steps.length-1].getBoundingClientRect();
 
     const pageTop=
-        window.scrollY+firstRect.top;
+        window.scrollY+
+        firstRect.top;
 
     const pageBottom=
         window.scrollY+
@@ -3371,7 +4236,8 @@ function getScrollRange(){
 
 function calculateScrollProgress(){
 
-    const range=getScrollRange();
+    const range=
+        getScrollRange();
 
     const position=
         window.scrollY+
@@ -3401,7 +4267,8 @@ function calculateScrollProgress(){
 
 function progressToScroll(progress){
 
-    const range=getScrollRange();
+    const range=
+        getScrollRange();
 
     const target=
 
@@ -3423,7 +4290,11 @@ function progressToScroll(progress){
         document.documentElement.scrollHeight-
         window.innerHeight;
 
-    return clamp(target,0,max);
+    return clamp(
+        target,
+        0,
+        max
+    );
 
 }
 
@@ -3480,7 +4351,8 @@ function renderCar(progress){
         *180/
         Math.PI;
 
-    angle=clamp(angle,-5,5);
+    angle=
+        clamp(angle,-5,5);
 
     const carX=
         x-carWrap.offsetWidth*.50;
@@ -3540,7 +4412,8 @@ function updateCar(){
 
     else{
 
-        currentProgress=targetProgress;
+        currentProgress=
+            targetProgress;
 
         renderCar(currentProgress);
 
@@ -3605,14 +4478,19 @@ function dragTo(clientX){
     const progress=
         pointerToProgress(clientX);
 
-    targetProgress=progress;
-    currentProgress=progress;
+    targetProgress=
+        progress;
+
+    currentProgress=
+        progress;
 
     renderCar(progress);
 
     window.scrollTo({
 
-        top:progressToScroll(progress),
+        top:
+            progressToScroll(progress),
+
         behavior:'auto'
 
     });
@@ -3626,18 +4504,27 @@ carWrap.addEventListener(
 
         isDragging=true;
 
-        carWrap.classList.add('dragging');
+        carWrap.classList.add(
+            'dragging'
+        );
 
         if(animationFrame!==null){
 
-            cancelAnimationFrame(animationFrame);
+            cancelAnimationFrame(
+                animationFrame
+            );
+
             animationFrame=null;
 
         }
 
-        carWrap.setPointerCapture(event.pointerId);
+        carWrap.setPointerCapture(
+            event.pointerId
+        );
 
-        dragTo(event.clientX);
+        dragTo(
+            event.clientX
+        );
 
     }
 );
@@ -3651,7 +4538,9 @@ carWrap.addEventListener(
             return;
         }
 
-        dragTo(event.clientX);
+        dragTo(
+            event.clientX
+        );
 
     }
 );
@@ -3665,11 +4554,19 @@ function finishDrag(event){
 
     isDragging=false;
 
-    carWrap.classList.remove('dragging');
+    carWrap.classList.remove(
+        'dragging'
+    );
 
-    if(carWrap.hasPointerCapture(event.pointerId)){
+    if(
+        carWrap.hasPointerCapture(
+            event.pointerId
+        )
+    ){
 
-        carWrap.releasePointerCapture(event.pointerId);
+        carWrap.releasePointerCapture(
+            event.pointerId
+        );
 
     }
 
@@ -3679,13 +4576,22 @@ function finishDrag(event){
     currentProgress=
         targetProgress;
 
-    renderCar(currentProgress);
+    renderCar(
+        currentProgress
+    );
 
 }
 
 
-carWrap.addEventListener('pointerup',finishDrag);
-carWrap.addEventListener('pointercancel',finishDrag);
+carWrap.addEventListener(
+    'pointerup',
+    finishDrag
+);
+
+carWrap.addEventListener(
+    'pointercancel',
+    finishDrag
+);
 
 
 window.addEventListener(
@@ -3698,7 +4604,9 @@ window.addEventListener(
         currentProgress=
             targetProgress;
 
-        renderCar(currentProgress);
+        renderCar(
+            currentProgress
+        );
 
     }
 );
@@ -3717,4 +4625,5 @@ renderCar(currentProgress);
 </script>
 
 </body>
+
 </html>
