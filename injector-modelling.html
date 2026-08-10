@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>
-Analytical Model of Injector Current & Voltage | Maja Antkowiak
+Analytical Model of Injector Current | Maja Antkowiak
 </title>
+
 
 <script>
 window.MathJax = {
@@ -26,6 +27,7 @@ window.MathJax = {
     defer
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
+
 
 <style>
 
@@ -168,6 +170,13 @@ nav{
 
     font-weight:600;
 
+    transition:.2s ease;
+
+}
+
+
+.back:hover{
+    transform:translateX(-3px);
 }
 
 
@@ -312,7 +321,6 @@ h1 span{
 
 /* =========================================================
    PAGE GRID
-   IMPORTANT STICKY FIX
 ========================================================= */
 
 .case-layout{
@@ -325,13 +333,6 @@ h1 span{
 
     gap:65px;
 
-    /*
-    VERY IMPORTANT:
-    start powodowało, że prawa kolumna
-    miała tylko wysokość własnego panelu.
-    stretch sprawia, że kolumna ma wysokość
-    całej lewej części strony.
-    */
     align-items:stretch;
 
 }
@@ -363,6 +364,12 @@ h1 span{
     border-bottom:
         1px solid
         rgba(177,186,195,.38);
+
+    /*
+    Dzięki temu kliknięcie przycisku fazy
+    nie chowa nagłówka sekcji pod navbar.
+    */
+    scroll-margin-top:105px;
 
 }
 
@@ -594,70 +601,6 @@ h1 span{
 
 
 /* =========================================================
-   INFO NOTE
-========================================================= */
-
-.model-note{
-
-    position:relative;
-
-    margin-top:28px;
-
-    padding:
-        21px 22px
-        21px 52px;
-
-    border:
-        1px solid
-        rgba(161,172,183,.55);
-
-    border-radius:18px;
-
-    background:
-        rgba(238,242,245,.70);
-
-    color:#616d79;
-
-    font-size:.82rem;
-
-    line-height:1.75;
-
-}
-
-
-.model-note::before{
-
-    content:"i";
-
-    position:absolute;
-
-    left:18px;
-    top:20px;
-
-    width:20px;
-    height:20px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border:
-        1px solid
-        #82909d;
-
-    border-radius:50%;
-
-    color:#63717e;
-
-    font-family:Georgia,serif;
-
-    font-style:italic;
-
-}
-
-
-/* =========================================================
    PHASE SEQUENCE
 ========================================================= */
 
@@ -774,18 +717,59 @@ h1 span{
 
 
 /* =========================================================
+   SIGNIFICANCE
+========================================================= */
+
+.significance-panel{
+
+    margin-top:35px;
+
+    padding:35px;
+
+    border:
+        1px solid
+        rgba(164,175,185,.62);
+
+    border-radius:27px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.90),
+            rgba(233,238,242,.75)
+        );
+
+}
+
+
+.significance-panel h3{
+
+    margin-bottom:15px;
+
+    font-size:1.5rem;
+
+}
+
+
+.significance-panel p{
+
+    color:#65717d;
+
+    font-size:.9rem;
+
+    line-height:1.85;
+
+}
+
+
+/* =========================================================
    RIGHT COLUMN
-   IMPORTANT STICKY FIX
 ========================================================= */
 
 .visual-column{
 
     min-width:0;
-
-    /*
-    Teraz aside rozciąga się na pełną wysokość
-    całej lewej kolumny.
-    */
 
     position:relative;
 
@@ -795,12 +779,6 @@ h1 span{
 
 
 .visual-sticky{
-
-    /*
-    Ten element jest teraz prawdziwie sticky.
-    Będzie jechał razem z ekranem aż do końca
-    sekcji modelu.
-    */
 
     position:sticky;
 
@@ -812,9 +790,9 @@ h1 span{
     height:
         calc(100dvh - 112px);
 
-    max-height:790px;
+    max-height:760px;
 
-    min-height:610px;
+    min-height:570px;
 
 }
 
@@ -912,7 +890,7 @@ h1 span{
 
 
 /* =========================================================
-   PHASE BUTTONS
+   CLICKABLE PHASE NAVIGATION
 ========================================================= */
 
 .visual-timeline{
@@ -924,26 +902,33 @@ h1 span{
 
     gap:7px;
 
-    margin-bottom:15px;
+    margin-bottom:16px;
 
 }
 
 
 .timeline-item{
 
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:39px;
+
     padding:
-        9px 4px;
+        8px 4px;
 
     border:
         1px solid
         rgba(174,184,194,.50);
 
-    border-radius:9px;
+    border-radius:10px;
 
-    color:#9aa4ae;
+    color:#929da8;
 
     background:
-        rgba(250,251,252,.70);
+        rgba(250,251,252,.75);
 
     font-size:.54rem;
 
@@ -953,11 +938,29 @@ h1 span{
 
     letter-spacing:.04em;
 
+    cursor:pointer;
+
     transition:
-        background .28s ease,
-        color .28s ease,
-        border .28s ease,
-        transform .28s ease;
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.timeline-item:hover{
+
+    color:#40515f;
+
+    border-color:
+        rgba(76,93,108,.55);
+
+    background:#fff;
+
+    transform:
+        translateY(-1px);
 
 }
 
@@ -969,6 +972,7 @@ h1 span{
     border-color:#354653;
 
     background:
+
         linear-gradient(
             135deg,
             #2e3e4b,
@@ -979,21 +983,26 @@ h1 span{
         0 8px 18px
         rgba(43,57,69,.18);
 
-    transform:
-        translateY(-1px);
-
 }
 
 
 /* =========================================================
-   PLOT CONTAINER
+   PLOT
 ========================================================= */
 
 .plot-container{
 
     position:relative;
 
-    height:410px;
+    /*
+    Po usunięciu dolnego pola ze wzorem
+    wykres może być większy.
+    */
+
+    height:
+        calc(100% - 125px);
+
+    min-height:410px;
 
     overflow:hidden;
 
@@ -1008,28 +1017,7 @@ h1 span{
 }
 
 
-.plot-view{
-
-    position:absolute;
-
-    inset:0;
-
-    opacity:0;
-
-    transition:
-        opacity .3s ease;
-
-    pointer-events:none;
-
-}
-
-
-.plot-view.active{
-    opacity:1;
-}
-
-
-.plot-view svg{
+.plot-container svg{
 
     display:block;
 
@@ -1040,7 +1028,7 @@ h1 span{
 
 
 /* =========================================================
-   GRAPH
+   GRAPH STYLE
 ========================================================= */
 
 .axis{
@@ -1054,7 +1042,7 @@ h1 span{
 
 .grid-line{
 
-    stroke:#eaedf0;
+    stroke:#e8ecef;
 
     stroke-width:1;
 
@@ -1074,11 +1062,11 @@ h1 span{
 
 .axis-label{
 
-    fill:#677480;
+    fill:#5f6d79;
 
     font-family:'Inter',sans-serif;
 
-    font-size:12px;
+    font-size:13px;
 
     font-weight:600;
 
@@ -1090,7 +1078,7 @@ h1 span{
     opacity:0;
 
     fill:
-        rgba(55,72,87,.10);
+        rgba(55,72,87,.105);
 
     transition:
         opacity .32s ease;
@@ -1107,7 +1095,7 @@ h1 span{
 
     fill:none;
 
-    stroke:#d9dde1;
+    stroke:#d5dade;
 
     stroke-width:3;
 
@@ -1115,7 +1103,7 @@ h1 span{
 
     stroke-linejoin:round;
 
-    opacity:.26;
+    opacity:.30;
 
     transition:
         stroke .32s ease,
@@ -1143,95 +1131,6 @@ h1 span{
     stroke-width:3.5;
 
     opacity:.82;
-
-}
-
-
-/* =========================================================
-   EQUATION BELOW PLOT
-========================================================= */
-
-.visual-equation{
-
-    min-height:90px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    margin-top:14px;
-
-    padding:15px;
-
-    border:
-        1px solid
-        rgba(175,185,195,.48);
-
-    border-radius:18px;
-
-    background:
-        rgba(255,255,255,.72);
-
-    color:#465563;
-
-    text-align:center;
-
-    font-family:
-        Georgia,
-        'Times New Roman',
-        serif;
-
-    font-style:italic;
-
-    font-size:1.03rem;
-
-}
-
-
-/* =========================================================
-   SIGNIFICANCE
-========================================================= */
-
-.significance-panel{
-
-    margin-top:35px;
-
-    padding:35px;
-
-    border:
-        1px solid
-        rgba(164,175,185,.62);
-
-    border-radius:27px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.90),
-            rgba(233,238,242,.75)
-        );
-
-}
-
-
-.significance-panel h3{
-
-    margin-bottom:15px;
-
-    font-size:1.5rem;
-
-}
-
-
-.significance-panel p{
-
-    color:#65717d;
-
-    font-size:.9rem;
-
-    line-height:1.85;
 
 }
 
@@ -1372,7 +1271,9 @@ h1 span{
 
     .timeline-item{
 
-        padding:6px 2px;
+        min-height:32px;
+
+        padding:5px 2px;
 
         font-size:.48rem;
 
@@ -1380,19 +1281,11 @@ h1 span{
 
 
     .plot-container{
-        height:300px;
-    }
 
+        height:
+            calc(100% - 98px);
 
-    .visual-equation{
-
-        min-height:62px;
-
-        margin-top:9px;
-
-        padding:9px;
-
-        font-size:.90rem;
+        min-height:0;
 
     }
 
@@ -1434,11 +1327,20 @@ h1 span{
 
         top:0;
 
-        height:650px;
+        height:620px;
 
         min-height:0;
 
         max-height:none;
+
+    }
+
+
+    .plot-container{
+
+        height:490px;
+
+        min-height:0;
 
     }
 
@@ -1479,7 +1381,7 @@ h1 span{
 
 
     .visual-sticky{
-        height:560px;
+        height:530px;
     }
 
 
@@ -1489,12 +1391,16 @@ h1 span{
 
 
     .timeline-item{
+
+        min-height:33px;
+
         font-size:.43rem;
+
     }
 
 
     .plot-container{
-        height:300px;
+        height:410px;
     }
 
 
@@ -1560,7 +1466,7 @@ h1 span{
             Analytical Model
 
             <span>
-                of Injector Current & Voltage
+                of Injector Current
             </span>
 
         </h1>
@@ -1574,12 +1480,13 @@ h1 span{
         <p class="hero-description">
 
             An analytical description of the electrical
-            behaviour of an electromagnetic fuel injector
-            during the <strong>Peak, Hold and switch-off
+            current response of an electromagnetic fuel
+            injector during the characteristic
+            <strong>Peak, transition, Hold and switch-off
             stages</strong>. The model begins with an
-            equivalent RL representation and is then used
-            to interpret characteristic changes observed
-            in the injector current and voltage waveforms.
+            equivalent RL representation and is used
+            to interpret changes observed in the injector
+            current waveform.
 
         </p>
 
@@ -1595,11 +1502,11 @@ h1 span{
             </span>
 
             <span class="hero-tag">
-                Current
+                Current Response
             </span>
 
             <span class="hero-tag">
-                Voltage
+                Injector Dynamics
             </span>
 
         </div>
@@ -1621,10 +1528,13 @@ h1 span{
 <div class="case-content">
 
 
-<!-- 01 ==================================================== -->
+<!-- =========================================================
+     01
+========================================================= -->
 
 <section
     class="model-section"
+    id="rl-model"
     data-phase="overview">
 
 
@@ -1758,10 +1668,13 @@ h1 span{
 
 
 
-<!-- 02 ==================================================== -->
+<!-- =========================================================
+     02 PEAK
+========================================================= -->
 
 <section
     class="model-section"
+    id="peak-phase"
     data-phase="peak">
 
 
@@ -1877,10 +1790,13 @@ h1 span{
 
 
 
-<!-- 03 ==================================================== -->
+<!-- =========================================================
+     03 NEEDLE
+========================================================= -->
 
 <section
     class="model-section"
+    id="needle-motion"
     data-phase="peak">
 
 
@@ -1899,20 +1815,20 @@ h1 span{
     <p class="section-lead">
 
         When the electromagnetic force becomes sufficient
-        to initiate movement of the injector needle, the
-        magnetic conditions of the system change. The
-        second part of the Peak phase can therefore be
-        represented using a different effective inductance
-        \(L_{II}\).
+        to initiate movement of the injector needle,
+        the magnetic conditions of the system change.
+        The second part of the Peak phase can therefore
+        be represented using a different effective
+        inductance \(L_{II}\).
 
     </p>
 
 
     <p class="section-lead">
 
-        In a continuous analytical description, the second
-        stage starts from the current already present when
-        needle movement begins.
+        In a continuous analytical description,
+        the second stage starts from the current already
+        present when needle movement begins.
 
     </p>
 
@@ -1955,10 +1871,13 @@ h1 span{
 
 
 
-<!-- 04 ==================================================== -->
+<!-- =========================================================
+     04 TRANSITION
+========================================================= -->
 
 <section
     class="model-section"
+    id="transition-phase"
     data-phase="transition">
 
 
@@ -2069,10 +1988,13 @@ h1 span{
 
 
 
-<!-- 05 ==================================================== -->
+<!-- =========================================================
+     05 HOLD
+========================================================= -->
 
 <section
     class="model-section"
+    id="hold-phase"
     data-phase="hold">
 
 
@@ -2091,9 +2013,10 @@ h1 span{
     <p class="section-lead">
 
         During the Hold phase, the high current required
-        for rapid opening is no longer necessary. A lower
-        current is sufficient to maintain the electromagnetic
-        force needed to keep the injector open.
+        for rapid opening is no longer necessary.
+        A lower current is sufficient to maintain the
+        electromagnetic force needed to keep the injector
+        open.
 
     </p>
 
@@ -2177,10 +2100,13 @@ h1 span{
 
 
 
-<!-- 06 ==================================================== -->
+<!-- =========================================================
+     06 SWITCH OFF
+========================================================= -->
 
 <section
     class="model-section"
+    id="switch-off-phase"
     data-phase="off">
 
 
@@ -2285,187 +2211,18 @@ h1 span{
 
 
 
-<!-- 07 ==================================================== -->
+<!-- =========================================================
+     07 DIAGNOSTIC MEANING
+========================================================= -->
 
 <section
     class="model-section"
-    data-phase="voltage">
-
-
-    <div class="section-label">
-        07 / Voltage Response
-    </div>
-
-
-    <h2 class="section-title">
-
-        Voltage during Peak, Hold and switch-off
-
-    </h2>
-
-
-    <p class="section-lead">
-
-        Before the injector control pulse begins,
-        the applied voltage is zero.
-
-    </p>
-
-
-    <div class="equation-card">
-
-        <div class="equation-number">
-            EQ / 12
-        </div>
-
-        <div class="equation">
-
-            \[
-            U_0(t)=0
-            \]
-
-        </div>
-
-    </div>
-
-
-    <p class="section-lead">
-
-        During the Peak phase, the high excitation voltage
-        is described by
-
-    </p>
-
-
-    <div class="equation-card">
-
-        <div class="equation-number">
-            PEAK
-        </div>
-
-        <div class="equation">
-
-            \[
-            U_{peak}
-            =
-            L\frac{dI}{dt}
-            +
-            R I(t)
-            \]
-
-        </div>
-
-    </div>
-
-
-    <p class="section-lead">
-
-        During the Hold phase, the effective excitation
-        is reduced to the lower Hold level.
-
-    </p>
-
-
-    <div class="equation-card">
-
-        <div class="equation-number">
-            HOLD
-        </div>
-
-        <div class="equation">
-
-            \[
-            U_{hold}
-            =
-            L_{II}
-            \frac{dI}{dt}
-            +
-            R I(t)
-            \]
-
-        </div>
-
-    </div>
-
-
-    <p class="section-lead">
-
-        Under idealized steady-state conditions,
-        \(dI/dt=0\), which gives
-
-    </p>
-
-
-    <div class="equation-card">
-
-        <div class="equation-number">
-            HOLD STEADY STATE
-        </div>
-
-        <div class="equation">
-
-            \[
-            U_{hold}
-            =
-            R I_{hold}
-            \]
-
-        </div>
-
-    </div>
-
-
-    <p class="section-lead">
-
-        During switch-off, the current decreases rapidly
-        and the induced coil voltage changes polarity.
-
-    </p>
-
-
-    <div class="equation-card">
-
-        <div class="equation-number">
-            INDUCTIVE VOLTAGE
-        </div>
-
-        <div class="equation">
-
-            \[
-            U_L(t)
-            =
-            L_{II}
-            \frac{dI}{dt}
-            \]
-
-        </div>
-
-    </div>
-
-
-    <div class="model-note">
-
-        The voltage measured in a real injector circuit
-        depends not only on the coil itself but also on
-        the flyback or clamping circuit used by the
-        injector driver.
-
-    </div>
-
-
-</section>
-
-
-
-<!-- 08 ==================================================== -->
-
-<section
-    class="model-section"
+    id="diagnostic-meaning"
     data-phase="meaning">
 
 
     <div class="section-label">
-        08 / Diagnostic Meaning
+        07 / Diagnostic Meaning
     </div>
 
 
@@ -2479,8 +2236,12 @@ h1 span{
     <p class="section-lead">
 
         The analytical model provides a physical
-        interpretation of characteristic regions
-        observed in the injector current waveform.
+        interpretation of characteristic regions observed
+        in the injector current waveform. Changes in
+        electrical parameters and injector behaviour can
+        influence different regions of the response,
+        which makes the current signal useful for
+        diagnostic analysis.
 
     </p>
 
@@ -2625,6 +2386,7 @@ h1 span{
                 Analytical Model
             </div>
 
+
             <div
                 class="visual-phase"
                 id="visualPhase">
@@ -2650,452 +2412,384 @@ h1 span{
 
 
 
+    <!-- =====================================================
+         CLICKABLE PHASE NAVIGATION
+    ====================================================== -->
+
     <div class="visual-timeline">
 
 
-        <div
+        <a
+            href="#peak-phase"
             class="timeline-item"
             data-button="peak">
 
             PEAK
 
-        </div>
+        </a>
 
 
-        <div
+        <a
+            href="#transition-phase"
             class="timeline-item"
             data-button="transition">
 
             TRANSITION
 
-        </div>
+        </a>
 
 
-        <div
+        <a
+            href="#hold-phase"
             class="timeline-item"
             data-button="hold">
 
             HOLD
 
-        </div>
+        </a>
 
 
-        <div
+        <a
+            href="#switch-off-phase"
             class="timeline-item"
             data-button="off">
 
             SWITCH-OFF
 
-        </div>
+        </a>
 
 
     </div>
 
 
+
+    <!-- =====================================================
+         CURRENT PLOT
+    ====================================================== -->
 
     <div class="plot-container">
 
 
-        <!-- CURRENT -->
+        <svg
+            viewBox="0 0 760 420"
+            preserveAspectRatio="xMidYMid meet">
 
-        <div
-            class="plot-view active"
-            id="currentPlot">
-
-
-            <svg
-                viewBox="0 0 760 420"
-                preserveAspectRatio="xMidYMid meet">
 
+            <!-- =================================================
+                 PHASE REGIONS
+            ================================================== -->
 
-                <!-- ACTIVE AREAS -->
+            <rect
+                x="135"
+                y="45"
+                width="155"
+                height="305"
+                class="phase-region"
+                data-region="peak"/>
 
-                <rect
-                    x="135"
-                    y="45"
-                    width="155"
-                    height="305"
-                    class="phase-region"
-                    data-region="peak"/>
-
 
-                <rect
-                    x="290"
-                    y="45"
-                    width="100"
-                    height="305"
-                    class="phase-region"
-                    data-region="transition"/>
+            <rect
+                x="290"
+                y="45"
+                width="100"
+                height="305"
+                class="phase-region"
+                data-region="transition"/>
 
 
-                <rect
-                    x="390"
-                    y="45"
-                    width="220"
-                    height="305"
-                    class="phase-region"
-                    data-region="hold"/>
+            <rect
+                x="390"
+                y="45"
+                width="220"
+                height="305"
+                class="phase-region"
+                data-region="hold"/>
 
 
-                <rect
-                    x="610"
-                    y="45"
-                    width="80"
-                    height="305"
-                    class="phase-region"
-                    data-region="off"/>
+            <rect
+                x="610"
+                y="45"
+                width="80"
+                height="305"
+                class="phase-region"
+                data-region="off"/>
 
-
-
-                <!-- AXES -->
-
-                <line
-                    x1="82"
-                    y1="350"
-                    x2="710"
-                    y2="350"
-                    class="axis"/>
 
-                <line
-                    x1="82"
-                    y1="45"
-                    x2="82"
-                    y2="350"
-                    class="axis"/>
-
-
-                <!-- GRID -->
-
-                <line
-                    x1="82"
-                    y1="289"
-                    x2="710"
-                    y2="289"
-                    class="grid-line"/>
 
-                <line
-                    x1="82"
-                    y1="228"
-                    x2="710"
-                    y2="228"
-                    class="grid-line"/>
-
-                <line
-                    x1="82"
-                    y1="167"
-                    x2="710"
-                    y2="167"
-                    class="grid-line"/>
-
-                <line
-                    x1="82"
-                    y1="106"
-                    x2="710"
-                    y2="106"
-                    class="grid-line"/>
-
-
-                <!-- Y TICKS -->
-
-                <text x="58" y="354" class="tick-text">0</text>
-                <text x="49" y="293" class="tick-text">0.5</text>
-                <text x="49" y="232" class="tick-text">1.0</text>
-                <text x="49" y="171" class="tick-text">1.5</text>
-                <text x="49" y="110" class="tick-text">2.0</text>
-                <text x="49" y="49" class="tick-text">2.5</text>
-
-
-                <!-- X TICKS -->
-
-                <text x="80" y="374" class="tick-text">0</text>
-                <text x="155" y="374" class="tick-text">1</text>
-                <text x="230" y="374" class="tick-text">2</text>
-                <text x="305" y="374" class="tick-text">3</text>
-                <text x="380" y="374" class="tick-text">4</text>
-                <text x="455" y="374" class="tick-text">5</text>
-                <text x="530" y="374" class="tick-text">6</text>
-                <text x="605" y="374" class="tick-text">7</text>
-                <text x="680" y="374" class="tick-text">8</text>
-
-
-
-                <!-- BEFORE PEAK -->
-
-                <path
-                    d="
-                    M82 343
-                    L135 343"
-                    class="wave-segment overview"
-                    data-wave="baseline"/>
-
-
-
-                <!-- PEAK -->
-
-                <path
-                    d="
-                    M135 343
-                    C150 297
-                     166 238
-                     183 174
-                    C197 120
-                     212 82
-                     228 69
-                    C237 62
-                     247 62
-                     256 67
-                    C266 75
-                     276 93
-                     290 136"
-                    class="wave-segment"
-                    data-wave="peak"/>
+            <!-- =================================================
+                 AXES
+            ================================================== -->
 
+            <line
+                x1="82"
+                y1="350"
+                x2="710"
+                y2="350"
+                class="axis"/>
 
 
-                <!-- TRANSITION -->
+            <line
+                x1="82"
+                y1="45"
+                x2="82"
+                y2="350"
+                class="axis"/>
 
-                <path
-                    d="
-                    M290 136
-                    C301 177
-                     314 202
-                     330 220
-                    C348 238
-                     365 248
-                     382 256
-                    L390 286"
-                    class="wave-segment"
-                    data-wave="transition"/>
 
 
+            <!-- =================================================
+                 GRID
+            ================================================== -->
 
-                <!-- HOLD -->
+            <line
+                x1="82"
+                y1="289"
+                x2="710"
+                y2="289"
+                class="grid-line"/>
 
-                <path
-                    d="
-                    M390 286
-                    L400 280
-                    L410 288
-                    L420 280
-                    L430 288
-                    L440 280
-                    L450 288
-                    L460 280
-                    L470 288
-                    L480 280
-                    L490 288
-                    L500 280
-                    L510 288
-                    L520 280
-                    L530 288
-                    L540 280
-                    L550 288
-                    L560 280
-                    L570 288
-                    L580 280
-                    L590 288
-                    L600 280
-                    L610 286"
-                    class="wave-segment"
-                    data-wave="hold"/>
 
+            <line
+                x1="82"
+                y1="228"
+                x2="710"
+                y2="228"
+                class="grid-line"/>
 
 
-                <!-- SWITCH OFF -->
+            <line
+                x1="82"
+                y1="167"
+                x2="710"
+                y2="167"
+                class="grid-line"/>
 
-                <path
-                    d="
-                    M610 286
-                    C618 314
-                     625 336
-                     638 344
-                    C652 351
-                     675 345
-                     710 343"
-                    class="wave-segment"
-                    data-wave="off"/>
 
+            <line
+                x1="82"
+                y1="106"
+                x2="710"
+                y2="106"
+                class="grid-line"/>
 
 
-                <!-- LABELS -->
 
-                <text
-                    x="355"
-                    y="405"
-                    class="axis-label">
+            <!-- =================================================
+                 Y TICKS
+            ================================================== -->
 
-                    Time [ms]
+            <text
+                x="58"
+                y="354"
+                class="tick-text">
 
-                </text>
+                0
 
+            </text>
 
-                <text
-                    x="18"
-                    y="235"
-                    class="axis-label"
-                    transform="rotate(-90 18 235)">
-
-                    Current [A]
-
-                </text>
-
-
-            </svg>
-
-
-        </div>
-
-
-
-        <!-- VOLTAGE -->
-
-        <div
-            class="plot-view"
-            id="voltagePlot">
-
-
-            <svg
-                viewBox="0 0 760 420"
-                preserveAspectRatio="xMidYMid meet">
-
-
-                <line
-                    x1="82"
-                    y1="220"
-                    x2="710"
-                    y2="220"
-                    class="axis"/>
-
-                <line
-                    x1="82"
-                    y1="45"
-                    x2="82"
-                    y2="350"
-                    class="axis"/>
-
-
-                <line
-                    x1="82"
-                    y1="110"
-                    x2="710"
-                    y2="110"
-                    class="grid-line"/>
-
-                <line
-                    x1="82"
-                    y1="165"
-                    x2="710"
-                    y2="165"
-                    class="grid-line"/>
 
-                <line
-                    x1="82"
-                    y1="275"
-                    x2="710"
-                    y2="275"
-                    class="grid-line"/>
+            <text
+                x="49"
+                y="293"
+                class="tick-text">
 
+                0.5
 
+            </text>
 
-                <path
-                    d="
-                    M82 220
-                    L135 220
-                    L135 82
-                    L290 82"
-                    class="wave-segment active"/>
 
+            <text
+                x="49"
+                y="232"
+                class="tick-text">
 
-                <path
-                    d="
-                    M290 82
-                    L290 292
-                    C298 266
-                     305 238
-                     314 220"
-                    class="wave-segment active"/>
+                1.0
 
+            </text>
 
-                <path
-                    d="
-                    M314 220
-                    L326 145
-                    L338 220
-                    L350 145
-                    L362 220
-                    L374 145
-                    L386 220
-                    L398 145
-                    L410 220
-                    L422 145
-                    L434 220
-                    L446 145
-                    L458 220
-                    L470 145
-                    L482 220
-                    L494 145
-                    L506 220
-                    L518 145
-                    L530 220
-                    L542 145
-                    L554 220
-                    L566 145
-                    L578 220
-                    L590 145
-                    L602 220"
-                    class="wave-segment active"/>
 
+            <text
+                x="49"
+                y="171"
+                class="tick-text">
 
-                <path
-                    d="
-                    M602 220
-                    L602 330
-                    C616 306
-                     630 273
-                     647 246
-                    C660 228
-                     672 220
-                     690 220
-                    L710 220"
-                    class="wave-segment active"/>
+                1.5
 
+            </text>
 
-                <text
-                    x="355"
-                    y="405"
-                    class="axis-label">
 
-                    Time [ms]
+            <text
+                x="49"
+                y="110"
+                class="tick-text">
 
-                </text>
+                2.0
 
+            </text>
 
-                <text
-                    x="18"
-                    y="235"
-                    class="axis-label"
-                    transform="rotate(-90 18 235)">
 
-                    Voltage [V]
+            <text
+                x="49"
+                y="49"
+                class="tick-text">
 
-                </text>
+                2.5
 
+            </text>
 
-            </svg>
 
 
-        </div>
+            <!-- =================================================
+                 X TICKS
+            ================================================== -->
 
+            <text x="80" y="374" class="tick-text">0</text>
+            <text x="155" y="374" class="tick-text">1</text>
+            <text x="230" y="374" class="tick-text">2</text>
+            <text x="305" y="374" class="tick-text">3</text>
+            <text x="380" y="374" class="tick-text">4</text>
+            <text x="455" y="374" class="tick-text">5</text>
+            <text x="530" y="374" class="tick-text">6</text>
+            <text x="605" y="374" class="tick-text">7</text>
+            <text x="680" y="374" class="tick-text">8</text>
 
-    </div>
 
 
+            <!-- =================================================
+                 SIGNAL BEFORE PEAK
+            ================================================== -->
 
-    <div
-        class="visual-equation"
-        id="visualEquation">
+            <path
+                d="
+                M82 343
+                L135 343"
+                class="wave-segment overview"
+                data-wave="baseline"/>
 
-        U(t) = L · dI/dt + R · I(t)
+
+
+            <!-- =================================================
+                 PEAK
+            ================================================== -->
+
+            <path
+                d="
+                M135 343
+                C150 297
+                 166 238
+                 183 174
+                C197 120
+                 212 82
+                 228 69
+                C237 62
+                 247 62
+                 256 67
+                C266 75
+                 276 93
+                 290 136"
+                class="wave-segment"
+                data-wave="peak"/>
+
+
+
+            <!-- =================================================
+                 TRANSITION
+            ================================================== -->
+
+            <path
+                d="
+                M290 136
+                C301 177
+                 314 202
+                 330 220
+                C348 238
+                 365 248
+                 382 256
+                L390 286"
+                class="wave-segment"
+                data-wave="transition"/>
+
+
+
+            <!-- =================================================
+                 HOLD
+            ================================================== -->
+
+            <path
+                d="
+                M390 286
+                L400 280
+                L410 288
+                L420 280
+                L430 288
+                L440 280
+                L450 288
+                L460 280
+                L470 288
+                L480 280
+                L490 288
+                L500 280
+                L510 288
+                L520 280
+                L530 288
+                L540 280
+                L550 288
+                L560 280
+                L570 288
+                L580 280
+                L590 288
+                L600 280
+                L610 286"
+                class="wave-segment"
+                data-wave="hold"/>
+
+
+
+            <!-- =================================================
+                 SWITCH OFF
+            ================================================== -->
+
+            <path
+                d="
+                M610 286
+                C618 314
+                 625 336
+                 638 344
+                C652 351
+                 675 345
+                 710 343"
+                class="wave-segment"
+                data-wave="off"/>
+
+
+
+            <!-- =================================================
+                 AXIS LABELS
+            ================================================== -->
+
+            <text
+                x="355"
+                y="405"
+                class="axis-label">
+
+                Time [ms]
+
+            </text>
+
+
+            <text
+                x="18"
+                y="235"
+                class="axis-label"
+                transform="rotate(-90 18 235)">
+
+                Current [A]
+
+            </text>
+
+
+        </svg>
+
 
     </div>
 
@@ -3174,14 +2868,9 @@ const phaseData={
             'Current waveform',
 
         description:
-            'Characteristic injector current response before individual phases are highlighted.',
-
-        equation:
-            'U(t) = L · dI/dt + R · I(t)',
+            'Characteristic injector current response before individual operating phases are highlighted.',
 
         active:[],
-
-        plot:'current',
 
         overview:true
 
@@ -3196,12 +2885,9 @@ const phaseData={
         description:
             'High excitation produces the rapid current rise required to open the injector.',
 
-        equation:
-            'I(t) = (U_peak / R) · (1 − e^(−t/τ))',
-
-        active:['peak'],
-
-        plot:'current'
+        active:[
+            'peak'
+        ]
 
     },
 
@@ -3214,12 +2900,9 @@ const phaseData={
         description:
             'Current decreases from the high Peak level toward the lower Hold operating level.',
 
-        equation:
-            'I_peak  →  I_hold',
-
-        active:['transition'],
-
-        plot:'current'
+        active:[
+            'transition'
+        ]
 
     },
 
@@ -3232,12 +2915,9 @@ const phaseData={
         description:
             'A reduced current level maintains the injector in the open state.',
 
-        equation:
-            'I_hold = U_hold / R',
-
-        active:['hold'],
-
-        plot:'current'
+        active:[
+            'hold'
+        ]
 
     },
 
@@ -3250,30 +2930,9 @@ const phaseData={
         description:
             'The excitation ends and the injector current rapidly decays toward zero.',
 
-        equation:
-            'I(t) = I_off · e^[−R(t−t_off)/L_II]',
-
-        active:['off'],
-
-        plot:'current'
-
-    },
-
-
-    voltage:{
-
-        title:
-            'Voltage Response',
-
-        description:
-            'Peak excitation, Hold control and inductive switch-off produce characteristic voltage regions.',
-
-        equation:
-            'U(t) = R·I(t) + L·dI/dt',
-
-        active:[],
-
-        plot:'voltage'
+        active:[
+            'off'
+        ]
 
     },
 
@@ -3284,14 +2943,9 @@ const phaseData={
             'Diagnostic Interpretation',
 
         description:
-            'The complete waveform contains information related to the electrical and physical behaviour of the injector.',
-
-        equation:
-            'physical behaviour → waveform → diagnostic information',
+            'The complete current waveform contains information related to injector behaviour and condition.',
 
         active:[],
-
-        plot:'current',
 
         overview:true
 
@@ -3301,45 +2955,61 @@ const phaseData={
 
 
 
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
 const sections=
-    [...document.querySelectorAll('.model-section')];
+    [
+        ...document.querySelectorAll(
+            '.model-section'
+        )
+    ];
 
 
 const timelineButtons=
-    [...document.querySelectorAll('[data-button]')];
+    [
+        ...document.querySelectorAll(
+            '[data-button]'
+        )
+    ];
 
 
 const phaseRegions=
-    [...document.querySelectorAll('[data-region]')];
+    [
+        ...document.querySelectorAll(
+            '[data-region]'
+        )
+    ];
 
 
 const currentWaves=
-    [...document.querySelectorAll('#currentPlot [data-wave]')];
+    [
+        ...document.querySelectorAll(
+            '[data-wave]'
+        )
+    ];
 
 
 const visualPhase=
-    document.getElementById('visualPhase');
+    document.getElementById(
+        'visualPhase'
+    );
 
 
 const visualDescription=
-    document.getElementById('visualDescription');
-
-
-const visualEquation=
-    document.getElementById('visualEquation');
-
-
-const currentPlot=
-    document.getElementById('currentPlot');
-
-
-const voltagePlot=
-    document.getElementById('voltagePlot');
+    document.getElementById(
+        'visualDescription'
+    );
 
 
 let activeSectionName=null;
 
 
+
+/* =========================================================
+   ACTIVATE PHASE
+========================================================= */
 
 function activatePhase(name){
 
@@ -3353,12 +3023,15 @@ function activatePhase(name){
     }
 
 
-    if(activeSectionName===name){
+    if(
+        activeSectionName===name
+    ){
         return;
     }
 
 
-    activeSectionName=name;
+    activeSectionName=
+        name;
 
 
 
@@ -3370,154 +3043,170 @@ function activatePhase(name){
         data.description;
 
 
-    visualEquation.textContent=
-        data.equation;
+
+    /* BUTTONS */
+
+    timelineButtons.forEach(
+        button=>{
 
 
+            const phase=
+                button.dataset.button;
 
-    currentPlot.classList.toggle(
-        'active',
-        data.plot==='current'
+
+            button.classList.toggle(
+                'active',
+                data.active.includes(phase)
+            );
+
+
+        }
     );
 
 
-    voltagePlot.classList.toggle(
-        'active',
-        data.plot==='voltage'
+
+    /* PHASE BACKGROUND */
+
+    phaseRegions.forEach(
+        region=>{
+
+
+            const phase=
+                region.dataset.region;
+
+
+            region.classList.toggle(
+                'active',
+                data.active.includes(phase)
+            );
+
+
+        }
     );
 
 
 
-    timelineButtons.forEach(button=>{
+    /* WAVEFORM */
 
-        const phase=
-            button.dataset.button;
-
-        button.classList.toggle(
-            'active',
-            data.active.includes(phase)
-        );
-
-    });
+    currentWaves.forEach(
+        wave=>{
 
 
-
-    phaseRegions.forEach(region=>{
-
-        const phase=
-            region.dataset.region;
-
-        region.classList.toggle(
-            'active',
-            data.active.includes(phase)
-        );
-
-    });
+            const phase=
+                wave.dataset.wave;
 
 
-
-    currentWaves.forEach(wave=>{
-
-        const phase=
-            wave.dataset.wave;
-
-
-        wave.classList.remove(
-            'active',
-            'overview'
-        );
-
-
-        if(data.overview){
-
-            wave.classList.add(
+            wave.classList.remove(
+                'active',
                 'overview'
             );
 
+
+            if(data.overview){
+
+
+                wave.classList.add(
+                    'overview'
+                );
+
+
+            }
+
+            else if(
+                data.active.includes(
+                    phase
+                )
+            ){
+
+
+                wave.classList.add(
+                    'active'
+                );
+
+
+            }
+
+
         }
-
-        else if(
-            data.active.includes(phase)
-        ){
-
-            wave.classList.add(
-                'active'
-            );
-
-        }
-
-    });
+    );
 
 
 }
 
 
 
+/* =========================================================
+   ACTIVE SECTION DETECTION
+========================================================= */
+
 function detectActiveSection(){
 
 
-    /*
-    Nie patrzymy już tylko na moment wejścia sekcji.
-    Za każdym razem sprawdzamy, która sekcja znajduje
-    się najbliżej środka ekranu.
-    */
-
-
     const referenceY=
-        window.innerHeight * 0.5;
+        window.innerHeight * 0.47;
 
 
-    let bestSection=null;
-
-    let bestDistance=Infinity;
-
+    let bestSection=
+        null;
 
 
-    sections.forEach(section=>{
+    let bestDistance=
+        Infinity;
 
 
-        const rect=
-            section.getBoundingClientRect();
+
+    sections.forEach(
+        section=>{
 
 
-        /*
-        Punkt reprezentujący sekcję ustawiam trochę
-        wyżej niż jej matematyczny środek, żeby faza
-        zmieniała się naturalnie podczas czytania.
-        */
-
-        const sectionPoint=
-            rect.top +
-            Math.min(
-                rect.height * 0.38,
-                330
-            );
+            const rect=
+                section.getBoundingClientRect();
 
 
-        const distance=
-            Math.abs(
-                sectionPoint-referenceY
-            );
+            const sectionPoint=
+                rect.top +
+                Math.min(
+                    rect.height*.34,
+                    310
+                );
 
 
-        if(distance < bestDistance){
+            const distance=
+                Math.abs(
+                    sectionPoint-
+                    referenceY
+                );
 
-            bestDistance=distance;
 
-            bestSection=section;
+            if(
+                distance <
+                bestDistance
+            ){
+
+
+                bestDistance=
+                    distance;
+
+
+                bestSection=
+                    section;
+
+
+            }
+
 
         }
-
-
-    });
+    );
 
 
 
     if(bestSection){
 
+
         activatePhase(
             bestSection.dataset.phase
         );
+
 
     }
 
@@ -3525,6 +3214,10 @@ function detectActiveSection(){
 }
 
 
+
+/* =========================================================
+   SCROLL UPDATE
+========================================================= */
 
 let ticking=false;
 
@@ -3540,13 +3233,18 @@ function requestScrollUpdate(){
     ticking=true;
 
 
-    requestAnimationFrame(()=>{
+    requestAnimationFrame(
+        ()=>{
 
-        detectActiveSection();
 
-        ticking=false;
+            detectActiveSection();
 
-    });
+
+            ticking=false;
+
+
+        }
+    );
 
 
 }
@@ -3555,7 +3253,9 @@ function requestScrollUpdate(){
 window.addEventListener(
     'scroll',
     requestScrollUpdate,
-    {passive:true}
+    {
+        passive:true
+    }
 );
 
 
@@ -3572,7 +3272,47 @@ window.addEventListener(
 
 
 
-activatePhase('overview');
+/* =========================================================
+   UPDATE AFTER CLICKING PHASE BUTTON
+========================================================= */
+
+timelineButtons.forEach(
+    button=>{
+
+
+        button.addEventListener(
+            'click',
+            ()=>{
+
+
+                const phase=
+                    button.dataset.button;
+
+
+                /*
+                Natychmiast pokazujemy wybraną fazę,
+                a równocześnie standardowy href
+                przewija stronę do odpowiedniej sekcji.
+                */
+
+                activatePhase(
+                    phase
+                );
+
+
+            }
+        );
+
+
+    }
+);
+
+
+
+activatePhase(
+    'overview'
+);
+
 
 detectActiveSection();
 
