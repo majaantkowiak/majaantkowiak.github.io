@@ -27,7 +27,6 @@ window.MathJax = {
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
 
-
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -313,6 +312,7 @@ h1 span{
 
 /* =========================================================
    PAGE GRID
+   IMPORTANT STICKY FIX
 ========================================================= */
 
 .case-layout{
@@ -325,7 +325,14 @@ h1 span{
 
     gap:65px;
 
-    align-items:start;
+    /*
+    VERY IMPORTANT:
+    start powodowało, że prawa kolumna
+    miała tylko wysokość własnego panelu.
+    stretch sprawia, że kolumna ma wysokość
+    całej lewej części strony.
+    */
+    align-items:stretch;
 
 }
 
@@ -587,69 +594,6 @@ h1 span{
 
 
 /* =========================================================
-   VARIABLES
-========================================================= */
-
-.variable-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,minmax(0,1fr));
-
-    gap:10px;
-
-    margin-top:27px;
-
-}
-
-
-.variable{
-
-    padding:13px 14px;
-
-    border:
-        1px solid
-        rgba(177,186,195,.48);
-
-    border-radius:13px;
-
-    background:
-        rgba(255,255,255,.52);
-
-}
-
-
-.variable-symbol{
-
-    margin-bottom:4px;
-
-    color:#4f5b67;
-
-    font-family:
-        Georgia,
-        'Times New Roman',
-        serif;
-
-    font-style:italic;
-
-    font-size:1rem;
-
-}
-
-
-.variable-description{
-
-    color:#7d8791;
-
-    font-size:.64rem;
-
-    line-height:1.5;
-
-}
-
-
-/* =========================================================
    INFO NOTE
 ========================================================= */
 
@@ -831,14 +775,32 @@ h1 span{
 
 /* =========================================================
    RIGHT COLUMN
+   IMPORTANT STICKY FIX
 ========================================================= */
 
 .visual-column{
+
     min-width:0;
+
+    /*
+    Teraz aside rozciąga się na pełną wysokość
+    całej lewej kolumny.
+    */
+
+    position:relative;
+
+    align-self:stretch;
+
 }
 
 
 .visual-sticky{
+
+    /*
+    Ten element jest teraz prawdziwie sticky.
+    Będzie jechał razem z ekranem aż do końca
+    sekcji modelu.
+    */
 
     position:sticky;
 
@@ -1004,8 +966,7 @@ h1 span{
 
     color:#fff;
 
-    border-color:
-        #354653;
+    border-color:#354653;
 
     background:
         linear-gradient(
@@ -1129,7 +1090,7 @@ h1 span{
     opacity:0;
 
     fill:
-        rgba(55,72,87,.09);
+        rgba(55,72,87,.10);
 
     transition:
         opacity .32s ease;
@@ -1146,7 +1107,7 @@ h1 span{
 
     fill:none;
 
-    stroke:#d4d9de;
+    stroke:#d9dde1;
 
     stroke-width:3;
 
@@ -1154,7 +1115,7 @@ h1 span{
 
     stroke-linejoin:round;
 
-    opacity:.38;
+    opacity:.26;
 
     transition:
         stroke .32s ease,
@@ -1166,9 +1127,9 @@ h1 span{
 
 .wave-segment.active{
 
-    stroke:#293c4b;
+    stroke:#263b4b;
 
-    stroke-width:5.5;
+    stroke-width:6;
 
     opacity:1;
 
@@ -1181,7 +1142,7 @@ h1 span{
 
     stroke-width:3.5;
 
-    opacity:.8;
+    opacity:.82;
 
 }
 
@@ -1365,7 +1326,7 @@ h1 span{
 
 
 /* =========================================================
-   SMALLER HEIGHT
+   SHORTER DESKTOP
 ========================================================= */
 
 @media(min-width:1051px) and (max-height:900px){
@@ -1510,8 +1471,7 @@ h1 span{
 
 
     .two-column,
-    .result-grid,
-    .variable-grid{
+    .result-grid{
 
         grid-template-columns:1fr;
 
@@ -1558,7 +1518,9 @@ h1 span{
 
 <nav>
 
-    <a href="index.html" class="brand">
+    <a
+        href="index.html"
+        class="brand">
 
         MA<span>.</span>
 
@@ -2734,9 +2696,7 @@ h1 span{
     <div class="plot-container">
 
 
-        <!-- =================================================
-             CURRENT
-        ================================================== -->
+        <!-- CURRENT -->
 
         <div
             class="plot-view active"
@@ -2748,7 +2708,7 @@ h1 span{
                 preserveAspectRatio="xMidYMid meet">
 
 
-                <!-- PHASE BACKGROUNDS -->
+                <!-- ACTIVE AREAS -->
 
                 <rect
                     x="135"
@@ -2787,7 +2747,7 @@ h1 span{
 
 
 
-                <!-- GRID -->
+                <!-- AXES -->
 
                 <line
                     x1="82"
@@ -2803,6 +2763,8 @@ h1 span{
                     y2="350"
                     class="axis"/>
 
+
+                <!-- GRID -->
 
                 <line
                     x1="82"
@@ -2835,59 +2797,12 @@ h1 span{
 
                 <!-- Y TICKS -->
 
-                <text
-                    x="58"
-                    y="354"
-                    class="tick-text">
-
-                    0
-
-                </text>
-
-                <text
-                    x="49"
-                    y="293"
-                    class="tick-text">
-
-                    0.5
-
-                </text>
-
-                <text
-                    x="49"
-                    y="232"
-                    class="tick-text">
-
-                    1.0
-
-                </text>
-
-                <text
-                    x="49"
-                    y="171"
-                    class="tick-text">
-
-                    1.5
-
-                </text>
-
-                <text
-                    x="49"
-                    y="110"
-                    class="tick-text">
-
-                    2.0
-
-                </text>
-
-                <text
-                    x="49"
-                    y="49"
-                    class="tick-text">
-
-                    2.5
-
-                </text>
+                <text x="58" y="354" class="tick-text">0</text>
+                <text x="49" y="293" class="tick-text">0.5</text>
+                <text x="49" y="232" class="tick-text">1.0</text>
+                <text x="49" y="171" class="tick-text">1.5</text>
+                <text x="49" y="110" class="tick-text">2.0</text>
+                <text x="49" y="49" class="tick-text">2.5</text>
 
 
                 <!-- X TICKS -->
@@ -2986,7 +2901,7 @@ h1 span{
 
 
 
-                <!-- OFF -->
+                <!-- SWITCH OFF -->
 
                 <path
                     d="
@@ -3002,7 +2917,7 @@ h1 span{
 
 
 
-                <!-- AXIS LABELS -->
+                <!-- LABELS -->
 
                 <text
                     x="355"
@@ -3032,9 +2947,7 @@ h1 span{
 
 
 
-        <!-- =================================================
-             VOLTAGE
-        ================================================== -->
+        <!-- VOLTAGE -->
 
         <div
             class="plot-view"
@@ -3083,7 +2996,6 @@ h1 span{
                     class="grid-line"/>
 
 
-                <!-- VOLTAGE RESPONSE -->
 
                 <path
                     d="
@@ -3217,6 +3129,7 @@ h1 span{
 
     <div class="footer-actions">
 
+
         <a
             href="index.html#research"
             class="footer-button">
@@ -3234,6 +3147,7 @@ h1 span{
 
         </a>
 
+
     </div>
 
 
@@ -3248,7 +3162,7 @@ h1 span{
 
 
 /* =========================================================
-   PHASE DEFINITIONS
+   PHASE DATA
 ========================================================= */
 
 const phaseData={
@@ -3265,11 +3179,9 @@ const phaseData={
         equation:
             'U(t) = L · dI/dt + R · I(t)',
 
-        active:
-            [],
+        active:[],
 
-        plot:
-            'current',
+        plot:'current',
 
         overview:true
 
@@ -3287,11 +3199,9 @@ const phaseData={
         equation:
             'I(t) = (U_peak / R) · (1 − e^(−t/τ))',
 
-        active:
-            ['peak'],
+        active:['peak'],
 
-        plot:
-            'current'
+        plot:'current'
 
     },
 
@@ -3307,11 +3217,9 @@ const phaseData={
         equation:
             'I_peak  →  I_hold',
 
-        active:
-            ['transition'],
+        active:['transition'],
 
-        plot:
-            'current'
+        plot:'current'
 
     },
 
@@ -3327,11 +3235,9 @@ const phaseData={
         equation:
             'I_hold = U_hold / R',
 
-        active:
-            ['hold'],
+        active:['hold'],
 
-        plot:
-            'current'
+        plot:'current'
 
     },
 
@@ -3347,11 +3253,9 @@ const phaseData={
         equation:
             'I(t) = I_off · e^[−R(t−t_off)/L_II]',
 
-        active:
-            ['off'],
+        active:['off'],
 
-        plot:
-            'current'
+        plot:'current'
 
     },
 
@@ -3367,11 +3271,9 @@ const phaseData={
         equation:
             'U(t) = R·I(t) + L·dI/dt',
 
-        active:
-            [],
+        active:[],
 
-        plot:
-            'voltage'
+        plot:'voltage'
 
     },
 
@@ -3387,11 +3289,9 @@ const phaseData={
         equation:
             'physical behaviour → waveform → diagnostic information',
 
-        active:
-            [],
+        active:[],
 
-        plot:
-            'current',
+        plot:'current',
 
         overview:true
 
@@ -3400,10 +3300,6 @@ const phaseData={
 };
 
 
-
-/* =========================================================
-   ELEMENTS
-========================================================= */
 
 const sections=
     [...document.querySelectorAll('.model-section')];
@@ -3445,10 +3341,6 @@ let activeSectionName=null;
 
 
 
-/* =========================================================
-   ACTIVATE PHASE
-========================================================= */
-
 function activatePhase(name){
 
 
@@ -3466,8 +3358,7 @@ function activatePhase(name){
     }
 
 
-    activeSectionName=
-        name;
+    activeSectionName=name;
 
 
 
@@ -3497,8 +3388,6 @@ function activatePhase(name){
 
 
 
-    /* BUTTONS */
-
     timelineButtons.forEach(button=>{
 
         const phase=
@@ -3513,8 +3402,6 @@ function activatePhase(name){
 
 
 
-    /* BACKGROUND REGIONS */
-
     phaseRegions.forEach(region=>{
 
         const phase=
@@ -3528,8 +3415,6 @@ function activatePhase(name){
     });
 
 
-
-    /* CURRENT WAVE */
 
     currentWaves.forEach(wave=>{
 
@@ -3568,23 +3453,23 @@ function activatePhase(name){
 
 
 
-/* =========================================================
-   SCROLL DETECTION
-========================================================= */
-
 function detectActiveSection(){
 
 
+    /*
+    Nie patrzymy już tylko na moment wejścia sekcji.
+    Za każdym razem sprawdzamy, która sekcja znajduje
+    się najbliżej środka ekranu.
+    */
+
+
     const referenceY=
-        window.innerHeight * 0.48;
+        window.innerHeight * 0.5;
 
 
-    let bestSection=
-        null;
+    let bestSection=null;
 
-
-    let bestDistance=
-        Infinity;
+    let bestDistance=Infinity;
 
 
 
@@ -3595,24 +3480,31 @@ function detectActiveSection(){
             section.getBoundingClientRect();
 
 
-        const center=
+        /*
+        Punkt reprezentujący sekcję ustawiam trochę
+        wyżej niż jej matematyczny środek, żeby faza
+        zmieniała się naturalnie podczas czytania.
+        */
+
+        const sectionPoint=
             rect.top +
-            rect.height / 2;
+            Math.min(
+                rect.height * 0.38,
+                330
+            );
 
 
         const distance=
             Math.abs(
-                center-referenceY
+                sectionPoint-referenceY
             );
 
 
         if(distance < bestDistance){
 
-            bestDistance=
-                distance;
+            bestDistance=distance;
 
-            bestSection=
-                section;
+            bestSection=section;
 
         }
 
@@ -3633,10 +3525,6 @@ function detectActiveSection(){
 }
 
 
-
-/* =========================================================
-   FORCE UPDATE WHILE SCROLLING
-========================================================= */
 
 let ticking=false;
 
@@ -3683,8 +3571,6 @@ window.addEventListener(
 );
 
 
-
-/* INITIAL */
 
 activatePhase('overview');
 
